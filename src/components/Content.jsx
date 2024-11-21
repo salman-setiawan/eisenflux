@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const Content = ({ data }) => {
   const isValidImage = (url) => {
@@ -21,6 +22,24 @@ const Content = ({ data }) => {
       )}
     </div>
   );
+};
+
+Content.propTypes = {
+  data: PropTypes.shape({
+    img: PropTypes.string,
+    desc: PropTypes.string, 
+    title: PropTypes.string,
+    text: PropTypes.string, 
+  }),
+};
+
+Content.defaultProps = {
+  data: {
+    img: null,
+    desc: null,
+    title: null,
+    text: null,
+  },
 };
 
 export default Content;

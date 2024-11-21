@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+ import { useParams } from 'react-router-dom';
 import ArticleData from '../data/article.js'
 import Content from '../components/Content.jsx'
 import Footnote from '../components/Footnote.jsx';
@@ -18,27 +18,7 @@ const Gallery = () => {
   }
 
   const contentArray = [
-    selectedArticle.content1,
-    selectedArticle.content2,
-    selectedArticle.content3,
-    selectedArticle.content4,
-    selectedArticle.content5,
-    selectedArticle.content6,
-    selectedArticle.content7,
-    selectedArticle.content8,
-    selectedArticle.content9,
-    selectedArticle.content10,
-    selectedArticle.content11,
-    selectedArticle.content12,
-    selectedArticle.content13,
-    selectedArticle.content14,
-    selectedArticle.content15,
-    selectedArticle.content16,
-    selectedArticle.content17,
-    selectedArticle.content18,
-    selectedArticle.content19,
-    selectedArticle.content20,
-    // Anda dapat melanjutkan sesuai jumlah konten yang ada...
+    selectedArticle.content1, selectedArticle.content2, selectedArticle.content3, selectedArticle.content4, selectedArticle.content5, selectedArticle.content6, selectedArticle.content7, selectedArticle.content8, selectedArticle.content9, selectedArticle.content10, selectedArticle.content11, selectedArticle.content12, selectedArticle.content13, selectedArticle.content14, selectedArticle.content15, selectedArticle.content16, selectedArticle.content17, selectedArticle.content18, selectedArticle.content19, selectedArticle.content20,
   ];
 
   return (

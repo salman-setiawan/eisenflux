@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 
-const Chip = ({label}) => {
+const Chip = ({ label }) => {
   return (
     <div>
       <div className="bg-opacity-80 flex gap-x-1 py-1 pl-1.5 pr-2 rounded-lg bg-gray-900 w-fit">
@@ -9,5 +10,8 @@ const Chip = ({label}) => {
     </div>
   )
 }
+
+Chip.propTypes = { label: PropTypes.string, };
+Chip.defaultProps = { label: null, };
 
 export default Chip

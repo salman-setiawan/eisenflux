@@ -1,7 +1,8 @@
 import Button from './Button';
 import { Link } from 'react-router-dom';
 import Chip from './Chip';
-import { useInView } from 'react-intersection-observer'; // import dari react-intersection-observer
+import { useInView } from 'react-intersection-observer';
+import PropTypes from 'prop-types';
 
 const Card = ({ category, img, extImg, extText, url1, url2 }) => {
   const { ref, inView } = useInView({
@@ -37,6 +38,24 @@ const Card = ({ category, img, extImg, extText, url1, url2 }) => {
       </div>
     </div>
   );
+};
+
+Card.propTypes = { 
+  category: PropTypes.string, 
+  img: PropTypes.string, 
+  extImg: PropTypes.string, 
+  extText: PropTypes.string, 
+  url1: PropTypes.string, 
+  url2: PropTypes.string, 
+};
+
+Card.defaultProps = { 
+  category: null, 
+  img: null, 
+  extImg: null, 
+  extText: null, 
+  url1: null, 
+  url2: null, 
 };
 
 export default Card;
