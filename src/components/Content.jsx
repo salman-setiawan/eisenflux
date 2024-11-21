@@ -14,8 +14,9 @@ const Content = ({ data }) => {
           <p className="pt-1.5 text-sm text-gray-500">{data.desc}</p>
         </div>
       ) : (
-        <div className="text-[15px] leading-relaxed text-justify">
-          {data}
+        <div className="leading-relaxed text-justify">
+          {data.title && <div className="font-semibold text-[17px] pb-1"> {data.title} </div>}
+          {data.text && <div className="text-[15px]"> {data.text} </div>}
         </div>
       )}
     </div>

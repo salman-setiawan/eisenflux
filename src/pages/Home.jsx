@@ -1,4 +1,5 @@
 import Card from "../components/Card"
+import Footnote from "../components/Footnote.jsx"
 import IconButton from "../components/IconButton"
 import ArticleData from '../data/article.js'
 
@@ -15,44 +16,27 @@ const Home = () => {
             If you have something to discuss or have some project to work with, please contact me on the button links down below. Thanks!
           </div>
           <div className="flex gap-x-2 justify-end md:justify-start">
-            <IconButton 
-              src='gmail.svg'
-              url='mailto:salmansetiawan88@gmail.com'
-            />
-            <IconButton 
-              src='instagram.svg'
-              url='https://instagram.com/eisenflux'
-            />
-            <IconButton 
-              src='linkedin.svg'
-              url='https://linkedin.com/in/salman-setiawan'
-            />
+            <IconButton src='gmail.svg' url='mailto:salmansetiawan88@gmail.com' />
+            <IconButton src='instagram.svg' url='https://instagram.com/eisenflux' />
+            <IconButton src='linkedin.svg' url='https://linkedin.com/in/salman-setiawan' />
           </div>
         </div>
         <div className="flex flex-col gap-y-3 md:w-3/5 md:pr-4 md:pb-4 md:overflow-y-auto">
-        {ArticleData.map((article) => (
-            <Card
-              key={article.id}
-              img={article.cover}
-              category={article.category}
-              url1={`/article/${article.id}`}
-              url2={article.extUrl}
-              extImg={article.extImg}
-              extText={article.extText}
-            />
-          ))}
+          {ArticleData.map((article) => (
+              <Card
+                key={article.id}
+                img={article.cover}
+                category={article.category}
+                url1={`/article/${article.id}`}
+                url2={article.extUrl}
+                extImg={article.extImg}
+                extText={article.extText}
+              />
+            ))}
         </div>
-        <div className="md:hidden w-full">
-          <div className="flex justify-center">
-            <p className="text-[11px] text-[#B5B5B5] cursonone">@ 2025 ENFX. All right reserved.</p>
-          </div>
-        </div>
+        <div className="md:hidden w-full"> <Footnote /> </div>
       </div>
-      <div className="hidden md:block fixed bottom-0 w-full bg-[#181818]" style={{ zIndex: 1 }}>
-        <div className="flex justify-center pt-2">
-          <p className="text-[11px] text-[#B5B5B5] mb-3 cursonone">@ 2025 ENFX. All right reserved.</p>
-        </div>
-      </div>
+      <div className="hidden md:block fixed bottom-0 w-full bg-[#181818]" style={{ zIndex: 1 }}> <Footnote /> </div>
     </div>
   )
 }

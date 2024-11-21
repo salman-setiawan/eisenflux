@@ -5,7 +5,7 @@
 :root {
   font-family: 'DM Sans', sans-serif;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #181818;
+  background-color: #111111;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -34,26 +34,19 @@
   width: 4px;
   height: 4px;
 }
-
-.bg-pict-1 {
-  background-image: url('example.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.bg-dark-border {
+  background-color: #222222;
 }
 
-.bg-pict-2 {
-  background-image: url('example2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.bg-pict-3 {
-  background-image: url('photo.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* a {
