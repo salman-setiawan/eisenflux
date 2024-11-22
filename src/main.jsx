@@ -33,7 +33,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <LanguageProvider>  {/* Membungkus seluruh aplikasi dengan LanguageProvider */}
+    <LanguageProvider> 
       <RouterProvider router={router} />
     </LanguageProvider>
   </React.StrictMode>

@@ -4,13 +4,14 @@ import Footnote from "../components/Footnote.jsx";
 import IconButton from "../components/IconButton.jsx";
 import ArticleData from '../data/article.js';
 import OtherData from '../data/other.js'; 
+import Notfound from './404.jsx';
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
   console.log(language, toggleLanguage);
 
   if (language === undefined || toggleLanguage === undefined) {
-    return <div>Loading...</div>;
+    return <Notfound />
   }
 
   const { welcome, contact } = OtherData[0].intro[language];
