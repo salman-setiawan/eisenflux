@@ -25,7 +25,7 @@ const Home = () => {
               {language === "en" ? "English" : "Bahasa"}
             </button>
           </div>
-          <img src="brand.png" alt="brand" className="h-20 w-fit pb-2" />
+          <video src="brand.mp4" className="h-20 w-fit pb-2" autoPlay loop muted />
           <div className="text-[15px] leading-relaxed text-justify">{welcome}</div>
           <div className="text-[15px] leading-relaxed text-justify">{contact}</div>
           <div className="flex gap-x-2.5 justify-end md:justify-start py-2">
