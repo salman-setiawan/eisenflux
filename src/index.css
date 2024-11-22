@@ -49,6 +49,90 @@
   transform: translateY(0);
 }
 
+@keyframes snake-border {
+  0% {
+    border-top-color: #79afff;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    box-shadow: 0 -8px 10px rgba(121, 175, 255, 0.3); /* Shadow on top border */
+  }
+  25% {
+    border-top-color: transparent;
+    border-right-color: #79afff;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    box-shadow: 8px 0 10px rgba(121, 175, 255, 0.3); /* Shadow on right border */
+  }
+  50% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: #79afff;
+    border-left-color: transparent;
+    box-shadow: 0 8px 10px rgba(121, 175, 255, 0.3); /* Shadow on bottom border */
+  }
+  75% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #79afff;
+    box-shadow: -8px 0 10px rgba(121, 175, 255, 0.3); /* Shadow on left border */
+  }
+  100% {
+    border-top-color: #79afff;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    box-shadow: 0 -8px 10px rgba(121, 175, 255, 0.3); /* Shadow on top border */
+  }
+}
+
+.button-snake-border {
+  position: relative;
+  border: 2px solid transparent;
+  animation: snake-border 3.5s linear infinite;
+}
+
+.snake {
+  position: relative;  /* Menjaga agar snake memiliki konteks stacking */
+  z-index: 1;          /* Mengatur box hitam agar berada di depan */
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.snake::after, .snake::before {
+  content: '';
+  position: absolute;  /* Memastikan kotak merah menggunakan absolute positioning */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* Memastikan box merah tetap di tengah */
+  width: 100%;
+  height: 100%;
+  background-image: conic-gradient(from var(--angle), transparent, orange 50%, transparent 50%, orange);
+  border-radius: 14px;
+  z-index: -1;  /* Mengatur kotak merah agar berada di belakang */
+  animation: 3s spin linear infinite;
+}
+
+.snake::before {
+  filter: blur(1rem);
+}
+
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+
+
 /* a {
   font-weight: 500;
   color: #646cff;
