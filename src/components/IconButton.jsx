@@ -6,8 +6,10 @@ const IconButton = ({ src, url }) => {
   return (
     <div>
       <Link to={url} target="_blank" rel="noopener noreferrer">
-        <div className='bg-gray-500 rounded-lg p-1.5 w-fit'>
-          <img src={src} alt="icon" />
+        <div className="snake p-0.5">
+          <div className='bg-[#111111] rounded-xl p-2 w-fit'>
+            <img src={src} alt="icon" />
+          </div>
         </div>
       </Link>
     </div>

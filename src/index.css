@@ -71,7 +71,7 @@
 }
 
 .snake::before {
-  filter: blur(1rem);
+  filter: blur(0.6rem);
 }
 
 @keyframes spin{
