@@ -6,11 +6,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        font-family: 'DM Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.87);
+        background-color: #111111;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+    <link rel="preload" href="/src/index.css" as="style" />
+    <script type="module" src="/src/main.jsx" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ENFX</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <link rel="stylesheet" href="/src/index.css" />
   </body>
 </html>
