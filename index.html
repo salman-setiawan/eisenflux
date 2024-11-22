@@ -5,7 +5,11 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" as="style">
+    <link rel="preload" href="styles.css" as="style">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <title>ENFX</title>
     <style>
       body {
         font-family: 'DM Sans', sans-serif;
@@ -13,12 +17,19 @@
       }
     </style>
     <script type="module" src="/src/main.jsx" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ENFX</title>
+    <script src="other-script.js" defer></script>
   </head>
+
   <body>
     <div id="root"></div>
-    <link rel="preload" href="styles.css" as="style">
-    <script src="other-script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <script>
+      window.addEventListener('load', function () {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap';
+        document.head.appendChild(link);
+      });
+    </script>
   </body>
 </html>
