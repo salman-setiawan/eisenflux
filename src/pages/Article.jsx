@@ -34,8 +34,8 @@ const Article = () => {
         <div className="px-5 md:px-8 flex flex-col md:flex-row gap-x-8 gap-y-4 w-full md:w-[1080px]">
           <div className="md:w-2/5 flex flex-col gap-y-2">
             <div className="w-full flex justify-end pb-4">
-              <button onClick={toggleLanguage} className="text-[15px] h-fit underline underline-offset-1">
-                {language === 'en' ? 'Bahasa' : 'English'}
+              <button onClick={toggleLanguage} className="text-[15px] h-fit underline underline-offset-1 text-[#ffa500]">
+                {language === "en" ? "English" : "Bahasa"}
               </button>
             </div>
             <div className="rounded-xl h-[320px] bg-cover bg-center" style={{ backgroundImage: `url(${cover})` }}></div>

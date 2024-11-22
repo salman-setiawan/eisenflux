@@ -21,8 +21,8 @@ const Home = () => {
       <div className="flex flex-col md:flex-row gap-x-10 gap-y-4 w-full md:w-[1080px]">
         <div className="md:w-2/5 flex flex-col gap-y-4">
           <div className="w-full flex justify-end pb-2">
-            <button onClick={toggleLanguage} className="text-[15px] h-fit underline underline-offset-1">
-              {language === "en" ? "Bahasa" : "English"}
+            <button onClick={toggleLanguage} className="text-[15px] h-fit underline underline-offset-1 text-[#ffa500]">
+              {language === "en" ? "English" : "Bahasa"}
             </button>
           </div>
           <img src="brand.png" alt="brand" className="h-20 w-fit pb-2" />
