@@ -1,7 +1,12 @@
-import Home from "./pages/Home";
+import { LanguageProvider } from './data/languageContext'; 
+import Home from './pages/Home';
 
-export default function App() {
+const App = () => {
   return (
-    <Home />
-  )
-}
+    <LanguageProvider>
+      <Home />
+    </LanguageProvider>
+  );
+};
+
+export default App;
