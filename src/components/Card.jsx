@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const Card = ({ category, img, intImg, intText, extImg, extText, url1, url2 }) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
-    threshold: 0.2,
+    threshold: 0.05,
   });
 
   return (

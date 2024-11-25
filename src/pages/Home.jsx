@@ -14,20 +14,21 @@ const Home = () => {
     return <Notfound />
   }
 
-  const { welcome, contact } = OtherData[0].intro[language];
+  const { contact } = OtherData[0].intro[language];
 
   return (
     <div className="flex place-content-center pt-6 pb-4 md:py-8 px-5 md:px-8 md:max-h-screen">
       <div className="flex flex-col md:flex-row gap-x-10 gap-y-4 w-full md:w-[1080px]">
-        <div className="md:w-2/5 flex flex-col gap-y-4">
-          <div className="w-full flex justify-end pb-2">
-            <button onClick={toggleLanguage} className="text-[14px] h-fit underline underline-offset-1 text-[#ffa500]">
-              {language === "en" ? "English" : "Bahasa"}
-            </button>
+        <div className="w-full flex justify-end pb-2">
+          <button onClick={toggleLanguage} className="text-[14px] h-fit underline underline-offset-1 text-[#ffa500]">
+            {language === "en" ? "English" : "Bahasa"}
+          </button>
+        </div>
+        <div className="md:w-2/5 flex flex-col gap-y-4 pt-[25rem]">
+          <div className="flex w-full justify-center">
+            <video src="brand.mp4" className="h-20 w-fit pb-2" autoPlay loop muted />
           </div>
-          <video src="brand.mp4" className="h-20 w-fit pb-2" autoPlay loop muted />
-          <div className="text-[15px] leading-relaxed text-justify">{welcome}</div>
-          <div className="text-[15px] leading-relaxed text-justify">{contact}</div>
+          <div className="text-[15px] leading-relaxed text-center">{contact}</div>
           <div className="flex gap-x-2.5 justify-end md:justify-start py-2">
             <IconButton src="gmail.svg" url="mailto:salmansetiawan88@gmail.com" />
             <IconButton src="instagram.svg" url="https://instagram.com/eisenflux" />
