@@ -81,3 +81,20 @@
     --angle: 360deg;
   }
 }
+
+
+@keyframes blink {
+  0% {
+    background-color: #18be55; /* green-500 */
+  }
+  50% {
+    background-color: #5ce68f; /* green-400 */
+  }
+  100% {
+    background-color: #18be55; /* green-500 */
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite; /* Animasi berjalan selama 1 detik secara terus-menerus */
+}
