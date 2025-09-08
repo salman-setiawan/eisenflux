@@ -18,19 +18,19 @@ const Home = () => {
   const { contact, stats } = OtherData[0].intro[language];
 
   return (
-    <div className="flex place-content-center pt-6 pb-4 md:py-8 px-4 md:px-8 md:max-h-screen">
-      <div className="flex flex-col md:flex-row gap-x-10 gap-y-4 w-full md:w-[1080px]">
-        <div className="w-full flex justify-end pb-2">
-          <button onClick={toggleLanguage} className="text-[14px] h-fit underline underline-offset-1 text-[#ffa500]">
-            {language === "en" ? "English" : "Bahasa"}
-          </button>
-        </div>
-        <div className="md:w-2/5 flex flex-col gap-y-4 pt-[25rem]">
-          <div className="flex w-full justify-center">
-            <video src="brand.mp4" className="h-20 w-fit pb-2" autoPlay loop muted />
+    <div className="flex flex-col place-content-center py-8 px-6 md:h-screen">
+      <div className="w-full flex justify-end pb-4">
+        <button onClick={toggleLanguage} className="text-[14px] h-fit underline underline-offset-1 text-[#ffa500]">
+          {language === "en" ? "English" : "Bahasa"}
+        </button>
+      </div>
+      <div className="flex flex-col gap-y-6 md:flex-row gap-x-16 w-full h-full">
+        <div className="md:w-3/5 md:min-w-[360px] md:max-w-[480px] flex flex-col gap-y-4 md:gap-y-8 pt-[25rem] md:pt-0 md:justify-end md:pb-12 md:px-4 h-full">
+          <div className="flex w-full justify-center md:justify-start">
+            <video src="brand.mp4" className="h-20 w-fit pb-2 md:pb-0" autoPlay loop muted />
           </div>
-          <div className="text-[15px] leading-relaxed text-center">{contact}</div>
-          <div className="flex justify-between items-center">
+          <div className="text-[15px] leading-relaxed text-center md:text-start">{contact}</div>
+          <div className="flex justify-between items-center md:flex-col md:gap-y-4 md:items-start">
             <WorkChip label={stats} />
             <div className="flex gap-x-2.5 justify-end md:justify-start py-2">
               <IconButton src="gmail.svg" url="mailto:salmansetiawan88@gmail.com" />
@@ -39,7 +39,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-y-3 md:w-3/5 md:pr-4 md:pb-4 md:overflow-y-auto">
+        <div className="flex flex-col gap-y-3 md:w-full md:pt-1 md:pb-12 md:pr-2 md:overflow-y-auto">
           {ArticleData.map((article) => (
             <Card
               key={article.id}

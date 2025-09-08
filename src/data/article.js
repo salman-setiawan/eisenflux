@@ -58,7 +58,7 @@ const ArticleData = [
       }
     },
     content6: {
-      img: "/example2.jpg",
+      img: "/anotherisland/interview.webp",
       desc: {
         en: "Questionnaire Results (Feb 4, 2023)",
         id: "Hasil Kuesioner (Feb 4, 2023)"

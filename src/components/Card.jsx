@@ -16,7 +16,7 @@ const Card = ({ category, img, intImg, intText, extImg, extText, url1, url2 }) =
       className={`transition-opacity duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}
     >
       <div className="">
-        <div className={`rounded-xl bg-cover bg-center h-[360px]`} style={{ backgroundImage: `url(${img})` }}>
+        <div className={`rounded-xl bg-cover bg-center h-[360px] md:h-[440px]`} style={{ backgroundImage: `url(${img})` }}>
           <div className="h-full flex flex-col px-2.5 py-3 justify-between">
             <Chip label={category} />
             <div className="w-full flex justify-end md:justify-start">

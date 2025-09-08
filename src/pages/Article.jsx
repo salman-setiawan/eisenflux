@@ -31,8 +31,8 @@ const Article = () => {
   return (
     <div>
       <div className="flex place-content-center py-5 md:py-8 md:max-h-screen">
-        <div className="px-5 md:px-8 flex flex-col md:flex-row gap-x-8 gap-y-4 w-full md:w-[1080px]">
-          <div className="md:w-2/5 flex flex-col gap-y-2">
+        <div className="px-5 md:px-8 flex flex-col items-center gap-x-8 gap-y-4 w-full">
+          <div className="md:w-1/4 flex flex-col gap-y-2">
             <div className="w-full flex justify-end pb-4">
               <button onClick={toggleLanguage} className="text-[15px] h-fit underline underline-offset-1 text-[#ffa500]">
                 {language === "en" ? "English" : "Bahasa"}

@@ -11,7 +11,7 @@ const Content = ({ data, language }) => {
     <div>
       {hasValidImage ? (
         <div className='py-2'>
-          <img className="w-full rounded-xl" src={data.img} alt={data.desc ? data.desc[language] : 'image'} />
+          <img className="w-full" src={data.img} alt={data.desc ? data.desc[language] : 'image'} />
           <p className="w-full text-center pt-1.5 text-sm text-gray-500">{data.desc ? data.desc[language] : ''}</p>
         </div>
       ) : (

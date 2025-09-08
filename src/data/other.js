@@ -7,7 +7,7 @@ const OtherData =[
       },
       id: {
         contact: "Selamat datang di portofolio saya. Anda bisa panggil saya Salman dan jika anda ingin diskusi atau ada proyek yang ingin dikerjakan, silakan hubungi saya melalui tombol di bawah ini.",
-        stats: "Tersedia untuk Pekerjaan",
+        stats: "Terbuka untuk Pekerjaan",
       },
     },
   }

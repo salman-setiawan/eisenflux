@@ -19,13 +19,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #5454FF;
+  background-color: #ffa500;
   width: 4px;
   height: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #111111;
+  background-color: #333333;
   width: 4px;
   height: 4px;
 }
@@ -85,16 +85,16 @@
 
 @keyframes blink {
   0% {
-    background-color: #18be55; /* green-500 */
+    background-color: #128d3f;
   }
   50% {
-    background-color: #5ce68f; /* green-400 */
+    background-color: #12ff69;
   }
   100% {
-    background-color: #18be55; /* green-500 */
+    background-color: #128d3f;
   }
 }
 
 .animate-blink {
-  animation: blink 1s infinite; /* Animasi berjalan selama 1 detik secara terus-menerus */
+  animation: blink 1s infinite;
 }
