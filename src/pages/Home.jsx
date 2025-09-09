@@ -25,7 +25,7 @@ const Home = () => {
         </button>
       </div>
       <div className="flex flex-col gap-y-6 md:flex-row gap-x-16 w-full h-full">
-        <div className="md:w-3/5 md:min-w-[360px] md:max-w-[480px] flex flex-col gap-y-4 md:gap-y-8 pt-[25rem] md:pt-0 md:justify-end md:pb-12 md:px-4 h-full">
+        <div className="md:w-3/5 md:min-w-[300px] md:max-w-[480px] flex flex-col gap-y-4 md:gap-y-8 pt-[25rem] md:pt-0 md:justify-end md:pb-12 md:px-4 h-full">
           <div className="flex w-full justify-center md:justify-start">
             <video src="brand.mp4" className="h-20 w-fit pb-2 md:pb-0" autoPlay loop muted />
           </div>
@@ -39,11 +39,13 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-y-3 md:w-full md:pt-1 md:pb-12 md:pr-2 md:overflow-y-auto">
+        <div className="flex flex-col gap-y-3 md:w-full md:pt-1 md:pb-8 md:pr-2 md:overflow-y-auto">
           {ArticleData.map((article) => (
             <Card
               key={article.id}
+              title={article.title}
               img={article.cover}
+              obj={article.obj}
               category={article.category[language]} 
               url1={`/article/${article.id}`}
               url2={article.extUrl}

@@ -4,7 +4,7 @@ import Chip from './Chip';
 import { useInView } from 'react-intersection-observer';
 import PropTypes from 'prop-types';
 
-const Card = ({ category, img, intImg, intText, extImg, extText, url1, url2 }) => {
+const Card = ({ title, category, img, intImg, intText, extImg, extText, url1, url2, obj }) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.05,
@@ -16,20 +16,24 @@ const Card = ({ category, img, intImg, intText, extImg, extText, url1, url2 }) =
       className={`transition-opacity duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}
     >
       <div className="">
-        <div className={`rounded-xl bg-cover bg-center h-[360px] md:h-[440px]`} style={{ backgroundImage: `url(${img})` }}>
+        <div className={`rounded-xl bg-cover bg-center border border-neutral-800`} style={{ backgroundImage: `url(${img})` }}>
           <div className="h-full flex flex-col px-2.5 py-3 justify-between">
             <Chip label={category} />
-            <div className="w-full flex justify-end md:justify-start">
+            <div className="flex justify-center">
+              <img className={`h-80 object-cover float-anim`} src={obj} alt="object" />
+            </div>
+            <div className="flex md:flex-col lg:flex-row justify-between md:justify-start lg:justify-between w-full items-center md:items-start lg:items-center md:gap-y-4 lg:gap-y-0">
+              <div className="p-0.5 font-semibold text-md">{title}</div>
               <div className="p-0.5 rounded-xl snake">
                 <div className="flex p-1 rounded-xl bg-[#111111]">
                   {url1 && (
                     <Link to={url1}>
-                      <Button img={intImg} bg="" text={intText} />
+                      <Button img={intImg} text={intText} hoverColor='#FFAA00' />
                     </Link>
                   )}
                   {url2 && (
                     <Link to={url2} target="_blank" rel="noopener noreferrer">
-                      <Button img={extImg} bg="" text={extText} />
+                      <Button img={extImg} text={extText} hoverColor='#FFAA00' />
                     </Link>
                   )}
                 </div>
@@ -43,6 +47,7 @@ const Card = ({ category, img, intImg, intText, extImg, extText, url1, url2 }) =
 };
 
 Card.propTypes = { 
+  title: PropTypes.string,
   category: PropTypes.string, 
   img: PropTypes.string, 
   intImg: PropTypes.string, 
@@ -51,9 +56,11 @@ Card.propTypes = {
   extText: PropTypes.string,  
   url1: PropTypes.string, 
   url2: PropTypes.string, 
+  obj: PropTypes.string, 
 };
 
 Card.defaultProps = { 
+  title: null,
   category: null, 
   img: null, 
   intImg: null, 
@@ -62,6 +69,7 @@ Card.defaultProps = {
   extText: null, 
   url1: null, 
   url2: null, 
+  obj: null, 
 };
 
 export default Card;

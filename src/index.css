@@ -98,3 +98,19 @@
 .animate-blink {
   animation: blink 1s infinite;
 }
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(4deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+}
+
+.float-anim {
+  animation: floatAnimation 4s ease-in-out infinite;
+}

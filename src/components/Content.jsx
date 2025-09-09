@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Content = ({ data, language }) => {
   const isValidImage = (url) => {
@@ -7,17 +7,22 @@ const Content = ({ data, language }) => {
 
   const hasValidImage = data && isValidImage(data.img);
 
+  const altText = {
+    en: "Can't load the image",
+    id: "Tidak dapat menggugah gambar",
+  };
+
   return (
     <div>
       {hasValidImage ? (
-        <div className='py-2'>
-          <img className="w-full" src={data.img} alt={data.desc ? data.desc[language] : 'image'} />
-          <p className="w-full text-center pt-1.5 text-sm text-gray-500">{data.desc ? data.desc[language] : ''}</p>
+        <div className="py-2">
+          <img className="text-center text-sm" src={data.img} alt={altText[language] || ""} />
+          <p className="w-full text-center pt-1.5 text-sm text-gray-500"> {data.desc ? data.desc[language] : ""} </p>
         </div>
       ) : (
         <div className="leading-relaxed text-justify">
-          {data.title && <div className="font-semibold text-xl pb-2"> {data.title[language]} </div>}
-          {data.text && <div className="text-[15px] text-gray-300"> {data.text[language]} </div>}
+          {data.title && ( <div className="font-semibold text-2xl pt-6 pb-3"> {data.title[language]} </div> )}
+          {data.text && ( <div className="text-[15px] text-gray-300"> {data.text[language]} </div> )}
         </div>
       )}
     </div>
@@ -27,9 +32,9 @@ const Content = ({ data, language }) => {
 Content.propTypes = {
   data: PropTypes.shape({
     img: PropTypes.string,
-    desc: PropTypes.object, 
-    title: PropTypes.object, 
-    text: PropTypes.object, 
+    desc: PropTypes.object,
+    title: PropTypes.object,
+    text: PropTypes.object,
   }),
   language: PropTypes.string.isRequired,
 };
