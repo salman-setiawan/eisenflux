@@ -143,14 +143,8 @@ const ArticleData = [
           id: "Solusi Desain Produk"
         },
         text: {
-          en: 'Based on the attached data, the design of the Another Day in the Island game can be done by creating a simple game with a more modern interface and characters. One advantage is that the player character can move freely, enhancing the gaming experience. The integration of modern design elements, such as smoother animations and responsive controls, will help create a more immersive experience for players.', 
-          id: 'Tahap ini mencakup pembuatan solusi desain, mulai dari konsep kasar seperti Game Design Document (GDD), storyboard, dan wireframe, hingga desain komprehensif seperti UI mockup.'
-        }
-      },
-      {
-        text: {
-          en: 'Based on the attached data, the design of the Another Day in the Island game can be done by creating a simple game with a more modern interface and characters. One advantage is that the player character can move freely, enhancing the gaming experience. The integration of modern design elements, such as smoother animations and responsive controls, will help create a more immersive experience for players.', 
-          id: 'GDD dibuat sebagai struktur dasar game yang akan dikembangkan, dan desain di dalamnya dapat terus berkembang seiring pembaruan. Setelah GDD selesai, tahap berikutnya adalah perancangan storyboard untuk menggambarkan alur permainan secara menyeluruh, mulai dari saat game dibuka hingga diselesaikan seperti gambar dibawah.'
+          en: 'This stage covers the creation of design solutions, starting from rough concepts such as the Game Design Document (GDD), storyboard, and wireframe, design system, up to the UI mockup.', 
+          id: 'Tahap ini mencakup pembuatan solusi desain, mulai dari konsep kasar seperti Game Design Document (GDD), storyboard, dan wireframe, design system hingga UI mockup.'
         }
       },
       {
@@ -162,13 +156,13 @@ const ArticleData = [
       },
       {
         text: {
-          en: 'Based on the attached data, the design of the Another Day in the Island game can be done by creating a simple game with a more modern interface and characters. One advantage is that the player character can move freely, enhancing the gaming experience. The integration of modern design elements, such as smoother animations and responsive controls, will help create a more immersive experience for players.', 
+          en: 'The image above is the result of the storyboard for the game to be developed. This design illustrates the game flow, where when players open the game, they will enter the main menu screen. Here, players can also access several features such as settings, events, and tutorials. Before playing, players can choose the difficulty level. Outside of the main gameplay flow, there are also explanations such as monster characteristics and conditional situations that players will encounter.', 
           id: 'Gambar diatas adalah hasil dari storyboard permainan yang akan di bangun, rancangan tersebut menjelaskan alur permainan dimana saat pemain membuka permainan akan masuk ke tampilan main-menu, disini pemain juga dapat mengakses beberapa fitur seperti pengaturan, event, dan tutorial. sebelum bermain pemain dapat memilih tingkat kesulitan. Diluar dari alur permainan ada penjelasan seperti karakterisitik monster, dan situasi kondisional yang akan dihadapi pemain.'
         }
       },
       {
         text: {
-          en: 'Based on the attached data, the design of the Another Day in the Island game can be done by creating a simple game with a more modern interface and characters. One advantage is that the player character can move freely, enhancing the gaming experience. The integration of modern design elements, such as smoother animations and responsive controls, will help create a more immersive experience for players.', 
+          en: 'The next step is moving into the wireframe design process, which aims to visualize the storyboard sketches into a simple framework of the game interface. The result is attached in the image below.', 
           id: 'Langkah selanjutnya adalah masuk ke proses desain wireframe, yang bertujuan untuk memvisualisasikan sketsa storyboard yang dibuat menjadi kerangka sederhana antarmuka permainan. berikut hasilnya terlampir pada gambar dibawah ini.'
         }
       },
@@ -181,14 +175,113 @@ const ArticleData = [
       },
       {
         text: {
-          en: 'Based on the attached data, the design of the Another Day in the Island game can be done by creating a simple game with a more modern interface and characters. One advantage is that the player character can move freely, enhancing the gaming experience. The integration of modern design elements, such as smoother animations and responsive controls, will help create a more immersive experience for players.', 
-          id: 'Wireframe telah dirancang, selanjutnya adalah tahap perancangan design system dengan tujuan sebagai panduan utama dalam merancang permainan hingga menyerupai produk aslinya. Tahap ini meliputi pembuatan style guide seperti brand identity, color system, typography, assets, dan beberapa component penting dalam permainan.'
+          en: 'The wireframe is designed based on the previously created storyboard concept. The next stage is the design system development, which serves as the main guideline for designing the game interface. This stage includes creating a style guide that covers brand identity, color system, typography, assets, and several key components of the game.', 
+          id: 'Wireframe dirancang berdasarkan konsep storyboard yang telah dibuat sebelumnya. Tahap selanjutnya adalah perancangan design system sebagai panduan utama dalam merancang antarmuka permainan. Tahap ini mencakup pembuatan style guide yang meliputi brand identity, color system, tipografi, aset, serta beberapa komponen penting dalam permainan.'
         }
       },
       {
         text: {
-          en: 'Based on the attached data, the design of the Another Day in the Island game can be done by creating a simple game with a more modern interface and characters. One advantage is that the player character can move freely, enhancing the gaming experience. The integration of modern design elements, such as smoother animations and responsive controls, will help create a more immersive experience for players.', 
+          en: 'The final result of the design solution will be a UI mockup, which will be used by the developers to build the game Another Day in the Island.', 
           id: 'Hasil akhir dari solusi desain nantinya akan berupa maket UI untuk digunakan pengembang dalam membangun permainan Another Day in the Island.'
+        }
+      },
+      {
+        title: {
+          en: "Evaluation Design",
+          id: "Evaluasi Desain"
+        },
+        text: {
+          en: "The purpose of this evaluation is to gather player's feedback through prepared questions and to understand their experience while playing. The evaluation is conducted iteratively to ensure satisfactory results.", 
+          id: 'Tujuan dari evaluasi ini adalah untuk mengumpulkan pendapat pemain melalui pertanyaan yang disiapkan dan memahami pengalaman mereka saat bermain. Evaluasi dilakukan secara iteratif untuk memastikan hasilnya memuaskan.'
+        }
+      },
+      {
+        img: "/example2.jpg",
+        desc: {
+          en: "This is the description for the image.",
+          id: "Ini adalah deskripsi untuk gambar."
+        }
+      },
+      {
+        text: {
+          en: 'Here is a brief documentation of how feedback will be collected. Players will first play the game, and once they feel they have experienced enough to provide an assessment, they will fill out a prepared feedback form. The evaluation technique will be carried out using the Customer Feedback Loop (CFL) method with the following stages.', 
+          id: 'Berikut adalah sedikit dokumentasi bagaimana pengambilan feedback akan dilakukan. Pemain akan bermain terlebih dahulu, setelah dirasa cukup dan bisa menilai, pemain akan mengisi form feedback yang sudah disiapkan. Teknik evaluasi akan dilakukan menggunakan metode customer feedback loop (CFL) dengan tahapan sebagai berikut.'
+        }
+      },
+      {
+        text: {
+          en: "The initial stage involves collecting feedback through a questionnaire with parameters such as age, gender, and questions related to Another Day in the Island. Age data is used to assess the level of game analysis understanding, while gender serves as a comparison for evaluating player's tendencies in assessing the game.", 
+          id: 'Tahap awal melibatkan pengumpulan umpan balik menggunakan kuesioner dengan parameter seperti usia, gender, serta pertanyaan seputar Another Day in the Island. Data usia digunakan untuk melihat tingkat pemahaman analisis game, sedangkan gender untuk pembanding tingkat kecendrungan untuk menilai permainan.'
+        }
+      },
+      {
+        img: "/example2.jpg",
+        desc: {
+          en: "This is the description for the image.",
+          id: "Ini adalah deskripsi untuk gambar."
+        }
+      },
+      {
+        text: {
+          en: "Next are questions regarding the game's usability, which are aimed at evaluating the user interface and user experience within the game. The usability testing questions in the questionnaire will be presented using a rating scale from 1 to 5. The details of the questions and scale are provided in the image below.", 
+          id: 'Selanjutnya adalah pertanyaan mengenai usability pada game yang digunakan untuk mengevaluasi antarmuka dan pengalaman pengguna dalam game. Untuk pertanyaan usability testing pada kuesioner, akan disajikan dengan skala penilaian dari 1 hingga 5. Berikut adalah informasi mengenai pertanyaan dan skala sebagaimana ditunjukkan pada gambar di bawah ini.'
+        }
+      },
+      {
+        img: "/example2.jpg",
+        desc: {
+          en: "This is the description for the image.",
+          id: "Ini adalah deskripsi untuk gambar."
+        }
+      },
+      {
+        text: {
+          en: "Players will also be asked to provide reviews and input in the form of critiques and suggestions that can contribute to improving the game's interface and overall experience. The following are the evaluation results for the arcade game *Another Day in the Island* that I have gathered", 
+          id: 'Pemain juga akan diminta untuk memberikan ulasan dan masukan berupa kritik serta saran yang dapat berkontribusi pada pengembangan antarmuka dan pengalaman permainan ini. Berikut adalah hasil evaluasi untuk game arcade Another Day in the Island yang saya peroleh.'
+        }
+      },
+      {
+        img: "/example2.jpg",
+        desc: {
+          en: "This is the description for the image.",
+          id: "Ini adalah deskripsi untuk gambar."
+        }
+      },
+      {
+        text: {
+          en: 'The initial evaluation results show a usability score of 3.72 (above average), with the following details: Satisfaction (3.675), Learnability (3.2), Efficiency (4), and Memorability (4.1).', 
+          id: 'Hasil evaluasi awal menunjukkan skor usability 3,72 (di atas rata-rata), dengan detail sebagai berikut: Satisfaction (3,675), Learnability (3,2), Efficiency (4), dan Memorability (4,1).'
+        }
+      },
+      {
+        text: {
+          en: "The next stage is processing data from open-ended questions, such as player's reviews and feedback. The results have been grouped based on common opinions shared by the players. Here are some examples of the collected feedback.", 
+          id: 'Tahap selanjutnya adalah mengolah data dari pertanyaan terbuka seperti ulasan dan masukan dari pemain. Hasilnya telah dipilih berdasarkan kesamaan pendapat yang diberikan oleh para pemain. Berikut adalah beberapa contoh hasil masukan yang telah dikumpulkan.'
+        }
+      },
+      {
+        img: "/example2.jpg",
+        desc: {
+          en: "This is the description for the image.",
+          id: "Ini adalah deskripsi untuk gambar."
+        }
+      },
+      {
+        text: {
+          en: "Based on the evaluation results, the next step will focus on improving the user experience and user interface. The following are the processes and decisions I have made in refining the design.", 
+          id: 'Dari hasil evaluasi, langkah selanjutnya akan berfokus pada peningkatan user experience dan user interface. Berikut adalah proses serta keputusan yang saya ambil dalam perbaikan desain.'
+        }
+      },
+      {
+        text: {
+          en: "The collected feedback will then be incorporated into the development of a tool to determine priorities between values and efforts, helping designers make better decisions.", 
+          id: 'Hasil dari masukan yang telah dikumpulkan kemudian akan dimasukkan ke dalam pengembangan sebuah alat untuk menentukan prioritas antara nilai (values) dan usaha (efforts), sehingga dapat membantu desainer dalam membuat keputusan yang lebih baik.'
+        }
+      },
+      {
+        text: {
+          en: "Dari analisis di atas, perbaikan yang akan dilakukan dapat dilihat pada poin-poin berikut.", 
+          id: 'From the analysis above, the improvements to be made can be seen in the following points.'
         }
       },
     ]
