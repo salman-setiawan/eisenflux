@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 const Chip = ({ label }) => {
   return (
     <div>
-      <div className="flex gap-x-1 py-1 pl-1.5 pr-2 rounded-lg bg-[#111111] w-fit">
-        <img className='w-[18px]' src="folder.svg" alt="icon" />
-        <div className="text-relaxed text-[13px] text-gray-400 font-medium"> {label} </div>
+      <div className="flex gap-x-1 py-1 px-2 rounded-lg bg-opacity-15 bg-[#ffaa00] w-fit">
+        {/* <img className='w-[18px]' src="folder.svg" alt="icon" /> */}
+        <div className="text-[12px] font-semibold"> {label} </div>
       </div>
     </div>
   )

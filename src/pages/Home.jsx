@@ -46,7 +46,7 @@ const Home = () => {
               title={article.title}
               img={article.cover}
               obj={article.obj}
-              category={article.category[language]} 
+              categories={article.categories.map(c => c[language])}
               url1={`/article/${article.id}`}
               url2={article.extUrl}
               intImg={article.intImg}

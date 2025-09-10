@@ -4,7 +4,7 @@ import Chip from './Chip';
 import { useInView } from 'react-intersection-observer';
 import PropTypes from 'prop-types';
 
-const Card = ({ title, category, img, intImg, intText, extImg, extText, url1, url2, obj }) => {
+const Card = ({ title, categories, img, intImg, intText, extImg, extText, url1, url2, obj }) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.05,
@@ -18,12 +18,16 @@ const Card = ({ title, category, img, intImg, intText, extImg, extText, url1, ur
       <div className="">
         <div className={`rounded-xl bg-cover bg-center border border-neutral-800`} style={{ backgroundImage: `url(${img})` }}>
           <div className="h-full flex flex-col px-2.5 py-3 justify-between">
-            <Chip label={category} />
+            <div className="flex flex-wrap gap-x-2">
+              {categories?.map((cat, i) => (
+                <Chip key={i} label={cat} />
+              ))}
+            </div>
             <div className="flex justify-center">
               <img className={`h-80 object-cover float-anim`} src={obj} alt="object" />
             </div>
             <div className="flex md:flex-col lg:flex-row justify-between md:justify-start lg:justify-between w-full items-center md:items-start lg:items-center md:gap-y-4 lg:gap-y-0">
-              <div className="p-0.5 font-semibold text-md">{title}</div>
+              <div className="p-0.5 font-semibold text-lg">{title}</div>
               <div className="p-0.5 rounded-xl snake">
                 <div className="flex p-1 rounded-xl bg-[#111111]">
                   {url1 && (
@@ -48,7 +52,7 @@ const Card = ({ title, category, img, intImg, intText, extImg, extText, url1, ur
 
 Card.propTypes = { 
   title: PropTypes.string,
-  category: PropTypes.string, 
+  categories: PropTypes.arrayOf(PropTypes.string),
   img: PropTypes.string, 
   intImg: PropTypes.string, 
   intText: PropTypes.string,
@@ -61,7 +65,7 @@ Card.propTypes = {
 
 Card.defaultProps = { 
   title: null,
-  category: null, 
+  categories: null, 
   img: null, 
   intImg: null, 
   intText: null, 

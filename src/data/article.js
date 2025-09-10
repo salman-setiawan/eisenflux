@@ -4,10 +4,9 @@ const ArticleData = [
     title: 'Another Day in the Island',
     cover: '/bg.webp',
     obj: '/showcase2.webp',
-    category: {
-      en: 'Game UIX',
-      id: 'Permainan UIX'
-    },
+    categories: [
+      { en: 'Game UIX', id: 'Permainan UIX' },
+    ],
     extUrl: 'https://anotherisland.netlify.app',
     intImg: '/process.svg',
     intText: {
@@ -316,19 +315,16 @@ const ArticleData = [
     title: 'EduFams',
     cover: '/bg.webp',
     obj: '/showcase3.webp',
-    
-    category: {
-      en: 'Game UIX',
-      id: 'Permainan UIX'
-    },
-
+    categories: [
+      { en: 'Mobile Apps', id: 'Aplikasi Mobile' },
+      { en: 'Web Apps', id: 'Aplikasi Web' },
+    ],
     extUrl: 'https://anotherisland.netlify.app',
     intImg: '/process.svg',
     intText: {
       en: 'See Process',
       id: 'Lihat Proses'
     },
-
     extImg: '/web.svg',
     extText: {
       en: 'See Page',
