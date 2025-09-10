@@ -7,12 +7,12 @@ const ArticleData = [
     categories: [
       { en: 'Game UIX', id: 'Permainan UIX' },
     ],
-    extUrl: 'https://anotherisland.netlify.app',
     intImg: '/process.svg',
     intText: {
       en: 'See Process',
       id: 'Lihat Proses'
     },
+    extUrl: 'https://anotherisland.netlify.app',
     extImg: '/web.svg',
     extText: {
       en: 'See Page',
@@ -319,7 +319,6 @@ const ArticleData = [
       { en: 'Mobile Apps', id: 'Aplikasi Mobile' },
       { en: 'Web Apps', id: 'Aplikasi Web' },
     ],
-    extUrl: 'https://anotherisland.netlify.app',
     intImg: '/process.svg',
     intText: {
       en: 'See Process',
@@ -332,12 +331,18 @@ const ArticleData = [
     },
 
     contents: [
-      {
-        text: {
-          en: 'This project is a simple arcade-survival game called Another Day in the Island...',
-          id: 'Proyek ini adalah permainan arkade-survival sederhana...'
-        }
-      }
+      { text: {
+          en: 'The EduFams family education platform was created as a solution for families in need of education and information about building a harmonious and healthy family.',
+          id: 'Platform edukasi keluarga EduFams dibuat sebagai solusi masalah bagi keluarga yang membutuhkan edukasi dan informasi seputar keluarga yang harmonis dan baik.'
+        } },
+      { text: {
+          en: 'The main features offered by the platform include informational media in the form of articles and videos, allowing users to gain knowledge and insights on topics such as child parenting, symptoms or syndromes that may occur in children, and more.',
+          id: 'Fitur utama yang ditawarkan oleh platform antara lain media informasi berupa artikel maupun video agar pengguna dapat mendapat informasi dan wawasan seperti parenting anak, gejala atau sindrom yang terjadi pada anak, dan lain sebagainya.'
+        } },
+        { text: {
+          en: 'The platform also provides classes and training with top mentors in their fields, along with paid features such as group chat counseling to help users better understand the classes they attend. Lastly, there is a donation feature for users from financially disadvantaged families.',
+          id: 'Platform ini juga menyediakan kelas dan pelatihan bersama mentor terbaik di bidangnya, fitur berbayar seperti konseling via group chat juga menjadi opsi untuk membantu pengguna lebih memahami kelas yang diikuti. Terakhir ada fitur donasi untuk pengguna dari keluarga yang kekurangan secara finansial.'
+        } },
     ]
   }
 ];

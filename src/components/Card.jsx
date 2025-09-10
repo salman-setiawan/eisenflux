@@ -32,12 +32,12 @@ const Card = ({ title, categories, img, intImg, intText, extImg, extText, url1, 
                 <div className="flex p-1 rounded-xl bg-[#111111]">
                   {url1 && (
                     <Link to={url1}>
-                      <Button img={intImg} text={intText} hoverColor='#FFAA00' />
+                      <Button img={intImg} text={intText} hoverText='hover:text-[#FFAA00]' />
                     </Link>
                   )}
                   {url2 && (
                     <Link to={url2} target="_blank" rel="noopener noreferrer">
-                      <Button img={extImg} text={extText} hoverColor='#FFAA00' />
+                      <Button img={extImg} text={extText} hoverText='hover:text-[#FFAA00]' />
                     </Link>
                   )}
                 </div>

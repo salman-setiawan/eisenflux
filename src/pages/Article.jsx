@@ -15,7 +15,7 @@ const Article = () => {
     return <Notfound />;
   }
 
-  const { title, cover, category, extUrl, extImg, extText, contents } = selectedArticle;
+  const { title, cover, categories, extUrl, extImg, extText, contents } = selectedArticle;
 
   return (
     <div>
@@ -34,24 +34,26 @@ const Article = () => {
               className="rounded-xl h-[320px] bg-cover bg-center"
               style={{ backgroundImage: `url(${cover})` }}
             ></div>
-            <div className="py-2">
-              <div className="text-2xl font-semibold leading-relaxed text-justify">
-                {title}
+            <div className="py-2 flex flex-col gap-y-6">
+              <div>
+                <div className="text-2xl font-semibold leading-relaxed text-justify">
+                  {title}
+                </div>
+                <div className="flex flex-wrap gap-x-2 text-sm font-semibold pt-1.5">
+                  {categories.map((cat, i) => (
+                    <span className='py-1 px-2 bg-opacity-15 bg-[#ffaa00] rounded-lg' key={i}>{cat[language]}</span>
+                  ))}
+                </div>
               </div>
-              <div className="text-sm font-semibold text-gray-400 leading-relaxed text-justify">
-                {category[language]}
-              </div>
-              <div className="pt-4">
-                {extUrl && (
-                  <a href={extUrl} target="_blank" rel="noopener noreferrer">
-                    <Button img={extImg} bg="bg-[#0066FF]" text={extText[language]} />
-                  </a>
-                )}
-              </div>
+              {extUrl && (
+                <a href={extUrl} target="_blank" rel="noopener noreferrer">
+                  <Button img={extImg} bg="bg-[#0066FF]" text={extText[language]} hoverBg="hover:bg-[#ffaa00]" />
+                </a>
+              )}
             </div>
 
             {contents.map((content, index) => (
-              <div key={index} className="pt-2">
+              <div key={index} className="py-2">
                 <Content data={content} language={language} />
               </div>
             ))}
