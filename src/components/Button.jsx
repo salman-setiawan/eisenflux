@@ -4,7 +4,7 @@ const Button = ({ img, text, bg, color, hoverBg, hoverText }) => {
   return (
     <div
       className={`${bg} ${color} ${hoverBg} ${hoverText} 
-      py-2 px-3 rounded-lg flex gap-x-1 items-center w-fit cursor-pointer`}
+      py-3 px-4 rounded-lg flex gap-x-1 place-content-center w-full cursor-pointer`}
     >
       {img && <img className="w-[20px]" src={img} alt="icon" />}
       {text && <p className="font-semibold text-sm">{text}</p>}
