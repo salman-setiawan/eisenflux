@@ -53,7 +53,7 @@ const Article = () => {
             </div>
 
             {contents.map((content, index) => (
-              <div key={index} className="py-2">
+              <div key={index}>
                 <Content data={content} language={language} />
               </div>
             ))}

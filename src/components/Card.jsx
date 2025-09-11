@@ -27,7 +27,7 @@ const Card = ({ title, categories, img, intImg, intText, extImg, extText, url1, 
               </div>
             </div>
             <div className="flex justify-center">
-              <img className={`h-80 object-cover float-anim`} src={obj} alt="object" />
+              <img className={`h-80 lg:h-96 object-cover float-anim`} src={obj} alt="object" />
             </div>
             <div className="flex justify-end">
               <div className="p-0.5 rounded-xl snake">

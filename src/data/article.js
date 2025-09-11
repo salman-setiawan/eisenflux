@@ -32,74 +32,61 @@ const ArticleData = [
           en: "This research employs the User-Centered Design (UCD) approach, a method that places users as the primary focus in the product, application, or experience design process as illustrated in the image below.", 
           id: "Penelitian ini menggunakan pendekatan User-Centered Design (UCD), yaitu metode yang menempatkan pengguna sebagai fokus utama dalam proses desain produk, aplikasi, atau pengalaman seperti yang digambarkan dalam gambar di bawah."
         } },
-      { img: "/anotherisland/ucd.webp", 
+      { img: "/anotherisland/ucd.png", 
         desc: {
-          en: "UCD Cycle according to usability.gov",
-          id: "Siklus UCD menurut usability.gov"
-        } },
-      { title: {
-          en: "Identify Need",
-          id: "Identifikasi Kebutuhan"
-        },
-        text: {
-          en: "This is a stage where the researcher identifies the requirements that users will have while playing the designed game. A questionnaire can serve as a tool to assist the researcher in the process of identifying user needs throughout the project.", 
-          id: "Ini adalah tahap di mana peneliti mengidentifikasi kebutuhan yang akan dimiliki pengguna saat bermain game yang dirancang. Kuesioner dapat berfungsi sebagai alat untuk membantu peneliti dalam proses mengidentifikasi kebutuhan pengguna selama proyek."
-        } },
-      { img: "/anotherisland/interview.webp",
-        desc: {
-          en: "Questionnaire Results (Feb 4, 2023)",
-          id: "Hasil Kuesioner (Feb 4, 2023)"
-        } },
-      { text: {
-          en: "The questions presented to participants consist of several sections. The first part includes questions about the participants' profiles, such as age range, their preferences for games and reasons behind them, and the players' experiences with arcade games.", 
-          id: "Pertanyaan yang diajukan kepada peserta terdiri dari beberapa bagian. Bagian pertama mencakup pertanyaan tentang profil peserta, seperti rentang usia, preferensi mereka terhadap permainan dan alasan di baliknya, serta pengalaman pemain dengan permainan arkade."
-        } },
-      { text: {
-          en: "The second part involves questions from the participants' perspective on arcade games in terms of gameplay, visuals, overall impressions, and finally, their preference for the desired game model to be developed.", 
-          id: "Bagian kedua melibatkan pertanyaan dari perspektif peserta tentang permainan arkade dalam hal gameplay, visual, kesan keseluruhan, dan akhirnya, preferensi mereka untuk model permainan yang ingin dikembangkan."
-        } },
-      { text: {
-          en: "To understand the participants more deeply, the next stage is creating user personas to gain a clear understanding of what users are currently experiencing and needing. These personas are fictional characters based on the data gathered from the questionnaires, which help in shaping the design process by representing the primary users.", 
-          id: "Untuk memahami peserta lebih dalam, tahap berikutnya adalah membuat persona pengguna untuk mendapatkan pemahaman yang jelas tentang apa yang saat ini dialami dan dibutuhkan pengguna. Persona ini adalah karakter fiksi yang didasarkan pada data yang dikumpulkan dari kuesioner, yang membantu membentuk proses desain dengan mewakili pengguna utama."
-        } },
-      { img: "/example2.jpg",
-        desc: {
-          en: "User Personas that have been created",
-          id: "Persona Pengguna yang telah dibuat"
+          en: "UCD Cycle according to ISO 9241-210:2019",
+          id: "Siklus UCD menurut ISO 9241-210:2019"
         } },
       { title: {
           en: "Specify Context of Use",
           id: "Spesifikasi Konteks Kegunaan"
         },
         text: {
-          en: "The results obtained from the questionnaire participants will be used to identify user preferences in the game to be developed. These points will be used as references in the design of the Another Day in the Island arcade game. Here are the key points identified from the research:", 
-          id: "Hasil yang diperoleh dari peserta kuesioner akan digunakan untuk mengidentifikasi preferensi pengguna dalam permainan yang akan dikembangkan. Poin-poin ini akan digunakan sebagai referensi dalam desain permainan arcade Another Day in the Island. Berikut adalah poin-poin kunci yang diidentifikasi dari riset:"
+          en: "At this stage, the researcher focused on understanding who the game's users are, their goals in playing, and the context of using the arcade game to be designed. Data was collected through a questionnaire covering participant profiles, such as age, play preferences, the reasons behind those choices, and their experience with arcade games.", 
+          id: "Pada tahap ini peneliti berfokus untuk memahami siapa pengguna permainan, tujuan mereka bermain, serta kondisi penggunaan permainan arcade yang akan dirancang. Data dikumpulkan melalui kuesioner yang mencakup profil peserta, seperti usia, preferensi bermain, alasan di balik pilihan tersebut, dan pengalaman mereka dengan permainan arcade."
         } },
-      { img: "/example2.jpg",
-        desc: {
-          en: "This is the description for the image.",
-          id: "Ini adalah deskripsi untuk gambar."
+      { text: {
+          en: "To clarify the analysis results, the researcher created user personas based on respondent data. Personas help visualize who the main players are, the situations in which they play, and the challenges they face, thereby providing a more concrete understanding of the game's usage context.", 
+          id: "Untuk memperjelas hasil analisis, peneliti menyusun user persona berdasarkan data responden. Persona membantu memvisualisasikan siapa pemain utama, dalam situasi apa mereka bermain, serta hambatan yang mereka hadapi, sehingga memberikan pemahaman yang lebih konkret mengenai konteks penggunaan permainan."
         } },
       { title: {
           en: "Specify Requirement",
           id: "Spesifikasi Kebutuhan"
         },
         text: {
-          en: "In this stage, the researcher will establish the necessary requirements for the game design by conducting research on competitors, such as similar or related games. The research is carried out to understand how their products function, identify areas for improvement, and create features that are more appealing than those of competitors. This helps in shaping a better user experience in the new game.", 
-          id: "Pada tahap ini, peneliti akan menetapkan persyaratan yang diperlukan untuk desain permainan dengan melakukan riset pada pesaing, seperti permainan serupa atau terkait. Riset dilakukan untuk memahami bagaimana produk mereka berfungsi, mengidentifikasi area yang perlu diperbaiki, dan menciptakan fitur yang lebih menarik daripada pesaing. Ini membantu dalam membentuk pengalaman pengguna yang lebih baik dalam permainan baru."
+          en: "The results of questionnaire data analysis, interviews, and insights from personas were then used to formulate user needs. Some of the main identified needs include:", 
+          id: "Hasil analisis data kuesioner, wawancara, serta insight dari persona kemudian digunakan untuk merumuskan kebutuhan pengguna. Beberapa kebutuhan utama yang teridentifikasi antara lain:"
         } },
+      { textQuote: [
+          { type: "text", 
+            value: { 
+              en: "Occasional bugs that disrupt player's comfort during gameplay have been identified. One such bug occurs in the hell level, where bullets keep spawning at the position of a monster that has already been defeated.", 
+              id: "Gameplay sederhana yang dapat dipelajari dengan cepat agar sesuai dengan waktu senggang yang terbatas." 
+            } },
+          { type: "text", 
+            value: { 
+              en: "A fun gameplay experience that can provide quick entertainment.", 
+              id: "Pengalaman bermain yang menyenangkan dan mampu memberikan hiburan singkat." 
+            } },
+          { type: "text", 
+            value: { 
+              en: "A survival arcade theme that offers both challenges and motivation to keep playing.", 
+              id: "Tema bertahan hidup (survival arcade) yang memberikan tantangan sekaligus motivasi untuk terus bermain." 
+            } },
+          { type: "text", 
+            value: { 
+              en: "Modern visuals that are more appealing than classic pixelated designs, aligning with the expectations of younger users.", 
+              id: "Visual modern yang lebih menarik daripada desain pixelated klasik, sesuai dengan ekspektasi pengguna muda." 
+            } },
+          { type: "text", 
+            value: { 
+              en: "High replayability that encourages players to replay the game without feeling bored.", 
+              id: "Replayability tinggi yang mendorong pemain untuk mengulang permainan tanpa merasa bosan." 
+            } },
+        ] },
       { text: {
-          en: "In this case, the researcher has selected a game with a similar mechanism, namely the arcade game series from Bandai Namco called Galaga. The game mechanics, enemy behavior, and power-ups are analyzed to understand what makes the game engaging and how those aspects can be improved or adapted for 'Another Day in the Island'.", 
-          id: "Dalam hal ini, peneliti telah memilih permainan dengan mekanisme serupa, yaitu seri permainan arkade dari Bandai Namco yang disebut Galaga. Mekanika permainan, perilaku musuh, dan power-up dianalisis untuk memahami apa yang membuat permainan ini menarik dan bagaimana aspek-aspek tersebut dapat ditingkatkan atau diadaptasi untuk 'Another Day in the Island'."
-        } },
-      { img: "/example2.jpg",
-        desc: {
-          en: "This is the description for the image.",
-          id: "Ini adalah deskripsi untuk gambar."
-        } },
-      { text: {
-          en: 'Based on the attached data, the design of the Another Day in the Island game can be done by creating a simple game with a more modern interface and characters. One advantage is that the player character can move freely, enhancing the gaming experience. The integration of modern design elements, such as smoother animations and responsive controls, will help create a more immersive experience for players.', 
-          id: 'Berdasarkan data yang terlampir, desain permainan Another Day in the Island dapat dilakukan dengan membuat permainan sederhana dengan antarmuka dan karakter yang lebih modern. Salah satu keuntungannya adalah bahwa karakter pemain dapat bergerak dengan bebas, meningkatkan pengalaman bermain. Integrasi elemen desain modern, seperti animasi yang lebih halus dan kontrol yang responsif, akan membantu menciptakan pengalaman yang lebih imersif bagi pemain.'
+          en: "The points above will be used as a reference in designing the arcade game Another Day in the Island.", 
+          id: "Poin-poin diatas akan digunakan sebagai acuan dalam perancangan permainan arcade Another Day in the Island."
         } },
       { title: {
           en: "Product Design Solution",
@@ -122,14 +109,19 @@ const ArticleData = [
           en: 'The next step is moving into the wireframe design process, which aims to visualize the storyboard sketches into a simple framework of the game interface. The result is attached in the image below.', 
           id: 'Langkah selanjutnya adalah masuk ke proses desain wireframe, yang bertujuan untuk memvisualisasikan sketsa storyboard yang dibuat menjadi kerangka sederhana antarmuka permainan. berikut hasilnya terlampir pada gambar dibawah ini.'
         } },
-      { img: "/example2.jpg",
+      { img: "/anotherisland/wire.png",
         desc: {
-          en: "This is the description for the image.",
-          id: "Ini adalah deskripsi untuk gambar."
+          en: "Wireframe from Another Day in the Island.",
+          id: "Wireframe dari Another Day in the Island."
         } },
       { text: {
           en: 'The wireframe is designed based on the previously created storyboard concept. The next stage is the design system development, which serves as the main guideline for designing the game interface. This stage includes creating a style guide that covers brand identity, color system, typography, assets, and several key components of the game.', 
           id: 'Wireframe dirancang berdasarkan konsep storyboard yang telah dibuat sebelumnya. Tahap selanjutnya adalah perancangan design system sebagai panduan utama dalam merancang antarmuka permainan. Tahap ini mencakup pembuatan style guide yang meliputi brand identity, color system, tipografi, aset, serta beberapa komponen penting dalam permainan.'
+        } },
+        { img: "/anotherisland/desy.png",
+        desc: {
+          en: "UI Assets from Another Day in the Island.",
+          id: "Aset UI dari Another Day in the Island."
         } },
       { text: {
           en: 'The final result of the design solution will be a UI mockup, which will be used by the developers to build the game Another Day in the Island.', 
@@ -143,10 +135,10 @@ const ArticleData = [
           en: "The purpose of this evaluation is to gather player's feedback through prepared questions and to understand their experience while playing. The evaluation is conducted iteratively to ensure satisfactory results.", 
           id: 'Tujuan dari evaluasi ini adalah untuk mengumpulkan pendapat pemain melalui pertanyaan yang disiapkan dan memahami pengalaman mereka saat bermain. Evaluasi dilakukan secara iteratif untuk memastikan hasilnya memuaskan.'
         } },
-      { img: "/example2.jpg",
+      { img: "/anotherisland/user.png",
         desc: {
-          en: "This is the description for the image.",
-          id: "Ini adalah deskripsi untuk gambar."
+          en: "Game Trial Documentation.",
+          id: "Dokumentasi Pengujian Permainan."
         } },
       { text: {
           en: 'Here is a brief documentation of how feedback will be collected. Players will first play the game, and once they feel they have experienced enough to provide an assessment, they will fill out a prepared feedback form. The evaluation technique will be carried out using the Customer Feedback Loop (CFL) method with the following stages.', 
@@ -312,6 +304,11 @@ const ArticleData = [
     },
 
     contents: [
+      { img: "/edufams/brand.webp",
+        desc: {
+          en: "This is the description for the image.",
+          id: "Ini adalah deskripsi untuk gambar."
+        } },
       { text: {
           en: 'The EduFams family education platform was created as a solution for families in need of education and information about building a harmonious and healthy family.',
           id: 'Platform edukasi keluarga EduFams dibuat sebagai solusi masalah bagi keluarga yang membutuhkan edukasi dan informasi seputar keluarga yang harmonis dan baik.'
@@ -328,7 +325,7 @@ const ArticleData = [
           en: "Team and Project Management",
           id: "Manajemen Tim dan Proyek"
         } },
-      { img: "/example2.jpg",
+      { img: "/edufams/team.jpg",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."
@@ -341,7 +338,7 @@ const ArticleData = [
           en: 'At this stage, the author and the team reported daily activities on a regular basis to communicate the progress made, based on the tasks assigned by the Product Manager using a Kanban Board. The implementation of the Kanban Board during the internship utilized Microsoft Planner, a web-based application, as shown in the following image.', 
           id: 'Pada tahap ini, penulis bersama tim melaporkan kegiatan yang dilakukan secara berkala setiap harinya untuk memberitahu sejauh apa progress yang sudah dilakukan, berdasarkan penugasan yang diterima oleh Product Manager menggunakan Kanban Board. Adapun implementasi penggunaan Kanban Board selama magang menggunakan aplikasi berbasis web Planner dari Microsoft seperti pada gambar berikut.'
         } },
-      { img: "/example2.jpg",
+      { img: "/edufams/kanban.jpg",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."
@@ -358,7 +355,7 @@ const ArticleData = [
           en: 'The process I went through with the team members in this program included learning the materials and skills needed to build a solid and proper startup, such as teamwork, brainstorming, research, and startup development. All of these stages were guided by a mentor who also served as the product manager.', 
           id: 'Proses yang saya jalani bersama anggota tim dalam program ini mencakup pembelajaran materi dan keterampilan yang dibutuhkan untuk membangun startup yang baik dan tepat, seperti kerja sama tim, brainstorming, riset, dan pengembangan startup. Seluruh tahapan ini dibimbing oleh seorang mentor yang juga berperan sebagai product manager.'
         } },
-      { img: "/example2.jpg",
+      { img: "/edufams/think.png",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."
@@ -448,9 +445,9 @@ const ArticleData = [
           en: 'In this stage, we designed the EduFams family education platform. The process began with creating a wireframe as the initial design, followed by developing the design system, producing the mockup design by combining the wireframe and design system, and finally, the prototyping process to make the mockup interactive. This entire process was carried out using Figma.', 
           id: 'Tahap ini kami merancang platform edukasi keluarga EduFams. Mulai dari desain wireframe sebagai rancangan awal, pembuatan design system, pembuatan mockup design dari penggabungan wireframe dan design system, terakhir proses prototyping agar mockup dapat berinteraksi. Proses ini sepenuhnya dikerjakan pada aplikasi Figma.'
         } },
-      { img: "/example2.jpg",
+      { img: "/edufams/wire1.png",
       },
-      { img: "/example2.jpg",
+      { img: "/edufams/wire2.png",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."
@@ -459,7 +456,7 @@ const ArticleData = [
           en: 'During the wireframing process, the author designed features and components according to the planned outcomes. The designs included both a web-based application and a mobile-based application.', 
           id: 'Selama proses wireframe penulis merancang fitur dan komponen sesuai dengan hasil yang sudah direncanakan. Desain yang dibuat meliputi aplikasi berbasis website dan aplikasi berbasis mobile.'
         } },
-      { img: "/example2.jpg",
+      { img: "/edufams/style.webp",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."
@@ -530,7 +527,7 @@ const ArticleData = [
           en: "Deploy and Pitching",
           id: "Deploy and Pitching"
         } },
-      { img: "/example2.jpg",
+      { img: "/edufams/pitch.webp",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."

@@ -11,9 +11,9 @@ const Content = ({ data, language }) => {
 
   if (hasValidImage && !data.textQuote) {
     return (
-      <div className="py-2">
+      <div>
         <img
-          className="text-center text-blue-300 text-sm"
+          className="text-center text-blue-300 text-sm py-1"
           src={data.img}
           alt={altText[language] || ""}
         />
@@ -59,7 +59,7 @@ const Content = ({ data, language }) => {
         </div>
       )}
       {data.text && (
-        <div className="text-[15px] text-gray-300">{data.text[language]}</div>
+        <div className="text-[15px] text-gray-300 py-2">{data.text[language]}</div>
       )}
     </div>
   );
