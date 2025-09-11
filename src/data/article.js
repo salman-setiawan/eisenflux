@@ -144,29 +144,16 @@ const ArticleData = [
           en: 'Here is a brief documentation of how feedback will be collected. Players will first play the game, and once they feel they have experienced enough to provide an assessment, they will fill out a prepared feedback form. The evaluation technique will be carried out using the Customer Feedback Loop (CFL) method with the following stages.', 
           id: 'Berikut adalah sedikit dokumentasi bagaimana pengambilan feedback akan dilakukan. Pemain akan bermain terlebih dahulu, setelah dirasa cukup dan bisa menilai, pemain akan mengisi form feedback yang sudah disiapkan. Teknik evaluasi akan dilakukan menggunakan metode customer feedback loop (CFL) dengan tahapan sebagai berikut.'
         } },
-      { text: {
-          en: "The initial stage involves collecting feedback through a questionnaire with parameters such as age, gender, and questions related to Another Day in the Island. Age data is used to assess the level of game analysis understanding, while gender serves as a comparison for evaluating player's tendencies in assessing the game.", 
-          id: 'Tahap awal melibatkan pengumpulan umpan balik menggunakan kuesioner dengan parameter seperti usia, gender, serta pertanyaan seputar Another Day in the Island. Data usia digunakan untuk melihat tingkat pemahaman analisis game, sedangkan gender untuk pembanding tingkat kecendrungan untuk menilai permainan.'
-        } },
-      { img: "/example2.jpg",
+      { img: "/anotherisland/cfl.png",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."
         } },
       { text: {
-          en: "Next are questions regarding the game's usability, which are aimed at evaluating the user interface and user experience within the game. The usability testing questions in the questionnaire will be presented using a rating scale from 1 to 5. The details of the questions and scale are provided in the image below.", 
-          id: 'Selanjutnya adalah pertanyaan mengenai usability pada game yang digunakan untuk mengevaluasi antarmuka dan pengalaman pengguna dalam game. Untuk pertanyaan usability testing pada kuesioner, akan disajikan dengan skala penilaian dari 1 hingga 5. Berikut adalah informasi mengenai pertanyaan dan skala sebagaimana ditunjukkan pada gambar di bawah ini.'
+          en: "The initial stage involved collecting feedback through a questionnaire with parameters such as age, gender, and questions related to Another Day in the Island. Usability-related questions aimed to evaluate the interface and user experience, using a rating scale from 1 to 5 based on factors of satisfaction, learnability, efficiency, and memorability. In addition, players were also asked to provide reviews, critiques, and suggestions to support interface development and improve the overall gaming experience. The following are the evaluation results obtained for the arcade game Another Day in the Island.", 
+          id: 'Tahap awal melibatkan pengumpulan umpan balik melalui kuesioner dengan parameter seperti usia, gender, serta pertanyaan terkait Another Day in the Island. Pertanyaan mengenai usability ditujukan untuk mengevaluasi antarmuka dan pengalaman pengguna, dengan skala penilaian 1 hingga 5 berdasarkan faktor satisfaction, learnability, efficiency, dan memorability. Selain itu, pemain juga diminta memberikan ulasan, kritik, dan saran yang dapat mendukung pengembangan antarmuka serta meningkatkan pengalaman bermain. Berikut adalah hasil evaluasi untuk game arcade Another Day in the Island yang diperoleh.'
         } },
-      { img: "/example2.jpg",
-        desc: {
-          en: "This is the description for the image.",
-          id: "Ini adalah deskripsi untuk gambar."
-        } },
-      { text: {
-          en: "Players will also be asked to provide reviews and input in the form of critiques and suggestions that can contribute to improving the game's interface and overall experience. The following are the evaluation results for the arcade game *Another Day in the Island* that I have gathered", 
-          id: 'Pemain juga akan diminta untuk memberikan ulasan dan masukan berupa kritik serta saran yang dapat berkontribusi pada pengembangan antarmuka dan pengalaman permainan ini. Berikut adalah hasil evaluasi untuk game arcade Another Day in the Island yang saya peroleh.'
-        } },
-      { img: "/example2.jpg",
+      { img: "/anotherisland/ces1.png",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."
@@ -176,21 +163,21 @@ const ArticleData = [
           id: 'Hasil evaluasi awal menunjukkan skor usability 3,72 (di atas rata-rata), dengan detail sebagai berikut: Satisfaction (3,675), Learnability (3,2), Efficiency (4), dan Memorability (4,1).'
         } },
       { text: {
-          en: "The next stage is processing data from open-ended questions, such as player's reviews and feedback. The results have been grouped based on common opinions shared by the players. Here are some examples of the collected feedback.", 
-          id: 'Tahap selanjutnya adalah mengolah data dari pertanyaan terbuka seperti ulasan dan masukan dari pemain. Hasilnya telah dipilih berdasarkan kesamaan pendapat yang diberikan oleh para pemain. Berikut adalah beberapa contoh hasil masukan yang telah dikumpulkan.'
+          en: "The next stage is processing data from player reviews and feedback. This data will be used to improve the interface and gameplay experience. The collected feedback was then integrated into the development of a tool that helps determine priorities between value and effort, enabling designers to make more accurate decisions. The following are the processes and decisions I made in refining the design.", 
+          id: 'Tahap selanjutnya adalah mengolah data dari ulasan dan masukan pemain. Data ini akan digunakan untuk meningkatkan antarmuka serta pengalaman bermain. Hasil masukan yang terkumpul kemudian diintegrasikan ke dalam pengembangan alat yang berfungsi menentukan prioritas antara nilai (value) dan usaha (effort), sehingga dapat membantu desainer mengambil keputusan yang lebih tepat. Berikut adalah proses dan keputusan yang saya ambil dalam perbaikan desain.'
         } },
-      { img: "/example2.jpg",
+      { img: "/anotherisland/ev.png",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."
         } },
       { text: {
-          en: "Based on the evaluation results, the next step will focus on improving the user experience and user interface. The following are the processes and decisions I have made in refining the design.", 
-          id: 'Dari hasil evaluasi, langkah selanjutnya akan berfokus pada peningkatan user experience dan user interface. Berikut adalah proses serta keputusan yang saya ambil dalam perbaikan desain.'
+          en: "Improvements were focused on the green area because they directly affect the player experience and are relatively easy to implement. For the yellow area, enhancements included adding a tutorial stage, refining the tutorial page, introducing power-up buffs to increase gameplay variety, and reducing the excessive number of enemies in casual stages.", 
+          id: 'Perbaikan yang dilakukan difokuskan pada area hijau karena berpengaruh langsung pada pengalaman pemain dan mudah diimplementasikan. Pada area kuning, peningkatan meliputi penambahan tahap tutorial, penyempurnaan halaman tutorial, penambahan power-up buffs untuk variasi gameplay, serta pengurangan jumlah musuh berlebihan pada tahap kasual.'
         } },
       { text: {
-          en: "The collected feedback will then be incorporated into the development of a tool to determine priorities between values and efforts, helping designers make better decisions.", 
-          id: 'Hasil dari masukan yang telah dikumpulkan kemudian akan dimasukkan ke dalam pengembangan sebuah alat untuk menentukan prioritas antara nilai (values) dan usaha (efforts), sehingga dapat membantu desainer dalam membuat keputusan yang lebih baik.'
+          en: "However, an in-game currency system was not added due to its complexity and lack of urgency, while the difficulty gap between casual and hell levels was intentionally maintained to preserve the sense of extreme challenge. The red area did not receive improvements since its urgency was low and it required significant resources.", 
+          id: 'Namun, fitur mata uang dalam game tidak ditambahkan karena kompleksitas dan belum mendesak, sementara kesenjangan tingkat kesulitan antara level kasual dan hell tetap dipertahankan untuk menjaga tantangan ekstrem. Area merah tidak mendapat peningkatan karena urgensinya rendah dan membutuhkan sumber daya besar.'
         } },
       { text: {
           en: "From the analysis above, the improvements to be made can be seen in the following points.", 
@@ -251,7 +238,7 @@ const ArticleData = [
           },
           { type: "image", value: "https://example.com/img1.jpg" },
         ] },
-      { img: "/example2.jpg",
+      { img: "/anotherisland/ces2.png",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."
