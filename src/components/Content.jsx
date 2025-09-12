@@ -26,27 +26,29 @@ const Content = ({ data, language }) => {
 
   if (Array.isArray(data.textQuote)) {
     return (
-      <div className="border-l-4 border-[#ffaa00] pl-4 py-1 leading-relaxed text-justify flex flex-col gap-y-4">
-        {data.textQuote.map((item, idx) => {
-          if (item.type === "text" && item.value[language]) {
-            return (
-              <div key={idx} className="text-[15px] text-gray-300">
-                {item.value[language]}
-              </div>
-            );
-          }
-          if (item.type === "image" && isValidImage(item.value)) {
-            return (
-              <img
-                key={idx}
-                className="text-sm text-center text-blue-300 mb-4"
-                src={item.value}
-                alt={altText[language] || ""}
-              />
-            );
-          }
-          return null;
-        })}
+      <div className="py-2.5">
+        <div className="border-l-4 border-[#ffaa00] pl-4 py-0.5 leading-relaxed text-justify flex flex-col gap-y-4">
+          {data.textQuote.map((item, idx) => {
+            if (item.type === "text" && item.value[language]) {
+              return (
+                <div key={idx} className="text-[15px] text-gray-300">
+                  {item.value[language]}
+                </div>
+              );
+            }
+            if (item.type === "image" && isValidImage(item.value)) {
+              return (
+                <img
+                  key={idx}
+                  className="text-sm text-center text-blue-300 mb-4"
+                  src={item.value}
+                  alt={altText[language] || ""}
+                />
+              );
+            }
+            return null;
+          })}
+        </div>
       </div>
     );
   }

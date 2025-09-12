@@ -96,7 +96,7 @@ const ArticleData = [
           en: 'This stage covers the creation of design solutions, starting from rough concepts such as the Game Design Document (GDD), storyboard, and wireframe, design system, up to the UI mockup.', 
           id: 'Tahap ini mencakup pembuatan solusi desain, mulai dari konsep kasar seperti Game Design Document (GDD), storyboard, dan wireframe, design system hingga UI mockup.'
         } },
-      { img: "/example2.jpg",
+      { img: "/anotherisland/content3.webp",
         desc: {
           en: "This is the description for the image.",
           id: "Ini adalah deskripsi untuk gambar."
@@ -150,8 +150,12 @@ const ArticleData = [
           id: "Ini adalah deskripsi untuk gambar."
         } },
       { text: {
-          en: "The initial stage involved collecting feedback through a questionnaire with parameters such as age, gender, and questions related to Another Day in the Island. Usability-related questions aimed to evaluate the interface and user experience, using a rating scale from 1 to 5 based on factors of satisfaction, learnability, efficiency, and memorability. In addition, players were also asked to provide reviews, critiques, and suggestions to support interface development and improve the overall gaming experience. The following are the evaluation results obtained for the arcade game Another Day in the Island.", 
-          id: 'Tahap awal melibatkan pengumpulan umpan balik melalui kuesioner dengan parameter seperti usia, gender, serta pertanyaan terkait Another Day in the Island. Pertanyaan mengenai usability ditujukan untuk mengevaluasi antarmuka dan pengalaman pengguna, dengan skala penilaian 1 hingga 5 berdasarkan faktor satisfaction, learnability, efficiency, dan memorability. Selain itu, pemain juga diminta memberikan ulasan, kritik, dan saran yang dapat mendukung pengembangan antarmuka serta meningkatkan pengalaman bermain. Berikut adalah hasil evaluasi untuk game arcade Another Day in the Island yang diperoleh.'
+          en: "The initial stage involved collecting feedback through a questionnaire with parameters such as age, gender, and questions related to Another Day in the Island. Usability-related questions aimed to evaluate the interface and user experience, using a rating scale from 1 to 5 based on factors of satisfaction, learnability, efficiency, and memorability.", 
+          id: 'Tahap awal melibatkan pengumpulan umpan balik melalui kuesioner dengan parameter seperti usia, gender, serta pertanyaan terkait Another Day in the Island. Pertanyaan mengenai usability ditujukan untuk mengevaluasi antarmuka dan pengalaman pengguna, dengan skala penilaian 1 hingga 5 berdasarkan faktor satisfaction, learnability, efficiency, dan memorability.'
+        } },
+      { text: {
+          en: "In addition, players were also asked to provide reviews, critiques, and suggestions to support interface development and improve the overall gaming experience. The following are the evaluation results obtained for the arcade game Another Day in the Island.", 
+          id: 'Selain itu, pemain juga diminta memberikan ulasan, kritik, dan saran yang dapat mendukung pengembangan antarmuka serta meningkatkan pengalaman bermain. Berikut adalah hasil evaluasi untuk game arcade Another Day in the Island yang diperoleh.'
         } },
       { img: "/anotherisland/ces1.png",
         desc: {
@@ -201,14 +205,14 @@ const ArticleData = [
               en: "The improvements include creating a dedicated stage designed to provide gameplay guidance in the game Another Day in the Island, as illustrated in the image below.", 
               id: "Perbaikan mencakup pembuatan sebuah tahap khusus yang didedikasikan untuk memberikan panduan gameplay dalam game Another Day in the Island, seperti yang digambarkan pada gambar di bawah ini." 
             } },
-          { type: "image", value: "https://example.com/img1.jpg" },
+          { type: "image", value: "/anotherisland/fix1.webp" },
           { type: "text", 
             value: { 
               en: "The image above shows the tutorial page that can be accessed from the main menu. However, due to the lack of player interest in opening this page, improvements have been made as shown in the image below.", 
               id: "Gambar di atas menampilkan halaman tutorial yang dapat diakses dari menu utama. Namun, karena kurangnya minat pemain untuk membuka halaman ini, dilakukan perbaikan seperti yang ditunjukkan pada gambar di bawah." 
             } },
-          { type: "image", value: "https://example.com/img1.jpg" },
-          { type: "image", value: "https://example.com/img1.jpg" },
+          { type: "image", value: "/anotherisland/fix2.webp" },
+          { type: "image", value: "/anotherisland/fix3.webp" },
           { type: "text", 
             value: { 
               en: "The two images above illustrate the improvement of the game guide from simple informational content into a playable stage. This tutorial stage is intended for players who find the game quite challenging, allowing them to play it first. The feature also introduces difficulty variations, including easy, medium, and hard levels.", 
@@ -221,8 +225,8 @@ const ArticleData = [
               en: "Designing the power-up system includes adding buffs to enhance gameplay variety, as illustrated in the image below.", 
               id: "Merancang sistem power-up mencakup penambahan buff untuk meningkatkan variasi dalam permainan, seperti yang digambarkan pada gambar di bawah ini." 
             } },
-          { type: "image", value: "https://example.com/img1.jpg" },
-          { type: "image", value: "https://example.com/img1.jpg" },
+          { type: "image", value: "/anotherisland/fix6.webp" },
+          { type: "image", value: "/anotherisland/fix7.webp" },
           { type: "text", 
             value: { 
               en: "The image above shows that after players defeat a monster in a certain area, the monster will have a small chance of dropping an orb, as illustrated. Once players obtain this orb, they will receive a buff effect such as a shield buff. This shield provides protection for a few seconds and destroys anything it comes into contact with, including monsters and enemy projectiles.", 
@@ -236,7 +240,7 @@ const ArticleData = [
               id: "Terakhir, pada awal permainan dirancang sebuah halaman yang menampilkan peringatan mengenai gejala fotosensitivitas, sehingga pemain dengan gejala serupa dapat memilih untuk tidak memainkan game. Antarmuka tersebut dapat dilihat pada gambar di bawah ini." 
             } 
           },
-          { type: "image", value: "https://example.com/img1.jpg" },
+          { type: "image", value: "/anotherisland/fix8.webp" },
         ] },
       { img: "/anotherisland/ces2.png",
         desc: {
@@ -274,7 +278,7 @@ const ArticleData = [
     id: 2,
     title: 'EduFams',
     cover: '/bg.webp',
-    obj: '/showcase3.webp',
+    obj: '/showcase4.webp',
     categories: [
       { en: 'Mobile Apps', id: 'Aplikasi Mobile' },
       { en: 'Web Apps', id: 'Aplikasi Web' },
