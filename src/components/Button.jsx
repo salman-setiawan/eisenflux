@@ -6,8 +6,8 @@ const Button = ({ img, text, bg, color, hoverBg, hoverText }) => {
       className={`${bg} ${color} ${hoverBg} ${hoverText} 
       py-2.5 px-3.5 rounded-xl flex gap-x-1.5 place-content-center w-full cursor-pointer`}
     >
-      {img && <img className="w-[20px]" src={img} alt="icon" />}
-      {text && <p className="font-semibold text-sm">{text}</p>}
+      {img && <img className="w-[18px] md:w-[20px]" src={img} alt="icon" />}
+      {text && <p className="font-semibold text-[13px] md:text-[14px]">{text}</p>}
     </div>
   );
 };
