@@ -2,11 +2,11 @@ const OtherData =[
   {
     intro: {
       en: {
-        contact: "Welcome to my portfolio. You can call me Salman and if you have something to discuss or have some project to work with, please contact me on the button links down below.",
-        stats: "Available for Jobs",
+        contact: "Bachelor of Informatics graduate with a specialization in UI/UX Design. Skilled in conducting user experience research, designing low- and high-fidelity prototypes, developing design systems, and creating interactive user interface prototypes.",
+        stats: "Open to Work",
       },
       id: {
-        contact: "Selamat datang di portofolio saya. Anda bisa panggil saya Salman dan jika anda ingin diskusi atau ada proyek yang ingin dikerjakan, silakan hubungi saya melalui tombol di bawah ini.",
+        contact: "Lulusan Sarjana Informatika dengan spesialisasi UI/UX Design. Berpengalaman dalam melakukan riset pengalaman pengguna, merancang desain low- dan high-fidelity, mengembangkan sistem desain, dan membuat prototipe antarmuka.",
         stats: "Terbuka untuk Pekerjaan",
       },
     },

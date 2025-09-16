@@ -2,10 +2,12 @@ const ArticleData = [
   {
     id: 1,
     title: 'Another Day in the Island',
+    title2: 'ANOTHER ISLAND',
     cover: '/bg.webp',
     obj: '/showcase2.webp',
     categories: [
-      { en: 'Game UIX', id: 'Permainan UIX' },
+      { en: 'UI/UX', id: 'UI/UX' },
+      { en: 'Web Game', id: 'Permainan Web' },
     ],
     intImg: '/process.svg',
     intText: {
@@ -277,9 +279,11 @@ const ArticleData = [
   {
     id: 2,
     title: 'EduFams',
+    title2: 'EDU FAMS',
     cover: '/bg.webp',
     obj: '/showcase4.webp',
     categories: [
+      { en: 'UI/UX', id: 'UI/UX' },
       { en: 'Mobile Apps', id: 'Aplikasi Mobile' },
       { en: 'Web Apps', id: 'Aplikasi Web' },
     ],

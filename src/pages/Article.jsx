@@ -34,8 +34,8 @@ const Article = () => {
               className="rounded-xl h-[320px] bg-cover bg-center"
               style={{ backgroundImage: `url(${cover})` }}
             ></div>
-            <div className="py-2 flex flex-col gap-y-6">
-              <div>
+            <div className="pt-2 pb-6 flex flex-col gap-y-6">
+              <div className='pb-1'>
                 <div className="text-2xl font-semibold leading-relaxed text-justify">
                   {title}
                 </div>
@@ -45,11 +45,13 @@ const Article = () => {
                   ))}
                 </div>
               </div>
-              {extUrl && (
-                <a href={extUrl} target="_blank" rel="noopener noreferrer">
-                  <Button img={extImg} bg="bg-[#0066FF]" text={extText[language]} hoverBg="hover:bg-[#ffaa00]" />
-                </a>
-              )}
+              <div className="p-0.5 snake">
+                {extUrl && (
+                  <a href={extUrl} target="_blank" rel="noopener noreferrer">
+                    <Button img={extImg} bg="bg-[#111111]" text={extText[language]} hoverBg="hover:bg-[#ffaa00]" />
+                  </a>
+                )}
+              </div>
             </div>
 
             {contents.map((content, index) => (
