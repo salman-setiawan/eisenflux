@@ -11,11 +11,16 @@ import Home from './pages/Home';
 import Notfound from './pages/404';
 import Article from './pages/Article';
 import { LanguageProvider } from './data/languageContext';
+import Bio from './pages/Bio';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/me",
+    element: <Bio />,
   },
   {
     path: "/article/:id",
