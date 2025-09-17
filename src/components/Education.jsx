@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Experience = ({ title, role, dateStart, dateEnd }) => {
+const Education = ({ title, role, dateStart, dateEnd }) => {
   return (
     <div>
 			<div className="flex flex-col p-4 border-dot-b">
@@ -18,18 +18,18 @@ const Experience = ({ title, role, dateStart, dateEnd }) => {
   )
 }
 
-Experience.propTypes = { 
-	title: PropTypes.string, 
-	role: PropTypes.string,
-	dateStart: PropTypes.string,
-	dateEnd: PropTypes.string, 
+Education.propTypes = { 
+  title: PropTypes.string, 
+  role: PropTypes.string,
+  dateStart: PropTypes.string,
+  dateEnd: PropTypes.string, 
 };
 
-Experience.defaultProps = { 
-	title: null, 
-	role: null,  
-	dateStart: null, 
-	dateEnd: null, 
+Education.defaultProps = { 
+  title: null, 
+  role: null,  
+  dateStart: null, 
+  dateEnd: null, 
 };
 
-export default Experience
+export default Education

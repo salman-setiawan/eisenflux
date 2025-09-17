@@ -1,24 +1,69 @@
-import React from 'react'
+// Bio.jsx
+import { useLanguage } from '../data/languageContext.jsx';
+import Experience from "../components/Experience";
+import BioData from "../data/bio";
+import Notfound from './404.jsx';
+import Education from '../components/Education.jsx';
 
 const Bio = () => {
+  const { language, toggleLanguage } = useLanguage();
+  console.log(language, toggleLanguage);
+
+  if (language === undefined || toggleLanguage === undefined) {
+    return <Notfound />;
+  }
+
+  const { desc, experience, education } = BioData[0];
+
   return (
     <div>
-			<div className="grid grid-cols-2 gap-x-8 px-6 py-8 w-full">
-				<div className="uppercase text-xl font-semibold">experiences</div>
-				<div className="flex flex-col gap-y-0.5">
-					<div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-y-0.5">
-						<div className="flex gap-x-3 lg:order-last text-[12px] uppercase">
-							<div>Sept 2025</div>
-							<div>⦁</div>
-							<div>Present</div>
-						</div>
-						<div className="text-[20px] font-semibold uppercase">PT. Cipta Lima Sekawan</div>
-					</div>
-					<div className="text-[12px] uppercase font-medium">Digital Marketing Specialist</div>
-				</div>
+			<div className="w-full flex justify-end px-4 pt-4">
+				<button onClick={toggleLanguage} className="text-[14px] h-fit font-medium underline underline-offset-1 text-[#ffa500]">
+					{language === "en" ? "English" : "Bahasa"}
+				</button>
 			</div>
-		</div>
-  )
-}
+      <div className="flex flex-col lg:flex-row gap-4 p-4">
+        <div className="flex flex-col gap-y-4 lg:max-w-[400px]">
+          <div className="w-full h-32 bg-white">x</div>
+          <div className="uppercase text-[14px]">{desc[language]}</div>
+        </div>
+        <div className="flex flex-col gap-y-2 w-full">
+          <div className="flex w-full border-dot">
+            <div className="max-w-[42px] border-dot-r">
+              <div className="p-2 uppercase font-semibold rotate-90 origin-bottom-left text-[#ffaa00]">experience</div>
+            </div>
+            <div className="flex w-full flex-col pb-24">
+              {experience.map((exp) => (
+                <Experience
+                  key={exp.uid}
+                  title={exp.title}
+                  role={exp.role[language]}
+                  dateStart={exp.dateStart}
+                  dateEnd={exp.dateEnd}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="flex w-full border-dot">
+            <div className="max-w-[42px] border-dot-r">
+              <div className="p-2 uppercase font-semibold rotate-90 origin-bottom-left text-[#ffaa00]">education</div>
+            </div>
+            <div className="flex w-full flex-col pb-24">
+              {education.map((edu) => (
+                <Education
+                  key={edu.uid}
+                  title={edu.title[language]}
+                  role={edu.role[language]}
+                  dateStart={edu.dateStart}
+                  dateEnd={edu.dateEnd}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Bio
+export default Bio;

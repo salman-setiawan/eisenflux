@@ -32,7 +32,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col gap-y-3">
               <div className="text-[14px] leading-relaxed">{contact}</div>
-              <a href='/me' target="_blank" rel="noopener noreferrer">
+              <a href='/me'>
                 <button className="text-[14px] h-fit font-medium underline underline-offset-1 text-[#ffa500]">
                   {language === "en" ? "More About Me" : "Lebih Banyak Tentang Saya"}
                 </button>

@@ -33,6 +33,34 @@
   background-color: #222222;
 }
 
+.border-dot-r {
+  border: 0;
+  background-image: repeating-linear-gradient(to bottom, #858585 0, #858585 3px, transparent 0px, transparent 8px); /* right */
+  background-size: 1px 100%;
+  background-repeat: repeat-y;
+  background-position: top right;
+}
+
+.border-dot-b {
+  border: 0;
+  background-image: repeating-linear-gradient(to right, #858585 0, #858585 3px, transparent 0px, transparent 8px); /* bottom */
+  background-size: 100% 1px;
+  background-repeat: repeat-x;
+  background-position: bottom left;
+}
+.border-dot {
+  border: 0;
+  background-image:
+    repeating-linear-gradient(to right, #858585 0, #858585 3px, transparent 0px, transparent 8px), /* top */
+    repeating-linear-gradient(to right, #858585 0, #858585 3px, transparent 0px, transparent 8px), /* bottom */
+    repeating-linear-gradient(to bottom, #858585 0, #858585 3px, transparent 0px, transparent 8px), /* left */
+    repeating-linear-gradient(to bottom, #858585 0, #858585 3px, transparent 0px, transparent 8px); /* right */
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 100% 1px, 100% 1px, 1px 100%, 1px 100%;
+  background-position: top left, bottom left, top left, top right;
+}
+
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
