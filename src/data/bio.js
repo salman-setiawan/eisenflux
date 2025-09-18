@@ -9,8 +9,8 @@ const BioData = [
         uid: 1,
         title: "PT. Cipta Lima Sekawan",
         role: {
-          en: "Digital Marketing Specialist",
-          id: "Spesialis Marketing Digital"
+          en: "Digital Marketing Specialist (Contract)",
+          id: "Spesialis Marketing Digital (Kontrak)"
         },
         dateStart: "2024-11",
         dateEnd: "Present",
@@ -19,8 +19,8 @@ const BioData = [
         uid: 2,
         title: "PT. Mahakarya Inovasi Bangsa",
         role: {
-          en: "UI/UX Designer Intern",
-          id: "Magang Perancang UI/UX"
+          en: "UI/UX Designer (Intern)",
+          id: "Perancang UI/UX (Magang)"
         },
         dateStart: "2024-06",
         dateEnd: "2024-09",
@@ -29,8 +29,8 @@ const BioData = [
         uid: 3,
         title: "PT. Talenta Sinergi Group",
         role: {
-          en: "UI/UX Designer Intern",
-          id: "Magang Perancang UI/UX"
+          en: "UI/UX Designer (Intern)",
+          id: "Perancang UI/UX (Magang)"
         },
         dateStart: "2023-06",
         dateEnd: "2023-09",
@@ -39,8 +39,8 @@ const BioData = [
         uid: 3,
         title: "PT. Media Kreasi Abadi",
         role: {
-          en: "UI/UX Designer Intern",
-          id: "Magang Perancang UI/UX"
+          en: "UI/UX Designer (Intern)",
+          id: "Perancang UI/UX (Magang)"
         },
         dateStart: "2022-02",
         dateEnd: "2022-07",
@@ -59,6 +59,26 @@ const BioData = [
         },
         dateStart: "2019-10",
         dateEnd: "2023-01",
+      },
+    ],
+    certification: [
+      {
+        uid: 1,
+        title: 'Figma Assessment',
+        company: 'Uxcel',
+        date: "2023",
+      },
+      {
+        uid: 2,
+        title: 'Google UX Design',
+        company: 'Coursera',
+        date: "2023",
+      },
+      {
+        uid: 3,
+        title: 'SKKNI Junior Graphic Design',
+        company: 'Balai Pelatihan & Pengembangan Teknologi Informasi & Komunikasi',
+        date: "2021",
       },
     ]
   },

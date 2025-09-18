@@ -1,9 +1,9 @@
-// Bio.jsx
 import { useLanguage } from '../data/languageContext.jsx';
-import Experience from "../components/Experience";
+import Experience from "../components/bio/Experience.jsx";
 import BioData from "../data/bio";
 import Notfound from './404.jsx';
-import Education from '../components/Education.jsx';
+import Education from '../components/bio/Education.jsx';
+import Certification from '../components/bio/Certification.jsx';
 
 const Bio = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -13,7 +13,7 @@ const Bio = () => {
     return <Notfound />;
   }
 
-  const { desc, experience, education } = BioData[0];
+  const { desc, experience, education, certification } = BioData[0];
 
   return (
     <div>
@@ -48,7 +48,7 @@ const Bio = () => {
             <div className="max-w-[42px] border-dot-r">
               <div className="p-2 uppercase font-semibold rotate-90 origin-bottom-left text-[#ffaa00]">education</div>
             </div>
-            <div className="flex w-full flex-col pb-24">
+            <div className="flex w-full flex-col pb-48">
               {education.map((edu) => (
                 <Education
                   key={edu.uid}
@@ -56,6 +56,21 @@ const Bio = () => {
                   role={edu.role[language]}
                   dateStart={edu.dateStart}
                   dateEnd={edu.dateEnd}
+                />
+              ))}
+            </div>
+          </div>
+        <div className="flex w-full border-dot">
+            <div className="max-w-[42px] border-dot-r">
+              <div className="p-2 uppercase font-semibold rotate-90 origin-bottom-left text-[#ffaa00]">certification</div>
+            </div>
+            <div className="flex w-full flex-col pb-24">
+              {certification.map((cert) => (
+                <Certification
+                  key={cert.uid}
+                  title={cert.title}
+                  company={cert.company}
+                  date={cert.date}
                 />
               ))}
             </div>
