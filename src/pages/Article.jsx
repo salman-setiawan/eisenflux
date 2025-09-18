@@ -19,7 +19,7 @@ const Article = () => {
 
   return (
     <div>
-      <div className="flex flex-col pt-2 items-center">
+      <div className="flex flex-col items-center">
         <div className="px-5 flex flex-col gap-y-2 justify-center w-full">
           <div className="w-full flex justify-end py-4">
             <button
@@ -30,11 +30,20 @@ const Article = () => {
             </button>
           </div>
         </div>
-        <div
-          className="w-full h-[580px] md:h-[320px] bg-cover bg-center bg-neutral-900"
-          // style={{ backgroundImage: `url(${cover})` }}
-        ></div>
-        <div className="px-5 flex flex-col gap-y-2 w-full md:max-w-[640px] pt-6 pb-12">
+        <div className="w-full h-[560px] md:h-[320px] bg-cover flex justify-center items-center bg-neutral-900">
+          <div className="grid grid-cols-3 w-[800px] gap-2 rotate-[-20deg]">
+            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
+            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
+            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
+            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
+            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
+            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
+            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
+            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
+            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
+          </div>
+        </div>
+        <div className="px-5 flex flex-col gap-y-2 w-full md:max-w-[640px] pt-4 pb-12">
           <div className="pt-2 pb-6 flex flex-col gap-y-6">
             <div className='pb-1'>
               <div className="text-2xl font-semibold leading-relaxed text-justify">
