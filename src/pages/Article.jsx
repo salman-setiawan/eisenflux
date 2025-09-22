@@ -5,6 +5,7 @@ import Notfound from '../pages/404.jsx';
 import Button from '../components/Button.jsx';
 import Footnote from '../components/Footnote.jsx';
 import Content from '../components/Content.jsx';
+import Showcase from '../components/Showcase.jsx';
 
 const Article = () => {
   const { id } = useParams();
@@ -30,18 +31,8 @@ const Article = () => {
             </button>
           </div>
         </div>
-        <div className="w-full h-[560px] md:h-[320px] bg-cover flex justify-center items-center bg-neutral-900">
-          <div className="grid grid-cols-3 w-[800px] gap-2 rotate-[-20deg]">
-            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
-            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
-            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
-            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
-            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
-            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
-            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
-            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
-            <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
-          </div>
+        <div className="w-full h-[560px] md:h-[320px] bg-cover flex justify-center items-center bg-[#171717] overflow-hidden shadow-lg">
+          <Showcase />
         </div>
         <div className="px-5 flex flex-col gap-y-2 w-full md:max-w-[640px] pt-4 pb-12">
           <div className="pt-2 pb-6 flex flex-col gap-y-6">

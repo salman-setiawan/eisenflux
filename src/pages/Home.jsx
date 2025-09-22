@@ -18,7 +18,7 @@ const Home = () => {
   const { contact, stats } = OtherData[0].intro[language];
 
   return (
-    <div className="">
+    <div className="flex w-full justify-center">
       <div className="flex flex-col place-content-center py-8 px-6 md:h-screen">
         <div className="w-full flex justify-end pb-4">
           <button onClick={toggleLanguage} className="text-[14px] h-fit font-medium underline underline-offset-1 text-[#ffa500]">
