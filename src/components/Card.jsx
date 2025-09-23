@@ -77,7 +77,7 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
           className="relative z-10 rounded-xl bg-cover bg-center border-2 border-neutral-800"
           style={{ backgroundImage: `url(${img})` }}
         >
-          <div className="h-full flex flex-col px-2.5 py-3 justify-between">
+          <div className="h-full flex flex-col px-2.5 py-2.5 justify-between">
             <div className="flex flex-wrap gap-x-2">
               {categories?.map((cat, i) => (
                 <Chip key={i} label={cat} />
@@ -107,7 +107,7 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
                   </div>
                 </div>
               </div>
-              <div className="flex w-full px-3 py-2 text-sm bg-neutral-900/50 rounded-xl">{desc}</div>
+              <div className="flex w-full p-2 text-sm bg-neutral-900/50 rounded-xl">{desc}</div>
             </div>
           </div>
         </div>
