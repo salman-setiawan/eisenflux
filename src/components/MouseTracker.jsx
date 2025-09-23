@@ -95,7 +95,7 @@ const MouseTracker = () => {
           height: "14px",
           transform: "translate(-50%, -50%)",
           backgroundColor: "#ffa500",
-          animation: isClickable ? "blink 0.6s infinite" : "none",
+          animation: isClickable ? "blink 0.2s infinite" : "none",
         }}
       />
 
