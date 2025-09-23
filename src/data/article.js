@@ -6,8 +6,8 @@ const ArticleData = [
     cover: '/bg.webp',
     obj: '/showcase2.webp',
     desc: {
-      en: 'A simple arcade-survival game called Another Day in the Island, which I designed as research for my final project as an informatics student at the Kalimantan Institute of Technology.',
-      id: 'Permainan arkade-survival sederhana yang disebut Hari Lain di Pulau, yang saya desain sebagai riset untuk proyek akhir saya sebagai mahasiswa ilmu komputer di Institut Teknologi Kalimantan.'
+      en: 'A simple arcade-survival game called Another Day in the Island, which I designed for my final project as an informatics student at the Kalimantan Institute of Technology.',
+      id: 'Permainan arkade-survival sederhana bernama Another Day in the Island, yang saya desain untuk proyek akhir saya sebagai mahasiswa ilmu komputer di Institut Teknologi Kalimantan.'
     },
     categories: [
       { en: 'UI/UX', id: 'UI/UX' },
