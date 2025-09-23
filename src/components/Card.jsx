@@ -11,14 +11,13 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
     threshold: 0.05,
   });
 
-  // Pecah title jadi array kata
   const words = title ? title.split(' ') : [];
 
   // Variants untuk container (atur stagger antar kata)
   const container = {
     animate: {
       transition: {
-        staggerChildren: 0.4, // jeda antar kata
+        staggerChildren: 0.4, 
         repeat: Infinity,
         repeatType: 'loop',
       },
@@ -44,7 +43,7 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
   const wordVariant = {
     animate: {
       transition: {
-        staggerChildren: 0.05, // jeda antar huruf dalam kata
+        staggerChildren: 0.05, 
       },
     },
   };
@@ -60,7 +59,7 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
             variants={container}
             initial="initial"
             animate="animate"
-            className="absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[12rem] xl:text-[16rem] font-black text-white/15 rotate-[-17deg] uppercase"
+            className="absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[14rem] lg:text-[18rem] font-black text-white/15 rotate-[-32deg] md:rotate-[-17deg] uppercase"
           >
             {words.map((word, wi) => (
               <motion.div key={wi} variants={wordVariant} className="flex">
