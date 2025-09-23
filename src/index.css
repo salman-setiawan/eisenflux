@@ -30,6 +30,10 @@
   height: 4px;
 }
 
+* {
+  cursor: none !important;
+}
+
 .bg-dark-border {
   background-color: #222222;
 }
