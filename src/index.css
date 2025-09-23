@@ -116,7 +116,7 @@
 }
 
 
-@keyframes blink {
+@keyframes blinks {
   0% {
     background-color: #128d3f;
   }
@@ -129,7 +129,7 @@
 }
 
 .animate-blink {
-  animation: blink 1s infinite;
+  animation: blinks 1s infinite;
 }
 
 @keyframes floatAnimation {
