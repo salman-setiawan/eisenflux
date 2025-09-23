@@ -18,8 +18,8 @@ const Home = () => {
   const { contact, stats } = OtherData[0].intro[language];
 
   return (
-    <div className="flex w-full justify-center">
-      <div className="flex flex-col place-content-center py-8 px-6 md:h-screen">
+    <div className="flex justify-center">
+      <div className="flex flex-col place-content-center w-full md:max-w-[1200px] py-4 md:py-8 px-6 md:h-screen">
         <div className="w-full flex justify-end pb-4">
           <button onClick={toggleLanguage} className="text-[14px] h-fit font-medium underline underline-offset-1 text-[#ffa500]">
             {language === "en" ? "English" : "Bahasa"}
@@ -47,13 +47,14 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-y-3 md:w-full md:pt-1 md:pb-8 md:pr-2 md:overflow-y-auto">
+          <div className="flex flex-col gap-y-3 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto">
             {ArticleData.map((article) => (
               <Card
                 key={article.id}
                 title={article.title2}
                 img={article.cover}
                 obj={article.obj}
+                desc={article.desc[language]}
                 categories={article.categories.map(c => c[language])}
                 url1={`/article/${article.id}`}
                 url2={article.extUrl}
@@ -67,7 +68,6 @@ const Home = () => {
           <div className="md:hidden w-full"> <Footnote /> </div>
         </div>
       </div>
-      <div className="hidden md:block fixed bottom-0 w-full bg-[#111111] py-1.5" style={{ zIndex: 1 }}> <Footnote /> </div>
     </div>
   );
 };

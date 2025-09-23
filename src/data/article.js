@@ -5,6 +5,10 @@ const ArticleData = [
     title2: 'ANOTHER ISLAND',
     cover: '/bg.webp',
     obj: '/showcase2.webp',
+    desc: {
+      en: 'Simple arcade-survival game called Another Day in the Island, which I designed as research for my final project as an informatics student at the Kalimantan Institute of Technology.',
+      id: 'Permainan arkade-survival sederhana yang disebut Hari Lain di Pulau, yang saya desain sebagai riset untuk proyek akhir saya sebagai mahasiswa ilmu komputer di Institut Teknologi Kalimantan.'
+    },
     categories: [
       { en: 'UI/UX', id: 'UI/UX' },
       { en: 'Web Game', id: 'Permainan Web' },
@@ -23,8 +27,8 @@ const ArticleData = [
 
     contents: [
       { text: {
-          en: 'This project is a simple arcade-survival game called Another Day in the Island, which I designed as research for my final project as a computer science student at the Kalimantan Institute of Technology.',
-          id: 'Proyek ini adalah permainan arkade-survival sederhana yang disebut Hari Lain di Pulau, yang saya desain sebagai riset untuk proyek akhir saya sebagai mahasiswa ilmu komputer di Institut Teknologi Kalimantan.'
+          en: 'This project is a simple arcade-survival game called Another Day in the Island, which I designed as research for my final project as an informatics student at the Kalimantan Institute of Technology.',
+          id: 'Proyek ini adalah permainan arkade-survival sederhana yang disebut Hari Lain di Pulau, yang saya desain sebagai riset untuk proyek akhir saya sebagai mahasiswa informatika di Institut Teknologi Kalimantan.'
         } },
       { text: {
           en: "In this game, players take on the role of a mysterious character, whose objective is to gather as many points as possible by defeating monsters scattered throughout the area.",
@@ -282,6 +286,10 @@ const ArticleData = [
     title2: 'EDU FAMS',
     cover: '/bg.webp',
     obj: '/showcase4.webp',
+    desc: {
+      en: 'I had the opportunity to intern at PT. Media Kreasi Abadi through the Kampus Merdeka program. I worked as a UI/UX Designer with a focus on developing a family education platform called EduFams. I designed and built EduFams using the Design Thinking methodology.',
+      id: 'PSaya berkesempatan untuk magang di PT. Media Kreasi Abadi melalui program Kampus Merdeka. Saya bekerja sebagai UI/UX Designer dengan fokus mengembangkan sebuah platform edukasi keluarga bernama EduFams. Saya merancang dan membangun EduFams menggunakan metodologi Design Thinking.'
+    },
     categories: [
       { en: 'UI/UX', id: 'UI/UX' },
       { en: 'Mobile Apps', id: 'Aplikasi Mobile' },
@@ -548,6 +556,10 @@ const ArticleData = [
     title2: 'EDUWORK MENTOR',
     cover: '/bg.webp',
     obj: '/showcase3.webp',
+    desc: {
+      en: 'I had the opportunity to intern at Eduwork, an education platform company based in Yogyakarta. Eduwork planned to develop a new platform in the form of a community-based website.',
+      id: 'Saya berkesempatan untuk menjalani magang di Eduwork, sebuah perusahaan platform pendidikan yang berbasis di Yogyakarta. Eduwork berencana mengembangkan platform baru berupa situs web berbasis komunitas'
+    },
     categories: [
       { en: 'UI/UX', id: 'UI/UX' },
       { en: 'Web Apps', id: 'Aplikasi Web' },
