@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "../data/languageContext.jsx";
 
 const MouseTracker = () => {
-  const { language } = useLanguage(); // ambil bahasa dari context
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const { language } = useLanguage();
+  const [coords, setCoords] = useState(null); // awalnya null, bukan (0,0)
   const [isClickable, setIsClickable] = useState(false);
-  const [isInside, setIsInside] = useState(true);
+  const [isInside, setIsInside] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -41,6 +41,7 @@ const MouseTracker = () => {
     const handleDocMouseOut = (e) => {
       if (!e.relatedTarget && !e.toElement) {
         setIsInside(false);
+        setCoords(null); // reset posisi agar tidak meninggalkan jejak
         setIsClickable(false);
       }
     };
@@ -53,10 +54,19 @@ const MouseTracker = () => {
 
     const handleBlur = () => {
       setIsInside(false);
+      setCoords(null);
       setIsClickable(false);
     };
     const handleFocus = () => setIsInside(true);
-    const handleVisibility = () => setIsInside(!document.hidden);
+    const handleVisibility = () => {
+      if (document.hidden) {
+        setIsInside(false);
+        setCoords(null);
+        setIsClickable(false);
+      } else {
+        setIsInside(true);
+      }
+    };
 
     window.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseout", handleDocMouseOut);
@@ -79,7 +89,8 @@ const MouseTracker = () => {
     };
   }, []);
 
-  if (!isInside) return null;
+  // kalau belum ada coords atau mouse di luar, jangan render
+  if (!isInside || !coords) return null;
 
   const tooltipText = isClickable
     ? language === "id"
@@ -89,7 +100,7 @@ const MouseTracker = () => {
 
   return (
     <>
-      {/* custom cursor kotak */}
+      {/* custom cursor */}
       <div
         className="fixed pointer-events-none z-[9999]"
         style={{
