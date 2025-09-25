@@ -6,6 +6,7 @@ import Certification from "../components/bio/Certification.jsx";
 import BioData from "../data/bio";
 import Notfound from "./404.jsx";
 import Draggable from "react-draggable";
+import Typewriter from "../components/animate/Typewriter.jsx";
 
 const sectionMap = {
   experience: (item, lang) => <Experience key={item.uid} {...item} role={item.role[lang]} />,
@@ -126,7 +127,9 @@ const Bio = () => {
   return (
     <div className="flex justify-center bg-cover bg-center min-h-screen">
       <div className="hidden lg:flex h-screen items-center w-full justify-center absolute overflow-hidden">
-        <div className="text-white/10 text-[40rem] font-black uppercase select-none">BIO.</div>
+      <div className="text-white/10 text-[40rem] font-black uppercase select-none">
+        <Typewriter />
+      </div>
       </div>
       <div className="flex flex-col place-content-center w-full lg:max-w-[1200px] fixed">
         <div className="w-full flex justify-end px-4 pt-4">
@@ -140,13 +143,13 @@ const Bio = () => {
           {Object.keys(dataMap).map((label) => renderSection(label))}
           {renderBioImage()}
           {renderBioDesc()}
-          <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-[#212121] text-[14px] py-2 px-4" style={{ zIndex: 9999 }}>
-          <div className="flex gap-x-2">
-            <div className="text-[#ffaa00] font-semibold">protips_</div>
-            <div className="">anda bisa menekan lalu seret untuk memindahkan objek</div>
+          <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 text-[14px] min-w-[1000px]" style={{ zIndex: 9999 }}>
+            <div className="flex gap-x-1.5 justify-center">
+              <div className="py-2 px-4 text-[#ffaa00] font-semibold bg-[#212121]">protips_</div>
+              <div className="py-2 px-4 bg-[#212121]">{language === "en" ? "click once to bring object to the front" : "tekan sekali untuk memindahkan objek ke posisi depan"}</div>
+              <div className="py-2 px-4 bg-[#212121]">{language === "en" ? "click and drag to move object anywhere" : "tekan lalu seret untuk memindahkan objek kemana saja"}</div>
+            </div>
           </div>
-        </div>
-
         </div>
 
         {/* mobile static */}
