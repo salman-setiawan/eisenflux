@@ -36,7 +36,17 @@ const BioData = [
         dateEnd: "2023-09",
       },
       {
-        uid: 3,
+        uid: 4,
+        title: "Torche Education",
+        role: {
+          en: "UI Designer (Intern)",
+          id: "Perancang UI (Magang)"
+        },
+        dateStart: "2023-02",
+        dateEnd: "2023-06",
+      },
+      {
+        uid: 5,
         title: "PT. Media Kreasi Abadi",
         role: {
           en: "UI/UX Designer (Intern)",
@@ -64,18 +74,24 @@ const BioData = [
     certification: [
       {
         uid: 1,
+        title: 'EF SET English Certificate (C1 Advanced)',
+        company: 'EF SET',
+        date: "2025",
+      },
+      {
+        uid: 2,
         title: 'Figma Assessment',
         company: 'Uxcel',
         date: "2023",
       },
       {
-        uid: 2,
+        uid: 3,
         title: 'Google UX Design',
         company: 'Coursera',
         date: "2023",
       },
       {
-        uid: 3,
+        uid: 4,
         title: 'SKKNI Junior Graphic Design',
         company: 'Balai Pelatihan & Pengembangan Teknologi Informasi & Komunikasi',
         date: "2021",

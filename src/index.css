@@ -31,8 +31,9 @@
 }
 
 * {
-  cursor: none !important;
+  cursor: none !important; 
 }
+
 
 .bg-dark-border {
   background-color: #222222;

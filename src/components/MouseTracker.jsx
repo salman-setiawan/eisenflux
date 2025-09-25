@@ -3,69 +3,46 @@ import { useLanguage } from "../data/languageContext.jsx";
 
 const MouseTracker = () => {
   const { language } = useLanguage();
-  const [coords, setCoords] = useState(null); // awalnya null, bukan (0,0)
+  const [coords, setCoords] = useState(null); 
   const [isClickable, setIsClickable] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const [isInside, setIsInside] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
-      const inside =
-        clientX >= 0 &&
-        clientY >= 0 &&
-        clientX <= window.innerWidth &&
-        clientY <= window.innerHeight;
+      const inside = clientX >= 0 && clientY >= 0 && clientX <= window.innerWidth && clientY <= window.innerHeight;
 
       setCoords({ x: clientX, y: clientY });
       setIsInside(inside);
-
-      if (!inside) {
-        setIsClickable(false);
-        return;
-      }
+      if (!inside) { setIsClickable(false); setIsDragging(false); return; }
 
       const el = document.elementFromPoint(clientX, clientY);
-      if (!el) {
-        setIsClickable(false);
-        return;
-      }
+      if (!el) { setIsClickable(false); setIsDragging(false); return; }
 
-      const clickable = el.closest(
-        "a, button, [role='button'], [data-clickable='true']"
-      );
-      const hasPointer = window.getComputedStyle(el).cursor === "pointer";
+      // 👉 cek apakah elemen punya tanda draggable
+      const draggable = el.closest("[data-draggable='true']");
+      const clickable = el.closest("a, button, [role='button'], [data-clickable='true']");
+      const cursorStyle = window.getComputedStyle(el).cursor;
 
-      setIsClickable(!!(clickable || hasPointer));
+      const isDragCursor = cursorStyle === "grab" || cursorStyle === "grabbing" || !!draggable;
+      setIsDragging(!!isDragCursor);
+      setIsClickable(!isDragCursor && !!(clickable || cursorStyle === "pointer"));
     };
 
     const handleDocMouseOut = (e) => {
-      if (!e.relatedTarget && !e.toElement) {
-        setIsInside(false);
-        setCoords(null); // reset posisi agar tidak meninggalkan jejak
-        setIsClickable(false);
-      }
+      if (!e.relatedTarget && !e.toElement) { setIsInside(false); setCoords(null); setIsClickable(false); setIsDragging(false); }
     };
 
     const handleDocMouseOver = (e) => {
-      if (!e.relatedTarget && !e.fromElement) {
-        setIsInside(true);
-      }
+      if (!e.relatedTarget && !e.fromElement) { setIsInside(true); }
     };
 
-    const handleBlur = () => {
-      setIsInside(false);
-      setCoords(null);
-      setIsClickable(false);
-    };
+    const handleBlur = () => { setIsInside(false); setCoords(null); setIsClickable(false); setIsDragging(false); };
     const handleFocus = () => setIsInside(true);
     const handleVisibility = () => {
-      if (document.hidden) {
-        setIsInside(false);
-        setCoords(null);
-        setIsClickable(false);
-      } else {
-        setIsInside(true);
-      }
+      if (document.hidden) { setIsInside(false); setCoords(null); setIsClickable(false); setIsDragging(false); } 
+      else { setIsInside(true); }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -89,18 +66,19 @@ const MouseTracker = () => {
     };
   }, []);
 
-  // kalau belum ada coords atau mouse di luar, jangan render
   if (!isInside || !coords) return null;
 
-  const tooltipText = isClickable
-    ? language === "id"
-      ? "tekan-tombol"
-      : "click-button"
-    : `x.${coords.x} - y.${coords.y}`;
+  let tooltipText;
+  if (isDragging) {
+    tooltipText = "drag-me";
+  } else if (isClickable) {
+    tooltipText = language === "id" ? "tekan-tombol" : "click-button";
+  } else {
+    tooltipText = `x.${coords.x} - y.${coords.y}`;
+  }
 
   return (
     <>
-      {/* custom cursor */}
       <div
         className="fixed pointer-events-none z-[9999]"
         style={{
@@ -114,11 +92,10 @@ const MouseTracker = () => {
         }}
       />
 
-      {/* tooltip */}
       <div
-        className="fixed bg-black text-white px-1 py-0.5 text-[11px] pointer-events-none z-[9999]"
+        className="fixed bg-black text-white px-1 py-0.5 text-[10px] pointer-events-none z-[9999]"
         style={{
-          top: coords.y + 12,
+          top: coords.y + 10,
           left: coords.x - 8,
         }}
       >
