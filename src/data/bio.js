@@ -75,7 +75,7 @@ const BioData = [
       {
         uid: 1,
         title: 'EF SET English Certificate (C1 Advanced)',
-        company: 'EF SET',
+        company: 'EF Standard English Test',
         date: "2025",
       },
       {
