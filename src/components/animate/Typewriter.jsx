@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Typewriter = ({ text = "BIO.", speed = 160, deleteSpeed = 240, dotBlinkCount = 4 }) => {
+const Typewriter = ({ text = "enfx.", speed = 160, deleteSpeed = 240, dotBlinkCount = 4 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loop, setLoop] = useState(0);
@@ -33,7 +33,7 @@ const Typewriter = ({ text = "BIO.", speed = 160, deleteSpeed = 240, dotBlinkCou
   }, [displayedText, isDeleting, text, speed, deleteSpeed, dotPhase, dotCount, loop]);
 
   return (
-    <span className="font-black uppercase block text-center" style={{ minWidth: `${text.length}ch` }}>
+    <span className="font-black block text-center" style={{ minWidth: `${text.length}ch` }}>
       {displayedText}
       {displayedText.length < text.length && <span className="invisible">.</span>}
     </span>

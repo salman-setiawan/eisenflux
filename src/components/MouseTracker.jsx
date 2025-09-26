@@ -20,7 +20,6 @@ const MouseTracker = () => {
       const el = document.elementFromPoint(clientX, clientY);
       if (!el) { setIsClickable(false); setIsDragging(false); return; }
 
-      // 👉 cek apakah elemen punya tanda draggable
       const draggable = el.closest("[data-draggable='true']");
       const clickable = el.closest("a, button, [role='button'], [data-clickable='true']");
       const cursorStyle = window.getComputedStyle(el).cursor;
@@ -69,13 +68,9 @@ const MouseTracker = () => {
   if (!isInside || !coords) return null;
 
   let tooltipText;
-  if (isDragging) {
-    tooltipText = "drag-me";
-  } else if (isClickable) {
-    tooltipText = language === "id" ? "tekan-tombol" : "click-button";
-  } else {
-    tooltipText = `x.${coords.x} - y.${coords.y}`;
-  }
+  if (isDragging) { tooltipText = language === "id" ? "seret-aku" : "drag-me"; } 
+  else if (isClickable) { tooltipText = language === "id" ? "tekan-aku" : "click-me"; } 
+  else { tooltipText = `x.${coords.x} - y.${coords.y}`; }
 
   return (
     <>
@@ -94,19 +89,13 @@ const MouseTracker = () => {
 
       <div
         className="fixed bg-black text-white px-1 py-0.5 text-[10px] pointer-events-none z-[9999]"
-        style={{
-          top: coords.y + 10,
-          left: coords.x - 8,
-        }}
+        style={{ top: coords.y + 10, left: coords.x - 8, }}
       >
         {tooltipText}
       </div>
 
       <style>{`
-        @keyframes blink {
-          0%, 100% { background-color: #ffa500; }
-          50% { background-color: #ffffff; }
-        }
+        @keyframes blink { 0%, 100% { background-color: #ffa500; } 50% { background-color: #ffffff; }}
       `}</style>
     </>
   );

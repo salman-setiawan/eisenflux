@@ -6,6 +6,7 @@ import ArticleData from '../data/article.js';
 import OtherData from '../data/other.js'; 
 import Notfound from './404.jsx';
 import WorkChip from '../components/WorkChip.jsx';
+import Draggable from 'react-draggable';
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -19,6 +20,14 @@ const Home = () => {
 
   return (
     <div className="flex justify-center">
+      <Draggable>
+        <div className="flex gap-x-1 h-fit text-[14px] font-semibold">
+          <div className="py-2 px-4 bg-[#282828] text-[#ffaa00] text-[20px] font-black flex items-center" data-draggable='true'>:</div>
+          <div className="py-2 px-3 bg-[#282828] flex items-center" data-clickable='true'>Projects</div>
+          <div className="py-2 px-3 bg-[#282828] flex items-center" data-clickable='true'>About Me</div>
+          <div className="py-2 px-3 bg-[#282828] flex items-center" data-clickable='true'>Socials</div>
+        </div>
+      </Draggable>
       <div className="flex flex-col place-content-center w-full md:max-w-[1200px] py-4 md:py-8 px-6 md:h-screen">
         <div className="w-full flex justify-end pb-4">
           <button onClick={toggleLanguage} className="text-[14px] h-fit font-medium underline underline-offset-1 text-[#ffa500]">

@@ -127,7 +127,7 @@ const Bio = () => {
   return (
     <div className="flex justify-center bg-cover bg-center min-h-screen">
       <div className="hidden lg:flex h-screen items-center w-full justify-center absolute overflow-hidden">
-      <div className="text-white/10 text-[40rem] font-black uppercase select-none">
+      <div className="text-white/10 text-[40rem] select-none">
         <Typewriter />
       </div>
       </div>
