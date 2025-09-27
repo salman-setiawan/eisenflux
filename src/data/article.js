@@ -3,6 +3,7 @@ const ArticleData = [
     id: 1,
     title: 'Another Day in the Island',
     title2: 'ANOTHER ISLAND',
+    nav: 'another_island.prj',
     cover: '/bg.webp',
     obj: '/showcase2.webp',
     desc: {
@@ -284,6 +285,7 @@ const ArticleData = [
     id: 2,
     title: 'EduFams',
     title2: 'EDU FAMS',
+    nav: 'edufams.prj',
     cover: '/bg.webp',
     obj: '/showcase4.webp',
     desc: {
@@ -554,6 +556,7 @@ const ArticleData = [
     id: 3,
     title: 'Eduwork Mentor Website',
     title2: 'EDUWORK MENTOR',
+    nav: 'eduwork.prj',
     cover: '/bg.webp',
     obj: '/showcase3.webp',
     desc: {

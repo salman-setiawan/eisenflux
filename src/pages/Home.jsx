@@ -7,6 +7,7 @@ import OtherData from '../data/other.js';
 import Notfound from './404.jsx';
 import WorkChip from '../components/WorkChip.jsx';
 import Navigation from '../components/Navigation.jsx';
+import Typewriter from '../components/animate/Typewriter.jsx';
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -20,34 +21,27 @@ const Home = () => {
 
   return (
     <div className="flex justify-center">
-      <div className='fixed top-6 left-6' style={{ zIndex: 200 }}>
+      <div className='fixed top-6 left-6 hidden md:block' style={{ zIndex: 200 }}>
         <Navigation />
       </div>
-      <div className="flex flex-col place-content-center w-full md:max-w-[1200px] py-4 md:py-8 px-6 md:h-screen">
-        <div className="w-full flex justify-end pb-4">
+      <div className="flex flex-col place-content-center w-full md:max-w-[920px] py-4 md:py-8 px-6 md:h-screen">
+        <div className="w-full flex justify-end md:justify-between py-4">
+          <div className="hidden md:block">
+            <WorkChip label={stats} />
+          </div>
           <button onClick={toggleLanguage} className="text-[14px] h-fit font-medium underline underline-offset-1 text-[#ffa500]">
             {language === "en" ? "English" : "Bahasa"}
           </button>
         </div>
         <div className="flex flex-col gap-y-6 md:flex-row gap-x-8 w-full h-full">
-          <div className="md:w-3/5 md:min-w-[300px] md:max-w-[480px] flex flex-col gap-y-6 md:gap-y-8 pt-[25rem] md:pt-0 md:justify-end md:pb-12 md:px-4 h-full">
-            <div className="flex w-full">
-              <video src="brand.mp4" className="h-20 w-fit pb-2 md:pb-0" autoPlay loop muted />
+          <div className="flex flex-col gap-y-6 pt-[25rem] h-full block md:hidden">
+            <div className="text-[64px]">
+              <Typewriter text='enfx.' />
             </div>
-            <div className="flex flex-col gap-y-3">
-              <div className="text-[14px] leading-relaxed">{contact}</div>
-              <a href='/me'>
-                <button className="text-[14px] h-fit font-medium underline underline-offset-1 text-[#ffa500]">
-                  {language === "en" ? "More About Me" : "Lebih Banyak Tentang Saya"}
-                </button>
-              </a>
-            </div>
-            <div className="flex justify-between items-center md:flex-col md:gap-y-4 md:items-start lg:items-center lg:flex-row">
+            <div className="flex justify-between items-center">
               <WorkChip label={stats} />
-              <div className="flex gap-x-2.5 justify-end md:justify-start py-2">
-                <IconButton src="gmail.svg" url="mailto:salmansetiawan88@gmail.com" />
-                <IconButton src="instagram.svg" url="https://instagram.com/eisenflux" />
-                <IconButton src="linkedin.svg" url="https://linkedin.com/in/salman-setiawan" />
+              <div className="w-fit" style={{ zIndex: 200 }}>
+                <Navigation />
               </div>
             </div>
           </div>
