@@ -50,7 +50,7 @@ const Navigation = () => {
 
           {/* About */}
           <div
-            className="py-3 px-3.5 bg-[#282828] flex items-center cursor-pointer"
+            className="w-full md:w-fit py-3 px-3.5 bg-[#282828] flex items-center cursor-pointer"
             onClick={() => handleClick("about")}
             data-clickable='true'
           >
@@ -59,7 +59,7 @@ const Navigation = () => {
 
           {/* Projects */}
           <div
-            className="py-3 px-3.5 bg-[#282828] flex items-center cursor-pointer relative"
+            className="w-full md:w-fit py-3 px-3.5 bg-[#282828] flex items-center cursor-pointer relative"
             onClick={() => handleClick("projects")}
             data-clickable='true'
           >
@@ -83,7 +83,7 @@ const Navigation = () => {
 
           {/* Socials */}
           <div
-            className="py-3 px-3.5 bg-[#282828] flex items-center cursor-pointer relative"
+            className="w-full md:w-fit py-3 px-3.5 bg-[#282828] flex items-center cursor-pointer relative"
             onClick={() => handleClick("socials")}
             data-clickable='true'
           >

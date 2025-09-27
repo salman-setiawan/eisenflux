@@ -37,9 +37,9 @@ const Home = () => {
             <div className="text-[64px]">
               <Typewriter text='enfx.' />
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col gap-y-4">
               <WorkChip label={stats} />
-              <div className="w-fit" style={{ zIndex: 200 }}>
+              <div className="w-full" style={{ zIndex: 200 }}>
                 <Navigation />
               </div>
             </div>
