@@ -3,45 +3,90 @@ import { useLanguage } from "../data/languageContext.jsx";
 
 const MouseTracker = () => {
   const { language } = useLanguage();
-  const [coords, setCoords] = useState(null); 
+  const [coords, setCoords] = useState(null);
   const [isClickable, setIsClickable] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [isInside, setIsInside] = useState(false);
+  const [hasPointer, setHasPointer] = useState(false);
 
   useEffect(() => {
+    // Deteksi pointer presisi (mouse/trackpad)
+    const mq = window.matchMedia("(pointer: fine)");
+    setHasPointer(mq.matches);
+
+    const handleChange = (e) => setHasPointer(e.matches);
+    mq.addEventListener("change", handleChange);
+
+    return () => mq.removeEventListener("change", handleChange);
+  }, []);
+
+  useEffect(() => {
+    if (!hasPointer) return; // Jangan aktifkan jika tidak ada pointer
+
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
-      const inside = clientX >= 0 && clientY >= 0 && clientX <= window.innerWidth && clientY <= window.innerHeight;
+      const inside =
+        clientX >= 0 &&
+        clientY >= 0 &&
+        clientX <= window.innerWidth &&
+        clientY <= window.innerHeight;
 
       setCoords({ x: clientX, y: clientY });
       setIsInside(inside);
-      if (!inside) { setIsClickable(false); setIsDragging(false); return; }
+      if (!inside) {
+        setIsClickable(false);
+        setIsDragging(false);
+        return;
+      }
 
       const el = document.elementFromPoint(clientX, clientY);
-      if (!el) { setIsClickable(false); setIsDragging(false); return; }
+      if (!el) {
+        setIsClickable(false);
+        setIsDragging(false);
+        return;
+      }
 
       const draggable = el.closest("[data-draggable='true']");
-      const clickable = el.closest("a, button, [role='button'], [data-clickable='true']");
+      const clickable = el.closest(
+        "a, button, [role='button'], [data-clickable='true']"
+      );
       const cursorStyle = window.getComputedStyle(el).cursor;
 
-      const isDragCursor = cursorStyle === "grab" || cursorStyle === "grabbing" || !!draggable;
+      const isDragCursor =
+        cursorStyle === "grab" || cursorStyle === "grabbing" || !!draggable;
       setIsDragging(!!isDragCursor);
       setIsClickable(!isDragCursor && !!(clickable || cursorStyle === "pointer"));
     };
 
     const handleDocMouseOut = (e) => {
-      if (!e.relatedTarget && !e.toElement) { setIsInside(false); setCoords(null); setIsClickable(false); setIsDragging(false); }
+      if (!e.relatedTarget && !e.toElement) {
+        setIsInside(false);
+        setCoords(null);
+        setIsClickable(false);
+        setIsDragging(false);
+      }
     };
 
     const handleDocMouseOver = (e) => {
-      if (!e.relatedTarget && !e.fromElement) { setIsInside(true); }
+      if (!e.relatedTarget && !e.fromElement) setIsInside(true);
     };
 
-    const handleBlur = () => { setIsInside(false); setCoords(null); setIsClickable(false); setIsDragging(false); };
+    const handleBlur = () => {
+      setIsInside(false);
+      setCoords(null);
+      setIsClickable(false);
+      setIsDragging(false);
+    };
     const handleFocus = () => setIsInside(true);
     const handleVisibility = () => {
-      if (document.hidden) { setIsInside(false); setCoords(null); setIsClickable(false); setIsDragging(false); } 
-      else { setIsInside(true); }
+      if (document.hidden) {
+        setIsInside(false);
+        setCoords(null);
+        setIsClickable(false);
+        setIsDragging(false);
+      } else {
+        setIsInside(true);
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -63,14 +108,18 @@ const MouseTracker = () => {
       document.removeEventListener("visibilitychange", handleVisibility);
       document.body.style.cursor = prevCursor || "auto";
     };
-  }, []);
+  }, [hasPointer]);
 
-  if (!isInside || !coords) return null;
+  if (!hasPointer || !isInside || !coords) return null;
 
   let tooltipText;
-  if (isDragging) { tooltipText = language === "id" ? "seret-aku" : "drag-me"; } 
-  else if (isClickable) { tooltipText = language === "id" ? "tekan-aku" : "click-me"; } 
-  else { tooltipText = `x.${coords.x} - y.${coords.y}`; }
+  if (isDragging) {
+    tooltipText = language === "id" ? "seret-aku" : "drag-me";
+  } else if (isClickable) {
+    tooltipText = language === "id" ? "tekan-aku" : "click-me";
+  } else {
+    tooltipText = `x.${coords.x} - y.${coords.y}`;
+  }
 
   return (
     <>
@@ -89,13 +138,16 @@ const MouseTracker = () => {
 
       <div
         className="fixed bg-black text-white px-1 py-0.5 text-[10px] pointer-events-none z-[9999]"
-        style={{ top: coords.y + 10, left: coords.x - 8, }}
+        style={{ top: coords.y + 10, left: coords.x - 8 }}
       >
         {tooltipText}
       </div>
 
       <style>{`
-        @keyframes blink { 0%, 100% { background-color: #ffa500; } 50% { background-color: #ffffff; }}
+        @keyframes blink {
+          0%, 100% { background-color: #ffa500; }
+          50% { background-color: #ffffff; }
+        }
       `}</style>
     </>
   );
