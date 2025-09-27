@@ -1,7 +1,6 @@
 import { useLanguage } from '../data/languageContext.jsx';
 import Card from "../components/Card.jsx";
 import Footnote from "../components/Footnote.jsx";
-import IconButton from "../components/IconButton.jsx";
 import ArticleData from '../data/article.js';
 import OtherData from '../data/other.js'; 
 import Notfound from './404.jsx';
@@ -24,7 +23,7 @@ const Home = () => {
       <div className='fixed top-6 left-6 hidden md:block' style={{ zIndex: 200 }}>
         <Navigation />
       </div>
-      <div className="flex flex-col place-content-center w-full md:max-w-[920px] py-4 md:py-8 px-6 md:h-screen">
+      <div className="flex flex-col place-content-center w-full md:max-w-[920px] md:py-8 px-6 md:h-screen">
         <div className="w-full flex justify-end md:justify-between py-4">
           <div className="hidden md:block">
             <WorkChip label={stats} />

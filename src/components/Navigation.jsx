@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Draggable from "react-draggable";
-import ArticleData from "../data/article.js"; // ambil semua artikel
+import ArticleData from "../data/article.js";
 import Typewriter from "./animate/Typewriter.jsx";
 
 const Navigation = () => {
   const [openMenu, setOpenMenu] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // cek ukuran layar (atau bisa juga pakai navigator.userAgent)
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768); 
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const handleClick = (menu) => {
     if (menu === "about") {
@@ -24,7 +37,7 @@ const Navigation = () => {
 
   return (
     <div>
-      <Draggable>
+      <Draggable disabled={isMobile}>
         <div className="relative flex gap-x-1 h-fit text-[14px] font-semibold shadow-lg shadow-black/40">
           {/* draggable icon */}
           <div className="py-2 px-3 bg-[#282828] text-[#ffaa00] text-[20px] font-black flex items-center cursor-move hidden md:block" data-draggable='true'>
