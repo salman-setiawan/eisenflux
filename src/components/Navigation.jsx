@@ -10,9 +10,8 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // cek ukuran layar (atau bisa juga pakai navigator.userAgent)
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768); 
+      setIsMobile(window.innerWidth <= 768);
     };
 
     checkMobile();
@@ -35,33 +34,40 @@ const Navigation = () => {
     { name: "Gmail", url: "mailto:username@gmail.com" },
   ];
 
+  // kelas umum untuk menu item
+  const menuClass =
+    "w-full md:w-fit py-2.5 px-3.5 bg-[#282828] flex items-center cursor-pointer select-none hover:bg-[#ffaa00] hover:text-black";
+
   return (
     <div>
-      <Draggable disabled={isMobile}>
-        <div className="relative flex gap-x-1 h-fit text-[14px] font-semibold shadow-lg shadow-black/40">
+      <Draggable disabled={isMobile} handle=".drag-handle">
+        <div className="relative flex gap-x-1 h-fit text-[13px] md:text-[14px] font-semibold shadow-lg shadow-black/40">
           {/* draggable icon */}
-          <div className="py-2 px-3 bg-[#282828] text-[#ffaa00] text-[20px] font-black flex items-center cursor-move hidden md:block" data-draggable='true'>
+          <div
+            className="drag-handle px-3 bg-[#282828] text-[#ffaa00] text-[18px] font-black md:flex items-center cursor-move hidden select-none"
+            data-draggable="true"
+          >
             : :
           </div>
 
-          <div className="p-2 bg-[#282828] text-[#ffaa00] text-[20px] font-black flex items-center cursor-move hidden md:block">
-            <Typewriter text='enfx.' />
+          <div className="p-2 bg-[#282828] text-[18px] font-black items-center hidden md:flex select-none">
+            <Typewriter text="enfx." />
           </div>
 
           {/* About */}
           <div
-            className="w-full md:w-fit py-3 px-3.5 bg-[#282828] flex items-center cursor-pointer"
+            className={menuClass}
             onClick={() => handleClick("about")}
-            data-clickable='true'
+            data-clickable="true"
           >
             About Me
           </div>
 
           {/* Projects */}
           <div
-            className="w-full md:w-fit py-3 px-3.5 bg-[#282828] flex items-center cursor-pointer relative"
+            className={`${menuClass} relative`}
             onClick={() => handleClick("projects")}
-            data-clickable='true'
+            data-clickable="true"
           >
             Projects
             {openMenu === "projects" && (
@@ -83,9 +89,9 @@ const Navigation = () => {
 
           {/* Socials */}
           <div
-            className="w-full md:w-fit py-3 px-3.5 bg-[#282828] flex items-center cursor-pointer relative"
+            className={`${menuClass} relative`}
             onClick={() => handleClick("socials")}
-            data-clickable='true'
+            data-clickable="true"
           >
             Socials
             {openMenu === "socials" && (
