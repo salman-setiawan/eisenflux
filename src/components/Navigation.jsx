@@ -29,8 +29,8 @@ const Navigation = () => {
   };
 
   const socialList = [
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/username" },
-    { name: "Instagram", url: "https://www.instagram.com/username" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/salman-setiawan" },
+    { name: "Instagram", url: "https://www.instagram.com/eisenflux" },
     { name: "Gmail", url: "mailto:username@gmail.com" },
   ];
 

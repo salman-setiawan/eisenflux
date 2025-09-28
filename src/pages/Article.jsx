@@ -6,6 +6,7 @@ import Button from '../components/Button.jsx';
 import Footnote from '../components/Footnote.jsx';
 import Content from '../components/Content.jsx';
 import Showcase from '../components/Showcase.jsx';
+import Chip from '../components/Chip.jsx';
 
 const Article = () => {
   const { id } = useParams();
@@ -36,13 +37,13 @@ const Article = () => {
         </div>
         <div className="px-5 flex flex-col gap-y-2 w-full md:max-w-[640px] pt-4 pb-12">
           <div className="pt-2 pb-6 flex flex-col gap-y-6">
-            <div className='pb-1'>
+            <div className='pb-2'>
               <div className="text-2xl font-semibold leading-relaxed text-justify">
                 {title}
               </div>
-              <div className="flex flex-wrap gap-x-2 text-[12px] font-semibold pt-1.5">
+              <div className="flex flex-wrap gap-x-2 text-[12px] font-semibold pt-2">
                 {categories.map((cat, i) => (
-                  <span className='py-1 px-2 bg-opacity-15 bg-[#ffaa00] rounded-lg' key={i}>{cat[language]}</span>
+                  <Chip key={i} label={cat[language]} />
                 ))}
               </div>
             </div>

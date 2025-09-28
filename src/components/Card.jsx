@@ -31,7 +31,7 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
     <div ref={ref} className={`transition-opacity duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
       <div className="relative overflow-hidden">
         {title && (
-          <motion.h1 variants={container} initial="initial" animate="animate" className="absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[14rem] lg:text-[18rem] font-black text-white/15 rotate-[-32deg] md:rotate-[-17deg] uppercase">
+          <motion.h1 variants={container} initial="initial" animate="animate" className="absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[14rem] lg:text-[20rem] font-black text-white/15 rotate-[-32deg] md:rotate-[-24deg] uppercase select-none">
             {words.map((word, wi) => (
               <motion.div key={wi} variants={wordVariant} className="flex">
                 {word.split('').map((char, ci) => (
@@ -43,32 +43,30 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
             ))}
           </motion.h1>
         )}
-        <div className="relative z-10 rounded-xl bg-cover bg-center border-2 border-neutral-800" style={{ backgroundImage: `url(${img})` }}>
-          <div className="h-full flex flex-col px-2.5 py-2.5 justify-between">
+        <div className="relative z-10 bg-cover bg-center border-2 border-neutral-800" style={{ backgroundImage: `url(${img})` }}>
+          <div className="h-full flex flex-col p-2 justify-between">
             <div className="flex flex-wrap gap-x-2">
               {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
             </div>
             <div className="flex justify-center">
-              <img className="h-80 lg:h-96 object-cover float-anim" src={obj} alt="object" />
+              <img className="h-80 md:h-[24rem] object-cover float-anim select-none" src={obj} alt="object" />
             </div>
             <div className="flex flex-col gap-y-4 justify-end">
               <div className="flex justify-end">
-                <div className="p-0.5 rounded-xl snake">
-                  <div className="flex rounded-xl bg-[#111111]">
-                    {url1 && (
-                      <Link to={url1}>
-                        <Button img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
-                      </Link>
-                    )}
-                    {url2 && (
-                      <Link to={url2} target="_blank" rel="noopener noreferrer">
-                        <Button img={extImg} text={extText} hoverText="hover:text-[#FFAA00]" />
-                      </Link>
-                    )}
-                  </div>
+                <div className="flex gap-x-2">
+                  {url1 && (
+                    <Link className='p-0.5 snake' to={url1}>
+                      <Button bg='bg-[#111]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
+                    </Link>
+                  )}
+                  {url2 && (
+                    <Link className='p-0.5 snake' to={url2} target="_blank" rel="noopener noreferrer">
+                      <Button bg='bg-[#111]' img={extImg} text={extText} hoverText="hover:text-[#FFAA00]" />
+                    </Link>
+                  )}
                 </div>
               </div>
-              <div className="flex w-full p-2 text-sm bg-neutral-900/50 rounded-xl">{desc}</div>
+              <div className="flex w-full p-2 text-sm bg-black/40">{desc}</div>
             </div>
           </div>
         </div>
