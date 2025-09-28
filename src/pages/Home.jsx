@@ -44,22 +44,24 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-y-3 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto">
+          <div className="flex flex-col gap-y-3 md:gap-y-4 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto">
             {ArticleData.map((article) => (
-              <Card
-                key={article.id}
-                title={article.title2}
-                img={article.cover}
-                obj={article.obj}
-                desc={article.desc[language]}
-                categories={article.categories.map(c => c[language])}
-                url1={`/article/${article.id}`}
-                url2={article.extUrl}
-                intImg={article.intImg}
-                intText={article.intText[language]}
-                extImg={article.extImg}
-                extText={article.extText[language]}
-              />
+              <div className="shadow-md md:shadow-lg shadow-black/30 md:shadow-black/40">
+                <Card
+                  key={article.id}
+                  title={article.title2}
+                  img={article.cover}
+                  obj={article.obj}
+                  desc={article.desc[language]}
+                  categories={article.categories.map(c => c[language])}
+                  url1={`/article/${article.id}`}
+                  url2={article.extUrl}
+                  intImg={article.intImg}
+                  intText={article.intText[language]}
+                  extImg={article.extImg}
+                  extText={article.extText[language]}
+                />
+              </div>
             ))}
           </div>
           <div className="md:hidden w-full"> <Footnote /> </div>

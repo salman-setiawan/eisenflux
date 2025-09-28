@@ -36,12 +36,12 @@ const Navigation = () => {
 
   // kelas umum untuk menu item
   const menuClass =
-    "w-full md:w-fit py-2.5 px-3.5 bg-[#282828] flex items-center cursor-pointer select-none hover:bg-[#ffaa00] hover:text-black";
+    "w-full md:w-fit py-2.5 px-3.5 bg-[#282828] flex items-center cursor-pointer select-none hover:hover:bg-[#ffaa00] hover:hover:text-black";
 
   return (
     <div>
       <Draggable disabled={isMobile} handle=".drag-handle">
-        <div className="relative flex gap-x-1 h-fit text-[13px] md:text-[14px] font-semibold shadow-lg shadow-black/40">
+        <div className="relative flex gap-x-1 h-fit text-[13px] md:text-[14px] font-semibold shadow-md md:shadow-lg shadow-black/30 md:shadow-black/40">
           {/* draggable icon */}
           <div
             className="drag-handle px-3 bg-[#282828] text-[#ffaa00] text-[18px] font-black md:flex items-center cursor-move hidden select-none"
