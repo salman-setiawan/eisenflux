@@ -53,7 +53,7 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
             </div>
             <div className="flex flex-col gap-y-4 justify-end">
               <div className="flex justify-end">
-                <div className="flex gap-x-2">
+                <div className="flex gap-x-1.5">
                   {url1 && (
                     <Link className='p-0.5 snake' to={url1}>
                       <Button bg='bg-[#111]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
