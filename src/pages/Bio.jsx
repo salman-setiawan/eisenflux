@@ -125,13 +125,13 @@ const Bio = () => {
   );
 
   return (
-    <div className="flex justify-center bg-cover bg-center min-h-screen">
+    <div className="flex justify-center bg-cover bg-center">
       <div className="hidden lg:flex h-screen items-center w-full justify-center absolute overflow-hidden">
       <div className="text-white/10 text-[28rem] 2xl:text-[40rem] select-none">
         <Typewriter text='enfx.' />
       </div>
       </div>
-      <div className="flex flex-col place-content-center w-full lg:max-w-[1200px] fixed">
+      <div className="flex flex-col place-content-center w-full lg:max-w-[1200px] relative">
         <div className="w-full flex justify-end px-4 pt-4">
           <button onClick={toggleLanguage} className="text-[14px] font-medium underline underline-offset-1 text-[#ffa500]">
             {language === "en" ? "English" : "Bahasa"}
