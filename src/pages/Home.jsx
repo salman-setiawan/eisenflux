@@ -52,7 +52,7 @@ const Home = () => {
       <div className='fixed top-6 left-6 hidden md:block' style={{ zIndex: 200 }}>
         <Navigation />
       </div>
-      <div className="flex flex-col place-content-center w-full md:max-w-[920px] md:py-8 px-6 md:h-screen">
+      <div className="flex flex-col place-content-center w-full md:max-w-[920px] md:py-8 md:h-screen">
         <div className="w-full flex justify-end md:justify-between py-4">
           <div className="hidden md:block">
             <WorkChip label={stats} />
@@ -61,20 +61,22 @@ const Home = () => {
             {language === "en" ? "English" : "Bahasa"}
           </button>
         </div>
-        <div className="flex flex-col gap-y-6 md:flex-row gap-x-8 w-full h-full">
+        <div className="flex flex-col gap-y-2 md:flex-row gap-x-8 w-full h-full">
           <div className="flex flex-col gap-y-6 pt-[25rem] h-full block md:hidden">
             <div className="text-[64px]">
               <Typewriter text='enfx.' />
             </div>
-            <div className="flex flex-col gap-y-4">
-              <WorkChip label={stats} />
+            <div className="flex flex-col">
+              <div className="px-6 py-1">
+                <WorkChip label={stats} />
+              </div>
               <div ref={sentinelRef}></div>
               {isFixed && (
                 <div style={{ height: '39.5px' }}></div>
               )}
               <div
                 id="navigation"
-                className={`${isFixed ? "fixed top-0 left-6 right-6" : "relative w-full"}`}
+                className={`${isFixed ? "fixed top-0 px-6 py-3 w-full bg-[#141414] shadow-lg shadow-black/30" : "relative w-full py-3 px-6 bg-[#141414]"}`}
                 style={{
                   zIndex: 200,
                   transition: "position 0.3s ease",
@@ -84,7 +86,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-y-3 md:gap-y-4 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto">
+          <div className="flex flex-col gap-y-3 md:gap-y-4 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto px-6 md:px-0">
             {ArticleData.map((article) => (
               <div className="shadow-md md:shadow-lg shadow-black/30 md:shadow-black/40">
                 <Card
