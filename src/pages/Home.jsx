@@ -106,7 +106,7 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div className="md:hidden w-full"> <Footnote /> </div>
+          <div className="md:hidden w-full py-4"> <Footnote /> </div>
         </div>
       </div>
     </div>
