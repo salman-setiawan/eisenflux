@@ -15,8 +15,8 @@ const ArticleData = [{
         id: 'UI/UX'
       },
       {
-        en: 'Web Game',
-        id: 'Permainan Web'
+        en: 'Web Apps',
+        id: 'Aplikasi Web'
       },
     ],
     intImg: '/process.svg',
