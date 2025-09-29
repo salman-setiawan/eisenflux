@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <Bio />,
   },
   {
-    path: "/article/:id",
+    path: "/article/:slug",
     element: <Article />,
   },
   {
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <LanguageProvider> 
+    <LanguageProvider>
       <MouseTracker />
       <RouterProvider router={router} />
     </LanguageProvider>
