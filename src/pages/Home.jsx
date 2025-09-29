@@ -1,4 +1,5 @@
 import { useLanguage } from '../data/languageContext.jsx';
+import { useEffect, useState, useRef } from "react";
 import Card from "../components/Card.jsx";
 import Footnote from "../components/Footnote.jsx";
 import ArticleData from '../data/article.js';
@@ -10,6 +11,8 @@ import Typewriter from '../components/animate/Typewriter.jsx';
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
+  const [isFixed, setIsFixed] = useState(false);
+  const sentinelRef = useRef(null);
   console.log(language, toggleLanguage);
 
   if (language === undefined || toggleLanguage === undefined) {
@@ -17,6 +20,26 @@ const Home = () => {
   }
 
   const { contact, stats } = OtherData[0].intro[language];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsFixed(!entry.isIntersecting);
+      },
+      {
+        threshold: [0],
+        rootMargin: "15px 0px 0px 0px",
+      }
+    );
+
+    if (sentinelRef.current) {
+      observer.observe(sentinelRef.current);
+    }
+
+    return () => {
+      if (sentinelRef.current) observer.unobserve(sentinelRef.current);
+    };
+  }, []);
 
   return (
     <div className="flex justify-center">
@@ -39,7 +62,18 @@ const Home = () => {
             </div>
             <div className="flex flex-col gap-y-4">
               <WorkChip label={stats} />
-              <div className="w-full" style={{ zIndex: 200 }}>
+              <div ref={sentinelRef}></div>
+              {isFixed && (
+                <div style={{ height: '39.5px' }}></div>
+              )}
+              <div
+                id="navigation"
+                className={`${isFixed ? "fixed top-0 left-6 right-6" : "relative w-full"}`}
+                style={{
+                  zIndex: 200,
+                  transition: "position 0.3s ease",
+                }}
+              >
                 <Navigation />
               </div>
             </div>
