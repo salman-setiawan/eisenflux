@@ -128,8 +128,8 @@ const Bio = () => {
         <div className="text-[#ffaa00] text-[12px] py-1 px-2 border-dot w-fit bg-[#111]">
           x.{positions.bioImage.x}, y.{positions.bioImage.y}
         </div>
-        <div className="w-[240px] h-[240px] pt-1">
-          <div className="h-full bg-white bg-[url('/bg-bio.png')] bg-cover bg-center"></div>
+        <div className="w-[20rem] h-[20rem] pt-1">
+          <div className="h-full bg-white bg-[url('/bg-bio.jpg')] bg-cover bg-center"></div>
         </div>
       </div>
     </Draggable>
@@ -212,7 +212,7 @@ const Bio = () => {
         {/* mobile static */}
         <div className="block lg:hidden flex flex-col lg:flex-row gap-4 p-4">
           <div className="flex flex-col gap-y-4 lg:max-w-[400px]">
-            <div className="w-full h-32 bg-white bg-[url('/bg-bio.png')] bg-cover bg-center"></div>
+            <div className="w-full h-[24rem] bg-white bg-[url('/bg-bio.jpg')] bg-cover bg-center"></div>
             <div className="uppercase text-[14px]">{desc[language]}</div>
           </div>
           <div className="flex flex-col gap-y-2 w-full">
