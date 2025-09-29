@@ -24,11 +24,17 @@ const Home = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsFixed(!entry.isIntersecting);
+        if (!entry.isIntersecting) {
+          if (entry.boundingClientRect.top < entry.rootBounds.top) {
+            setIsFixed(true);
+          }
+        } else {
+          setIsFixed(false);
+        }
       },
       {
         threshold: [0],
-        rootMargin: "15px 0px 0px 0px",
+        rootMargin: "0px 0px 0px 0px",
       }
     );
 
