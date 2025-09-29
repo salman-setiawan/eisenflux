@@ -52,8 +52,8 @@ const Home = () => {
       <div className='fixed top-6 left-6 hidden md:block' style={{ zIndex: 200 }}>
         <Navigation />
       </div>
-      <div className="flex flex-col place-content-center w-full md:max-w-[920px] md:py-8 md:h-screen">
-        <div className="w-full flex justify-end md:justify-between py-4">
+      <div className="flex flex-col place-content-center w-full md:max-w-[920px] md:py-8 md:h-screen md:px-6">
+        <div className="w-full flex justify-end md:justify-between py-4 px-6 md:px-0">
           <div className="hidden md:block">
             <WorkChip label={stats} />
           </div>
@@ -76,7 +76,7 @@ const Home = () => {
               )}
               <div
                 id="navigation"
-                className={`${isFixed ? "fixed top-0 px-6 py-3 w-full bg-[#141414] shadow-lg shadow-black/30" : "relative w-full py-3 px-6 bg-[#141414]"}`}
+                className={`${isFixed ? "fixed top-0 px-6 py-3 w-full bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30" : "relative w-full py-3 px-6"}`}
                 style={{
                   zIndex: 200,
                   transition: "position 0.3s ease",

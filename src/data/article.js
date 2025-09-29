@@ -405,7 +405,7 @@ const ArticleData = [{
 
   {
     id: 2,
-    slug: 'edu-fams',
+    slug: 'edufams',
     title: 'EduFams',
     title2: 'EDU FAMS',
     nav: 'edufams.prj',
@@ -774,7 +774,7 @@ const ArticleData = [{
 
   {
     id: 3,
-    slug: 'eduwork-mentor',
+    slug: 'eduwork',
     title: 'Eduwork Mentor Website',
     title2: 'EDUWORK MENTOR',
     nav: 'eduwork.prj',
