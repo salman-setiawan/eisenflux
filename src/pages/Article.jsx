@@ -9,9 +9,9 @@ import Showcase from '../components/Showcase.jsx';
 import Chip from '../components/Chip.jsx';
 
 const Article = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const { language, toggleLanguage } = useLanguage();
-  const selectedArticle = ArticleData.find(article => article.id === parseInt(id));
+  const selectedArticle = ArticleData.find(article => article.slug === slug);
 
   if (!selectedArticle) {
     return <Notfound />;

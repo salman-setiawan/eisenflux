@@ -2,7 +2,7 @@ import { useLanguage } from '../data/languageContext.jsx';
 import Card from "../components/Card.jsx";
 import Footnote from "../components/Footnote.jsx";
 import ArticleData from '../data/article.js';
-import OtherData from '../data/other.js'; 
+import OtherData from '../data/other.js';
 import Notfound from './404.jsx';
 import WorkChip from '../components/WorkChip.jsx';
 import Navigation from '../components/Navigation.jsx';
@@ -54,7 +54,7 @@ const Home = () => {
                   obj={article.obj}
                   desc={article.desc[language]}
                   categories={article.categories.map(c => c[language])}
-                  url1={`/article/${article.id}`}
+                  url1={`/article/${article.slug}`}
                   url2={article.extUrl}
                   intImg={article.intImg}
                   intText={article.intText[language]}
