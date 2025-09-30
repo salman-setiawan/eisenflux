@@ -3,9 +3,9 @@ const ArticleData = [{
     slug: 'bhumi-pemedas',
     title: 'Bhumi Pemedas Ads Website',
     title2: 'BHUMI PEMEDAS',
-    nav: 'bhumi-pemedas.prj',
+    nav: 'bhumi_pemedas.prj',
     cover: '/bg.webp',
-    obj: '/showcase2.webp',
+    obj: '',
     desc: {
       en: 'Coming Soon.',
       id: 'Akan Datang.'
