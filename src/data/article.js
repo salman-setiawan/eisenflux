@@ -24,7 +24,7 @@ const ArticleData = [{
       en: 'See Process',
       id: 'Lihat Proses'
     },
-    extUrl: 'https://anotherisland.netlify.app',
+    extUrl: 'https://bhumipemedas.netlify.app',
     extImg: '/web.svg',
     extText: {
       en: 'See Page',

@@ -74,24 +74,30 @@ const BioData = [
     certification: [
       {
         uid: 1,
+        title: 'Test of English Proficiency and Skill (610)',
+        company: 'Neo Specta',
+        date: "2025",
+      },
+      {
+        uid: 2,
         title: 'EF SET English Certificate (C1 Advanced)',
         company: 'EF Standard English Test',
         date: "2025",
       },
       {
-        uid: 2,
+        uid: 3,
         title: 'Figma Assessment',
         company: 'Uxcel',
         date: "2023",
       },
       {
-        uid: 3,
+        uid: 4,
         title: 'Google UX Design',
         company: 'Coursera',
         date: "2023",
       },
       {
-        uid: 4,
+        uid: 5,
         title: 'SKKNI Junior Graphic Design',
         company: 'Balai Pelatihan & Pengembangan Teknologi Informasi & Komunikasi',
         date: "2021",

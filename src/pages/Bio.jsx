@@ -189,7 +189,7 @@ const Bio = () => {
           {renderBioDesc()}
           <div
             className="fixed bottom-6 left-1/2 transform -translate-x-1/2 text-[14px] min-w-[1000px]"
-            style={{ zIndex: 9999 }}
+            style={{ zIndex: 999 }}
           >
             <div className="flex gap-x-1.5 justify-center">
               <div className="py-2 px-4 text-[#ffaa00] font-semibold bg-[#212121]">
