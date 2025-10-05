@@ -5,6 +5,7 @@ import BioData from "../data/bio";
 import Notfound from "./404.jsx";
 import Draggable from "react-draggable";
 import Typewriter from "../components/animate/Typewriter.jsx";
+import NoiseOverlay from "../components/animate/Noise.jsx";
 
 const paddingMap = { education: "pb-48", certification: "pb-24", experience: "pb-24" };
 
@@ -220,6 +221,7 @@ const Bio = () => {
           </div>
         </div>
       </div>
+      <NoiseOverlay />
     </div>
   );
 };

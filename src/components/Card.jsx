@@ -31,7 +31,7 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
     <div ref={ref} className={`transition-opacity duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
       <div className="relative overflow-hidden">
         {title && (
-          <motion.h1 variants={container} initial="initial" animate="animate" className="absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[14rem] lg:text-[20rem] font-black text-white/15 rotate-[-32deg] md:rotate-[-24deg] uppercase select-none">
+          <motion.h1 variants={container} initial="initial" animate="animate" className="absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[14rem] md:text-[20rem] xl:text-[24rem] font-black text-white/15 rotate-[-32deg] md:rotate-[-24deg] uppercase select-none">
             {words.map((word, wi) => (
               <motion.div key={wi} variants={wordVariant} className="flex">
                 {word.split('').map((char, ci) => (
@@ -51,22 +51,21 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
             <div className="flex justify-center">
               <img className="h-80 md:h-[24rem] object-cover float-anim select-none" src={obj} alt="object" />
             </div>
-            <div className="flex flex-col gap-y-4 justify-end">
-              <div className="flex justify-end">
-                <div className="flex gap-x-1.5">
-                  {url1 && (
-                    <Link className='p-0.5 snake' to={url1}>
-                      <Button bg='bg-[#111]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
-                    </Link>
-                  )}
-                  {url2 && (
-                    <Link className='p-0.5 snake' to={url2} target="_blank" rel="noopener noreferrer">
-                      <Button bg='bg-[#111]' img={extImg} text={extText} hoverText="hover:text-[#FFAA00]" />
-                    </Link>
-                  )}
-                </div>
+            <div className="flex flex-col lg:flex-row lg:gap-x-4 gap-y-4 justify-end lg:justify-between items-end">
+              <div className="flex p-2 text-sm bg-black/40 lg:block hidden">{desc}</div>
+              <div className="flex justify-end h-fit gap-x-1.5">
+                {url1 && (
+                  <Link className='p-0.5 snake' to={url1}>
+                    <Button bg='bg-[#111] lg:min-w-[150px]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
+                  </Link>
+                )}
+                {url2 && (
+                  <Link className='p-0.5 snake' to={url2} target="_blank" rel="noopener noreferrer">
+                    <Button bg='bg-[#111] lg:min-w-[150px]' img={extImg} text={extText} hoverText="hover:text-[#FFAA00]" />
+                  </Link>
+                )}
               </div>
-              <div className="flex w-full p-2 text-sm bg-black/40">{desc}</div>
+              <div className="flex w-full p-2 text-sm bg-black/40 block lg:hidden">{desc}</div>
             </div>
           </div>
         </div>

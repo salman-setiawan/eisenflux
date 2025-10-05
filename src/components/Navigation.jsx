@@ -1,3 +1,4 @@
+import { useLanguage } from '../data/languageContext.jsx';
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Draggable from "react-draggable";
@@ -5,6 +6,8 @@ import ArticleData from "../data/article.js";
 import Typewriter from "./animate/Typewriter.jsx";
 
 const Navigation = () => {
+  const { language, toggleLanguage } = useLanguage();
+
   const [openMenu, setOpenMenu] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
@@ -92,7 +95,9 @@ const Navigation = () => {
               )}
             </div>
           </div>
-          <div className="text-[12px] text-[#ffaa00] hidden md:block font-medium">tap orange dot box to drag</div>
+          <div className="py-0.5 px-1 bg-black/40 w-fit text-[12px] text-[#ffaa00] hidden md:block font-medium">
+            {language === "en" ? "tap the orange-dotted box to drag navigation" : "tekan kotak dengan titik-oranye untuk menyeret navigasi"}
+          </div>
         </div>
       </Draggable>
     </div>

@@ -8,6 +8,7 @@ import Notfound from './404.jsx';
 import WorkChip from '../components/WorkChip.jsx';
 import Navigation from '../components/Navigation.jsx';
 import Typewriter from '../components/animate/Typewriter.jsx';
+import NoiseOverlay from '../components/animate/Noise.jsx';
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -63,7 +64,7 @@ const Home = () => {
       <div className='fixed top-6 left-6 hidden md:block' style={{ zIndex: 200 }}>
         <Navigation />
       </div>
-      <div className="flex flex-col place-content-center w-full md:max-w-[920px] md:py-8 md:h-screen md:px-6">
+      <div className="flex flex-col place-content-center w-full md:max-w-[1000px] md:py-8 md:h-screen md:px-6">
         <div className="w-full flex justify-end md:justify-between py-4 px-6 md:px-0">
           <div className="hidden md:block">
             <WorkChip label={stats} />
@@ -129,6 +130,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <NoiseOverlay />
     </div>
   );
 };
