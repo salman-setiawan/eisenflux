@@ -58,12 +58,7 @@ const Article = () => {
             {extUrl && (
               <div className="p-0.5 snake">
                 <a href={extUrl} target="_blank" rel="noopener noreferrer">
-                  <Button
-                    img={extImg}
-                    bg="bg-[#111111]"
-                    text={extText[language]}
-                    hoverBg="hover:bg-[#ffaa00]"
-                  />
+                  <Button img={extImg} bg="bg-[#111111]" text={extText[language]} hoverBg="hover:bg-[#ffaa00]" />
                 </a>
               </div>
             )}

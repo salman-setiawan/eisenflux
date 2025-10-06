@@ -54,27 +54,31 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                   <img className="h-[20rem] md:h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
                 </div>
                 <div className="flex flex-col lg:flex-row lg:gap-x-4 gap-y-4 justify-end lg:justify-between items-end">
-                  <div className="flex p-2 text-sm bg-black/50 lg:block hidden font-medium">{desc}</div>
                   <div className="flex justify-end h-fit gap-x-1.5">
-                    {url1 && (
-                      <Link className='p-0.5 snake' to={url1}>
-                        <Button bg='bg-[#111] lg:min-w-[150px]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
-                      </Link>
-                    )}
-                    {url2 && (
-                      <Link className='p-0.5 snake' to={url2} target="_blank" rel="noopener noreferrer">
-                        <Button bg='bg-[#111] lg:min-w-[150px]' img={extImg} text={extText} hoverText="hover:text-[#FFAA00]" />
-                      </Link>
-                    )}
+                  {url1 && (
+                    <Link className='p-0.5 snake' to={url1}>
+                      <Button bg='bg-[#111]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
+                    </Link>
+                  )}
+                  {url2 && (
+                    <Link className='p-0.5 snake' to={url2}>
+                      <Button bg='bg-[#111]' img={intImg2} text={intText2} hoverText="hover:text-[#FFAA00]" />
+                    </Link>
+                  )}
+                  {url3 && (
+                    <Link className='p-0.5 snake' to={url3} target="_blank" rel="noopener noreferrer">
+                      <Button bg='bg-[#111]' img={extImg} text={extText} hoverText="hover:text-[#FFAA00]" />
+                    </Link>
+                  )}
                   </div>
-                  <div className="flex w-full p-2 text-sm bg-black/50 block lg:hidden">{desc}</div>
+                  <div className="flex w-full p-2 text-sm bg-black/50">{desc}</div>
                 </div>
               </div>
             </div>
           </div> 
         </div>
-        <div className="hidden lg:flex gap-x-8">
-          <div className="flex flex-col min-w-[350px] max-w-[350px] h-[480px] justify-between py-4">
+        <div className="hidden lg:flex gap-x-8 h-[500px]">
+          <div className="flex flex-col min-w-[350px] max-w-[350px] h-full justify-between py-6">
             <div className="flex flex-col gap-y-4">
               <div className="font-semibold text-[20px]">
                 {nav}
@@ -84,20 +88,20 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
               </div>
               <div className="text-sm font-medium">{desc}</div>
             </div>
-            <div className="flex h-fit gap-x-1.5">
+            <div className="flex gap-x-1.5">
               {url1 && (
                 <Link className='p-0.5 snake' to={url1}>
-                  <Button bg='bg-[#111] lg:min-w-[150px]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
+                  <Button bg='bg-[#111]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
                 </Link>
               )}
               {url2 && (
                 <Link className='p-0.5 snake' to={url2}>
-                  <Button bg='bg-[#111] lg:min-w-[150px]' img={intImg2} text={intText2} hoverText="hover:text-[#FFAA00]" />
+                  <Button bg='bg-[#111]' img={intImg2} text={intText2} hoverText="hover:text-[#FFAA00]" />
                 </Link>
               )}
               {url3 && (
                 <Link className='p-0.5 snake' to={url3} target="_blank" rel="noopener noreferrer">
-                  <Button bg='bg-[#111] lg:min-w-[150px]' img={extImg} text={extText} hoverText="hover:text-[#FFAA00]" />
+                  <Button bg='bg-[#111]' img={extImg} text={extText} hoverText="hover:text-[#FFAA00]" />
                 </Link>
               )}
             </div>
@@ -116,7 +120,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="relative z-10 bg-cover bg-center border-2 border-neutral-800" style={{ backgroundImage: `url(${img})` }}>
+            <div className="relative z-10 bg-cover bg-center border-2 border-neutral-800 h-full" style={{ backgroundImage: `url(${img})` }}>
               <div className="flex justify-center h-[30rem] items-center">
                 <img className="h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
               </div>
