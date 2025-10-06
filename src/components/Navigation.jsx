@@ -2,11 +2,11 @@ import { useLanguage } from '../data/languageContext.jsx';
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Draggable from "react-draggable";
-import ArticleData from "../data/article.js";
+import ArticleData from "../data/card.js";
 import Typewriter from "./animate/Typewriter.jsx";
 
 const Navigation = () => {
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
 
   const [openMenu, setOpenMenu] = useState(null);
   const [isMobile, setIsMobile] = useState(false);

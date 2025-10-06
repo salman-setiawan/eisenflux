@@ -77,8 +77,8 @@ Content.propTypes = {
       PropTypes.shape({
         type: PropTypes.oneOf(["text", "image"]).isRequired,
         value: PropTypes.oneOfType([
-          PropTypes.object, // untuk text { en, id }
-          PropTypes.string, // untuk image URL
+          PropTypes.object, 
+          PropTypes.string, 
         ]).isRequired,
       })
     ),

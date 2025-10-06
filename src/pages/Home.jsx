@@ -2,7 +2,7 @@ import { useLanguage } from '../data/languageContext.jsx';
 import { useEffect, useState, useRef } from "react";
 import Card from "../components/Card.jsx";
 import Footnote from "../components/Footnote.jsx";
-import ArticleData from '../data/article.js';
+import CardData from '../data/card.js'; 
 import OtherData from '../data/other.js';
 import Notfound from './404.jsx';
 import WorkChip from '../components/WorkChip.jsx';
@@ -14,10 +14,7 @@ const Home = () => {
   const { language, toggleLanguage } = useLanguage();
   const [isFixed, setIsFixed] = useState(false);
   const sentinelRef = useRef(null);
-
-  // flag agar hook tetap dipanggil
   const isInvalid = language === undefined || toggleLanguage === undefined;
-
   const { stats } = !isInvalid ? OtherData[0].intro[language] : { stats: "" };
 
   useEffect(() => {
@@ -38,7 +35,6 @@ const Home = () => {
         }
       );
 
-      // simpan nilai ref ke variabel lokal
       const sentinelEl = sentinelRef.current;
 
       if (sentinelEl) {
@@ -104,26 +100,30 @@ const Home = () => {
             </div>
           </div>
           <div className="flex flex-col gap-y-3 md:gap-y-4 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto px-6 md:px-0">
-            {ArticleData.map((article) => (
-              <div 
-                key={article.id} 
-                className="shadow-md md:shadow-lg shadow-black/30 md:shadow-black/40"
-              >
-                <Card
-                  title={article.title2}
-                  img={article.cover}
-                  obj={article.obj}
-                  desc={article.desc[language]}
-                  categories={article.categories.map(c => c[language])}
-                  url1={article.intImg && article.intText ? `/article/${article.slug}` : null}
-                  url2={article.extUrl}
-                  intImg={article.intImg}
-                  intText={article.intText?.[language]}
-                  extImg={article.extImg}
-                  extText={article.extText?.[language]}
-                />
-              </div>
-            ))}
+            {CardData?.length ? (
+              CardData.map((article) => (
+                <div 
+                  key={article.id} 
+                  className="shadow-md md:shadow-lg shadow-black/30 md:shadow-black/40"
+                >
+                  <Card
+                    title={article.title2}
+                    img={article.cover}
+                    obj={article.obj}
+                    desc={article.desc[language]}
+                    categories={article.categories.map(c => c[language])}
+                    url1={article.intImg && article.intText ? `/article/${article.slug}` : null}
+                    url2={article.extUrl}
+                    intImg={article.intImg}
+                    intText={article.intText?.[language]}
+                    extImg={article.extImg}
+                    extText={article.extText?.[language]}
+                  />
+                </div>
+              ))
+            ) : (
+              <div className="text-gray-400 italic">No articles available.</div>
+            )}
           </div>
           <div className="md:hidden w-full py-4"> 
             <Footnote /> 
