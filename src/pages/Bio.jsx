@@ -62,7 +62,7 @@ const Bio = () => {
 
     if (isMobile) {
       return (
-        <div key={label} className="flex w-full border-dot">
+        <div key={label} className="flex w-full border-dot bg-[#111]">
           <div className="max-w-[42px] border-dot-r">
             <div className="p-2 uppercase font-semibold rotate-90 origin-bottom-left text-[#ffaa00]">
               {label}
@@ -214,7 +214,7 @@ const Bio = () => {
         <div className="block lg:hidden flex flex-col lg:flex-row gap-4 p-4">
           <div className="flex flex-col gap-y-4 lg:max-w-[400px]">
             <div className="w-full h-[24rem] bg-white bg-[url('/bg-bio.webp')] bg-cover bg-center"></div>
-            <div className="uppercase text-[14px]">{desc[language]}</div>
+            <div className="bg-[#111] uppercase p-4 border-dot text-[14px]">{desc[language]}</div>
           </div>
           <div className="flex flex-col gap-y-2 w-full">
             {Object.keys(dataMap).map((label) => renderSection(label, true))}

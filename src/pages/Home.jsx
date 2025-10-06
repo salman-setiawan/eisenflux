@@ -88,24 +88,30 @@ const Home = () => {
               <div
                 id="navigation"
                 className={`${isFixed 
-                  ? "fixed top-0 px-6 py-3 w-full bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30" 
+                  ? "fixed top-0 px-6 py-3 w-full bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center justify-between"
                   : "relative w-full py-3 px-6"}`}
                 style={{
                   zIndex: 200,
                   transition: "position 0.3s ease",
                 }}
               >
-                <Navigation />
+                {isFixed ? (
+                  <div className='flex flex-col gap-y-3 w-full'>
+                    <div className="text-[24px] font-bold">
+                      <Typewriter text="enfx." />
+                    </div>
+                    <Navigation />
+                  </div>
+                ) : (
+                  <Navigation />
+                )}
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-y-3 md:gap-y-4 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto px-6 md:px-0">
+          <div className="flex flex-col gap-y-4 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto px-6 md:px-0">
             {CardData?.length ? (
               CardData.map((article) => (
-                <div 
-                  key={article.id} 
-                  className="shadow-md md:shadow-lg shadow-black/30 md:shadow-black/40"
-                >
+                <div key={article.id} className="shadow-lg shadow-black/40">
                   <Card
                     title={article.title2}
                     img={article.cover}

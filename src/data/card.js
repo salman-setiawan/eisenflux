@@ -11,8 +11,8 @@ const CardData = [{
     cover: '/bg.webp',
     obj: '/showcase/pemedas.webp',
     desc: {
-      en: 'Coming Soon.',
-      id: 'Akan Datang.'
+      en: 'Designing Bhumi Pemedas Housing website for promotion and sales pages.',
+      id: 'Merancang situs web Perumahan Bhumi Pemedas untuk halaman promosi dan penjualan.'
     },
     categories: [{
         en: 'UI/UX',
@@ -76,8 +76,8 @@ const CardData = [{
     cover: '/bg.webp',
     obj: '/showcase/edufams.webp',
     desc: {
-      en: 'I had the opportunity to intern at PT. Media Kreasi Abadi through the Kampus Merdeka program, with a focus on developing a family education platform called EduFams using the Design Thinking methodology.',
-      id: 'PSaya berkesempatan untuk magang di PT. Media Kreasi Abadi melalui program Kampus Merdeka, dengan fokus mengembangkan sebuah platform edukasi keluarga bernama EduFams menggunakan metodologi Design Thinking.'
+      en: 'In here I am focus designing a family education platform called EduFams using the Design Thinking methodology. For MSIB Kampus Merdeka Program.',
+      id: 'Disini saya berfokus merancang sebuah platform edukasi keluarga bernama EduFams menggunakan metodologi Design Thinking. Untuk Program MSIB Kampus Merdeka.'
     },
     categories: [{
         en: 'UI/UX',
