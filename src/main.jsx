@@ -12,6 +12,7 @@ import Notfound from './pages/404';
 import Article from './pages/Article';
 import { LanguageProvider } from './data/languageContext';
 import Bio from './pages/Bio';
+import Gallery from './pages/Gallery';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/article/:slug",
     element: <Article />,
+  },
+    {
+    path: "/gallery/:slug",
+    element: <Gallery />,
   },
   {
     path: "*",

@@ -97,6 +97,11 @@ const CardData = [{
       en: 'See Process',
       id: 'Lihat Proses'
     },
+    intImg2: '/process.svg',
+    intText2: {
+      en: 'See Design',
+      id: 'Lihat Rancangan'
+    },
     extImg: '/web.svg',
     extText: {
       en: 'See Page',
@@ -131,6 +136,11 @@ const CardData = [{
     intText: {
       en: 'See Process',
       id: 'Lihat Proses'
+    },
+    intImg2: '/process.svg',
+    intText2: {
+      en: 'See Design',
+      id: 'Lihat Rancangan'
     },
     extImg: '/web.svg',
     extText: {

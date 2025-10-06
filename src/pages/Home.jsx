@@ -60,7 +60,7 @@ const Home = () => {
       <div className='fixed top-6 left-6 hidden md:block' style={{ zIndex: 200 }}>
         <Navigation />
       </div>
-      <div className="flex flex-col place-content-center w-full md:max-w-[1000px] md:py-8 md:h-screen md:px-6">
+      <div className="flex flex-col place-content-center w-full md:max-w-[1080px] md:py-8 md:h-screen md:px-6">
         <div className="w-full flex justify-end md:justify-between py-4 px-6 md:px-0">
           <div className="hidden md:block">
             <WorkChip label={stats} />
@@ -74,7 +74,7 @@ const Home = () => {
         </div>
         <div className="flex flex-col gap-y-2 md:flex-row gap-x-8 w-full h-full">
           <div className="flex flex-col gap-y-6 pt-[25rem] h-full block md:hidden">
-            <div className="text-[64px]">
+            <div className="text-[80px]">
               <Typewriter text='enfx.' />
             </div>
             <div className="flex flex-col">
@@ -111,17 +111,21 @@ const Home = () => {
           <div className="flex flex-col gap-y-4 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto px-6 md:px-0">
             {CardData?.length ? (
               CardData.map((article) => (
-                <div key={article.id} className="shadow-lg shadow-black/40">
+                <div key={article.id}>
                   <Card
                     title={article.title2}
+                    nav={article.nav}
                     img={article.cover}
                     obj={article.obj}
                     desc={article.desc[language]}
                     categories={article.categories.map(c => c[language])}
                     url1={article.intImg && article.intText ? `/article/${article.slug}` : null}
-                    url2={article.extUrl}
+                    url2={article.intImg2 && article.intText2 ? `/gallery/${article.slug}` : null}
+                    url3={article.extUrl}
                     intImg={article.intImg}
                     intText={article.intText?.[language]}
+                    intImg2={article.intImg2}
+                    intText2={article.intText2?.[language]}
                     extImg={article.extImg}
                     extText={article.extText?.[language]}
                   />
