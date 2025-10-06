@@ -1,22 +1,41 @@
+import PropTypes from "prop-types";
+import Interface from "../data/interface.js";
 
+const Showcase = ({ id }) => {
+  const selected = Interface.find(item => item.id === id);
 
-const Showcase = () => {
+  if (!selected) {
+    return (
+      <div className="text-neutral-400 text-center py-12">
+        No images found.
+      </div>
+    );
+  }
+
   return (
-    <div>
-      <div className="grid grid-cols-2 md:grid-cols-3 md:w-[1000px] gap-2 pt-16 md:pt-32">
-        <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
-        <img src="/anotherisland/gallery/screen5.webp" alt="" className="" />
-        <img src="/anotherisland/gallery/screen10.webp" alt="" className="" />
-        <img src="/anotherisland/gallery/screen4.webp" alt="" className="" />
-        <img src="/anotherisland/gallery/screen3.webp" alt="" className="" />
-        <img src="/anotherisland/gallery/screen6.webp" alt="" className="" />
-        <img src="/anotherisland/gallery/screen7.webp" alt="" className="" />
-        <img src="/anotherisland/gallery/screen8.webp" alt="" className="" />
-        <img src="/anotherisland/gallery/screen9.webp" alt="" className="" />
-        <img src="/anotherisland/gallery/screen1.webp" alt="" className="" />
+    <div className="pt-16 md:pt-32 w-full md:w-[1000px] mx-auto">
+      <div className="columns-2 md:columns-3 gap-2 space-y-2">
+        {selected.cover.map((image, index) => (
+          <div key={index} className="break-inside-avoid overflow-hidden">
+            <img
+              src={image.img}
+              alt={`cover-${index}`}
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Showcase
+Showcase.propTypes = {
+  id: PropTypes.string,
+};
+
+Showcase.defaultProps = {
+  id: null,
+};
+
+export default Showcase;

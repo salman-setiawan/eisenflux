@@ -41,7 +41,7 @@ const Article = () => {
           </div>
         </div>
         <div className="w-full h-[560px] md:h-[320px] bg-cover flex justify-center items-center bg-[#171717] overflow-hidden shadow-lg">
-          <Showcase />
+          <Showcase id={selectedArticle.id} />
         </div>
         <div className="px-5 flex flex-col gap-y-2 w-full max-w-[720px] pt-4 pb-12">
           <div className="pt-2 pb-6 flex flex-col gap-y-6">
