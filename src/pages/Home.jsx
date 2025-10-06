@@ -108,7 +108,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-y-4 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto px-6 md:px-0">
+          <div className="flex flex-col gap-y-4 md:w-full md:pt-1 md:pb-4 md:pr-2 md:overflow-y-auto px-6 md:px-0 md:pr-3">
             {CardData?.length ? (
               CardData.map((article) => (
                 <div key={article.id}>
