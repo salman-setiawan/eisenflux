@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useLanguage } from '../data/languageContext';
-import CardData from '../data/card.js'; 
+import CardData from '../data/card.js';
 import Notfound from '../pages/404.jsx';
 import Button from '../components/Button.jsx';
 import Footnote from '../components/Footnote.jsx';
@@ -40,7 +40,7 @@ const Article = () => {
             </button>
           </div>
         </div>
-        <div className="w-full h-[560px] md:h-[320px] bg-cover flex justify-center items-center bg-[#171717] overflow-hidden shadow-lg">
+        <div className="w-[150vw] h-[560px] md:h-[320px] bg-cover flex justify-center items-center bg-[#171717] overflow-hidden shadow-lg">
           <Showcase id={selectedArticle.id} />
         </div>
         <div className="px-5 flex flex-col gap-y-2 w-full max-w-[720px] pt-4 pb-12">
