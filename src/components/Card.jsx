@@ -48,8 +48,8 @@ const Card = ({ title, desc, categories, img, intImg, intText, extImg, extText, 
             <div className="flex flex-wrap gap-x-2">
               {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
             </div>
-            <div className="flex justify-center">
-              <img className="h-80 md:h-[24rem] object-cover float-anim select-none" src={obj} alt="object" />
+            <div className="flex justify-center md:h-[24rem] items-center">
+              <img className="h-[20rem] md:h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
             </div>
             <div className="flex flex-col lg:flex-row lg:gap-x-4 gap-y-4 justify-end lg:justify-between items-end">
               <div className="flex p-2 text-sm bg-black/40 lg:block hidden">{desc}</div>

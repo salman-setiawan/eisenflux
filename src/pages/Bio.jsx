@@ -50,7 +50,7 @@ const Bio = () => {
     const content = dataMap[label].map((item) => (
       <BioCards
         key={item.uid}
-        type={label} // ✅ gunakan type
+        type={label}
         title={item.title?.[language] || item.title}
         role={item.role?.[language] || item.role}
         company={item.company}
@@ -130,7 +130,7 @@ const Bio = () => {
           x.{positions.bioImage.x}, y.{positions.bioImage.y}
         </div>
         <div className="w-[20rem] h-[20rem] pt-1">
-          <div className="h-full bg-white bg-[url('/bg-bio.jpg')] bg-cover bg-center"></div>
+          <div className="h-full bg-white bg-[url('/bg-bio.webp')] bg-cover bg-center"></div>
         </div>
       </div>
     </Draggable>
@@ -213,7 +213,7 @@ const Bio = () => {
         {/* mobile static */}
         <div className="block lg:hidden flex flex-col lg:flex-row gap-4 p-4">
           <div className="flex flex-col gap-y-4 lg:max-w-[400px]">
-            <div className="w-full h-[24rem] bg-white bg-[url('/bg-bio.jpg')] bg-cover bg-center"></div>
+            <div className="w-full h-[24rem] bg-white bg-[url('/bg-bio.webp')] bg-cover bg-center"></div>
             <div className="uppercase text-[14px]">{desc[language]}</div>
           </div>
           <div className="flex flex-col gap-y-2 w-full">

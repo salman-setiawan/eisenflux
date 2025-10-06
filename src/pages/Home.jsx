@@ -115,12 +115,12 @@ const Home = () => {
                   obj={article.obj}
                   desc={article.desc[language]}
                   categories={article.categories.map(c => c[language])}
-                  url1={`/article/${article.slug}`}
+                  url1={article.intImg && article.intText ? `/article/${article.slug}` : null}
                   url2={article.extUrl}
                   intImg={article.intImg}
-                  intText={article.intText[language]}
+                  intText={article.intText?.[language]}
                   extImg={article.extImg}
-                  extText={article.extText[language]}
+                  extText={article.extText?.[language]}
                 />
               </div>
             ))}
