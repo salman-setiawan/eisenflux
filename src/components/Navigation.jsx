@@ -71,7 +71,11 @@ const Navigation = () => {
                       <div
                         key={article.id}
                         className="px-3 py-3 md:py-2 hover:bg-[#333] cursor-pointer"
-                        onClick={() => navigate(`/article/${article.id}`)}
+                        onClick={() =>
+                          article.slug === "bhumi-pemedas"
+                            ? window.open("https://bhumipemedas.netlify.app/", "_blank")
+                            : navigate(`/article/${article.slug}`)
+                        }
                       >
                         / {article.nav}
                       </div>
