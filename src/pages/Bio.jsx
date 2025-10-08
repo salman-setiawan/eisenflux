@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../data/languageContext.jsx";
 import BioCards from "../components/BioCards.jsx";
 import BioData from "../data/bio";
@@ -17,6 +17,17 @@ const randomPosition = (maxX = 712, maxY = 462, step = 80) => {
 
 const Bio = () => {
   const { language, toggleLanguage } = useLanguage();
+
+  // 🔒 Nonaktifkan scroll hanya di halaman ini untuk desktop
+  useEffect(() => {
+    if (window.innerWidth >= 1024) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, []);
 
   const [positions, setPositions] = useState({
     bioImage: randomPosition(),
@@ -193,9 +204,7 @@ const Bio = () => {
             style={{ zIndex: 999 }}
           >
             <div className="flex gap-x-1.5 justify-center">
-              <div className="py-2 px-4 text-[#ffaa00] font-semibold bg-[#212121]">
-                protips_
-              </div>
+              <div className="py-2 px-4 text-[#ffaa00] font-semibold bg-[#212121]">protips_</div>
               <div className="py-2 px-4 bg-[#212121]">
                 {language === "en"
                   ? "click once to bring object to the front"
