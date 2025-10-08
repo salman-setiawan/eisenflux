@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 const WorkChip = ({ label }) => {
   return (
     <div>
@@ -10,8 +8,5 @@ const WorkChip = ({ label }) => {
     </div>
   )
 }
-
-WorkChip.propTypes = { label: PropTypes.string, };
-WorkChip.defaultProps = { label: null, };
 
 export default WorkChip

@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 const Content = ({ data, language }) => {
   const isValidImage = (url) => url && /\.(jpg|jpeg|png|webp)$/i.test(url);
   const hasValidImage = data && isValidImage(data.img);
@@ -65,35 +63,6 @@ const Content = ({ data, language }) => {
       )}
     </div>
   );
-};
-
-Content.propTypes = {
-  data: PropTypes.shape({
-    img: PropTypes.string,
-    desc: PropTypes.object,
-    title: PropTypes.object,
-    text: PropTypes.object,
-    textQuote: PropTypes.arrayOf(
-      PropTypes.shape({
-        type: PropTypes.oneOf(["text", "image"]).isRequired,
-        value: PropTypes.oneOfType([
-          PropTypes.object, 
-          PropTypes.string, 
-        ]).isRequired,
-      })
-    ),
-  }),
-  language: PropTypes.string.isRequired,
-};
-
-Content.defaultProps = {
-  data: {
-    img: null,
-    desc: null,
-    title: null,
-    text: null,
-    textQuote: null,
-  },
 };
 
 export default Content;

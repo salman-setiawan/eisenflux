@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import Interface from "../data/interface.js";
 
 const Showcase = ({ id }) => {
@@ -23,14 +22,6 @@ const Showcase = ({ id }) => {
       </div>
     </div>
   );
-};
-
-Showcase.propTypes = {
-  id: PropTypes.string,
-};
-
-Showcase.defaultProps = {
-  id: null,
 };
 
 export default Showcase;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../data/languageContext.jsx";
 import BioCards from "../components/BioCards.jsx";
 import BioData from "../data/bio";
@@ -57,6 +57,8 @@ const Bio = () => {
     setZIndexes((prev) => ({ ...prev, [label]: maxZ + 1 }));
   };
 
+  const sectionRefs = useRef({});
+
   const renderSection = (label, isMobile = false) => {
     const content = dataMap[label].map((item) => (
       <BioCards
@@ -96,8 +98,10 @@ const Bio = () => {
             [label]: { x: Math.round(data.x), y: Math.round(data.y) }
           }))
         }
+        nodeRef={(sectionRefs.current[label] ||= (sectionRefs.current[label] = { current: null })).current ? sectionRefs.current[label] : (sectionRefs.current[label] = { current: null })}
       >
         <div
+          ref={(sectionRefs.current[label] ||= (sectionRefs.current[label] = { current: null }))}
           data-draggable="true"
           onMouseDown={() => bringToFront(label)}
           className="absolute gap-y-1 flex flex-col"
@@ -106,7 +110,7 @@ const Bio = () => {
           <div className="text-[#ffaa00] text-[12px] py-1 px-2 border-dot w-fit bg-[#111]">
             x.{positions[label].x}, y.{positions[label].y}
           </div>
-          <div className="flex border-dot bg-[#111]/85 backdrop-blur-sm w-[640px] cursor-pointer">
+          <div className="flex border-dot bg-[#111]/85 backdrop-blur-sm w-[640px] cursor-grab">
             <div className="max-w-[42px] border-dot-r">
               <div className="p-2 uppercase font-semibold rotate-90 origin-bottom-left text-[#ffaa00]">
                 {label}
@@ -119,6 +123,7 @@ const Bio = () => {
     );
   };
 
+  const bioImageRef = useRef(null);
   const renderBioImage = () => (
     <Draggable
       grid={[1, 1]}
@@ -130,8 +135,10 @@ const Bio = () => {
           bioImage: { x: Math.round(data.x), y: Math.round(data.y) }
         }))
       }
+      nodeRef={bioImageRef}
     >
       <div
+        ref={bioImageRef}
         data-draggable="true"
         onMouseDown={() => bringToFront("bioImage")}
         className="absolute cursor-grab"
@@ -147,6 +154,7 @@ const Bio = () => {
     </Draggable>
   );
 
+  const bioDescRef = useRef(null);
   const renderBioDesc = () => (
     <Draggable
       grid={[1, 1]}
@@ -158,8 +166,10 @@ const Bio = () => {
           bioDesc: { x: Math.round(data.x), y: Math.round(data.y) }
         }))
       }
+      nodeRef={bioDescRef}
     >
       <div
+        ref={bioDescRef}
         data-draggable="true"
         onMouseDown={() => bringToFront("bioDesc")}
         className="absolute cursor-grab"
@@ -169,7 +179,7 @@ const Bio = () => {
           x.{positions.bioDesc.x}, y.{positions.bioDesc.y}
         </div>
         <div className="pt-1">
-          <div className="bg-[#111]/85 backdrop-blur-sm w-[480px] uppercase cursor-pointer p-4 border-dot text-[14px]">
+          <div className="bg-[#111]/85 backdrop-blur-sm w-[480px] uppercase cursor-grab p-4 border-dot text-[14px]">
             {desc[language]}
           </div>
         </div>

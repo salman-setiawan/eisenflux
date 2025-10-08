@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 const Chip = ({ label }) => {
   return (
     <div>
@@ -9,8 +7,5 @@ const Chip = ({ label }) => {
     </div>
   )
 }
-
-Chip.propTypes = { label: PropTypes.string, };
-Chip.defaultProps = { label: null, };
 
 export default Chip

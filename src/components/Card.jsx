@@ -2,7 +2,6 @@ import Button from './Button';
 import { Link } from 'react-router-dom';
 import Chip from './Chip';
 import { useInView } from 'react-intersection-observer';
-import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, intText2, extImg, extText, url1, url2, url3, obj }) => {
@@ -130,42 +129,6 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
       </div>
     </div>
   );
-};
-
-Card.propTypes = { 
-  title: PropTypes.string,
-  nav: PropTypes.string,
-  desc: PropTypes.string,
-  categories: PropTypes.arrayOf(PropTypes.string),
-  img: PropTypes.string, 
-  intImg: PropTypes.string, 
-  intText: PropTypes.string,
-  intImg2: PropTypes.string, 
-  intText2: PropTypes.string,
-  extImg: PropTypes.string, 
-  extText: PropTypes.string,  
-  url1: PropTypes.string, 
-  url2: PropTypes.string, 
-  url3: PropTypes.string,
-  obj: PropTypes.string, 
-};
-
-Card.defaultProps = { 
-  title: null,
-  nav: null,
-  desc: null,
-  categories: null, 
-  img: null, 
-  intImg: null, 
-  intText: null,
-  intImg2: null, 
-  intText2: null, 
-  extImg: null, 
-  extText: null, 
-  url1: null, 
-  url2: null, 
-  url3: null, 
-  obj: null, 
 };
 
 export default Card;

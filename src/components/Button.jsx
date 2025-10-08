@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 const Button = ({ img, text, bg, color, hoverBg, hoverText }) => {
   return (
     <div
@@ -10,24 +8,6 @@ const Button = ({ img, text, bg, color, hoverBg, hoverText }) => {
       {text && <p className="font-semibold text-[13px] md:text-[14px]">{text}</p>}
     </div>
   );
-};
-
-Button.propTypes = {
-  img: PropTypes.string,
-  text: PropTypes.string,
-  bg: PropTypes.string,
-  color: PropTypes.string,
-  hoverText: PropTypes.string,
-  hoverBg: PropTypes.string,
-};
-
-Button.defaultProps = {
-  img: null,
-  text: null,
-  bg: null,
-  color: null,
-  hoverText: null,
-  hoverBg: null,
 };
 
 export default Button;

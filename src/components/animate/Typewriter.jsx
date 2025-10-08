@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
 const Typewriter = ({ text, speed = 160, deleteSpeed = 240, dotBlinkCount = 4 }) => {
@@ -59,13 +58,6 @@ const Typewriter = ({ text, speed = 160, deleteSpeed = 240, dotBlinkCount = 4 })
       {displayedText.length < text.length && <span className="invisible">.</span>}
     </span>
   );
-};
-
-Typewriter.propTypes = {
-  text: PropTypes.string,
-  speed: PropTypes.number,
-  deleteSpeed: PropTypes.number,
-  dotBlinkCount: PropTypes.number,
 };
 
 export default Typewriter;

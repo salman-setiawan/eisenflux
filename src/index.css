@@ -1,9 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap');
+@import "tailwindcss";
 
 :root {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Manrope', sans-serif;
   color: rgba(255, 255, 255, 0.87);
   background-color: #141414;
   font-synthesis: none;
@@ -81,14 +80,15 @@
   height: 100%;
   background-image: conic-gradient(from var(--angle), transparent, #ffa500 50%, transparent 50%, #ffa500);
   z-index: -1; 
-  animation: 3s spin linear infinite;
+  animation: 3s snake-spin linear infinite;
+  will-change: transform, background-image, --angle;
 }
 
 .snake::before {
   filter: blur(0.6rem);
 }
 
-@keyframes spin{
+@keyframes snake-spin{
   from{
     --angle: 0deg;
   }

@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import { Link } from 'react-router-dom'
 
 const IconButton = ({ src, url }) => {
@@ -15,15 +13,5 @@ const IconButton = ({ src, url }) => {
     </div>
   )
 }
-
-IconButton.propTypes = { 
-  src: PropTypes.string, 
-  url: PropTypes.string, 
-};
-
-IconButton.defaultProps = { 
-  src: null, 
-  url: null,  
-};
 
 export default IconButton

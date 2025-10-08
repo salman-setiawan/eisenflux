@@ -1,5 +1,5 @@
 import { useLanguage } from '../data/languageContext.jsx';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Draggable from "react-draggable";
 import ArticleData from "../data/card.js";
@@ -11,6 +11,7 @@ const Navigation = () => {
   const [openMenu, setOpenMenu] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+  const dragRef = useRef(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -43,8 +44,8 @@ const Navigation = () => {
 
   return (
     <div>
-      <Draggable disabled={isMobile} handle=".drag-handle">
-        <div className="relative flex flex-col gap-y-1 h-fit">
+      <Draggable disabled={isMobile} handle=".drag-handle" nodeRef={dragRef}>
+        <div ref={dragRef} className="relative flex flex-col gap-y-1 h-fit">
           <div className="flex gap-x-1 text-[13px] md:text-[14px] font-semibold shadow-md md:shadow-lg shadow-black/30 md:shadow-black/40">
             <div
               className="drag-handle px-3 bg-[#282828] text-[#ffaa00] text-[18px] font-black md:flex items-center cursor-move hidden select-none"

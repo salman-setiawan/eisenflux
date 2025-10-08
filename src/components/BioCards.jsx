@@ -1,14 +1,4 @@
-import PropTypes from "prop-types";
-
-const BioCards = ({ 
-  type, 
-  title, 
-  role, 
-  company, 
-  date, 
-  dateStart, 
-  dateEnd 
-}) => {
+const BioCards = ({ type, title, role, company, date, dateStart, dateEnd }) => {
   const renderContent = () => {
     switch (type) {
       case "certification":
@@ -58,25 +48,6 @@ const BioCards = ({
   };
 
   return <>{renderContent()}</>;
-};
-
-BioCards.propTypes = { 
-  type: PropTypes.oneOf(["experience", "education", "certification"]).isRequired,
-  title: PropTypes.string,
-  role: PropTypes.string, 
-  company: PropTypes.string,
-  date: PropTypes.string,
-  dateStart: PropTypes.string,
-  dateEnd: PropTypes.string,
-};
-
-BioCards.defaultProps = { 
-  title: null, 
-  role: null, 
-  company: null,
-  date: null,
-  dateStart: null,
-  dateEnd: null,
 };
 
 export default BioCards;
