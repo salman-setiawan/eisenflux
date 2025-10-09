@@ -100,7 +100,7 @@ const Navigation = () => {
               )}
             </div>
           </div>
-          <div className="py-0.5 px-1 bg-black/40 w-fit text-[12px] text-[#ffaa00] hidden md:block font-medium">
+          <div className="py-0.5 px-2 bg-[#111]/90 w-fit text-[12px] text-[#ffaa00] hidden md:block font-medium">
             {language === "en" ? "tap the orange-dotted box to drag navigation" : "tekan kotak dengan titik-oranye untuk menyeret navigasi"}
           </div>
         </div>

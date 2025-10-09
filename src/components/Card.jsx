@@ -32,7 +32,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
         <div className="block lg:hidden">
           <div className="relative overflow-hidden">
             {title && (
-              <motion.h1 variants={container} initial="initial" animate="animate" className="absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[14rem] md:text-[20rem] font-black text-white/15 rotate-[-32deg] md:rotate-[-24deg] uppercase select-none">
+              <motion.h1 variants={container} initial="initial" animate="animate" className="font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[18rem] md:text-[22rem] font-black text-white/8 rotate-[-32deg] md:rotate-[-24deg] uppercase select-none">
                 {words.map((word, wi) => (
                   <motion.div key={wi} variants={wordVariant} className="flex">
                     {word.split('').map((char, ci) => (
@@ -70,24 +70,23 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                     </Link>
                   )}
                   </div>
-                  <div className="flex w-full p-2 text-sm bg-black/50">{desc}</div>
+                  <div className="w-full p-2 text-sm bg-black/50 font-medium"><span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}</div>
                 </div>
               </div>
             </div>
           </div> 
         </div>
-        <div className="hidden lg:flex gap-x-8 h-[500px]">
-          <div className="flex flex-col min-w-[350px] max-w-[350px] h-full justify-between py-6">
+        <div className="hidden lg:flex gap-x-3 h-[500px] items-end">
+          <div className="flex flex-col min-w-[390px] max-w-[390px] justify-between p-4 border-2 border-neutral-800 gap-y-8 bg-[#111]/50">
             <div className="flex flex-col gap-y-4">
-              <div className="font-semibold text-[20px]">
-                {nav}
-              </div>
               <div className="flex flex-wrap gap-x-1.5">
                 {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
               </div>
-              <div className="text-sm font-medium">{desc}</div>
+              <div className="font-medium">
+                <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
+              </div>
             </div>
-            <div className="flex gap-x-1.5">
+            <div className="flex gap-x-2">
               {url1 && (
                 <Link className='p-0.5 snake' to={url1}>
                   <Button bg='bg-[#111]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
@@ -107,7 +106,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
           </div>
           <div className="relative overflow-hidden w-full">
             {title && (
-              <motion.h1 variants={container} initial="initial" animate="animate" className="absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[20rem] font-black text-white/15 rotate-[-32deg] md:rotate-[-24deg] uppercase select-none">
+              <motion.h1 variants={container} initial="initial" animate="animate" className="font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[18rem] font-black text-white/8 rotate-[-28deg] uppercase select-none">
                 {words.map((word, wi) => (
                   <motion.div key={wi} variants={wordVariant} className="flex">
                     {word.split('').map((char, ci) => (
