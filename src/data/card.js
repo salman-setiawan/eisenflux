@@ -19,8 +19,8 @@ const CardData = [{
         id: 'UI/UX'
       },
       {
-        en: 'Web Apps',
-        id: 'Aplikasi Web'
+        en: 'Web Landing Page',
+        id: 'Web Halaman Arahan'
       },
     ],
     extUrl: 'https://bhumipemedas.netlify.app',
@@ -128,8 +128,8 @@ const CardData = [{
         id: 'UI/UX'
       },
       {
-        en: 'Web Apps',
-        id: 'Aplikasi Web'
+        en: 'Web Landing Page',
+        id: 'Web Halaman Arahan'
       },
     ],
     intImg: '/process.svg',

@@ -9,6 +9,8 @@ import WorkChip from '../components/WorkChip.jsx';
 import Navigation from '../components/Navigation.jsx';
 import Typewriter from '../components/animate/Typewriter.jsx';
 import NoiseOverlay from '../components/animate/Noise.jsx';
+import ExpCard from '../components/ExpCard.jsx';
+import AvaCard from '../components/AvaCard.jsx';
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -57,7 +59,7 @@ const Home = () => {
 
   return (
     <div className="flex justify-center">
-      <div className='fixed bottom-14 center-1 hidden md:block' style={{ zIndex: 200 }}>
+      <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:block' style={{ zIndex: 200 }}>
         <Navigation />
       </div>
       <div className="flex flex-col place-content-center w-full md:max-w-[1080px] md:py-8 md:h-screen md:px-6">
@@ -108,7 +110,12 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-y-4 md:w-full md:pt-1 md:pb-4 lg:pb-2 md:pr-2 md:overflow-y-auto px-6 md:px-0 md:pr-3">
+          <div className="flex flex-col gap-y-4 md:w-full md:pb-4 lg:pb-2 md:pr-2 md:overflow-y-auto px-6 md:px-0 md:pr-3">
+            <div className="flex lg:grid lg:grid-cols-2 gap-4">
+              <AvaCard />
+              <div className="hidden md:flex w-full items-center bg-cover bg-center" style={{ backgroundImage: `url('/pixel.gif')`}}></div>
+            </div>
+            <ExpCard />
             {CardData?.length ? (
               CardData.map((article) => (
                 <div key={article.id}>

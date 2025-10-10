@@ -1,8 +1,8 @@
 const BioData = [
   {
     desc: {
-      en: "Bachelor of Informatics graduate with a specialization in UI/UX Design. Skilled in conducting user experience research, designing low- and high-fidelity prototypes, developing design systems, and creating interactive user interface prototypes.",
-      id: "Lulusan Sarjana Informatika dengan spesialisasi UI/UX Design. Berpengalaman dalam melakukan riset pengalaman pengguna, merancang desain low- dan high-fidelity, mengembangkan sistem desain, dan membuat prototipe antarmuka.",
+      en: "Bachelor of Informatics graduate with a specialization in UI/UX Design. Experienced in conducting user experience research, designing low and high-fidelity interface, developing design systems, and prototyping interface.",
+      id: "Lulusan Sarjana Informatika dengan spesialisasi dalam Desain UI/UX. Berpengalaman dalam melakukan riset pengalaman pengguna, merancang antarmuka fidelitas rendah dan tinggi, mengembangkan sistem desain, serta membuat prototipe antarmuka.",
     },
     experience: [
       {
