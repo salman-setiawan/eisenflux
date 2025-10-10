@@ -12,8 +12,7 @@ const AvaCard = () => {
     <div className="flex flex-col md:flex-row gap-3 border border-neutral-800 p-3">
       <img src="/bg-bio.webp" alt="Background profile" className="w-16 md:w-20 h-full object-cover" />
       <div className="flex flex-col gap-y-1">
-        <div className="font-semibold text-[#ffaa50]">salman_setiawan</div>
-        <div className='text-sm'>{description}</div>
+        <div className='text-sm pr-2'> {language === "en" ? "Hola! my name is" : "Hola! namaku"} <span className="font-semibold text-[#ffaa50]">Salman</span> {language === "en" ? "and i'm a" : "dan aku seorang"} {description}</div>
       </div>
     </div>
   );
