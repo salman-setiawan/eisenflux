@@ -100,6 +100,7 @@ const Article = () => {
         style={{ zIndex: 1 }}
       >
         <Footnote />
+        <title>{title}</title>
       </div>
     </div>
   );

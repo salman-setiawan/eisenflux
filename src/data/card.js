@@ -11,8 +11,8 @@ const CardData = [{
     cover: '/bg.webp',
     obj: '/showcase/pemedas.webp',
     desc: {
-      en: 'is a website design project for Bhumi Pemedas Housing, focusing on promotional and sales pages',
-      id: 'adalah proyek desain situs web untuk Bhumi Pemedas Housing yang berfokus pada halaman promosi dan penjualan.'
+      en: 'is a website design project for Bhumi Pemedas Housing, focused on creating engaging promotional and sales pages that highlight the unique benefits of living in this seaside residential area.',
+      id: 'adalah proyek desain situs web untuk Perumahan Bhumi Pemedas, yang berfokus pada pembuatan halaman promosi dan penjualan yang menarik serta menonjolkan keunggulan tinggal di kawasan hunian tepi pantai ini.'
     },
     categories: [{
         en: 'UI/UX',
@@ -40,8 +40,8 @@ const CardData = [{
     cover: '/bg.webp',
     obj: '/showcase/another.webp',
     desc: {
-      en: 'is a simple arcade-survival game called Another Day in the Island, which I designed for my final project as an informatics student at the Kalimantan Institute of Technology.',
-      id: 'adalah permainan arkade-survival sederhana bernama Another Day in the Island, yang saya desain untuk proyek akhir saya sebagai mahasiswa ilmu komputer di Institut Teknologi Kalimantan.'
+      en: 'is a simple yet challenging arcade-survival game, which I designed and developed as my final project while studying Informatics at the Kalimantan Institute of Technology.',
+      id: 'adalah gim arcade-survival sederhana namun menantang, yang saya rancang dan kembangkan sebagai proyek akhir ketika menempuh studi Informatika di Institut Teknologi Kalimantan.'
     },
     categories: [{
         en: 'UI/UX',
@@ -76,8 +76,8 @@ const CardData = [{
     cover: '/bg.webp',
     obj: '/showcase/edufams.webp',
     desc: {
-      en: 'is a family education platform called EduFams that i design using the Design Thinking methodology. For MSIB Kampus Merdeka Program.',
-      id: 'adalah sebuah platform edukasi keluarga bernama EduFams yang saya rancang menggunakan metodologi Design Thinking. Untuk Program MSIB Kampus Merdeka.'
+      en: 'is a family education platform called EduFams, which I designed using the Design Thinking methodology. The project focuses on creating an intuitive, family-friendly interface that supports accessible experiences.',
+      id: 'adalah platform edukasi keluarga bernama EduFams yang saya rancang menggunakan metodologi Design Thinking. Proyek ini berfokus pada pembuatan antarmuka yang intuitif dan ramah keluarga untuk mendukung pengalaman yang mudah diakses.'
     },
     categories: [{
         en: 'UI/UX',
@@ -120,8 +120,8 @@ const CardData = [{
     cover: '/bg.webp',
     obj: '/showcase/eduwork.webp',
     desc: {
-      en: 'is a project initiated when Eduwork (an education platform company based in Yogyakarta) planned to develop a new platform in the form of a community-based website.',
-      id: 'adalah proyek saat Eduwork (perusahaan platform pendidikan yang berbasis di Yogyakarta) berencana mengembangkan platform baru berupa situs web berbasis komunitas.'
+      en: 'is a UI/UX design project developed for Eduwork — an education platform company based in Yogyakarta — during their plan to expand into a new community-based website platform.',
+      id: 'adalah proyek desain UI/UX yang dikembangkan untuk Eduwork — perusahaan platform pendidikan berbasis di Yogyakarta — dalam rangka pengembangan platform baru berbasis komunitas.'
     },
     categories: [{
         en: 'UI/UX',

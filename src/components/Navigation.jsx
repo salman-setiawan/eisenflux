@@ -48,10 +48,10 @@ const Navigation = () => {
         <div ref={dragRef} className="relative flex flex-col gap-y-1 h-fit">
           <div className="flex gap-x-1 text-[13px] md:text-[14px] font-semibold shadow-md md:shadow-lg shadow-black/30 md:shadow-black/40">
             <div
-              className="drag-handle px-3 bg-[#282828] text-[#ffaa00] text-[18px] font-black md:flex items-center cursor-move hidden select-none"
+              className="drag-handle px-3 bg-[#282828] text-[#ffaa00] text-[20px] font-black md:flex items-center cursor-move hidden select-none"
               data-draggable="true"
             >
-              : :
+              ::
             </div>
             <div className="p-2 bg-[#282828] text-[18px] font-black items-center hidden md:flex select-none">
               <Typewriter text="enfx." />
@@ -66,7 +66,7 @@ const Navigation = () => {
             <div className={`${menuClass} relative`} onClick={() => handleClick("projects")} data-clickable="true">
               Projects
               {openMenu === "projects" && (
-                <div className="absolute py-1.5 top-full right-0 md:left-0">
+                <div className="absolute py-1.5 top-full right-0">
                   <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md">
                     {ArticleData.map((article) => (
                       <div
@@ -88,7 +88,7 @@ const Navigation = () => {
             <div className={`${menuClass} relative`} onClick={() => handleClick("socials")} data-clickable="true">
               Socials
               {openMenu === "socials" && (
-                <div className="absolute py-1.5 top-full right-0 md:left-0">
+                <div className="absolute py-1.5 top-full right-0">
                   <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md">
                     {socialList.map((item, idx) => (
                       <div key={idx} className="px-3 py-3 md:py-2 hover:bg-[#333] cursor-pointer" onClick={() => window.open(item.url, "_blank")}>
@@ -101,7 +101,7 @@ const Navigation = () => {
             </div>
           </div>
           <div className="py-0.5 px-2 bg-[#111]/90 w-fit text-[12px] text-[#ffaa00] hidden md:block font-medium">
-            {language === "en" ? "tap the orange-dotted box to drag navigation" : "tekan kotak dengan titik-oranye untuk menyeret navigasi"}
+            {language === "en" ? "tap the orange-dotted box to drag the navigation bar" : "tekan kotak dengan titik-oranye untuk menyeret navigasi bar"}
           </div>
         </div>
       </Draggable>

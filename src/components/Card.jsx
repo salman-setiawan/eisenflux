@@ -82,7 +82,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
               <div className="flex flex-wrap gap-x-1.5">
                 {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
               </div>
-              <div className="font-medium">
+              <div className="font-medium text-[15px]">
                 <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
               </div>
             </div>

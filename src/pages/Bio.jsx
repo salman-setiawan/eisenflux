@@ -241,6 +241,7 @@ const Bio = () => {
         </div>
       </div>
       <NoiseOverlay />
+      <title>About Me</title>
     </div>
   );
 };

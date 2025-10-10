@@ -57,7 +57,7 @@ const Home = () => {
 
   return (
     <div className="flex justify-center">
-      <div className='fixed top-6 left-6 hidden md:block' style={{ zIndex: 200 }}>
+      <div className='fixed bottom-14 center-1 hidden md:block' style={{ zIndex: 200 }}>
         <Navigation />
       </div>
       <div className="flex flex-col place-content-center w-full md:max-w-[1080px] md:py-8 md:h-screen md:px-6">
@@ -132,7 +132,7 @@ const Home = () => {
                 </div>
               ))
             ) : (
-              <div className="text-gray-400 italic">No articles available.</div>
+              <div className="text-gray-400 italic">No Articles Available.</div>
             )}
           </div>
           <div className="md:hidden w-full py-4"> 
