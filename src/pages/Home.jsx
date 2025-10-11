@@ -11,6 +11,7 @@ import Typewriter from '../components/animate/Typewriter.jsx';
 import NoiseOverlay from '../components/animate/Noise.jsx';
 import ExpCard from '../components/ExpCard.jsx';
 import AvaCard from '../components/AvaCard.jsx';
+import LanguageToggle from '../components/LanguageToggle.jsx';
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -63,26 +64,14 @@ const Home = () => {
         <Navigation />
       </div>
       <div className="flex flex-col place-content-center w-full md:max-w-[1080px] md:py-8 md:h-screen md:px-6">
-        <div className="w-full flex justify-end md:justify-between py-4 px-6 md:px-0">
-          <div className="hidden md:block">
-            <WorkChip label={stats} />
-          </div>
-          <button 
-            onClick={toggleLanguage} 
-            className="text-[14px] h-fit font-medium underline underline-offset-1 text-[#ffa500]"
-          >
-            {language === "en" ? "English" : "Bahasa"}
-          </button>
+        <div className="w-full flex justify-between py-4 px-6 md:px-0">
+          <WorkChip label={stats} />
+          <LanguageToggle />
         </div>
         <div className="flex flex-col gap-y-2 md:flex-row gap-x-8 w-full h-full">
-          <div className="flex flex-col gap-y-6 pt-[25rem] h-full block md:hidden">
-            <div className="text-[80px]">
-              <Typewriter text='enfx.' />
-            </div>
-            <div className="flex flex-col">
-              <div className="px-6 py-1">
-                <WorkChip label={stats} />
-              </div>
+          <div className="flex flex-col block md:hidden">
+            <Typewriter className='text-[24px] pl-6' text='enfx.' />
+            <div>
               <div ref={sentinelRef}></div>
               {isFixed && (
                 <div style={{ height: '39.5px' }}></div>
@@ -92,16 +81,11 @@ const Home = () => {
                 className={`${isFixed 
                   ? "fixed top-0 px-6 py-3 w-full bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center justify-between"
                   : "relative w-full py-3 px-6"}`}
-                style={{
-                  zIndex: 200,
-                  transition: "position 0.3s ease",
-                }}
+                style={{ zIndex: 200, transition: "position 0.3s ease",}}
               >
                 {isFixed ? (
                   <div className='flex flex-col gap-y-3 w-full'>
-                    <div className="text-[24px] font-bold">
-                      <Typewriter text="enfx." />
-                    </div>
+                    <Typewriter className="text-[24px] text-center" text="enfx." />
                     <Navigation />
                   </div>
                 ) : (

@@ -4,6 +4,7 @@ import BioData from "../data/bio";
 import Notfound from "./404.jsx";
 import Typewriter from "../components/animate/Typewriter.jsx";
 import NoiseOverlay from "../components/animate/Noise.jsx";
+import LanguageToggle from "../components/LanguageToggle.jsx";
 
 const Bio = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -40,18 +41,11 @@ const Bio = () => {
   return (
     <div className="flex justify-center bg-cover bg-center">
       <div className="hidden lg:flex h-screen items-center w-full justify-center fixed overflow-hidden">
-        <div className="text-white/5 text-[40rem] select-none">
-          <Typewriter text="enfx." />
-        </div>
+        <Typewriter className='text-white/5 text-[40rem] select-none' text="enfx." />
       </div>
       <div className="flex flex-col place-content-center w-full lg:max-w-[720px] relative">
         <div className="w-full flex justify-end px-4 pt-4">
-          <button
-            onClick={toggleLanguage}
-            className="text-[14px] font-medium underline underline-offset-1 text-[#ffa500]"
-          >
-            {language === "en" ? "English" : "Bahasa"}
-          </button>
+          <LanguageToggle />
         </div>
 
         {/* scroll layout for all screens */}

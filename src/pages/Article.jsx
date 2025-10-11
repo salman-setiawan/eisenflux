@@ -7,6 +7,7 @@ import Footnote from '../components/Footnote.jsx';
 import Content from '../components/Content.jsx';
 import Showcase from '../components/Showcase.jsx';
 import Chip from '../components/Chip.jsx';
+import LanguageToggle from '../components/LanguageToggle.jsx';
 import { useEffect, useState } from 'react';
 
 const Article = () => {
@@ -42,12 +43,7 @@ const Article = () => {
     <div className="flex flex-col items-center overflow-x-hidden">
       <div className="px-5 flex flex-col gap-y-2 justify-center w-full">
         <div className="w-full flex justify-end py-4">
-          <button
-            onClick={toggleLanguage}
-            className="text-[15px] h-fit underline underline-offset-1 text-[#ffa500]"
-          >
-            {language === "en" ? "English" : "Bahasa"}
-          </button>
+          <LanguageToggle />
         </div>
       </div>
 

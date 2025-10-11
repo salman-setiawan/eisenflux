@@ -3,6 +3,7 @@ import { useLanguage } from '../data/languageContext';
 import UIData from '../data/interface.js';
 import Notfound from '../pages/404.jsx';
 import Footnote from '../components/Footnote.jsx';
+import LanguageToggle from '../components/LanguageToggle.jsx';
 
 const Gallery = () => {
   const { slug } = useParams();
@@ -24,12 +25,7 @@ const Gallery = () => {
         <div className="px-5 flex flex-col gap-y-2 justify-center w-full">
           <div className="w-full flex justify-between py-4">
             <div className="font-bold">{title}</div>
-            <button
-              onClick={toggleLanguage}
-              className="text-[15px] h-fit underline underline-offset-1 text-[#ffa500]"
-            >
-              {language === "en" ? "English" : "Bahasa"}
-            </button>
+            <LanguageToggle />
           </div>
 
           {/* Jika gallery berupa object dengan pc dan mobile */}
