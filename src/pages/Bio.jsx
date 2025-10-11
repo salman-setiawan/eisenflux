@@ -1,4 +1,4 @@
- import { useLanguage } from "../data/languageContext.jsx";
+import { useLanguage } from "../data/languageContext.jsx";
 import BioCards from "../components/BioCards.jsx";
 import BioData from "../data/bio";
 import Notfound from "./404.jsx";
@@ -7,7 +7,7 @@ import NoiseOverlay from "../components/animate/Noise.jsx";
 import LanguageToggle from "../components/LanguageToggle.jsx";
 
 const Bio = () => {
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
 
   if (!language) return <Notfound />;
 

@@ -55,18 +55,18 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 <div className="flex flex-col lg:flex-row lg:gap-x-4 gap-y-4 justify-end lg:justify-between items-end">
                   <div className="flex justify-end h-fit gap-x-1.5">
                   {url1 && (
-                    <Link className='p-0.5 snake' to={url1}>
-                      <Button bg='bg-[#111]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
+                    <Link to={url1}>
+                      <Button colorSpec='bg-white text-black' img={intImg} text={intText} />
                     </Link>
                   )}
                   {url2 && (
-                    <Link className='p-0.5 snake' to={url2}>
-                      <Button bg='bg-[#111]' img={intImg2} text={intText2} hoverText="hover:text-[#FFAA00]" />
+                    <Link to={url2}>
+                      <Button colorSpec='bg-white text-black' img={intImg2} text={intText2} />
                     </Link>
                   )}
                   {url3 && (
-                    <Link className='p-0.5 snake' to={url3} target="_blank" rel="noopener noreferrer">
-                      <Button bg='bg-[#111]' img={extImg} text={extText} hoverText="hover:text-[#FFAA00]" />
+                    <Link to={url3} target="_blank" rel="noopener noreferrer">
+                      <Button colorSpec='bg-white text-black' img={extImg} text={extText} />
                     </Link>
                   )}
                   </div>
@@ -88,18 +88,18 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
             </div>
             <div className="flex gap-x-2">
               {url1 && (
-                <Link className='p-0.5 snake' to={url1}>
-                  <Button bg='bg-[#111]' img={intImg} text={intText} hoverText="hover:text-[#FFAA00]" />
+                <Link to={url1}>
+                  <Button colorSpec='bg-white text-black' img={intImg} text={intText}  />
                 </Link>
               )}
               {url2 && (
-                <Link className='p-0.5 snake' to={url2}>
-                  <Button bg='bg-[#111]' img={intImg2} text={intText2} hoverText="hover:text-[#FFAA00]" />
+                <Link to={url2}>
+                  <Button colorSpec='bg-white text-black' img={intImg2} text={intText2}  />
                 </Link>
               )}
               {url3 && (
-                <Link className='p-0.5 snake' to={url3} target="_blank" rel="noopener noreferrer">
-                  <Button bg='bg-[#111]' img={extImg} text={extText} hoverText="hover:text-[#FFAA00]" />
+                <Link to={url3} target="_blank" rel="noopener noreferrer">
+                  <Button colorSpec='bg-white text-black' img={extImg} text={extText}  />
                 </Link>
               )}
             </div>

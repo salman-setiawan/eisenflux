@@ -7,7 +7,7 @@ import LanguageToggle from '../components/LanguageToggle.jsx';
 
 const Gallery = () => {
   const { slug } = useParams();
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
   const navigate = useNavigate();
 
   const selectedArticle = UIData.find(article => article.slug === slug);

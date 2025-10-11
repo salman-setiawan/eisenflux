@@ -1,8 +1,7 @@
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../data/languageContext';
 import CardData from '../data/card.js';
 import Notfound from '../pages/404.jsx';
-import Button from '../components/Button.jsx';
 import Footnote from '../components/Footnote.jsx';
 import Content from '../components/Content.jsx';
 import Showcase from '../components/Showcase.jsx';
@@ -12,7 +11,7 @@ import { useEffect, useState } from 'react';
 
 const Article = () => {
   const { slug } = useParams();
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
   const navigate = useNavigate();
   const selectedArticle = CardData.find(article => article.slug === slug);
   const [contents, setContents] = useState([]);
