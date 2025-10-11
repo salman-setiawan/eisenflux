@@ -85,7 +85,10 @@ const Home = () => {
               >
                 {isFixed ? (
                   <div className='flex flex-col gap-y-3 w-full'>
-                    <Typewriter className="text-[24px] text-center" text="enfx." />
+                    <div className="flex justify-between items-center">
+                      <Typewriter className="text-[20px]" text="enfx." />
+                      <LanguageToggle />
+                    </div>
                     <Navigation />
                   </div>
                 ) : (
@@ -97,7 +100,7 @@ const Home = () => {
           <div className="flex flex-col gap-y-4 md:w-full md:pb-4 lg:pb-2 md:pr-2 md:overflow-y-auto px-6 md:px-0 md:pr-3">
             <div className="flex lg:grid lg:grid-cols-2 gap-4">
               <AvaCard />
-              <div className="hidden md:flex w-full items-center bg-cover bg-center" style={{ backgroundImage: `url('/pixel.gif')`}}></div>
+              <div className="hidden md:flex w-full items-center bg-cover bg-center rounded-lg border border-neutral-800" style={{ backgroundImage: `url('/pixel.gif')`}}></div>
             </div>
             <ExpCard />
             {CardData?.length ? (

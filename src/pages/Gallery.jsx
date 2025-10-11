@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../data/languageContext';
 import UIData from '../data/interface.js';
 import Notfound from '../pages/404.jsx';
@@ -8,6 +8,7 @@ import LanguageToggle from '../components/LanguageToggle.jsx';
 const Gallery = () => {
   const { slug } = useParams();
   const { language, toggleLanguage } = useLanguage();
+  const navigate = useNavigate();
 
   const selectedArticle = UIData.find(article => article.slug === slug);
 
@@ -21,13 +22,20 @@ const Gallery = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center">
-        <div className="px-5 flex flex-col gap-y-2 justify-center w-full">
-          <div className="w-full flex justify-between py-4">
-            <div className="font-bold">{title}</div>
-            <LanguageToggle />
-          </div>
-
+      <div className="flex flex-col items-center px-5">
+        <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-4 px-5 items-center">
+          <button 
+            onClick={() => navigate(-1)}
+            className="text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <div className="font-semibold text-[13px]">{title}</div>
+          <LanguageToggle />
+        </div>
+        <div className='pt-16 pb-8'>
           {/* Jika gallery berupa object dengan pc dan mobile */}
           {isGroupedGallery ? (
             <div className="flex flex-col gap-y-16">

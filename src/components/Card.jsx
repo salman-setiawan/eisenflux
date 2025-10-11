@@ -44,7 +44,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="relative z-10 bg-cover bg-center border-2 border-neutral-800" style={{ backgroundImage: `url(${img})` }}>
+            <div className="rounded-xl relative z-10 bg-cover bg-center border border-neutral-800" style={{ backgroundImage: `url(${img})` }}>
               <div className="h-full flex flex-col p-2 justify-between">
                 <div className="flex flex-wrap gap-x-1.5">
                   {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
@@ -70,19 +70,19 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                     </Link>
                   )}
                   </div>
-                  <div className="w-full p-2 text-sm md:text-[15px] bg-black/50 font-medium"><span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}</div>
+                  <div className="w-full p-2 text-sm md:text-[15px] bg-black/50 font-medium rounded-lg"><span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}</div>
                 </div>
               </div>
             </div>
           </div> 
         </div>
         <div className="hidden lg:flex gap-x-3 items-end">
-          <div className="flex flex-col min-w-[390px] max-w-[390px] justify-between p-4 border-2 border-neutral-800 gap-y-8 bg-[#111]/50">
+          <div className="rounded-xl flex flex-col min-w-[390px] max-w-[390px] justify-between p-4 border border-neutral-800 gap-y-8 bg-[#111]/50">
             <div className="flex flex-col gap-y-4">
               <div className="flex flex-wrap gap-x-1.5">
                 {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
               </div>
-              <div className="font-medium text-[15px]">
+              <div className="font-medium text-[15px] px-0.5">
                 <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
               </div>
             </div>
@@ -118,7 +118,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="relative z-10 bg-cover bg-center border-2 border-neutral-800 h-full" style={{ backgroundImage: `url(${img})` }}>
+            <div className="rounded-xl relative z-10 bg-cover bg-center border border-neutral-800 h-full" style={{ backgroundImage: `url(${img})` }}>
               <div className="flex justify-center h-[30rem] items-center">
                 <img className="h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
               </div>

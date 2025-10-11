@@ -87,6 +87,7 @@
   z-index: -1; 
   animation: 3s snake-spin linear infinite;
   will-change: transform, background-image, --angle;
+  border-radius: 9999px;
 }
 
 .snake::before {

@@ -11,7 +11,7 @@ const ExpCard = () => {
   const displayedExperiences = experienceData.slice(0, 3);
 
   return (
-    <div className="w-full p-3 border-2 border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#111]">
+    <div className="w-full p-3 rounded-xl border border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#111]">
       <h2 className="font-bold mb-3 text-[#ffaa50]">{language === "en" ? "Work Experience" : "Pengalaman Kerja"}</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8">
         {displayedExperiences.map((exp, index) => (

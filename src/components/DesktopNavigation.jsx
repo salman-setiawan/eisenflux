@@ -40,7 +40,7 @@ const DesktopNavigation = () => {
               ::
             </div>
             <div className="p-2 bg-[#282828] text-[18px] font-black items-center select-none">
-              <Typewriter text="enfx." />
+              <Typewriter className='flex px-2' text="enfx." />
             </div>
             <div className={menuClass} onClick={() => handleClick("about")} data-clickable="true">
             {language === "en" ? "About Me" : "Tentang Saya"}
