@@ -158,6 +158,16 @@ const Home = () => {
   }, [isInvalid]);
 
   useEffect(() => {
+    // Check if intro has been shown in current session
+    const hasSeenIntro = sessionStorage.getItem('introShown');
+    
+    if (hasSeenIntro) {
+      // Skip intro if already shown in this session
+      setIsLoading(false);
+      setShowContinueButton(false);
+      return;
+    }
+
     const preloadAssets = async () => {
       let loadedCount = 0;
       const totalAssets = assetsToPreload.length;
@@ -188,8 +198,8 @@ const Home = () => {
       setTimeout(() => {
         setIsLoading(false);
         setShowContinueButton(true);
-        // Set flag bahwa user sudah mengunjungi
-        localStorage.setItem('hasVisited', 'true');
+        // Set flag bahwa user sudah melihat intro dalam session ini
+        sessionStorage.setItem('introShown', 'true');
       }, 300);
     };
 
