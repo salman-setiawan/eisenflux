@@ -24,12 +24,13 @@ const Bio = () => {
         date={item.date}
         dateStart={item.dateStart}
         dateEnd={item.dateEnd}
+        keyWord={item.keyWord}
         jobdesc={item.jobdesc}
         language={language}
       />
     ));
     return (
-      <div key={label} className="flex w-full border-dot bg-black/70 backdrop-blur-lg">
+      <div key={label} className="flex w-full border-dot bg-black/80 backdrop-blur-md">
         <div className={`flex w-full flex-col`}>{content}</div>
       </div>
     );
@@ -39,7 +40,7 @@ const Bio = () => {
   return (
     <div className="flex justify-center bg-cover bg-center">
       <div className="hidden lg:flex h-screen items-center w-full justify-center fixed overflow-hidden">
-        <div className="text-white/10 text-[40rem] select-none">
+        <div className="text-white/5 text-[40rem] select-none">
           <Typewriter text="enfx." />
         </div>
       </div>
@@ -58,7 +59,7 @@ const Bio = () => {
           {/* image */}
           <div className="w-full h-[24rem] bg-white bg-[url('/bg-bio.webp')] bg-cover bg-center"></div>
           {/* description */}
-          <div className="bg-black/70 backdrop-blur-lg p-4 border-dot text-[15px]">{desc[language]}</div>
+          <div className="bg-black/80 backdrop-blur-lg p-4 border-dot text-[15px]">{desc[language]}</div>
           {/* experience, education, certification in order */}
           <div className="flex flex-col gap-y-2 w-full">
             {renderSection("experience")}

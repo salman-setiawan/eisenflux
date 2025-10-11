@@ -11,7 +11,7 @@ const ExpCard = () => {
   const displayedExperiences = experienceData.slice(0, 3);
 
   return (
-    <div className="w-full p-3 border-2 border-neutral-800 relative overflow-hidden md:min-h-[160px]">
+    <div className="w-full p-3 border-2 border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#111]">
       <h2 className="font-bold mb-3 text-[#ffaa50]">{language === "en" ? "Work Experience" : "Pengalaman Kerja"}</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8">
         {displayedExperiences.map((exp, index) => (
@@ -27,13 +27,13 @@ const ExpCard = () => {
               {index < displayedExperiences.length - 1 && (
                 <div
                   className="hidden md:block absolute"
-                  style={{ top: 32, left: 6.5,  width: 'calc(100% + 21rem)',  borderTop: '2px solid #4C341A', opacity: 1, zIndex: -1,}}
+                  style={{ top: 32, left: 13,  width: 'calc(100% + 21rem)',  borderTop: '2px solid #4C341A'}}
                 ></div>
               )}
               {index < displayedExperiences.length - 1 && (
                 <div
                   className="block md:hidden absolute"
-                  style={{ top: 12, left: 7.5,  height: 'calc(100% + 5rem)',  borderLeft: '2px solid #4C341A', opacity: 1, zIndex: -1,}}
+                  style={{ top: 19, left: 7.5,  height: 'calc(100% + 5rem)',  borderLeft: '2px solid #4C341A'}}
                 ></div>
               )}
             </div>

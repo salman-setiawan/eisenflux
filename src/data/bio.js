@@ -14,26 +14,19 @@ const BioData = [
         },
         dateStart: "2024-11",
         dateEnd: "Present",
-        jobdesc: [
-          {
-            desc: {
-              en: "Supported sales achievement by successfully assisting in the closing of 28 out of 36 units (±78%), directly contributing to the company's target attainment.",
-              id: 'Mendukung pencapaian penjualan dengan berhasil membantu closing 28 dari 36 kavling (±78%), berkontribusi langsung dalam mencapai target dari perusahaan.'
-            },
-          },
-          {
-            desc: {
-              en: 'Developed digital content strategies from ideation, AI-powered video content production, and video editing, to optimizing paid ads through Meta Ads to boost engagement and conversions.',
-              id: 'Mengembangkan strategi konten digital mulai dari ideasi, produksi video konten dengan AI, video editing, hingga optimasi iklan berbayar melalui Meta Ads untuk meningkatkan engagement dan konversi.'
-            },
-          },
-          {
-            desc: {
-              en: "Designed and produced marketing creative assets (banners, posters, Instagram posts, and other promotional media) tailored to campaign needs, supporting the company's branding and awareness efforts.",
-              id: 'Merancang dan memproduksi aset kreatif pemasaran (banner, poster, Instagram post, dan media promosi lainnya) sesuai kebutuhan kampanye, sehingga mendukung branding dan awareness perusahaan.'
-            },
-          },
-        ],        
+        keyWord: [
+          { en: 'Digital Marketing', id: 'Pemasaran Digital' },
+          { en: 'Graphic Design', id: 'Desain Grafis' },
+          { en: 'UI/UX Design', id: 'Desain UI/UX' },
+          { en: 'Handle Social Media', id: 'Mengelola Media Sosial' },
+          { en: 'Figma', id: 'Figma' },
+          { en: 'Meta Ads', id: 'Meta Ads' },
+          { en: 'Veo 3', id: 'Veo 3' },
+        ],
+        jobdesc: {
+          en: 'Designed promotional and company profile websites, managed corporate design assets, and developed digital content strategies, including optimizing paid advertising through Meta Ads to boost engagement and conversions.',
+          id: 'Merancang website promosi dan profil perusahaan, mengelola aset desain perusahaan, serta mengembangkan strategi konten digital hingga melakukan optimasi iklan berbayar melalui Meta Ads untuk meningkatkan engagement dan konversi.'
+        },      
       },
       {
         uid: 2,
@@ -44,20 +37,17 @@ const BioData = [
         },
         dateStart: "2024-06",
         dateEnd: "2024-09",
-        jobdesc: [
-          {
-            desc: {
-              en: 'Designed and enhanced the user interface and user experience for the ERP website of state-owned enterprises in Balikpapan, including PDAM, PLN, and the Environmental Agency.',
-              id: 'Merancang dan meningkatkan desain antarmuka serta pengalaman pengguna untuk website ERP milik BUMN di Balikpapan, termasuk PDAM, PLN, dan Dinas Lingkungan Hidup.'
-            },
-          },
-          {
-            desc: {
-              en: 'Contributed to improvements in usability, accessibility, and efficiency during a 3-month project.',
-              id: 'Berkontribusi dalam peningkatan kegunaan, aksesibilitas, dan efisiensi selama proyek 3 bulan.'
-            },
-          },
+        keyWord: [
+          { en: 'UI/UX Design', id: 'Desain UI/UX' },
+          { en: 'ERP Website', id: 'Situs ERP' },
+          { en: 'Agile', id: 'Agile' },
+          { en: 'Figma', id: 'Figma' },
+          { en: 'Jira', id: 'Jira' },
         ],
+        jobdesc: {
+          en: 'Designed and optimized the user interface and user experience (UI/UX) of ERP websites for state-owned enterprises (BUMN) in Balikpapan including PDAM, PLN, and the Environmental Agency with a focus on usability, accessibility, and efficiency.',
+          id: 'Merancang dan mengoptimalkan desain antarmuka serta pengalaman pengguna (UI/UX) untuk website ERP milik BUMN di Balikpapan termasuk PDAM, PLN, dan Dinas Lingkungan Hidup dengan fokus pada kegunaan, aksesibilitas, dan efisiensi.'
+        },
       },
       {
         uid: 3,
@@ -68,20 +58,18 @@ const BioData = [
         },
         dateStart: "2023-06",
         dateEnd: "2023-09",
-        jobdesc: [
-          {
-            desc: {
-              en: "Contributed to the design of the main page for Eduwork's mentor website.",
-              id: 'Berkontribusi dalam perancangan halaman utama website mentor milik Eduwork.'
-            },
-          },
-          {
-            desc: {
-              en: 'Participated in daily brainstorming sessions with other interns to create low-fidelity and high-fidelity designs.',
-              id: 'Terlibat dalam sesi brainstorming harian bersama tim magang lain untuk membuat desain low-fi dan hi-fi'
-            },
-          },
-        ]        
+        keyWord: [
+          { en: 'UI/UX Design', id: 'Desain UI/UX' },
+          { en: 'Landing Page for Mentor', id: 'Halaman Arahan untuk Mentor' },
+          { en: 'Agile', id: 'Agile' },
+          { en: 'A/B Testing', id: 'A/B Testing' },
+          { en: 'Figma', id: 'Figma' },
+          { en: 'Jira', id: 'Jira' },
+        ],
+        jobdesc: {
+          en: "Contributed to the design of the main page for Eduwork's mentor website, and participated in daily brainstorming sessions with other interns to create low-fidelity and high-fidelity designs.",
+          id: 'Berkontribusi dalam perancangan halaman utama website mentor milik Eduwork, dan Terlibat dalam sesi brainstorming harian bersama tim magang lain untuk membuat desain low-fi dan hi-fi'
+        },
       },
       {
         uid: 4,
@@ -92,20 +80,16 @@ const BioData = [
         },
         dateStart: "2023-02",
         dateEnd: "2023-06",
-        jobdesc: [
-          {
-            desc: {
-              en: 'Transformed wireframes into visual mockups and created responsive prototypes for the career page.',
-              id: 'Mengubah wireframe menjadi mockup visual dan membuat prototipe responsif untuk halaman karir.'
-            },
-          },
-          {
-            desc: {
-              en: 'Improved navigation and user flow to enhance accessibility and overall user experience on the website.',
-              id: 'Meningkatkan navigasi dan alur pengguna untuk mempermudah akses dan meningkatkan pengalaman situs web.'
-            },
-          },
+        keyWord: [
+          { en: 'UI/UX Design', id: 'Desain UI/UX' },
+          { en: 'Landing Page for Career', id: 'Halaman Arahan untuk Karir' },
+          { en: 'Figma', id: 'Figma' },
+          { en: 'Discord', id: 'Discord' },
         ],
+        jobdesc: {
+          en: 'Transformed wireframes into compelling visual mockups and responsive prototypes for the careers page—designed to attract top-tier candidates. Strategically enhanced navigation and user flow to ensure faster, more intuitive access and deliver an exceptional user experience.',
+          id: 'Mengubah wireframe menjadi mockup visual yang menarik dan prototipe responsif untuk halaman karir, yang dirancang untuk menarik lebih banyak pelamar berkualitas. Menyempurnakan navigasi dan alur pengguna secara strategis untuk memastikan akses yang cepat, intuitif, dan meningkatkan pengalaman pengguna secara keseluruhan.'
+        },
       },
       {
         uid: 5,
@@ -116,32 +100,19 @@ const BioData = [
         },
         dateStart: "2022-02",
         dateEnd: "2022-07",
-        jobdesc: [
-          {
-            desc: {
-              en: 'Collaborated in a team using Agile methodology with Kanban.',
-              id: 'Bekerja sama dalam tim dengan metode Agile menggunakan Kanban.'
-            },
-          },
-          {
-            desc: {
-              en: 'Developed a family education platform called EduFams using Design Thinking methodology.',
-              id: 'Membuat platform edukasi keluarga bernama EduFams dengan metodologi Design Thinking.'
-            },
-          },
-          {
-            desc: {
-              en: 'Handled UX design tasks such as problem identification, solution formulation, user flow, and business flow.',
-              id: 'Menangani desain UX seperti identifikasi masalah, perumusan solusi, user-flow, dan business-flow.'
-            },
-          },
-          {
-            desc: {
-              en: 'Designed and managed UI design including wireframing, design systems, UI mockups, and prototyping.',
-              id: 'Merancang dan mengelola desain UI termasuk wireframing, design systems, UI mockups, and prototyping.'
-            },
-          },
-        ],        
+        keyWord: [
+          { en: 'UI/UX Design', id: 'Desain UI/UX' },
+          { en: 'Familiy-Education Platform', id: 'Platform untuk Edukasi-Keluarga' },
+          { en: 'Kanban', id: 'Kanban' },
+          { en: 'Design Thinking', id: 'Design Thinking' },
+          { en: 'Figma', id: 'Figma' },
+          { en: 'Microsoft Planner', id: 'Microsoft Planner' },
+          { en: 'Miro', id: 'Miro' },
+        ],
+        jobdesc: {
+          en: 'Experienced in working within an Agile team using the Kanban framework, I contributed to the development of a family education platform called EduFams through a Design Thinking approach. I led the end-to-end UX design process, including problem identification, solution formulation, and crafting both user and business flows. Additionally, I designed and managed comprehensive UI components, covering wireframing, design systems, UI mockups, and responsive, functional prototyping.',
+          id: 'Berpengalaman bekerja dalam tim dengan metodologi Agile menggunakan Kanban, saya berkontribusi dalam pengembangan platform edukasi keluarga bernama EduFams menggunakan pendekatan Design Thinking. Dalam proyek ini, saya menangani seluruh proses desain UX mulai dari identifikasi masalah, perumusan solusi, hingga perancangan alur pengguna dan bisnis. Selain itu, saya juga merancang dan mengelola desain UI secara menyeluruh, mencakup wireframing, sistem desain, mockup antarmuka, hingga pembuatan prototipe yang responsif dan fungsional.'
+        },
       },
     ],
     education: [

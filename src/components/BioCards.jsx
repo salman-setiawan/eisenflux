@@ -1,4 +1,6 @@
-const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdesc, language }) => {
+import Chip from './Chip';
+
+const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdesc, keyWord, language }) => {
   const renderDateRange = () => (
     <div className="flex gap-x-2">
       <div className="md:text-end md:w-[62px]">{dateStart}</div>
@@ -7,16 +9,36 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
     </div>
   );
 
-  const renderJobDesc = () =>
-    Array.isArray(jobdesc) && jobdesc.length > 0 ? (
-      <ul className="mt-3 list-disc pl-3 normal-case text-[15px] text-white space-y-1">
-        {jobdesc.map((item, idx) => (
-          <li key={idx}>{item?.desc?.[language] || item?.desc?.id || ""}</li>
-        ))}
-      </ul>
-    ) : null;
+  const renderJobDesc = () => {
+    // Render job description text
+    const jobDescText = jobdesc?.[language] || jobdesc?.id || "";
+    
+    // Render keywords as chips
+    const renderKeywords = () =>
+      Array.isArray(keyWord) && keyWord.length > 0 ? (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {keyWord.map((keyword, idx) => (
+            <Chip 
+              key={idx} 
+              label={keyword?.[language] || keyword?.id || keyword || ""} 
+            />
+          ))}
+        </div>
+      ) : null;
 
-    const layoutStyle ="flex flex-col md:flex-row md:justify-between md:items-center gap-y-0.5 text-[14px] text-white/60 font-medium"
+    return (
+      <div className="mt-3">
+        {renderKeywords()}
+        {jobDescText && (
+          <p className="text-[15px] text-white/80 mt-3 leading-relaxed">
+            {jobDescText}
+          </p>
+        )}
+      </div>
+    );
+  };
+
+  const layoutStyle ="flex flex-col md:flex-row md:justify-between md:items-center gap-y-0.5 text-[14px] text-white/60 font-medium"
 
   return (
     <div className="p-4 border-dot-b">

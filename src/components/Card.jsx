@@ -70,7 +70,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                     </Link>
                   )}
                   </div>
-                  <div className="w-full p-2 text-sm bg-black/50 font-medium"><span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}</div>
+                  <div className="w-full p-2 text-sm md:text-[15px] bg-black/50 font-medium"><span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}</div>
                 </div>
               </div>
             </div>
