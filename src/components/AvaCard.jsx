@@ -18,7 +18,7 @@ const AvaCard = () => {
           <Chip label='Balikpapan - Indonesia 🇮🇩' />
           <Chip label={language === 'en' ? "and yeah, i'm currently using Figma" : "dan ya, saya menggunakan Figma saat ini"} />
         </div>
-        <div className='text-sm pr-1 text-justify'> {language === "en" ? "Hola! my name is" : "Hola! namaku"} <span className="font-semibold text-[#ffaa50]">Salman</span> {language === "en" ? "and i'm a" : "dan aku seorang"} {description}</div>
+        <div className='text-sm px-0.5 pr-1 text-justify'> {language === "en" ? "Hola! my name is" : "Hola! namaku"} <span className="font-semibold text-[#ffaa50]">Salman</span> {language === "en" ? "and i'm a" : "dan aku seorang"} {description}</div>
       </div>
     </div>
   );

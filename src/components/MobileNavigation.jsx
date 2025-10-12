@@ -28,15 +28,13 @@ const MobileNavigation = () => {
     <div>
       <div className="flex gap-x-1 text-[13px] font-semibold shadow-md shadow-black/30">
         <div className='flex w-full' onClick={() => handleClick("about")}>
-          <Button text={language === "en" ? "About Me" : "Tentang Saya"} fullWidth={true}>
-          </Button>
+          <Button text={language === "en" ? "About Me" : "Tentang Saya"} fullWidth={true} />
         </div>
         <div className='flex w-full relative' onClick={() => handleClick("projects")}>
-          <Button text={language === "en" ? "My Projects" : "Proyek Saya"} fullWidth={true}>
-          </Button>
+          <Button text={language === "en" ? "My Projects" : "Proyek Saya"} fullWidth={true} />
           {openMenu === "projects" && (
             <div className="absolute py-1.5 top-full right-0 rounded-lg">
-              <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md rounded-lg">
+              <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md rounded-lg border border-neutral-800">
                 {ArticleData.map((article) => (
                   <div
                     key={article.id}
@@ -55,11 +53,10 @@ const MobileNavigation = () => {
           )}
         </div>
         <div className='flex w-full relative' onClick={() => handleClick("socials")}>
-          <Button text={language === "en" ? "My Contacts" : "Kontak Saya"} fullWidth={true}>
-          </Button>
+          <Button text={language === "en" ? "My Contacts" : "Kontak Saya"} fullWidth={true} />
           {openMenu === "socials" && (
             <div className="absolute py-1.5 top-full right-0 rounded-lg">
-              <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md rounded-lg">
+              <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md rounded-lg border border-neutral-800">
                 {socialList.map((item, idx) => (
                   <div key={idx} className="px-3 py-3 hover:bg-[#333] cursor-pointer" onClick={() => window.open(item.url, "_blank")}>
                     {item.name}
