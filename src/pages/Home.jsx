@@ -332,12 +332,7 @@ const Home = () => {
           <div className="flex flex-col gap-y-4 md:w-full md:pb-4 lg:pb-2 md:pr-2 md:overflow-y-auto px-6 md:px-0 md:pr-3">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-4">
               <AvaCard />
-              <div className="flex flex-col gap-y-3 h-full w-full">
-                <div className="hidden md:flex w-full h-full items-center bg-cover bg-center rounded-lg border border-neutral-800" style={{ backgroundImage: `url('/pixel.gif')` }}></div>
-                <div className="flex flex-row gap-3.5 border border-neutral-800 px-3 py-2.5 bg-[#111] rounded-xl">
-                  <Button text={language === 'en' ? 'Download CV Here' : 'Unduh CV Disini'} />
-                </div>
-              </div>
+              <div className="hidden md:flex h-full items-center bg-cover bg-center rounded-lg border border-neutral-800" style={{ backgroundImage: `url('/pixel.gif')` }}></div>
             </div>
             <ExpCard />
             {CardData?.length ? (

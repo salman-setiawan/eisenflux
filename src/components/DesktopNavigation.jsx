@@ -49,7 +49,7 @@ const DesktopNavigation = () => {
               {language === "en" ? "Projects" : "Proyek"}
               {openMenu === "projects" && (
                 <div className="absolute py-1.5 top-full left-0 rounded-lg">
-                  <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md rounded-lg">
+                  <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-lg shadow-black/30 rounded-lg">
                     {ArticleData.map((article) => (
                       <div
                         key={article.id}
@@ -71,7 +71,7 @@ const DesktopNavigation = () => {
               {language === "en" ? "Socials" : "Sosial"}
               {openMenu === "socials" && (
                 <div className="absolute py-1.5 top-full left-0 rounded-lg">
-                  <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md rounded-lg">
+                  <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-lg shadow-black/30 rounded-lg">
                     {socialList.map((item, idx) => (
                       <div key={idx} className="px-3 py-2 hover:bg-[#333] cursor-pointer" onClick={() => window.open(item.url, "_blank")}>
                         {item.name}
@@ -82,7 +82,7 @@ const DesktopNavigation = () => {
               )}
             </div>
           </div>
-          <div className="py-0.5 px-2 bg-[#111]/90 w-fit text-[12px] text-[#ffaa00] font-medium">
+          <div className="py-0.5 px-2 bg-[#141414]/90 w-fit text-[12px] text-[#ffaa00] font-medium">
             {language === "en" ? "tap the orange-dotted box to drag navigation" : "tekan kotak dengan titik-oranye untuk menyeret navigasi"}
           </div>
         </div>

@@ -10,8 +10,17 @@ const ExpCard = () => {
   const experienceData = BioData[0].experience;
   const displayedExperiences = experienceData.slice(0, 3);
 
+const handleDownload = () => {
+  const link = document.createElement('a');
+  link.href = '/api/download-cv';
+  link.download = 'cv_salman_setiawan.pdf'; // ini hanya simbolik, API akan memaksa download
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
   return (
-    <div className="w-full p-3 rounded-xl border border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#111]">
+    <div className="w-full p-3 rounded-xl border border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#141414]">
       <h2 className="font-bold mb-3 text-[#ffaa50]">{language === "en" ? "Work Experience" : "Pengalaman Kerja"}</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8">
         {displayedExperiences.map((exp, index) => (
@@ -54,7 +63,7 @@ const ExpCard = () => {
       <div 
         className="absolute block md:hidden bottom-0 left-0 right-0 h-[160px] pointer-events-none"
         style={{
-          background: 'linear-gradient(to top, #111111 0%, transparent 80%)'
+          background: 'linear-gradient(to top, #141414 0%, transparent 80%)'
         }}
       ></div>
       
@@ -62,7 +71,7 @@ const ExpCard = () => {
       <div 
         className="hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] pointer-events-none"
         style={{
-          background: 'linear-gradient(to left, #111111 0%, transparent 80%)'
+          background: 'linear-gradient(to left, #141414 0%, transparent 80%)'
         }}
       ></div>
       
@@ -89,8 +98,15 @@ const ExpCard = () => {
       ></div>
       
       {/* Learn more button */}
-      <div className="absolute right-3 bottom-3 md:right-4 z-10">
-        <Button to='/me' text='Learn More' />
+      <div className="absolute right-3 bottom-3 md:right-4 z-10 flex flex-col items-end md:flex-row gap-y-1 gap-x-2">
+        <div className="flex items-end h-[48px]">
+          <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-2 bg-black w-full'>
+            <div className={`bg-white text-black py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-4 border-black hover:bg-[#ffaa50] font-bold text-[13px] md:text-[14px]`}>
+              {language === 'en' ? 'Download CV Here' : 'Unduh CV Disini'}
+            </div>
+          </button>
+      </div>
+        <Button to='/me' text={language === "en" ? "Learn More" : "Pelajari Lebih Lanjut"} />
       </div>
     </div>
   );

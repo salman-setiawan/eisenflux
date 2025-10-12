@@ -84,7 +84,7 @@ const Article = () => {
       </div>
 
       <div
-        className="fixed bottom-0 w-full bg-[#111111] py-1.5"
+        className="fixed bottom-0 w-full bg-[#141414] py-1.5"
         style={{ zIndex: 1 }}
       >
         <Footnote />

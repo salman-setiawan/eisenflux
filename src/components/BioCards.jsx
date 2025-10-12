@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import Chip from './Chip';
 
-const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdesc, keyWord, language }) => {
+const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdesc, keyWord, language, proof }) => {
   const renderDateRange = () => (
     <div className="flex gap-x-2">
       <div className="md:text-end md:w-[62px]">{dateStart}</div>
@@ -48,6 +49,15 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
         <div className={`${layoutStyle}`}>
           <div>{company}</div>
           <div className="md:text-end md:w-[62px]">{date}</div>
+          {proof &&
+            <div className="pt-2.5">
+            <Link to={proof} target="_blank" rel="noopener noreferrer">
+              <button className="px-2 py-1 text-[13px] text-[#ffaa50] bg-[#ffaa50]/20 w-fit rounded-md font-semibold cursor-pointer">
+                {language === 'en' ? 'See Certification' : 'Lihat Sertifikasi'}
+              </button>
+            </Link>
+          </div>
+          }
         </div>
       ) : (
         <>

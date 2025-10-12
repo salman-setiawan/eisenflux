@@ -71,7 +71,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
           </div> 
         </div>
         <div className="hidden lg:flex gap-x-3 items-end">
-          <div className="rounded-xl flex flex-col min-w-[390px] max-w-[390px] justify-between p-4 border border-neutral-800 gap-y-8 bg-[#111]/50">
+          <div className="rounded-xl flex flex-col min-w-[390px] max-w-[390px] justify-between p-4 border border-neutral-800 gap-y-8 bg-[#141414]/50">
             <div className="flex flex-col gap-y-4">
               <div className="flex flex-wrap gap-x-1.5">
                 {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}

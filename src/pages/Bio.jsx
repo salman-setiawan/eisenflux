@@ -30,6 +30,7 @@ const Bio = () => {
         keyWord={item.keyWord}
         jobdesc={item.jobdesc}
         language={language}
+        proof={item.proof}
       />
     ));
     return (

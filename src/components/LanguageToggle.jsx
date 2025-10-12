@@ -9,15 +9,15 @@ const LanguageToggle = ({ className = "" }) => {
       <button
         onClick={toggleLanguage}
         className={`relative inline-flex h-[20px] w-[42px] items-center rounded-full transition-colors duration-200 ease-in-out ${
-          language === 'en' ? 'bg-[#ffa500]' : 'bg-gray-600'
+          language === 'en' ? 'bg-[#ffa500]' : 'bg-neutral-600'
         }`}
         role="switch"
         aria-checked={language === 'en'}
         aria-label="Toggle language"
       >
         <span
-          className={`inline-block h-[14px] w-[14px] transform rounded-full bg-white transition-transform duration-200 ease-in-out ${
-            language === 'en' ? 'translate-x-6' : 'translate-x-1'
+          className={`inline-block h-[14px] w-[14px] transform rounded-full transition-transform duration-200 ease-in-out ${
+            language === 'en' ? 'translate-x-6 bg-black' : 'translate-x-1 bg-white'
           }`}
         />
       </button>

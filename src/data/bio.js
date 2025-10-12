@@ -136,24 +136,28 @@ const BioData = [
         title: 'Test of English Proficiency and Skill (610)',
         company: 'Neo Specta',
         date: "2025",
+        proof: "https://drive.google.com/file/d/15quCF5h0yBlyOR4pazs6vTN68l_bZ20F/view?usp=sharing",
       },
       {
         uid: 2,
         title: 'EF SET English Certificate (C1 Advanced)',
         company: 'EF Standard English Test',
         date: "2025",
+        proof: "https://cert.efset.org/en/mq72vr",
       },
       {
         uid: 3,
         title: 'Figma Assessment',
         company: 'Uxcel',
         date: "2023",
+        proof: "https://app.uxcel.com/assessment-report/J1YO9DIE",
       },
       {
         uid: 4,
         title: 'Google UX Design',
         company: 'Coursera',
         date: "2023",
+        proof: "https://drive.google.com/file/d/18l13McBY0I0Tzi43kVGKMYfPtDE-IMm1/view?usp=sharing",
       },
       {
         uid: 5,
