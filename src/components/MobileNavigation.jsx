@@ -2,6 +2,7 @@ import { useLanguage } from '../data/languageContext.jsx';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ArticleData from "../data/card.js";
+import Button from './Button.jsx';
 
 const MobileNavigation = () => {
   const { language } = useLanguage();
@@ -23,17 +24,18 @@ const MobileNavigation = () => {
   ];
 
   // kelas umum untuk menu item mobile
-  const menuClass =
-    "w-full py-2.5 px-3.5 bg-[#282828] flex items-center cursor-pointer select-none hover:hover:bg-[#ffaa00] hover:hover:text-black";
+  
 
   return (
     <div>
       <div className="flex gap-x-1 text-[13px] font-semibold shadow-md shadow-black/30">
-        <div className={menuClass} onClick={() => handleClick("about")} data-clickable="true">
-          {language === "en" ? "About Me" : "Tentang Saya"}
+        <div className='flex w-full' onClick={() => handleClick("about")}>
+          <Button text={language === "en" ? "About Me" : "Tentang Saya"} fullWidth={true}>
+          </Button>
         </div>
-        <div className={`${menuClass} relative`} onClick={() => handleClick("projects")} data-clickable="true">
-          {language === "en" ? "Projects" : "Proyek"}
+        <div className='flex w-full relative' onClick={() => handleClick("projects")}>
+          <Button text={language === "en" ? "My Projects" : "Proyek Saya"} fullWidth={true}>
+          </Button>
           {openMenu === "projects" && (
             <div className="absolute py-1.5 top-full right-0">
               <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md">
@@ -54,8 +56,9 @@ const MobileNavigation = () => {
             </div>
           )}
         </div>
-        <div className={`${menuClass} relative`} onClick={() => handleClick("socials")} data-clickable="true">
-          {language === "en" ? "Socials" : "Sosial"}
+        <div className='flex w-full relative' onClick={() => handleClick("socials")}>
+          <Button text={language === "en" ? "My Contacts" : "Kontak Saya"} fullWidth={true}>
+          </Button>
           {openMenu === "socials" && (
             <div className="absolute py-1.5 top-full right-0">
               <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md">

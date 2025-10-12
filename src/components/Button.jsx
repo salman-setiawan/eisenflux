@@ -1,12 +1,15 @@
-const Button = ({ img, text, colorSpec }) => {
+import { Link } from 'react-router-dom';
+
+const Button = ({ img, text, to, target, rel }) => {
   return (
-    <div
-      className={`${colorSpec} 
-      py-2 px-3 flex gap-x-1.5 place-content-center w-full cursor-pointer rounded-full`}
-    >
-      {/* {img && <img className="w-[16px] md:w-[18px]" src={img} alt="icon" />} */}
-      {text && <p className="font-bold text-[13px] md:text-[14px]">{text}</p>}
-    </div>
+    <Link className="flex items-end h-[52px] w-full" to={to} target={target} rel={rel}>      
+      <div className="flex rounded-lg pb-1 hover:pb-2 bg-black w-full">
+        <div className={`bg-white text-black py-2 px-3 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-4 border-black hover:bg-[#ffaa50]`}>
+          {/* {img && <img className="w-[16px] md:w-[18px]" src={img} alt="icon" />} */}
+          {text && <p className="font-bold text-[13px] md:text-[14px]">{text}</p>}
+        </div>
+      </div>
+    </Link>
   );
 };
 

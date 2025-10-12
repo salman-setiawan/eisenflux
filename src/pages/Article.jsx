@@ -50,7 +50,7 @@ const Article = () => {
             <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
-        <div className="font-semibold text-[13px]">{title}</div>
+        <div className="fixed -translate-x-1/2 left-1/2 font-semibold text-[13px]">{title}</div>
         <LanguageToggle />
       </div>
 

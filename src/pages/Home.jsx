@@ -275,14 +275,9 @@ const Home = () => {
             </div>
             
             {/* Continue Button */}
-            <div className="space-y-3">
-              <div className="text-[14px] text-white/45">
-                {language === "en" ? "Assets loaded successfully!" : "Aset berhasil dimuat!"}
-              </div>
-              <button onClick={handleContinue}>
-                <Button colorSpec='bg-white text-black' text={language === "en" ? "Click here to continue" : "Klik di sini untuk melanjutkan"} />
-              </button>
-            </div>
+            <button onClick={handleContinue}>
+              <Button text={language === "en" ? "Click here to continue" : "Klik di sini untuk melanjutkan"} />
+            </button>
           </div>
         </div>
         <div className="flex flex-col place-content-center w-full px-5 relative">

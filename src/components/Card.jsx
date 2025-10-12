@@ -53,22 +53,16 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                   <img className="h-[20rem] md:h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
                 </div>
                 <div className="flex flex-col lg:flex-row lg:gap-x-4 gap-y-4 justify-end lg:justify-between items-end">
-                  <div className="flex justify-end h-fit gap-x-1.5">
-                  {url1 && (
-                    <Link to={url1}>
-                      <Button colorSpec='bg-white text-black' img={intImg} text={intText} />
-                    </Link>
-                  )}
-                  {url2 && (
-                    <Link to={url2}>
-                      <Button colorSpec='bg-white text-black' img={intImg2} text={intText2} />
-                    </Link>
-                  )}
-                  {url3 && (
-                    <Link to={url3} target="_blank" rel="noopener noreferrer">
-                      <Button colorSpec='bg-white text-black' img={extImg} text={extText} />
-                    </Link>
-                  )}
+                  <div className="flex justify-end gap-x-1.5 min-w-[280px]">
+                    {url1 && (
+                      <Button to={url1} img={intImg} text={intText} />
+                    )}
+                    {url2 && (
+                      <Button to={url2} img={intImg2} text={intText2} />
+                    )}
+                    {url3 && (
+                      <Button url={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />
+                    )}
                   </div>
                   <div className="w-full p-2 text-sm md:text-[15px] bg-black/50 font-medium rounded-lg"><span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}</div>
                 </div>
@@ -86,21 +80,15 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
               </div>
             </div>
-            <div className="flex gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               {url1 && (
-                <Link to={url1}>
-                  <Button colorSpec='bg-white text-black' img={intImg} text={intText}  />
-                </Link>
+                <Button to={url1} img={intImg} text={intText} />
               )}
               {url2 && (
-                <Link to={url2}>
-                  <Button colorSpec='bg-white text-black' img={intImg2} text={intText2}  />
-                </Link>
+                <Button to={url2} img={intImg2} text={intText2} />
               )}
               {url3 && (
-                <Link to={url3} target="_blank" rel="noopener noreferrer">
-                  <Button colorSpec='bg-white text-black' img={extImg} text={extText}  />
-                </Link>
+                <Button url={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />
               )}
             </div>
           </div>

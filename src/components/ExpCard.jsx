@@ -90,11 +90,7 @@ const ExpCard = () => {
       
       {/* Learn more button */}
       <div className="absolute right-3 bottom-3 md:right-4 z-10">
-        <div className="flex">
-          <Link to='/me'>
-            <Button colorSpec='bg-white text-black' text='Learn More' />
-          </Link>
-        </div>
+        <Button to='/me' text='Learn More' />
       </div>
     </div>
   );

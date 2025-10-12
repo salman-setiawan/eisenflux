@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from "../data/languageContext.jsx";
 import BioCards from "../components/BioCards.jsx";
 import BioData from "../data/bio";
@@ -8,6 +9,7 @@ import LanguageToggle from "../components/LanguageToggle.jsx";
 
 const Bio = () => {
   const { language } = useLanguage();
+  const navigate = useNavigate();
 
   if (!language) return <Notfound />;
 
@@ -44,11 +46,19 @@ const Bio = () => {
       <div className="hidden lg:flex h-screen items-center w-full justify-center fixed overflow-hidden">
         <Typewriter className='text-white/5 text-[40rem] select-none text-center' text="enfx." />
       </div>
-      <div className="flex flex-col place-content-center w-full lg:max-w-[720px] relative">
-        <div className="w-full flex justify-end px-4 pt-4">
-          <LanguageToggle />
-        </div>
-
+      <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-4 px-5 items-center">
+        <button 
+          onClick={() => navigate(-1)}
+          className="text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        <div className="fixed -translate-x-1/2 left-1/2 font-semibold text-[13px]">{language === "en" ? "About Me" : "Tentang Saya  "}</div>
+        <LanguageToggle />
+      </div>
+      <div className="flex flex-col place-content-center w-full md:max-w-[720px] pt-14 relative">
         {/* scroll layout for all screens */}
         <div className="flex flex-col gap-y-2 p-4">
           {/* image */}
