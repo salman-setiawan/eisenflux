@@ -61,7 +61,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                       <Button to={url2} img={intImg2} text={intText2} />
                     )}
                     {url3 && (
-                      <Button url={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />
+                      <Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />
                     )}
                   </div>
                   <div className="w-full p-2 text-sm md:text-[15px] bg-black/50 font-medium rounded-lg"><span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}</div>
@@ -80,7 +80,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="flex gap-x-2">
               {url1 && (
                 <Button to={url1} img={intImg} text={intText} />
               )}
@@ -88,7 +88,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 <Button to={url2} img={intImg2} text={intText2} />
               )}
               {url3 && (
-                <Button url={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />
+                <Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />
               )}
             </div>
           </div>

@@ -318,7 +318,7 @@ const Home = () => {
                 className={`${isFixed 
                   ? "fixed top-0 px-6 py-3 w-full bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center justify-between"
                   : "relative w-full py-3 px-6"}`}
-                style={{ zIndex: 200, transition: "position 0.3s ease",}}
+                style={{ zIndex: 200, transition: "position 0.3s ease"}}
               >
                 {isFixed ? (
                   <div className='flex flex-col gap-y-3 w-full'>

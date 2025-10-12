@@ -22,8 +22,6 @@ const MobileNavigation = () => {
     { name: "Instagram", url: "https://www.instagram.com/eisenflux" },
     { name: "Gmail", url: "mailto:username@gmail.com" },
   ];
-
-  // kelas umum untuk menu item mobile
   
 
   return (
