@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import BioData from '../data/bio.js'; 
+import BioData from '../data/bio.js';
 import { useLanguage } from '../data/languageContext.jsx';
 import Button from './Button.jsx';
 
@@ -10,14 +10,15 @@ const ExpCard = () => {
   const experienceData = BioData[0].experience;
   const displayedExperiences = experienceData.slice(0, 3);
 
-const handleDownload = () => {
-  const link = document.createElement('a');
-  link.href = '/api/download-cv';
-  link.download = 'cv_salman_setiawan.pdf'; // ini hanya simbolik, API akan memaksa download
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/cv_salman_setiawan.pdf';
+    link.download = 'cv_salman_setiawan.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
 
   return (
     <div className="w-full p-3 rounded-xl border border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#141414]">
@@ -31,18 +32,18 @@ const handleDownload = () => {
             <div className="pt-1.5 md:pt-0 pl-0.5 md:pl-0">
               <div
                 className={index === 0 ? "animate-blink rounded-full w-[13px] h-[13px]" : "rounded-full w-[13px] h-[13px]"}
-                style={{ backgroundColor: index === 0 ? undefined : '#4C341A'}}
+                style={{ backgroundColor: index === 0 ? undefined : '#4C341A' }}
               ></div>
               {index < displayedExperiences.length - 1 && (
                 <div
                   className="hidden md:block absolute"
-                  style={{ top: 32, left: 13,  width: 'calc(100% + 21rem)',  borderTop: '2px solid #4C341A'}}
+                  style={{ top: 32, left: 13, width: 'calc(100% + 21rem)', borderTop: '2px solid #4C341A' }}
                 ></div>
               )}
               {index < displayedExperiences.length - 1 && (
                 <div
                   className="block md:hidden absolute"
-                  style={{ top: 19, left: 7.5,  height: 'calc(100% + 5rem)',  borderLeft: '2px solid #4C341A'}}
+                  style={{ top: 19, left: 7.5, height: 'calc(100% + 5rem)', borderLeft: '2px solid #4C341A' }}
                 ></div>
               )}
             </div>
@@ -58,25 +59,25 @@ const handleDownload = () => {
           </div>
         ))}
       </div>
-      
+
       {/* Gradient color overlay - bottom for mobile, right side for desktop */}
-      <div 
+      <div
         className="absolute block md:hidden bottom-0 left-0 right-0 h-[160px] pointer-events-none"
         style={{
           background: 'linear-gradient(to top, #141414 0%, transparent 80%)'
         }}
       ></div>
-      
+
       {/* Desktop-specific right side gradient color */}
-      <div 
+      <div
         className="hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] pointer-events-none"
         style={{
           background: 'linear-gradient(to left, #141414 0%, transparent 80%)'
         }}
       ></div>
-      
+
       {/* Gradient blur overlay - bottom for mobile, right side for desktop */}
-      <div 
+      <div
         className="absolute block md:hidden bottom-0 left-0 right-0 h-[240px] pointer-events-none"
         style={{
           backdropFilter: 'blur(3px)',
@@ -85,9 +86,9 @@ const handleDownload = () => {
           WebkitMask: 'linear-gradient(to top, black 0%, black 35%, transparent 100%)'
         }}
       ></div>
-      
+
       {/* Desktop-specific right side gradient blur */}
-      <div 
+      <div
         className="hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] pointer-events-none"
         style={{
           backdropFilter: 'blur(3px)',
@@ -96,7 +97,7 @@ const handleDownload = () => {
           WebkitMask: 'linear-gradient(to left, black 0%, black 35%, transparent 100%)'
         }}
       ></div>
-      
+
       {/* Learn more button */}
       <div className="absolute right-3 bottom-3 md:right-4 z-10 flex flex-col items-end md:flex-row gap-y-1 gap-x-2">
         <div className="flex items-end h-[48px]">
@@ -105,7 +106,7 @@ const handleDownload = () => {
               {language === 'en' ? 'Download CV Here' : 'Unduh CV Disini'}
             </div>
           </button>
-      </div>
+        </div>
         <Button to='/me' text={language === "en" ? "Learn More" : "Pelajari Lebih Lanjut"} />
       </div>
     </div>
