@@ -4,7 +4,7 @@ import NoiseOverlay from '../components/animate/Noise'
 import Footnote from '../components/Footnote'
 import { useEffect, useState, useRef } from 'react';
 import Card from "../components/Card.jsx";
-import CardData from '../data/card.js'; 
+import CardData from '../data/card.js';
 import OtherData from '../data/other.js';
 import Notfound from './404.jsx';
 import WorkChip from '../components/WorkChip.jsx';
@@ -33,13 +33,13 @@ const Home = () => {
     '/process.svg',
     '/vite.svg',
     '/web.svg',
-    
+
     // Showcase images
     '/showcase/another.webp',
     '/showcase/edufams.webp',
     '/showcase/eduwork.webp',
     '/showcase/pemedas.webp',
-    
+
     // Another Island assets
     '/anotherisland/ces1.webp',
     '/anotherisland/ces2.webp',
@@ -59,7 +59,7 @@ const Home = () => {
     '/anotherisland/ucd.webp',
     '/anotherisland/user.webp',
     '/anotherisland/wire.webp',
-    
+
     // Another Island gallery
     '/anotherisland/gallery/screen1.webp',
     '/anotherisland/gallery/screen2.webp',
@@ -71,7 +71,7 @@ const Home = () => {
     '/anotherisland/gallery/screen8.webp',
     '/anotherisland/gallery/screen9.webp',
     '/anotherisland/gallery/screen10.webp',
-    
+
     // Edufams assets
     '/edufams/brand.webp',
     '/edufams/kanban.webp',
@@ -81,7 +81,7 @@ const Home = () => {
     '/edufams/think.webp',
     '/edufams/wire1.webp',
     '/edufams/wire2.webp',
-    
+
     // Edufams gallery
     '/edufams/gallery/mobile_screen1.webp',
     '/edufams/gallery/mobile_screen2.webp',
@@ -106,13 +106,13 @@ const Home = () => {
     '/edufams/gallery/pc_screen9.webp',
     '/edufams/gallery/pc_screen10.webp',
     '/edufams/gallery/pc_screen11.webp',
-    
+
     // Eduwork assets
     '/eduwork/design.webp',
     '/eduwork/flow.webp',
     '/eduwork/mood.webp',
     '/eduwork/team.webp',
-    
+
     // Eduwork gallery
     '/eduwork/gallery/screen1.webp',
     '/eduwork/gallery/screen2.webp',
@@ -128,39 +128,34 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    if (!isInvalid) {
+    if (!isInvalid && !isLoading && !showContinueButton) {
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (!entry.isIntersecting) {
-            if (entry.boundingClientRect.top < entry.rootBounds.top) {
-              setIsFixed(true);
-            }
+          if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+            setIsFixed(true);
           } else {
             setIsFixed(false);
           }
         },
         {
-          threshold: [0],
-          rootMargin: "0px 0px 0px 0px",
+          threshold: 0,
+          rootMargin: "0px",
         }
       );
 
       const sentinelEl = sentinelRef.current;
-
-      if (sentinelEl) {
-        observer.observe(sentinelEl);
-      }
+      if (sentinelEl) observer.observe(sentinelEl);
 
       return () => {
         if (sentinelEl) observer.unobserve(sentinelEl);
       };
     }
-  }, [isInvalid]);
+  }, [isInvalid, isLoading, showContinueButton]);
 
   useEffect(() => {
     // Check if intro has been shown in current session
     const hasSeenIntro = sessionStorage.getItem('introShown');
-    
+
     if (hasSeenIntro) {
       // Skip intro if already shown in this session
       setIsLoading(false);
@@ -228,16 +223,16 @@ const Home = () => {
               {language === "en" ? "a good portfolio is a finished portfolio." : "portfolio yang bagus adalah portfolio yang selesai."}
             </div>
             <div className="text-[14px] text-white/45">
-              {language === "en" ? "is a phrase often quoted by" : "adalah kata yang selalu dikutip oleh"} <span className="font-semibold text-[#ffaa50]">@halodesigners</span> {language === "en" ? "in various posts." : "di berbagai postingannya."} 
+              {language === "en" ? "is a phrase often quoted by" : "adalah kata yang selalu dikutip oleh"} <span className="font-semibold text-[#ffaa50]">@halodesigners</span> {language === "en" ? "in various posts." : "di berbagai postingannya."}
             </div>
-            
+
             {/* Loading Bar */}
             <div className="space-y-3">
               <div className="text-[12px] text-white/60">
                 {language === "en" ? "Loading assets..." : "Memuat aset..."} {loadingProgress}%
               </div>
               <div className="w-full bg-white/10 rounded-full h-1 overflow-hidden">
-                <div 
+                <div
                   className="bg-gradient-to-r from-[#ffaa50] to-[#ffaa50]/80 h-full rounded-full transition-all duration-300 ease-out"
                   style={{ width: `${loadingProgress}%` }}
                 ></div>
@@ -251,8 +246,8 @@ const Home = () => {
           </div>
         </div>
         <NoiseOverlay />
-        <div className="fixed bottom-0 w-full py-4"> 
-          <Footnote /> 
+        <div className="fixed bottom-0 w-full py-4">
+          <Footnote />
         </div>
         <title>Welcome Human!</title>
       </div>
@@ -270,10 +265,10 @@ const Home = () => {
                 {language === "en" ? "a good portfolio is a finished portfolio." : "portfolio yang bagus adalah portfolio yang selesai."}
               </div>
               <div className="text-[14px] text-white/45">
-                {language === "en" ? "is a phrase often quoted by" : "adalah kata yang selalu dikutip oleh"} <span className="font-semibold text-[#ffaa50]">@halodesigners</span> {language === "en" ? "in various posts." : "di berbagai postingannya."} 
+                {language === "en" ? "is a phrase often quoted by" : "adalah kata yang selalu dikutip oleh"} <span className="font-semibold text-[#ffaa50]">@halodesigners</span> {language === "en" ? "in various posts." : "di berbagai postingannya."}
               </div>
             </div>
-            
+
             {/* Continue Button */}
             <button onClick={handleContinue}>
               <Button text={language === "en" ? "Click here to continue" : "Klik di sini untuk melanjutkan"} />
@@ -286,8 +281,8 @@ const Home = () => {
           </div>
         </div>
         <NoiseOverlay />
-        <div className="fixed bottom-0 w-full py-4"> 
-          <Footnote /> 
+        <div className="fixed bottom-0 w-full py-4">
+          <Footnote />
         </div>
         <title>Welcome Human!</title>
       </div>
@@ -315,10 +310,10 @@ const Home = () => {
               )}
               <div
                 id="navigation"
-                className={`${isFixed 
+                className={`${isFixed
                   ? "fixed top-0 px-6 py-3 w-full bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center justify-between"
                   : "relative w-full py-3 px-6"}`}
-                style={{ zIndex: 200, transition: "position 0.3s ease"}}
+                style={{ zIndex: 200, transition: "position 0.3s ease" }}
               >
                 {isFixed ? (
                   <div className='flex flex-col gap-y-3 w-full'>
@@ -338,7 +333,7 @@ const Home = () => {
             <div className="flex flex-col md:grid md:grid-cols-2 gap-4">
               <AvaCard />
               <div className="flex flex-col gap-y-3 h-full w-full">
-                <div className="hidden md:flex w-full h-full items-center bg-cover bg-center rounded-lg border border-neutral-800" style={{ backgroundImage: `url('/pixel.gif')`}}></div>
+                <div className="hidden md:flex w-full h-full items-center bg-cover bg-center rounded-lg border border-neutral-800" style={{ backgroundImage: `url('/pixel.gif')` }}></div>
                 <div className="flex flex-row gap-3.5 border border-neutral-800 px-3 py-2.5 bg-[#111] rounded-xl">
                   <Button text={language === 'en' ? 'Download CV Here' : 'Unduh CV Disini'} />
                 </div>
@@ -371,8 +366,8 @@ const Home = () => {
               <div className="text-gray-400 italic">No Articles Available.</div>
             )}
           </div>
-          <div className="md:hidden w-full py-4"> 
-            <Footnote /> 
+          <div className="md:hidden w-full py-4">
+            <Footnote />
           </div>
         </div>
       </div>
