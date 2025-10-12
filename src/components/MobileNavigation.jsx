@@ -35,8 +35,8 @@ const MobileNavigation = () => {
           <Button text={language === "en" ? "My Projects" : "Proyek Saya"} fullWidth={true}>
           </Button>
           {openMenu === "projects" && (
-            <div className="absolute py-1.5 top-full right-0">
-              <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md">
+            <div className="absolute py-1.5 top-full right-0 rounded-lg">
+              <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md rounded-lg">
                 {ArticleData.map((article) => (
                   <div
                     key={article.id}
@@ -58,8 +58,8 @@ const MobileNavigation = () => {
           <Button text={language === "en" ? "My Contacts" : "Kontak Saya"} fullWidth={true}>
           </Button>
           {openMenu === "socials" && (
-            <div className="absolute py-1.5 top-full right-0">
-              <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md">
+            <div className="absolute py-1.5 top-full right-0 rounded-lg">
+              <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md rounded-lg">
                 {socialList.map((item, idx) => (
                   <div key={idx} className="px-3 py-3 hover:bg-[#333] cursor-pointer" onClick={() => window.open(item.url, "_blank")}>
                     {item.name}

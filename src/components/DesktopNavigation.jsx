@@ -48,8 +48,8 @@ const DesktopNavigation = () => {
             <div className={`${menuClass} relative`} onClick={() => handleClick("projects")} data-clickable="true">
               {language === "en" ? "Projects" : "Proyek"}
               {openMenu === "projects" && (
-                <div className="absolute py-1.5 top-full left-0">
-                  <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md">
+                <div className="absolute py-1.5 top-full left-0 rounded-lg">
+                  <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md rounded-lg">
                     {ArticleData.map((article) => (
                       <div
                         key={article.id}
@@ -70,8 +70,8 @@ const DesktopNavigation = () => {
             <div className={`${menuClass} relative`} onClick={() => handleClick("socials")} data-clickable="true">
               {language === "en" ? "Socials" : "Sosial"}
               {openMenu === "socials" && (
-                <div className="absolute py-1.5 top-full left-0">
-                  <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md">
+                <div className="absolute py-1.5 top-full left-0 rounded-lg">
+                  <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-md rounded-lg">
                     {socialList.map((item, idx) => (
                       <div key={idx} className="px-3 py-2 hover:bg-[#333] cursor-pointer" onClick={() => window.open(item.url, "_blank")}>
                         {item.name}
