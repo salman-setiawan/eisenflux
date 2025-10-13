@@ -41,7 +41,7 @@ const Article = () => {
   const { title, categories, extUrl, extImg, extText, intImg2, intText2 } = selectedArticle;
 
   return (
-    <div className="flex flex-col items-center overflow-x-hidden">
+    <div className="flex flex-col items-center overflow-x-hidden bg-[#141414]">
       <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-4 px-5 items-center">
         <button 
           onClick={() => navigate(-1)}
