@@ -55,7 +55,7 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
             <div className="pt-2.5">
             <Link to={proof} target="_blank" rel="noopener noreferrer">
               <button className="px-2 py-1 text-[13px] text-[#ffaa50] bg-[#ffaa50]/20 w-fit rounded-md font-semibold cursor-pointer">
-                {language === 'en' ? 'See Certification' : 'Lihat Sertifikasi'}
+                {language === 'en' ? 'See Certification Here' : 'Lihat Sertifikasi Disini'}
               </button>
             </Link>
           </div>
