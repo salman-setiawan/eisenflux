@@ -95,8 +95,8 @@ const Bio = () => {
         <div className="flex w-full justify-center">
           <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 pt-1 pb-3">
             <div className="flex items-end h-[48px]">
-              <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-2 bg-black w-full'>
-                <div className={`bg-white text-black py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-4 border-black hover:bg-[#ffaa50] font-bold text-[13px] md:text-[14px]`}>
+              <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full'>
+                <div className={`bg-white text-black py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-[#ffaa50] font-bold text-[13px] md:text-[14px]`}>
                   {language === 'en' ? 'Download CV Here' : 'Unduh CV Disini'}
                 </div>
               </button>
