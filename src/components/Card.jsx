@@ -1,5 +1,5 @@
+/* eslint-disable no-unused-vars */
 import Button from './Button';
-import { Link } from 'react-router-dom';
 import Chip from './Chip';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';

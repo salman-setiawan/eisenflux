@@ -1,12 +1,9 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import BioData from '../data/bio.js';
 import { useLanguage } from '../data/languageContext.jsx';
 import Button from './Button.jsx';
 
 const ExpCard = () => {
   const { language } = useLanguage();
-  const navigate = useNavigate();
   const experienceData = BioData[0].experience;
   const displayedExperiences = experienceData.slice(0, 3);
 

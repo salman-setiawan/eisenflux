@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link } from 'react-router-dom';
 
 const Button = ({ img, text, to, target, rel, fullWidth }) => {

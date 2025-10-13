@@ -1,8 +1,6 @@
 const UIData = [
   {
     id: 2,
-    title: "Another Island",
-    slug: 'another-island',
     cover: [
       { img: '/anotherisland/gallery/screen1.webp' },
       { img: '/anotherisland/gallery/screen2.webp' },
@@ -30,8 +28,6 @@ const UIData = [
   },
   {
     id: 3,
-    title: "EduFams",
-    slug: 'edufams',
     cover: [
       { img: '/edufams/gallery/pc_screen1.webp' },
       { img: '/edufams/gallery/pc_screen2.webp' },
@@ -77,8 +73,6 @@ const UIData = [
   },
   {
     id: 4,
-    title: "EduWork",
-    slug: 'eduwork',
     cover: [
       { img: '/eduwork/gallery/screen1.webp' },
       { img: '/eduwork/gallery/screen2.webp' },

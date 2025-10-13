@@ -8,6 +8,7 @@ import Showcase from '../components/Showcase.jsx';
 import Chip from '../components/Chip.jsx';
 import LanguageToggle from '../components/LanguageToggle.jsx';
 import { useEffect, useState } from 'react';
+import Button from '../components/Button.jsx';
 
 const Article = () => {
   const { slug } = useParams();
@@ -37,7 +38,7 @@ const Article = () => {
     return <Notfound />;
   }
 
-  const { title, categories, extUrl, extImg, extText } = selectedArticle;
+  const { title, categories, extUrl, extImg, extText, intImg2, intText2 } = selectedArticle;
 
   return (
     <div className="flex flex-col items-center overflow-x-hidden">
@@ -87,6 +88,16 @@ const Article = () => {
         className="fixed bottom-0 w-full bg-[#141414] py-1.5"
         style={{ zIndex: 1 }}
       >
+        <div className="flex w-full justify-center">
+          <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 py-1">
+            {extUrl && (
+              <Button to={extUrl} target="_blank" rel="noopener noreferrer" img={extImg} text={extText[language]} fullWidth={true} />
+            )}
+            {intText2 && (
+              <Button to={`/gallery/${slug}`} img={intImg2} text={intText2[language]} fullWidth={true} />
+            )}
+          </div>
+        </div>
         <Footnote />
         <title>{title}</title>
       </div>

@@ -1,22 +1,27 @@
+import CardData from '../data/card.js';
+import UIData from '../data/interface.js';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../data/languageContext';
-import UIData from '../data/interface.js';
 import Notfound from '../pages/404.jsx';
 import Footnote from '../components/Footnote.jsx';
 import LanguageToggle from '../components/LanguageToggle.jsx';
+import Button from '../components/Button.jsx';
 
 const Gallery = () => {
   const { slug } = useParams();
   const { language } = useLanguage();
   const navigate = useNavigate();
 
-  const selectedArticle = UIData.find(article => article.slug === slug);
+  // Cari card berdasarkan slug
+  const selectedCard = CardData.find(item => item.slug === slug);
+  if (!selectedCard) return <Notfound />;
 
-  if (!selectedArticle) {
-    return <Notfound />;
-  }
+  // Gunakan id dari CardData untuk cari data gallery di UIData
+  const selectedUI = UIData.find(item => item.id === selectedCard.id);
+  if (!selectedUI) return <Notfound />;
 
-  const { title, gallery } = selectedArticle;
+  const { title, intImg, intText, extUrl, extImg, extText } = selectedCard;
+  const { gallery } = selectedUI;
 
   const isGroupedGallery = typeof gallery === 'object' && !Array.isArray(gallery);
 
@@ -35,55 +40,45 @@ const Gallery = () => {
           <div className="fixed -translate-x-1/2 left-1/2 font-semibold text-[13px]">{title}</div>
           <LanguageToggle />
         </div>
-        <div className='pt-16 pb-8'>
-          {/* Jika gallery berupa object dengan pc dan mobile */}
+
+        <div className="pt-16 pb-8">
           {isGroupedGallery ? (
-            <div className="flex flex-col gap-y-16">
+            <>
               {gallery.pc && (
-                <div className="grid">
-                  <h2 className="text-[24px] font-semibold mb-6">{language === "en" ? "Desktop Screen" : "Tampilan Desktop"}</h2>
+                <div className="mb-16">
+                  <h2 className="text-[24px] font-semibold mb-6">
+                    {language === "en" ? "Desktop Screens" : "Tampilan Desktop"}
+                  </h2>
                   <div className="columns-1 md:columns-2 lg:columns-3 gap-3">
                     {gallery.pc.map((item, index) => (
                       <div key={`pc-${index}`} className="break-inside-avoid mb-3">
-                        <img
-                          src={item.img}
-                          alt={`PC Gallery ${index + 1}`}
-                          className="w-full object-cover"
-                        />
+                        <img src={item.img} alt={`PC ${index}`} className="w-full object-cover" />
                       </div>
                     ))}
                   </div>
                 </div>
               )}
               {gallery.mobile && (
-                <div className="flex-1">
-                  <h2 className="text-[24px] font-semibold mb-6">{language === "en" ? "Mobile Screens" : "Tampilan Mobile"}</h2>
+                <div>
+                  <h2 className="text-[24px] font-semibold mb-6">
+                    {language === "en" ? "Mobile Screens" : "Tampilan Mobile"}
+                  </h2>
                   <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-3">
                     {gallery.mobile.map((item, index) => (
                       <div key={`mobile-${index}`} className="break-inside-avoid mb-3">
-                        <img
-                          src={item.img}
-                          alt={`Mobile Gallery ${index + 1}`}
-                          className="w-full object-cover"
-                        />
+                        <img src={item.img} alt={`Mobile ${index}`} className="w-full object-cover" />
                       </div>
                     ))}
                   </div>
                 </div>
               )}
-            </div>
+            </>
           ) : (
-            
-            // Default: satu kolom jika bukan grouped (Another Island, EduWork)
             <div className="columns-1 md:columns-2 lg:columns-3 gap-3">
-              {gallery.length > 0 ? (
+              {gallery?.length ? (
                 gallery.map((item, index) => (
                   <div key={index} className="break-inside-avoid mb-3">
-                    <img
-                      src={item.img}
-                      alt={`Gallery ${index + 1}`}
-                      className="w-full object-cover"
-                    />
+                    <img src={item.img} alt={`Gallery ${index}`} className="w-full object-cover" />
                   </div>
                 ))
               ) : (
@@ -98,10 +93,17 @@ const Gallery = () => {
         </div>
       </div>
 
-      <div
-        className="hidden md:block fixed bottom-0 w-full bg-[#141414] py-1.5"
-        style={{ zIndex: 1 }}
-      >
+      <div className="hidden md:block fixed bottom-0 w-full bg-[#141414] py-1.5" style={{ zIndex: 1 }}>
+        <div className="flex w-full justify-center">
+          <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 py-1">
+            {extUrl && (
+              <Button to={extUrl} target="_blank" rel="noopener noreferrer" img={extImg} text={extText[language]} fullWidth={true} />
+            )}
+            {intText && (
+              <Button to={`/article/${slug}`} img={intImg} text={intText[language]} fullWidth={true} />
+            )}
+          </div>
+        </div>
         <Footnote />
       </div>
     </div>
