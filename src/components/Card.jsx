@@ -44,7 +44,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="relative rounded-xl border border-neutral-800 overflow-hidden bg-tile">
+            <div className="relative rounded-xl bg-[#111]/50 border border-neutral-800 overflow-hidden bg-tile">
               {/* Layer Pattern dengan masking dan opacity */}
               <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-20 pointer-events-none" style={{ backgroundSize: 'auto', WebkitMaskImage: 'radial-gradient(circle at 25% 35%, transparent 0%, black 60%), radial-gradient(circle at 75% 70%, transparent 0%, black 60%)', WebkitMaskComposite: 'destination-in', maskComposite: 'intersect',}}></div>
               {/* Konten utama */}
@@ -59,15 +59,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                   <div className="flex justify-end gap-x-1.5 min-w-[280px]">
                     {url1 && <Button to={url1} img={intImg} text={intText} />}
                     {url2 && <Button to={url2} img={intImg2} text={intText2} />}
-                    {url3 && (
-                      <Button
-                        to={url3}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        img={extImg}
-                        text={extText}
-                      />
-                    )}
+                    {url3 && (<Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}
                   </div>
                   <div className="w-full p-2 text-sm md:text-[15px] bg-black/50 font-medium rounded-lg">
                     <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
@@ -88,15 +80,9 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
               </div>
             </div>
             <div className="flex gap-x-2">
-              {url1 && (
-                <Button to={url1} img={intImg} text={intText} />
-              )}
-              {url2 && (
-                <Button to={url2} img={intImg2} text={intText2} />
-              )}
-              {url3 && (
-                <Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />
-              )}
+              {url1 && (<Button to={url1} img={intImg} text={intText} />)}
+              {url2 && (<Button to={url2} img={intImg2} text={intText2} />)}
+              {url3 && (<Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}
             </div>
           </div>
           <div className="relative overflow-hidden w-full">
@@ -113,7 +99,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="relative rounded-xl border border-neutral-800 overflow-hidden">
+            <div className="relative rounded-xl bg-[#111]/50 border border-neutral-800 overflow-hidden">
               {/* Layer Pattern */}
               <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-20 bg-tile pointer-events-none"
                   style={{
