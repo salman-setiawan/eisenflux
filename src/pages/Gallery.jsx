@@ -41,7 +41,7 @@ const Gallery = () => {
           <LanguageToggle />
         </div>
 
-        <div className="pt-16 pb-8">
+        <div className="pt-20 pb-8">
           {isGroupedGallery ? (
             <>
               {gallery.pc && (
@@ -63,7 +63,7 @@ const Gallery = () => {
                   <h2 className="text-[24px] font-semibold mb-6">
                     {language === "en" ? "Mobile Screens" : "Tampilan Mobile"}
                   </h2>
-                  <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-3">
+                  <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-6 gap-3">
                     {gallery.mobile.map((item, index) => (
                       <div key={`mobile-${index}`} className="break-inside-avoid mb-3">
                         <img src={item.img} alt={`Mobile ${index}`} className="w-full object-cover" />
@@ -95,7 +95,7 @@ const Gallery = () => {
 
       <div className="fixed bottom-0 w-full bg-[#141414] py-1.5" style={{ zIndex: 1 }}>
         <div className="flex w-full justify-center">
-          <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 py-1">
+          <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 pt-1 pb-3">
             {extUrl && (
               <Button to={extUrl} target="_blank" rel="noopener noreferrer" img={extImg} text={extText[language]} fullWidth={true} />
             )}

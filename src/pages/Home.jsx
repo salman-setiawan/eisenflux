@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useLanguage } from "../data/languageContext.jsx";
 import LanguageToggle from '../components/LanguageToggle'
 import NoiseOverlay from '../components/animate/Noise'
@@ -28,7 +29,7 @@ const Home = () => {
   const assetsToPreload = [
     // Background images
     '/bg.webp',
-    '/bg-bio.webp',
+    '/pattern-card.svg',
     '/pixel.gif',
     '/process.svg',
     '/vite.svg',
@@ -302,7 +303,7 @@ const Home = () => {
         </div>
         <div className="flex flex-col gap-y-2 md:flex-row gap-x-8 w-full h-full">
           <div className="flex flex-col block md:hidden">
-            <Typewriter className='text-[24px] pl-6' text='enfx.' />
+            <Typewriter className='text-center text-[24px]' text='enfx.' />
             <div>
               <div ref={sentinelRef}></div>
               {isFixed && (

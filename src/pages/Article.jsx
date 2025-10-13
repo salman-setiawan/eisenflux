@@ -89,7 +89,7 @@ const Article = () => {
         style={{ zIndex: 1 }}
       >
         <div className="flex w-full justify-center">
-          <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 py-1">
+          <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 pt-1 pb-3">
             {extUrl && (
               <Button to={extUrl} target="_blank" rel="noopener noreferrer" img={extImg} text={extText[language]} fullWidth={true} />
             )}

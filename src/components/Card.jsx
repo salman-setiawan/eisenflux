@@ -32,7 +32,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
         <div className="block lg:hidden">
           <div className="relative overflow-hidden">
             {title && (
-              <motion.h1 variants={container} initial="initial" animate="animate" className="font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[22rem] md:text-[26rem] font-black text-white/8 rotate-[-32deg] md:rotate-[-24deg] uppercase select-none">
+              <motion.h1 variants={container} initial="initial" animate="animate" className="font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[20rem] md:text-[26rem] font-black text-white/8 rotate-[-32deg] md:rotate-[-24deg] uppercase select-none">
                 {words.map((word, wi) => (
                   <motion.div key={wi} variants={wordVariant} className="flex">
                     {word.split('').map((char, ci) => (
@@ -44,7 +44,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="relative rounded-xl bg-[#111]/50 border border-neutral-800 overflow-hidden bg-tile">
+            <div className="relative rounded-xl bg-[#111]/60 border border-neutral-800 overflow-hidden bg-tile">
               {/* Layer Pattern dengan masking dan opacity */}
               <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-20 pointer-events-none" style={{ backgroundSize: 'auto', WebkitMaskImage: 'radial-gradient(circle at 25% 35%, transparent 0%, black 60%), radial-gradient(circle at 75% 70%, transparent 0%, black 60%)', WebkitMaskComposite: 'destination-in', maskComposite: 'intersect',}}></div>
               {/* Konten utama */}
@@ -99,7 +99,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="relative rounded-xl bg-[#111]/50 border border-neutral-800 overflow-hidden">
+            <div className="relative rounded-xl bg-[#111]/60 border border-neutral-800 overflow-hidden">
               {/* Layer Pattern */}
               <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-20 bg-tile pointer-events-none"
                   style={{
