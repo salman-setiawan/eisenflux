@@ -39,7 +39,7 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
     );
   };
 
-  const layoutStyle ="flex flex-col md:flex-row md:justify-between md:items-center gap-y-0.5 text-[14px] text-white/60 font-medium"
+  const layoutStyle ="flex flex-col gap-y-0.5 text-[14px] text-white/60 font-medium"
 
   return (
     <div className="p-4 border-dot-b">
@@ -47,8 +47,10 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
 
       {type === "certification" ? (
         <div className={`${layoutStyle}`}>
-          <div>{company}</div>
-          <div className="md:text-end md:w-[62px]">{date}</div>
+          <div className="flex flex-col md:flex-row md:justify-between">
+            <div>{company}</div>
+            <div className="md:text-end md:w-[62px]">{date}</div>
+          </div>
           {proof &&
             <div className="pt-2.5">
             <Link to={proof} target="_blank" rel="noopener noreferrer">
@@ -62,8 +64,10 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
       ) : (
         <>
           <div className={`${layoutStyle}`}>
-            <div>{role}</div>
-            {renderDateRange()}
+            <div className="flex flex-col md:flex-row md:justify-between">
+              <div>{role}</div>
+              {renderDateRange()}
+            </div>
           </div>
           {type === "experience" && renderJobDesc()}
         </>
