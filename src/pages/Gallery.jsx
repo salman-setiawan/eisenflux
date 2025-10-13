@@ -93,7 +93,7 @@ const Gallery = () => {
         </div>
       </div>
 
-      <div className="hidden md:block fixed bottom-0 w-full bg-[#141414] py-1.5" style={{ zIndex: 1 }}>
+      <div className="fixed bottom-0 w-full bg-[#141414] py-1.5" style={{ zIndex: 1 }}>
         <div className="flex w-full justify-center">
           <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 py-1">
             {extUrl && (
