@@ -44,27 +44,34 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="rounded-xl relative z-10 bg-cover bg-center border border-neutral-800" style={{ backgroundImage: `url(${img})` }}>
-              <div className="h-full flex flex-col p-2 justify-between">
+            <div className="relative rounded-xl border border-neutral-800 overflow-hidden bg-tile">
+              {/* Layer Pattern dengan masking dan opacity */}
+              <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-20 pointer-events-none" style={{ backgroundSize: 'auto', WebkitMaskImage: 'radial-gradient(circle at 25% 35%, transparent 0%, black 60%), radial-gradient(circle at 75% 70%, transparent 0%, black 60%)', WebkitMaskComposite: 'destination-in', maskComposite: 'intersect',}}></div>
+              {/* Konten utama */}
+              <div className="relative z-10 h-full flex flex-col p-2 justify-between">
                 <div className="flex flex-wrap gap-x-1.5">
-                  {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
+                  {categories?.map((cat, i) => ( <Chip key={i} label={cat} />))}
                 </div>
                 <div className="flex justify-center md:h-[24rem] items-center">
                   <img className="h-[20rem] md:h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
                 </div>
                 <div className="flex flex-col lg:flex-row lg:gap-x-4 gap-y-4 justify-end lg:justify-between items-end">
                   <div className="flex justify-end gap-x-1.5 min-w-[280px]">
-                    {url1 && (
-                      <Button to={url1} img={intImg} text={intText} />
-                    )}
-                    {url2 && (
-                      <Button to={url2} img={intImg2} text={intText2} />
-                    )}
+                    {url1 && <Button to={url1} img={intImg} text={intText} />}
+                    {url2 && <Button to={url2} img={intImg2} text={intText2} />}
                     {url3 && (
-                      <Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />
+                      <Button
+                        to={url3}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        img={extImg}
+                        text={extText}
+                      />
                     )}
                   </div>
-                  <div className="w-full p-2 text-sm md:text-[15px] bg-black/50 font-medium rounded-lg"><span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}</div>
+                  <div className="w-full p-2 text-sm md:text-[15px] bg-black/50 font-medium rounded-lg">
+                    <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
+                  </div>
                 </div>
               </div>
             </div>
@@ -106,9 +113,24 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="rounded-xl relative z-10 bg-cover bg-center border border-neutral-800 h-full" style={{ backgroundImage: `url(${img})` }}>
-              <div className="flex justify-center h-[30rem] items-center">
-                <img className="h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
+            <div className="relative rounded-xl border border-neutral-800 overflow-hidden">
+              {/* Layer Pattern */}
+              <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-20 bg-tile pointer-events-none"
+                  style={{
+                    WebkitMaskImage:
+                      'radial-gradient(circle at 30% 40%, transparent 0%, black 60%), radial-gradient(circle at 70% 70%, transparent 0%, black 60%)',
+                    WebkitMaskComposite: 'destination-in',
+                    maskComposite: 'intersect',
+                  }}
+              ></div>
+
+              {/* Konten utama */}
+              <div className="flex justify-center h-[30rem] items-center relative z-10">
+                <img
+                  className="h-[30rem] object-cover float-anim select-none"
+                  src={obj}
+                  alt="object"
+                />
               </div>
             </div>
           </div> 

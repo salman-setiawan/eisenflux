@@ -26,7 +26,7 @@ const MobileNavigation = () => {
 
   return (
     <div>
-      <div className="flex gap-x-1 text-[13px] font-semibold shadow-md shadow-black/30">
+      <div className="flex gap-x-1 text-[13px] font-semibold">
         <div className='flex w-full' onClick={() => handleClick("about")}>
           <Button text={language === "en" ? "About Me" : "Tentang Saya"} fullWidth={true} />
         </div>
