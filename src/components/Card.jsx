@@ -49,7 +49,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
               <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-20 pointer-events-none" style={{ backgroundSize: 'auto', WebkitMaskImage: 'radial-gradient(circle at 25% 35%, transparent 0%, black 60%), radial-gradient(circle at 75% 70%, transparent 0%, black 60%)', WebkitMaskComposite: 'destination-in', maskComposite: 'intersect',}}></div>
               {/* Konten utama */}
               <div className="relative z-10 h-full flex flex-col p-2 justify-between">
-                <div className="flex flex-wrap gap-x-1.5">
+                <div className="flex flex-wrap gap-x-1.5 p-1">
                   {categories?.map((cat, i) => ( <Chip key={i} label={cat} />))}
                 </div>
                 <div className="flex justify-center md:h-[24rem] items-center">
