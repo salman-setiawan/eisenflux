@@ -61,7 +61,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                     {url2 && <Button to={url2} img={intImg2} text={intText2} />}
                     {url3 && (<Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}
                   </div>
-                  <div className="w-full p-2 text-sm md:text-[15px] bg-black/50 font-medium rounded-lg">
+                  <div className="w-full py-2 pl-2 pr-4 text-sm md:text-[15px] bg-black/50 font-medium rounded-lg">
                     <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
                   </div>
                 </div>
@@ -112,11 +112,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
 
               {/* Konten utama */}
               <div className="flex justify-center h-[30rem] items-center relative z-10">
-                <img
-                  className="h-[30rem] object-cover float-anim select-none"
-                  src={obj}
-                  alt="object"
-                />
+                <img className="h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
               </div>
             </div>
           </div> 

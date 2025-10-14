@@ -24,6 +24,10 @@ const CardData = [{
         id: 'Kepala UI/UX'
       },
       {
+        en: 'Design Sprint',
+        id: 'Design Sprint'
+      },
+      {
         en: 'Web Landing Page',
         id: 'Web Halaman Arahan'
       },
@@ -60,6 +64,10 @@ const CardData = [{
       {
         en: 'Independent UI/UX',
         id: 'UI/UX Independen'
+      },
+      {
+        en: 'User-Centered Design',
+        id: 'User-Centered Design'
       },
       {
         en: 'Web Game',
@@ -105,6 +113,10 @@ const CardData = [{
       {
         en: 'UI/UX Internship',
         id: 'UI/UX Internship'
+      },
+      {
+        en: 'Design Thinking',
+        id: 'Design Thinking'
       },
       {
         en: 'Mobile Apps',
@@ -154,6 +166,10 @@ const CardData = [{
       {
         en: 'UI/UX Internship',
         id: 'UI/UX Internship'
+      },
+      {
+        en: 'Design Sprint',
+        id: 'Design Sprint'
       },
       {
         en: 'Web Landing Page',
