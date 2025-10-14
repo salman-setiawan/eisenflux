@@ -11,23 +11,32 @@ const CardData = [{
     cover: '/bg.webp',
     obj: '/showcase/pemedas.webp',
     desc: {
-      en: 'is a website design project for Bhumi Pemedas Housing, focused on creating engaging promotional and sales pages that highlight the unique benefits of living in this seaside residential area.',
-      id: 'adalah proyek desain situs web untuk Perumahan Bhumi Pemedas, yang berfokus pada pembuatan halaman promosi dan penjualan yang menarik serta menonjolkan keunggulan tinggal di kawasan hunian tepi pantai ini.'
+      en: 'is a website for Bhumi Pemedas Housing, focused on creating engaging promotional and sales pages that highlight the benefits of living in this seaside residential area.',
+      id: 'adalah situs web untuk Perumahan Bhumi Pemedas, berfokus pada pembuatan halaman promosi dan penjualan yang menonjolkan keunggulan tinggal di kawasan hunian tepi pantai ini.'
     },
-    categories: [{
-        en: 'UI/UX',
-        id: 'UI/UX'
+    categories: [
+      {
+        en: 'Company Project',
+        id: 'Proyek Perusahaan'
+      },
+      {
+        en: 'UI/UX Lead',
+        id: 'Kepala UI/UX'
       },
       {
         en: 'Web Landing Page',
         id: 'Web Halaman Arahan'
       },
+      {
+        en: 'Live Site',
+        id: 'Situs Langsung'
+      },
     ],
     extUrl: 'https://bhumipemedas.netlify.app',
     extImg: '/web.svg',
     extText: {
-      en: 'See Page',
-      id: 'Lihat Halaman'
+      en: 'See Website',
+      id: 'Lihat Situs Web'
     },
   },
 
@@ -40,16 +49,25 @@ const CardData = [{
     cover: '/bg.webp',
     obj: '/showcase/another.webp',
     desc: {
-      en: 'is a simple yet challenging arcade-survival game, which I designed and developed as my final project while studying Informatics at the Kalimantan Institute of Technology.',
-      id: 'adalah gim arcade-survival sederhana namun menantang, yang saya rancang dan kembangkan sebagai proyek akhir ketika menempuh studi Informatika di Institut Teknologi Kalimantan.'
+      en: "a simple yet challenging arcade survival game that I designed as my final project for my bachelor's degree.",
+      id: 'adalah permainan arcade survival yang sederhana namun menantang, yang saya rancang sebagai proyek akhir untuk gelar sarjana saya.'
     },
-    categories: [{
-        en: 'UI/UX',
-        id: 'UI/UX'
+    categories: [
+      {
+        en: 'Final Project',
+        id: 'Proyek Tugas Akhir'
+      },
+      {
+        en: 'Independent UI/UX',
+        id: 'UI/UX Independen'
       },
       {
         en: 'Web Game',
         id: 'Permainan Web'
+      },
+      {
+        en: 'Live Site',
+        id: 'Situs Langsung'
       },
     ],
     intImg: '/process.svg',
@@ -60,8 +78,8 @@ const CardData = [{
     extUrl: 'https://anotherisland.netlify.app',
     extImg: '/web.svg',
     extText: {
-      en: 'See Page',
-      id: 'Lihat Halaman'
+      en: 'See Website',
+      id: 'Lihat Situs Web'
     },
 
     contents: AnotherIsland,
@@ -76,12 +94,17 @@ const CardData = [{
     cover: '/bg.webp',
     obj: '/showcase/edufams.webp',
     desc: {
-      en: 'is a family education platform called EduFams, which I designed using the Design Thinking methodology. The project focuses on creating an intuitive, family-friendly interface that supports accessible experiences.',
-      id: 'adalah platform edukasi keluarga bernama EduFams yang saya rancang menggunakan metodologi Design Thinking. Proyek ini berfokus pada pembuatan antarmuka yang intuitif dan ramah keluarga untuk mendukung pengalaman yang mudah diakses.'
+      en: 'is a family education platform called EduFams. The project focuses on creating an intuitive interface that supports accessible experiences.',
+      id: 'adalah platform edukasi keluarga bernama EduFams. Proyek ini berfokus pada pembuatan antarmuka yang intuitif untuk mendukung pengalaman yang mudah diakses.'
     },
-    categories: [{
-        en: 'UI/UX',
-        id: 'UI/UX'
+    categories: [
+      {
+        en: 'Company Project',
+        id: 'Proyek Perusahaan'
+      },
+      {
+        en: 'UI/UX Internship',
+        id: 'UI/UX Internship'
       },
       {
         en: 'Mobile Apps',
@@ -120,12 +143,17 @@ const CardData = [{
     cover: '/bg.webp',
     obj: '/showcase/eduwork.webp',
     desc: {
-      en: 'is a UI/UX design project developed for Eduwork — an education platform company based in Yogyakarta — during their plan to expand into a new community-based website platform.',
-      id: 'adalah proyek desain UI/UX yang dikembangkan untuk Eduwork — perusahaan platform pendidikan berbasis di Yogyakarta — dalam rangka pengembangan platform baru berbasis komunitas.'
+      en: 'is a UI/UX design project developed for Eduwork (an education platform company based in Yogyakarta) during their plan to expand into a new community-based website platform.',
+      id: 'adalah proyek desain UI/UX yang dikembangkan untuk Eduwork (perusahaan platform pendidikan berbasis di Yogyakarta) dalam rangka pengembangan platform baru berbasis komunitas.'
     },
-    categories: [{
-        en: 'UI/UX',
-        id: 'UI/UX'
+    categories: [
+      {
+        en: 'Collaborative Project',
+        id: 'Collaborative Project'
+      },
+      {
+        en: 'UI/UX Internship',
+        id: 'UI/UX Internship'
       },
       {
         en: 'Web Landing Page',

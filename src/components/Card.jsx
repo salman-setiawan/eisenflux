@@ -46,10 +46,10 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
             )}
             <div className="relative rounded-xl bg-[#111]/60 border border-neutral-800 overflow-hidden bg-tile">
               {/* Layer Pattern dengan masking dan opacity */}
-              <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-20 pointer-events-none" style={{ backgroundSize: 'auto', WebkitMaskImage: 'radial-gradient(circle at 25% 35%, transparent 0%, black 60%), radial-gradient(circle at 75% 70%, transparent 0%, black 60%)', WebkitMaskComposite: 'destination-in', maskComposite: 'intersect',}}></div>
+              <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-13 pointer-events-none" style={{ backgroundSize: 'auto', WebkitMaskImage: 'radial-gradient(circle at 25% 35%, transparent 0%, black 60%), radial-gradient(circle at 75% 70%, transparent 0%, black 60%)', WebkitMaskComposite: 'destination-in', maskComposite: 'intersect',}}></div>
               {/* Konten utama */}
               <div className="relative z-10 h-full flex flex-col p-2 justify-between">
-                <div className="flex flex-wrap gap-x-1.5 p-1">
+                <div className="flex flex-wrap gap-x-1.5 gap-y-2 py-1 pl-1 pr-3">
                   {categories?.map((cat, i) => ( <Chip key={i} label={cat} />))}
                 </div>
                 <div className="flex justify-center md:h-[24rem] items-center">
@@ -72,7 +72,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
         <div className="hidden lg:flex gap-x-3 items-end">
           <div className="rounded-xl flex flex-col min-w-[390px] max-w-[390px] justify-between p-4 border border-neutral-800 gap-y-8 bg-[#141414]/50">
             <div className="flex flex-col gap-y-4">
-              <div className="flex flex-wrap gap-x-1.5">
+              <div className="flex flex-wrap gap-x-1.5 gap-y-2">
                 {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
               </div>
               <div className="font-medium text-[15px] px-0.5">

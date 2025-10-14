@@ -1,23 +1,26 @@
-import React from 'react';
-import { useLanguage } from '../data/languageContext.jsx';
-import BioData from '../data/bio.js'; 
-import Chip from './Chip.jsx';
+import { useLanguage } from '../data/languageContext.jsx'; 
+import WorkChip from './WorkChip.jsx';
 
 const AvaCard = () => {
   const { language } = useLanguage();
 
-  // Ambil deskripsi berdasarkan bahasa, fallback ke Bahasa Indonesia
-  const description = BioData[0]?.desc?.[language] || BioData[0]?.desc?.id || '';
-
   return (
     <div className="flex flex-row gap-3.5 border border-neutral-800 p-3 bg-[#141414] rounded-xl">
       <img src="/bg-bio.webp" alt="ava" className="w-20 md:w-24 h-full object-cover rounded-lg" />
-      <div className="space-y-2">
-        <div className="flex flex-wrap gap-2">
-          <Chip label='UI/UX Designer' />
-          <Chip label='Balikpapan - Indonesia 🇮🇩' />
+      <div className="space-y-2 text-[15px] text-justify">
+        <WorkChip label={language === "en" ? "Open to Work" : "Terbuka dalam Pekerjaan"} />
+        <div className='pl-0.5 pr-2'> 
+          {language === "en" ? "Hola! my name is" : "Hola! namaku"} 
+          <span className="font-semibold text-[#ffaa50]"> Salman</span>
+          <span>,</span> 
+          {language === "en" ? " a Bachelor of Informatics graduate specializing in" : " lulusan Informatika dengan spesialisasi"} 
+          <span className="font-semibold text-[#ffaa50]">UI/UX Design.</span>
+          {language === "en" ? " currently based in" : " saat ini berdomisili di"}
+          <span className="font-semibold text-[#ffaa50]"> Balikpapan - Indonesia 🇮🇩</span>
         </div>
-        <div className='text-sm px-0.5 pr-1 text-justify'> {language === "en" ? "Hola! my name is" : "Hola! namaku"} <span className="font-semibold text-[#ffaa50]">Salman</span> {language === "en" ? "and i'm a" : "dan aku seorang"} {description}</div>
+        <div className='pl-0.5 pr-2'>
+          {language === "en" ? "Experienced in creating intuitive digital experiences, translating complex problems into simple, meaningful, and impactful interfaces for both users and your business." : "Memiliki pengalaman dalam menciptakan pengalaman digital yang intuitif, menerjemahkan permasalahan kompleks menjadi antarmuka yang sederhana, bermakna, dan berdampak nyata bagi pengguna dan bisnis anda."}
+        </div>
       </div>
     </div>
   );
