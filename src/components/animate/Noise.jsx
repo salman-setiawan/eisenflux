@@ -44,7 +44,7 @@ const NoiseOverlay = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 -z-10 pointer-events-none opacity-60 mix-blend-overlay"
+      className="fixed inset-0 -z-2 pointer-events-none opacity-60 mix-blend-overlay"
     />
   );
 };

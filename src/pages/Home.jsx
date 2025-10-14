@@ -11,6 +11,7 @@ import Navigation from '../components/Navigation.jsx';
 import Typewriter from '../components/animate/Typewriter.jsx';
 import ExpCard from '../components/ExpCard.jsx';
 import AvaCard from '../components/AvaCard.jsx';
+import Connect from "../components/Connect.jsx";
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -139,8 +140,8 @@ const Home = () => {
       <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:block' style={{ zIndex: 200 }}>
         <Navigation />
       </div>
-      <div className="flex flex-col place-content-center w-full md:max-w-[1080px] md:py-8 md:h-screen md:px-6">
-        <div className="w-full flex justify-between items-center pt-4 pb-2 md:pb-4 px-6 md:px-0">
+      <div className="flex flex-col place-content-center w-full md:max-w-[1080px] md:py-8 md:h-screen md:px-4">
+        <div className="w-full flex justify-between items-center pt-4 pb-2 md:pb-4 px-4 md:px-0">
           <Typewriter className='text-[20px]' text='enfx.' />
           <LanguageToggle />
         </div>
@@ -151,8 +152,8 @@ const Home = () => {
               <div
                 id="navigation"
                 className={`${isFixed
-                  ? "fixed top-0 px-6 py-3 w-full bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center justify-between"
-                  : "relative w-full py-2 px-6"}`}
+                  ? "fixed top-0 px-4 py-3 w-full bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center justify-between"
+                  : "relative w-full py-2 px-4"}`}
                 style={{ zIndex: 200, transition: "position 0.3s ease" }}
               >
                 {isFixed ? (
@@ -168,7 +169,7 @@ const Home = () => {
                 )}
             </div>
           </div>
-          <div className="flex flex-col gap-y-4 md:w-full md:pb-4 lg:pb-2 md:pr-2 md:overflow-y-auto px-6 md:px-0 md:pr-3">
+          <div className="flex flex-col gap-y-4 md:w-full md:pb-4 lg:pb-2 md:pr-2 md:overflow-y-auto px-4 md:px-0 md:pr-3">
             <div className="flex flex-col md:flex-row gap-4">
               <AvaCard />
               <div
@@ -202,9 +203,10 @@ const Home = () => {
             ) : (
               <div className="text-gray-400 italic">No Articles Available.</div>
             )}
-          </div>
-          <div className="md:hidden w-full py-4">
-            <Footnote />
+            <Connect />
+            <div className="w-full py-4">
+              <Footnote />
+            </div>
           </div>
         </div>
       </div>
