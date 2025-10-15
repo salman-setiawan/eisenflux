@@ -183,7 +183,7 @@ const Home = () => {
                 <div className="hidden md:block flex-1 bg-cover bg-center rounded-lg bg-[url('/pixel.gif')] border border-neutral-800"></div>
                 <div className="grid grid-cols-2 md:grid-cols-1 gap-2">
                   <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center gap-y-2 py-2 px-2.5 bg-[#141414] rounded-lg border border-neutral-800">
-                    <div className="text-[14px] pr-4">{language === "en" ? "Created with :" : "Diciptakan dengan :"}</div>
+                    <div className="text-[14px] pr-4">{language === "en" ? "Created with :" : "Dibuat dengan :"}</div>
                     <div className="flex items-center gap-3 px-1">
                       <img src="/react.svg" alt="" className="h-4.5 w-4.5" />
                       <img src="/tailwind.svg" alt="" className="h-4.5 w-4.5" />

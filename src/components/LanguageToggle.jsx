@@ -17,7 +17,7 @@ const LanguageToggle = ({ className = "" }) => {
       >
         <span
           className={`inline-block h-[14px] w-[14px] transform rounded-full transition-transform duration-200 ease-in-out ${
-            language === 'en' ? 'translate-x-5 bg-black' : 'translate-x-1 bg-white'
+            language === 'en' ? 'translate-x-5 bg-black' : 'translate-x-0.5 bg-white'
           }`}
         />
       </button>
