@@ -137,23 +137,16 @@ const Home = () => {
   // Konten utama
   return (
     <div className="flex justify-center">
-      <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:block' style={{ zIndex: 200 }}>
-        <Navigation />
-      </div>
-      <div className="flex flex-col place-content-center w-full md:max-w-[1080px] md:py-8 md:h-screen md:px-4">
-        <div className="w-full flex justify-between items-center pt-4 pb-2 md:pb-4 px-4 md:px-0">
-          <Typewriter className='text-[20px]' text='enfx.' />
-          <LanguageToggle />
-        </div>
-        <div className="flex flex-col gap-y-2 md:flex-row gap-x-8 w-full h-full">
+      <div className="flex flex-col place-content-center w-full md:max-w-[1080px] md:h-screen">
+        <div className="flex flex-col gap-y-2 w-full h-full px-0 md:px-4">
           <div className="flex flex-col block md:hidden">
             <div ref={sentinelRef}></div>
               {isFixed && <div style={{ height: '39.5px' }}></div>}
               <div
                 id="navigation"
                 className={`${isFixed
-                  ? "fixed top-0 px-4 py-3 w-full bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center justify-between"
-                  : "relative w-full py-2 px-4"}`}
+                  ? "fixed w-full px-4 top-0 py-3 bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center"
+                  : "px-4"}`}
                 style={{ zIndex: 200, transition: "position 0.3s ease" }}
               >
                 {isFixed ? (
@@ -165,11 +158,24 @@ const Home = () => {
                     <Navigation />
                   </div>
                 ) : (
-                  <Navigation />
+                  <div className='flex flex-col gap-y-3 w-full pt-4 pb-2'>
+                    <div className="flex justify-between items-center">
+                      <Typewriter className="text-[20px]" text="enfx." />
+                      <LanguageToggle />
+                    </div>
+                    <Navigation />
+                  </div>
                 )}
             </div>
           </div>
-          <div className="flex flex-col gap-y-4 md:w-full md:pb-4 lg:pb-2 md:pr-2 md:overflow-y-auto px-4 md:px-0 md:pr-3">
+          <div className='flex flex-col gap-y-3 py-3 pb-2 w-full hidden md:block'>
+            <div className="flex justify-between items-center">
+              <Typewriter className="text-[20px]" text="enfx." />
+              <div className="w-[400px]"><Navigation /></div>
+              <LanguageToggle />
+            </div>
+          </div>
+          <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto md:pr-3 px-4 md:px-0">
             <div className="flex flex-col md:flex-row gap-4">
               <AvaCard />
               <div
@@ -204,7 +210,7 @@ const Home = () => {
               <div className="text-gray-400 italic">No Articles Available.</div>
             )}
             <Connect />
-            <div className="w-full py-4">
+            <div className="w-full">
               <Footnote />
             </div>
           </div>
