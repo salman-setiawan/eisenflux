@@ -176,14 +176,25 @@ const Home = () => {
             </div>
           </div>
           <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto md:pr-3 px-4 md:px-0">
-            <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col md:flex-row gap-2 items-stretch">
               <AvaCard />
-              <div
-                className="hidden md:flex w-full h-full items-center bg-cover bg-center rounded-lg border border-neutral-800"
-                style={{ backgroundImage: `url('/pixel.gif')` }}
-              ></div>
+              <div className="gap-y-2 w-full flex flex-col">
+                <div className="hidden md:block flex-1 bg-cover bg-center rounded-lg bg-[url('/pixel.gif')] border border-neutral-800"></div>
+                <div className="p-2 bg-[#141414] rounded-lg border border-neutral-800 flex justify-between items-center">
+                  <div className="text-[14px]">Created with :</div>
+                  <div className="flex items-center gap-3 px-1">
+                    <img src="/react.svg" alt="" className="h-4.5 w-4.5" />
+                    <img src="/tailwind.svg" alt="" className="h-4.5 w-4.5" />
+                  </div>
+                </div>
+              </div>
+              <div className="md:hidden">
+                <ExpCard />
+              </div>
             </div>
-            <ExpCard />
+            <div className="hidden md:block">
+              <ExpCard />
+            </div>
             {CardData?.length ? (
               CardData.map((article) => (
                 <div key={article.id}>
