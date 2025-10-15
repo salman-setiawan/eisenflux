@@ -1,68 +1,82 @@
-const Eduwork = [
-  {
-    text: {
-      en: "So, during this internship I was placed in the Unicorn team, which consisted of 2 product managers, 2 UI/UX designers, and 1 copywriter. This team was responsible for creating the landing page of Eduwork's mentor website, which will be launched in the future.",
-      id: 'Jadi, selama magang ini saya ditempatkan di tim Unicorn, yang terdiri dari 2 product manager, 2 UI/UX designer, dan 1 copywriter. Tim ini bertugas untuk membuat landing page dari situs web mentor milik Eduwork yang akan diluncurkan di masa mendatang.'
-    }
-  },
-  {
-    img: "/eduwork/team.webp",
+const Eduwork = {
+  card: {
+    id: 4,
+    slug: 'eduwork',
+    title: 'Eduwork Mentor Website',
+    title2: 'EDUWORK MENTOR',
+    nav: 'eduwork.prj',
+    cover: '/bg.webp',
+    obj: '/showcase/eduwork.webp',
     desc: {
-      en: "This is the description for the image.",
-      id: "Ini adalah deskripsi untuk gambar."
-    }
+      en: 'is a UI/UX design project developed for Eduwork (an education platform company based in Yogyakarta) during their plan to expand into a new community-based website platform.',
+      id: 'adalah proyek desain UI/UX yang dikembangkan untuk Eduwork (perusahaan platform pendidikan berbasis di Yogyakarta) dalam rangka pengembangan platform baru berbasis komunitas.'
+    },
+    categories: [
+      { en: 'Collaborative Project', id: 'Proyek Kolaboratif' },
+      { en: 'UI/UX Internship', id: 'UI/UX Internship' },
+      { en: 'Design Sprint', id: 'Design Sprint' },
+      { en: 'Web Landing Page', id: 'Halaman Arahan Web' },
+    ],
+    intImg: '/process.svg',
+    intText: { en: 'See Process', id: 'Lihat Proses' },
+    intImg2: '/process.svg',
+    intText2: { en: 'See Design', id: 'Lihat Rancangan' },
+    extImg: '/web.svg',
+    extText: { en: 'See Page', id: 'Lihat Halaman' },
   },
-  {
-    text: {
-      en: 'The work environment was conducted remotely, with morning meetings alongside the team for brainstorming sessions. Design sessions were carried out flexibly, following the contracted working hours. The workday concluded with afternoon meetings with the CEO to present the design progress achieved that day.',
-      id: 'Lingkungan kerja dilakukan secara remote, dengan pertemuan pagi bersama tim untuk sesi brainstorming. Sesi desain dijalankan secara fleksibel mengikuti jam kerja sesuai kontrak. Hari kerja ditutup dengan pertemuan sore bersama CEO untuk mempresentasikan progres desain yang telah dicapai pada hari itu.'
+
+  caseStudies: {
+    title: "Eduwork Mentor Website",
+    role: "UI/UX Designer",
+    tools: ["Figma", "Miro", "Microsoft Planner"],
+    duration: { en: "1.5 Months", id: "1,5 Bulan" },
+    type: { en: "Collaborative Internship Project", id: "Proyek Magang Kolaboratif" },
+    overview: {
+      en: "Eduwork Mentor is a collaborative web design project aimed at creating a mentor-focused landing page. The design supports Eduwork’s vision to expand into a more interactive, community-driven learning environment.",
+      id: "Eduwork Mentor adalah proyek desain web kolaboratif yang berfokus pada pembuatan halaman arahan untuk mentor. Desain ini mendukung visi Eduwork untuk berkembang menjadi lingkungan pembelajaran yang lebih interaktif dan berorientasi komunitas."
+    },
+    problem: {
+      en: "Eduwork sought to strengthen its brand credibility and attract mentors by presenting clear program structures, testimonials, and benefits within a visually modern and trustworthy layout.",
+      id: "Eduwork ingin memperkuat kredibilitas mereknya dan menarik lebih banyak mentor dengan menyajikan struktur program, testimoni, dan manfaat secara jelas dalam tata letak yang modern dan tepercaya."
+    },
+    process: [
+      {
+        overview: {
+          en: "We adopted a Collaborative Agile Workflow to ensure rapid iteration and transparent communication with stakeholders. This approach maintained alignment between design goals, feedback, and deliverables.",
+          id: "Kami menerapkan alur kerja Agile Kolaboratif untuk memastikan iterasi yang cepat dan komunikasi yang transparan dengan para pemangku kepentingan. Pendekatan ini menjaga keselarasan antara tujuan desain, umpan balik, dan hasil kerja."
+        }
+      },
+      {
+        label: { en: 'Brainstorm :', id: 'Brainstorm :' },
+        desc: {
+          en: 'Held daily online sessions to generate ideas and align feature concepts with business goals.',
+          id: 'Melakukan sesi daring harian untuk menghasilkan ide serta menyelaraskan konsep fitur dengan tujuan bisnis.'
+        }
+      },
+      {
+        label: { en: 'Design :', id: 'Desain :' },
+        desc: {
+          en: 'Developed low- and high-fidelity wireframes collaboratively to compare layouts and iterate quickly.',
+          id: 'Mengembangkan wireframe fidelitas rendah dan tinggi secara kolaboratif untuk membandingkan tata letak dan melakukan iterasi dengan cepat.'
+        }
+      },
+      {
+        label: { en: 'Feedback Loop :', id: 'Siklus Umpan Balik :' },
+        desc: {
+          en: 'Presented progress daily to the CEO and refined designs based on feedback and business direction.',
+          id: 'Menyampaikan kemajuan desain setiap hari kepada CEO dan menyempurnakan desain berdasarkan umpan balik serta arah bisnis.'
+        }
+      },
+    ],
+    impact: {
+      en: "Delivered a modern, content-focused mentor landing page that aligns with Eduwork’s brand tone and improves user engagement. The design contributed to faster onboarding and increased mentor applications.",
+      id: "Menghasilkan halaman arahan mentor yang modern dan berfokus pada konten, selaras dengan citra merek Eduwork serta meningkatkan keterlibatan pengguna. Desain ini berkontribusi pada proses onboarding yang lebih cepat dan peningkatan jumlah pendaftar mentor."
+    },
+    keyLearnings: {
+      en: "Consistent communication and transparent collaboration accelerate design iteration. Clear presentation and shared understanding between teams significantly improve design efficiency.",
+      id: "Komunikasi yang konsisten dan kolaborasi yang transparan mempercepat proses iterasi desain. Penyajian yang jelas serta pemahaman bersama antar tim secara signifikan meningkatkan efisiensi desain."
     }
-  },
-  {
-    text: {
-      en: 'Here is the design process flow that I went through with the team during this internship.',
-      id: 'Berikut adalah alur proses desain yang saya jalani bersama tim selama masa magang ini.'
-    }
-  },
-  {
-    img: "/eduwork/flow.webp",
-    desc: {
-      en: "This is the description for the image.",
-      id: "Ini adalah deskripsi untuk gambar."
-    }
-  },
-  {
-    text: {
-      en: 'The first thing we did was hold brainstorming sessions every morning with the entire team via Zoom meetings. The purpose of these sessions was to generate ideas and concepts related to the features and designs to be developed, such as creating a mood board.',
-      id: 'Hal pertama yang kami lakukan adalah mengadakan sesi brainstorming setiap pagi bersama seluruh tim melalui Zoom meeting. Tujuan dari sesi brainstorming ini adalah untuk menghasilkan ide dan konsep terkait fitur maupun desain yang akan dikembangkan, seperti membuat mood board.'
-    }
-  },
-  {
-    img: "/eduwork/mood.webp",
-    desc: {
-      en: "This is the description for the image.",
-      id: "Ini adalah deskripsi untuk gambar."
-    }
-  },
-  {
-    text: {
-      en: 'Entering the design phase, we primarily worked on creating both low-fidelity and high-fidelity designs based on the results of brainstorming sessions. Since the team consisted of two UI/UX designers, the work was usually divided so that each could produce their own designs. This approach allowed us to make comparisons while also providing additional references during presentation sessions.',
-      id: 'Memasuki fase desain, kami terutama mengerjakan pembuatan desain low-fidelity maupun high-fidelity berdasarkan hasil brainstorming. Karena dalam tim terdapat dua UI/UX designer, biasanya pekerjaan dibagi sehingga masing-masing dapat menghasilkan desainnya sendiri. Pendekatan ini memungkinkan kami untuk melakukan perbandingan sekaligus memberikan referensi tambahan saat sesi presentasi.'
-    }
-  },
-  {
-    img: "/eduwork/design.webp",
-    desc: {
-      en: "This is the description for the image.",
-      id: "Ini adalah deskripsi untuk gambar."
-    }
-  },
-  {
-    text: {
-      en: 'Entering the presentation phase, these sessions were held every afternoon with the entire team and division to present the progress achieved each day. During the presentations, feedback was provided by Mr. Dodi, the CEO, regarding necessary improvements or decisions on whether we could proceed to the prototyping stage.',
-      id: 'Memasuki fase presentasi, sesi ini diadakan setiap sore oleh seluruh tim dan divisi untuk memaparkan progres yang telah dicapai setiap hari. Dalam presentasi tersebut, masukan diberikan oleh Bapak Dodi selaku CEO terkait perbaikan yang diperlukan atau keputusan apakah kami bisa melanjutkan ke tahap prototyping.'
-    }
-  },
-]
+  }
+};
 
 export default Eduwork;

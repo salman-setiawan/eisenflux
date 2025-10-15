@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../data/languageContext';
-import CardData from '../data/card.js';
+import { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
 import Notfound from '../pages/404.jsx';
 import Footnote from '../components/Footnote.jsx';
 import Content from '../components/Content.jsx';
@@ -14,12 +14,37 @@ const Article = () => {
   const { slug } = useParams();
   const { language } = useLanguage();
   const navigate = useNavigate();
-  const selectedArticle = CardData.find(article => article.slug === slug);
+  const selectedArticle = getCardBySlug(slug);
   const [contents, setContents] = useState([]);
 
   useEffect(() => {
-    if (selectedArticle?.contents) {
-      setContents(selectedArticle.contents);
+    const cs = getCaseStudyBySlug(slug);
+    // normalize to Content.jsx input array shape if present
+    if (cs && Array.isArray(cs.process)) {
+      const normalized = [];
+      if (cs.overview) {
+        normalized.push({ title: { en: 'Overview', id: 'Ringkasan' }, text: cs.overview });
+      }
+      if (cs.problem) {
+        normalized.push({ title: { en: 'Problem', id: 'Masalah' }, text: cs.problem });
+      }
+      if (cs.process) {
+        // map process items into textQuote blocks or simple text blocks
+        cs.process.forEach((step) => {
+          if (step.overview) {
+            normalized.push({ text: step.overview });
+          } else if (step.label || step.desc) {
+            normalized.push({ title: step.label, text: step.desc });
+          }
+        });
+      }
+      if (cs.impact) {
+        normalized.push({ title: { en: 'Impact', id: 'Dampak' }, text: cs.impact });
+      }
+      if (cs.keyLearnings) {
+        normalized.push({ title: { en: 'Key Learnings', id: 'Pelajaran Utama' }, text: cs.keyLearnings });
+      }
+      setContents(normalized);
     } else {
       console.warn(`⚠️ Artikel "${slug}" tidak memiliki data konten.`);
       setContents([]);
@@ -59,16 +84,14 @@ const Article = () => {
         <Showcase id={selectedArticle.id} />
       </div>
 
-      <div className="px-5 flex flex-col gap-y-2 w-full max-w-[720px] pt-4 pb-12">
-        <div className="py-2">
-          <div className="text-2xl font-semibold leading-relaxed text-justify">
-            {title}
-          </div>
-          <div className="flex flex-wrap gap-x-2 text-[12px] font-semibold pt-2">
-            {categories.map((cat, i) => (
-              <Chip key={i} label={cat[language]} />
-            ))}
-          </div>
+      <div className="px-5 flex flex-col gap-y-2 w-full max-w-[720px] pt-8 pb-12">
+        <div className="text-2xl font-semibold leading-relaxed text-justify">
+          {title}
+        </div>
+        <div className="flex flex-wrap gap-x-2 text-[12px] font-semibold pt-2">
+          {categories.map((cat, i) => (
+            <Chip key={i} label={cat[language] || cat} />
+          ))}
         </div>
 
         {contents.length === 0 ? (

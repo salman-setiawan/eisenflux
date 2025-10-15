@@ -200,7 +200,9 @@ const Home = () => {
               <ExpCard />
             </div>
             {CardData?.length ? (
-              CardData.map((article) => (
+              [...CardData]
+                .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
+                .map((article) => (
                 <div key={article.id}>
                   <Card
                     title={article.title2}
