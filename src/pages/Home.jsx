@@ -179,18 +179,20 @@ const Home = () => {
           <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto md:pr-3 px-4 md:px-0">
             <div className="flex flex-col md:flex-row gap-2 items-stretch">
               <AvaCard />
-              <div className="gap-y-2 w-full flex flex-col min-w-[250px]">
+              <div className="gap-y-2 w-full flex flex-col min-w-[280px]">
                 <div className="hidden md:block flex-1 bg-cover bg-center rounded-lg bg-[url('/pixel.gif')] border border-neutral-800"></div>
                 <div className="grid grid-cols-2 md:grid-cols-1 gap-2">
                   <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center gap-y-2 py-2 px-2.5 bg-[#141414] rounded-lg border border-neutral-800">
-                    <div className="text-[14px] pr-4">{language === "en" ? "Created with :" : "Dibuat dengan :"}</div>
-                    <div className="flex items-center gap-3 px-1">
-                      <img src="/react.svg" alt="" className="h-4.5 w-4.5" />
-                      <img src="/tailwind.svg" alt="" className="h-4.5 w-4.5" />
+                    <div className="text-[12px] md:text-[14px] pr-4">{language === "en" ? "Created with :" : "Dibuat dengan :"}</div>
+                    <div className="flex items-center gap-2">
+                      <div className="text-[12px] md:text-[13px] px-2 py-0.5 font-bold text-[#ffaa50] bg-[#ffaa50]/15 rounded-full">React</div>
+                      <div className="text-[12px] md:text-[13px] px-2 py-0.5 font-bold text-[#ffaa50] bg-[#ffaa50]/15 rounded-full">TailwindCSS</div>
+                      {/* <img src="/react.svg" alt="" className="h-4.5 w-4.5" />
+                      <img src="/tailwind.svg" alt="" className="h-4.5 w-4.5" /> */}
                     </div>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center gap-y-1 py-2 px-2.5 bg-[#141414] rounded-lg border border-neutral-800">
-                    <div className="text-[14px] pr-4">{language === "en" ? "My Time Zone :" : "Zona Waktu Saya :"}</div>
+                    <div className="text-[12px] md:text-[14px] pr-4">{language === "en" ? "My Time Zone :" : "Zona Waktu Saya :"}</div>
                     <Clock />
                   </div>
                 </div>

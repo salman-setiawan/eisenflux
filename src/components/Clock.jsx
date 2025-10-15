@@ -23,11 +23,11 @@ const Clock = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-between sm:flex-col sm:items-end font-bold">
-      <div className="text-[15px]">
+    <div className="flex items-center justify-between sm:items-end gap-x-1.5 font-bold h-full">
+      <div>
         {time || "--:--:--"}
       </div>
-      <div className="text-neutral-400 text-[11px]">GMT+8 / WITA</div>
+      <div className="text-neutral-400 text-[11px]">GMT+8</div>
     </div>
   );
 };
