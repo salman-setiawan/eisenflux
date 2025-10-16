@@ -2,8 +2,7 @@ const Edufams = {
   card: {
     id: 3,
     slug: 'edufams',
-    title: 'EduFams',
-    title2: 'EDUCATION FAMILY',
+    title: 'EDUCATION FAMILY',
     nav: 'edufams.prj',
     cover: '/bg.webp',
     obj: '/showcase/edufams.webp',
@@ -28,9 +27,10 @@ const Edufams = {
 
   caseStudies: {
     title: "EduFams - Family Education Platform",
-    role: "UI/UX Designer",
+    altTitle: "EduFams",
+    role: { en: "UI/UX Internship", id: "UI/UX Magang" },
+    duration: { en: "5 Months", id: "5 Bulan" },
     tools: ["Figma", "Miro", "Microsoft Planner"],
-    duration: { en: "1.5 Months", id: "1,5 Bulan" },
     type: { en: "Startup Internship Project", id: "Proyek Magang Startup" },
     overview: {
       en: "EduFams is a family education platform offering parenting content, mentorship, and donation support. Developed collaboratively under the guidance of a Product Manager using Design Thinking methodology.",

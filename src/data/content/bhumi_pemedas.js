@@ -2,8 +2,7 @@ const BhumiPemedas = {
   card: {
     id: 1,
     slug: 'bhumi-pemedas',
-    title: 'Bhumi Pemedas Ads Website',
-    title2: 'BHUMI PEMEDAS',
+    title: 'BHUMI PEMEDAS',
     nav: 'bhumi_pemedas.prj',
     cover: '/bg.webp',
     obj: '/showcase/pemedas.webp',
@@ -25,9 +24,10 @@ const BhumiPemedas = {
 
   caseStudies: {
     title: 'Bhumi Pemedas Ads Website',
-    role: 'UI/UX Lead',
+    altTitle: 'Bhumi Pemedas',
+    role: { en: 'UI/UX Lead', id: 'Kepala UI/UX' },
+    duration: { en: '4 Months', id: '4 Bulan' },
     tools: ['Figma'],
-    duration: { en: '', id: '' },
     type: { en: 'Web Landing Page', id: 'Web Halaman Arahan' },
     overview: { en: '', id: '' },
     problem: { en: '', id: '' },

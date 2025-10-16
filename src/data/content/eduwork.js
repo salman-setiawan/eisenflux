@@ -2,8 +2,7 @@ const Eduwork = {
   card: {
     id: 4,
     slug: 'eduwork',
-    title: 'Eduwork Mentor Website',
-    title2: 'EDUWORK MENTOR',
+    title: 'EDUWORK MENTOR',
     nav: 'eduwork.prj',
     cover: '/bg.webp',
     obj: '/showcase/eduwork.webp',
@@ -27,12 +26,13 @@ const Eduwork = {
 
   caseStudies: {
     title: "Eduwork Mentor Website",
-    role: "UI/UX Designer",
+    altTitle: "Eduwork",
+    role: { en: "UI/UX Internship", id: "UI/UX Magang" },
+    duration: { en: "3 Months", id: "3 Bulan" },
     tools: ["Figma", "Miro", "Microsoft Planner"],
-    duration: { en: "1.5 Months", id: "1,5 Bulan" },
     type: { en: "Collaborative Internship Project", id: "Proyek Magang Kolaboratif" },
     overview: {
-      en: "Eduwork Mentor is a collaborative web design project aimed at creating a mentor-focused landing page. The design supports Eduwork’s vision to expand into a more interactive, community-driven learning environment.",
+      en: "Eduwork Mentor is a collaborative web design project aimed at creating a mentor-focused landing page. The design supports Eduwork's vision to expand into a more interactive, community-driven learning environment.",
       id: "Eduwork Mentor adalah proyek desain web kolaboratif yang berfokus pada pembuatan halaman arahan untuk mentor. Desain ini mendukung visi Eduwork untuk berkembang menjadi lingkungan pembelajaran yang lebih interaktif dan berorientasi komunitas."
     },
     problem: {

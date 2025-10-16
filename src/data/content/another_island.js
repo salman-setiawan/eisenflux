@@ -2,8 +2,7 @@ const AnotherIsland = {
   card: {
     id: 2,
     slug: 'another-island',
-    title: 'Another Day in the Island',
-    title2: 'ANOTHER ISLAND',
+    title: 'ANOTHER ISLAND',
     nav: 'another_island.prj',
     cover: '/bg.webp',
     obj: '/showcase/another.webp',
@@ -26,10 +25,11 @@ const AnotherIsland = {
   },
 
   caseStudies: {
-    title: 'Another Day in the Island',
-    role: 'UI/UX Designer & Researcher',
-    tools: ['Figma', 'Google Form', 'Construct', 'Excel'],
-    duration: { en: '3 Months', id: '3 Bulan' },
+    title: 'Another Day in the Island Web Game',
+    altTitle: 'Another Day in the Island',
+    role: { en: 'Independent UI/UX', id: 'UI/UX Independen' },
+    duration: { en: '7 Months', id: '7 Bulan' },
+    tools: ['Figma', 'Google Form', 'Construct 3'],
     type: { en: 'Game UX Design (Academic Research)', id: 'Desain UX Permainan (Riset Akademik)' },
     overview: {
       en: 'An arcade-survival game designed using the User-Centered Design (UCD) framework. The goal was to improve gameplay enjoyment and usability based on player feedback and iterative evaluation.',

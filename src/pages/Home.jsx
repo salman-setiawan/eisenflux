@@ -205,7 +205,7 @@ const Home = () => {
                 .map((article) => (
                 <div key={article.id}>
                   <Card
-                    title={article.title2}
+                    title={article.title}
                     nav={article.nav}
                     img={article.cover}
                     obj={article.obj}

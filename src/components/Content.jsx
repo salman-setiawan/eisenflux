@@ -1,4 +1,20 @@
 const Content = ({ data, language }) => {
+  const getBgClasses = (kind) => {
+    switch (kind) {
+      case 'overview':
+        return 'bg-yellow-200/5 border-yellow-200/30 text-yellow-200';
+      case 'problem':
+        return 'bg-rose-500/5 border-rose-500/30 text-rose-400';
+      case 'process':
+        return 'bg-yellow-200/5 border-yellow-200/30 text-yellow-200';
+      case 'impact':
+        return 'bg-emerald-400/5 border-emerald-400/30 text-emerald-400';
+      case 'keyLearnings':
+        return 'bg-emerald-400/5 border-emerald-400/30 text-emerald-400';
+      default:
+        return 'bg-transparent border-neutral-800';
+    }
+  };
   const isValidImage = (url) => url && /\.(jpg|jpeg|png|webp)$/i.test(url);
   const hasValidImage = data && isValidImage(data.img);
 
@@ -10,56 +26,47 @@ const Content = ({ data, language }) => {
   if (hasValidImage && !data.textQuote) {
     return (
       <div>
-        <img
-          className="text-center text-blue-300 text-sm py-1"
-          src={data.img}
-          alt={altText[language] || ""}
-        />
-        <p className="w-full text-center pt-1.5 text-sm text-gray-500">
-          {data.desc ? data.desc[language] : ""}
-        </p>
+        <img className="text-center text-blue-300 text-sm py-1" src={data.img} alt={altText[language] || ""} />
+        <p className="w-full text-center pt-1.5 text-sm text-gray-500"> {data.desc ? data.desc[language] : ""}</p>
       </div>
     );
   }
 
-  if (Array.isArray(data.textQuote)) {
+  // Combined Process Card rendering
+  if (data.kind === 'process') {
     return (
-      <div className="py-2.5">
-        <div className="border-l-4 border-[#ffaa00] pl-4 py-0.5 leading-relaxed text-justify flex flex-col gap-y-4">
-          {data.textQuote.map((item, idx) => {
-            if (item.type === "text" && item.value[language]) {
-              return (
-                <div key={idx} className="text-[15px] text-gray-300">
-                  {item.value[language]}
-                </div>
-              );
-            }
-            if (item.type === "image" && isValidImage(item.value)) {
-              return (
-                <img
-                  key={idx}
-                  className="text-sm text-center text-blue-300 mb-4"
-                  src={item.value}
-                  alt={altText[language] || ""}
-                />
-              );
-            }
-            return null;
-          })}
+      <div className={`leading-relaxed text-justify px-3 py-2.5 rounded-lg border-2 border-dashed text-[14px] md:text-[15px] ${getBgClasses(data.kind)}`}>
+        <div className="font-bold mb-1">
+          {data.title ? data.title[language] : (language === 'id' ? 'Proses' : 'Process')}
         </div>
+        {data.text && (
+          <div className="font-medium text-gray-300 mb-6">{data.text[language]}</div>
+        )}
+        {Array.isArray(data.steps) && data.steps.length > 0 && (
+          <div className="flex flex-col gap-y-1.5">
+            {data.steps.map((s, i) => (
+              <div key={i} className="font-bold">
+                <span className="font-semibold">{s.label?.[language]}</span>
+                {s.desc && (
+                  <span className="font-medium text-gray-300">{"\u00A0"}{s.desc[language]}</span>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     );
   }
 
   return (
-    <div className="leading-relaxed text-justify">
+    <div className={`leading-relaxed text-justify px-3 py-2.5 border-2 border-dashed rounded-lg text-[14px] md:text-[15px] ${getBgClasses(data.kind)}`}>
       {data.title && (
-        <div className="font-semibold text-2xl pt-6 pb-3">
+        <div className="font-bold mb-1">
           {data.title[language]}
         </div>
       )}
       {data.text && (
-        <div className="text-[15px] text-gray-300 py-2">{data.text[language]}</div>
+        <span className="font-medium text-gray-300">{data.text[language]}</span>
       )}
     </div>
   );

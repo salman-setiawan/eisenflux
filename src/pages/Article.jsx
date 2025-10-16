@@ -16,6 +16,7 @@ const Article = () => {
   const navigate = useNavigate();
   const selectedArticle = getCardBySlug(slug);
   const [contents, setContents] = useState([]);
+  const csData = getCaseStudyBySlug(slug);
 
   useEffect(() => {
     const cs = getCaseStudyBySlug(slug);
@@ -23,26 +24,34 @@ const Article = () => {
     if (cs && Array.isArray(cs.process)) {
       const normalized = [];
       if (cs.overview) {
-        normalized.push({ title: { en: 'Overview', id: 'Ringkasan' }, text: cs.overview });
+        normalized.push({ kind: 'overview', title: { en: 'Overview', id: 'Ringkasan' }, text: cs.overview });
       }
       if (cs.problem) {
-        normalized.push({ title: { en: 'Problem', id: 'Masalah' }, text: cs.problem });
+        normalized.push({ kind: 'problem', title: { en: 'Problem', id: 'Masalah' }, text: cs.problem });
       }
       if (cs.process) {
-        // map process items into textQuote blocks or simple text blocks
+        // Build a single combined process card: overview + labeled steps
+        let processOverview = null;
+        const steps = [];
         cs.process.forEach((step) => {
           if (step.overview) {
-            normalized.push({ text: step.overview });
+            processOverview = step.overview;
           } else if (step.label || step.desc) {
-            normalized.push({ title: step.label, text: step.desc });
+            steps.push({ label: step.label, desc: step.desc });
           }
+        });
+        normalized.push({
+          kind: 'process',
+          title: { en: 'Process', id: 'Proses' },
+          text: processOverview,
+          steps,
         });
       }
       if (cs.impact) {
-        normalized.push({ title: { en: 'Impact', id: 'Dampak' }, text: cs.impact });
+        normalized.push({ kind: 'impact', title: { en: 'Impact', id: 'Dampak' }, text: cs.impact });
       }
       if (cs.keyLearnings) {
-        normalized.push({ title: { en: 'Key Learnings', id: 'Pelajaran Utama' }, text: cs.keyLearnings });
+        normalized.push({ kind: 'keyLearnings', title: { en: 'Key Learnings', id: 'Pelajaran Utama' }, text: cs.keyLearnings });
       }
       setContents(normalized);
     } else {
@@ -63,10 +72,19 @@ const Article = () => {
     return <Notfound />;
   }
 
-  const { title, categories, extUrl, extImg, extText, intImg2, intText2 } = selectedArticle;
+  const { extUrl, extImg, extText, intImg2, intText2 } = selectedArticle;
+  const pageTitle = csData?.title || selectedArticle.title;
+  const navbarTitle = csData?.altTitle || selectedArticle.title3 || selectedArticle.title;
+
+  const metaLabels = {
+    role: { en: 'Role', id: 'Peran' },
+    tools: { en: 'Tools', id: 'Perangkat' },
+    duration: { en: 'Duration', id: 'Durasi' },
+    type: { en: 'Type', id: 'Jenis' },
+  };
 
   return (
-    <div className="flex flex-col items-center overflow-x-hidden bg-[#141414]">
+    <div className="flex flex-col items-center overflow-x-hidden bg-[#191919]">
       <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-4 px-5 items-center">
         <button 
           onClick={() => navigate(-1)}
@@ -76,23 +94,47 @@ const Article = () => {
             <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
-        <div className="text-center font-semibold text-[13px]">{title}</div>
+        <div className="text-center font-semibold text-[13px]">{navbarTitle}</div>
         <LanguageToggle />
       </div>
 
-      <div className="w-[150vw] h-[560px] md:h-[320px] bg-cover flex justify-center items-center bg-[#171717] overflow-hidden shadow-lg">
+      <div className="w-[150vw] h-[560px] md:h-[320px] bg-cover flex justify-center items-center bg-[#212121] overflow-hidden">
         <Showcase id={selectedArticle.id} />
       </div>
 
-      <div className="px-5 flex flex-col gap-y-2 w-full max-w-[720px] pt-8 pb-12">
-        <div className="text-2xl font-semibold leading-relaxed text-justify">
-          {title}
+      <div className="px-5 flex flex-col gap-y-4 w-full max-w-[800px] pt-6 pb-28">
+        <div className="text-2xl font-semibold pb-1">
+          {pageTitle}
         </div>
-        <div className="flex flex-wrap gap-x-2 text-[12px] font-semibold pt-2">
-          {categories.map((cat, i) => (
-            <Chip key={i} label={cat[language] || cat} />
-          ))}
-        </div>
+
+        {csData && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[14px] text-neutral-300 pb-2">
+            {csData.role && (
+              <div className="flex gap-2">
+                <span className="text-neutral-400 min-w-[72px]">{metaLabels.role[language]}:</span>
+                <span className="font-semibold text-white">{csData.role[language] || csData.role.en || csData.role}</span>
+              </div>
+            )}
+            {csData.duration && (
+              <div className="flex gap-2">
+                <span className="text-neutral-400 min-w-[72px]">{metaLabels.duration[language]}:</span>
+                <span className="font-semibold text-white">{csData.duration[language] || csData.duration.en || csData.duration}</span>
+              </div>
+            )}
+            {csData.type && (
+              <div className="flex gap-2">
+                <span className="text-neutral-400 min-w-[72px]">{metaLabels.type[language]}:</span>
+                <span className="font-semibold text-white">{csData.type[language] || csData.type.en || csData.type}</span>
+              </div>
+            )}
+            {csData.tools && Array.isArray(csData.tools) && csData.tools.length > 0 && (
+              <div className="flex gap-2">
+                <span className="text-neutral-400 min-w-[72px]">{metaLabels.tools[language]}:</span>
+                <span className="font-semibold text-white">{csData.tools.join(', ')}</span>
+              </div>
+            )}
+          </div>
+        )}
 
         {contents.length === 0 ? (
           <div className="text-neutral-300 text-center italic py-12">
@@ -122,7 +164,7 @@ const Article = () => {
           </div>
         </div>
         <Footnote />
-        <title>{title}</title>
+        <title>{pageTitle}</title>
       </div>
     </div>
   );
