@@ -65,8 +65,16 @@ const Content = ({ data, language }) => {
           {data.title[language]}
         </div>
       )}
-      {data.text && (
-        <span className="font-medium text-gray-300">{data.text[language]}</span>
+      {Array.isArray(data.text) ? (
+        <div className="flex flex-col gap-y-2">
+          {data.text.map((para, idx) => (
+            <span key={idx} className="font-medium text-gray-300">{para?.[language] || para?.en || ''}</span>
+          ))}
+        </div>
+      ) : (
+        data.text && (
+          <span className="font-medium text-gray-300">{data.text[language]}</span>
+        )
       )}
     </div>
   );

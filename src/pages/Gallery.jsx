@@ -27,7 +27,7 @@ const Gallery = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center px-5 bg-[#141414]">
+      <div className="flex flex-col items-center px-5">
         <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-4 px-5 items-center">
           <button 
             onClick={() => navigate(-1)}
@@ -41,7 +41,7 @@ const Gallery = () => {
           <LanguageToggle />
         </div>
 
-        <div className="pt-20 pb-8">
+        <div className="pt-20 pb-32">
           {isGroupedGallery ? (
             <>
               {gallery.pc && (

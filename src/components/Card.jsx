@@ -56,7 +56,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                   <img className="h-[20rem] md:h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
                 </div>
                 <div className="flex flex-col lg:flex-row lg:gap-x-4 gap-y-4 justify-end lg:justify-between items-end">
-                  <div className="flex justify-end gap-x-1.5 min-w-[280px]">
+                  <div className="flex justify-end gap-x-1.5 min-w-[280px] z-20">
                     {url1 && <Button to={url1} img={intImg} text={intText} />}
                     {url2 && <Button to={url2} img={intImg2} text={intText2} />}
                     {url3 && (<Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}

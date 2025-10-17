@@ -31,50 +31,56 @@ const Eduwork = {
     duration: { en: "3 Months", id: "3 Bulan" },
     tools: ["Figma", "Miro", "Microsoft Planner"],
     type: { en: "Collaborative Internship Project", id: "Proyek Magang Kolaboratif" },
-    overview: {
-      en: "Eduwork Mentor is a collaborative web design project aimed at creating a mentor-focused landing page. The design supports Eduwork's vision to expand into a more interactive, community-driven learning environment.",
-      id: "Eduwork Mentor adalah proyek desain web kolaboratif yang berfokus pada pembuatan halaman arahan untuk mentor. Desain ini mendukung visi Eduwork untuk berkembang menjadi lingkungan pembelajaran yang lebih interaktif dan berorientasi komunitas."
-    },
+    overview: [
+      {
+        en: "The Eduwork website for mentors is a collaborative web design project we worked on during our internship, focusing on creating a landing page for mentors.",
+        id: "Situs Eduwork untuk mentor adalah proyek desain web kolaboratif yang kami kerjakan selama magang berlangsung dengan berfokus pada pembuatan halaman arahan bagi mentor."
+      },
+      {
+        en: "It aims to help Eduwork strengthen the connection between mentors and the platform, while supporting its vision to build a more interactive, credible, and community-oriented learning environment.",
+        id: "Bertujuan untuk membantu Eduwork memperkuat hubungan antara mentor dan platform, serta mendukung visinya untuk menciptakan lingkungan belajar yang lebih interaktif, kredibel, dan berorientasi komunitas."
+      },
+    ],
     problem: {
-      en: "Eduwork sought to strengthen its brand credibility and attract mentors by presenting clear program structures, testimonials, and benefits within a visually modern and trustworthy layout.",
-      id: "Eduwork ingin memperkuat kredibilitas mereknya dan menarik lebih banyak mentor dengan menyajikan struktur program, testimoni, dan manfaat secara jelas dalam tata letak yang modern dan tepercaya."
+      en: "Eduwork aims to enhance its credibility and attract more mentors by clearly presenting the program structure, benefits, and testimonials in a modern, professional, and easy-to-understand layout.",
+      id: "Eduwork ingin meningkatkan kredibilitas dan menarik lebih banyak mentor dengan menampilkan struktur program, manfaat, dan testimoni secara jelas dalam tata letak yang modern, profesional, dan mudah dipahami."
     },
     process: [
       {
         overview: {
-          en: "We adopted a Collaborative Agile Workflow to ensure rapid iteration and transparent communication with stakeholders. This approach maintained alignment between design goals, feedback, and deliverables.",
-          id: "Kami menerapkan alur kerja Agile Kolaboratif untuk memastikan iterasi yang cepat dan komunikasi yang transparan dengan para pemangku kepentingan. Pendekatan ini menjaga keselarasan antara tujuan desain, umpan balik, dan hasil kerja."
+          en: "We applied a Collaborative Agile workflow to ensure rapid iteration and transparent communication with stakeholders. This approach maintains alignment between design goals, feedback, and the outcomes we deliver.",
+          id: "Kami menerapkan alur kerja Agile Kolaboratif untuk memastikan iterasi yang cepat dan komunikasi yang transparan dengan para pemangku kepentingan. Pendekatan ini menjaga keselarasan antara tujuan desain, umpan balik, dan hasil yang kami berikan."
         }
       },
       {
         label: { en: 'Brainstorm :', id: 'Brainstorm :' },
         desc: {
-          en: 'Held daily online sessions to generate ideas and align feature concepts with business goals.',
-          id: 'Melakukan sesi daring harian untuk menghasilkan ide serta menyelaraskan konsep fitur dengan tujuan bisnis.'
+          en: 'Conducted daily online sessions to align visions and generate ideas, focusing on improving information clarity and mentor registration conversion.',
+          id: 'Melakukan sesi harian secara daring untuk menyamakan visi dan menghasilkan ide, dengan berfokus pada peningkatan kejelasan informasi dan konversi pendaftaran mentor.'
         }
       },
       {
         label: { en: 'Design :', id: 'Desain :' },
         desc: {
-          en: 'Developed low- and high-fidelity wireframes collaboratively to compare layouts and iterate quickly.',
-          id: 'Mengembangkan wireframe fidelitas rendah dan tinggi secara kolaboratif untuk membandingkan tata letak dan melakukan iterasi dengan cepat.'
+          en: 'Developed low- to high-fidelity interfaces, tested layouts with internal users, and refined the visual hierarchy based on usability insights.',
+          id: 'Mengembangkan antarmuka fidelitas rendah hingga tinggi, menguji tata letak dengan pengguna internal, serta menyesuaikan hierarki visual berdasarkan insight usability.'
         }
       },
       {
         label: { en: 'Feedback Loop :', id: 'Siklus Umpan Balik :' },
         desc: {
-          en: 'Presented progress daily to the CEO and refined designs based on feedback and business direction.',
-          id: 'Menyampaikan kemajuan desain setiap hari kepada CEO dan menyempurnakan desain berdasarkan umpan balik serta arah bisnis.'
+          en: 'Presented daily design progress to the CEO and development team, received strategic feedback, and implemented design changes to maintain alignment with business direction.',
+          id: 'Menampilkan progres rancangan harian kepada CEO dan tim pengembang, menerima masukan strategis, lalu mengimplementasikan perubahan rancangan untuk menjaga konsistensi arah bisnis.'
         }
       },
     ],
     impact: {
-      en: "Delivered a modern, content-focused mentor landing page that aligns with Eduwork’s brand tone and improves user engagement. The design contributed to faster onboarding and increased mentor applications.",
-      id: "Menghasilkan halaman arahan mentor yang modern dan berfokus pada konten, selaras dengan citra merek Eduwork serta meningkatkan keterlibatan pengguna. Desain ini berkontribusi pada proses onboarding yang lebih cepat dan peningkatan jumlah pendaftar mentor."
+      en: "Enhanced the clarity of the program structure and benefits for prospective mentors. Aligned the visual design with Eduwork's brand identity to strengthen the perception of professionalism and user trust.",
+      id: "Meningkatkan kejelasan struktur program dan manfaat bagi calon mentor. Menyelaraskan tampilan visual dengan identitas merek Eduwork, meningkatkan persepsi profesionalitas dan kepercayaan pengguna."
     },
     keyLearnings: {
-      en: "Consistent communication and transparent collaboration accelerate design iteration. Clear presentation and shared understanding between teams significantly improve design efficiency.",
-      id: "Komunikasi yang konsisten dan kolaborasi yang transparan mempercepat proses iterasi desain. Penyajian yang jelas serta pemahaman bersama antar tim secara signifikan meningkatkan efisiensi desain."
+      en: "Consistent communication and transparent collaboration accelerated the design iteration process. Furthermore, presenting information in a well-structured manner not only improved design efficiency but also helped the team understand the impact of design decisions on business goals.",
+      id: "Komunikasi yang konsisten dan kolaborasi yang transparan mempercepat proses iterasi desain. Kemudian penyajian informasi yang terstruktur dengan baik tidak hanya meningkatkan efisiensi desain, tetapi juga membantu tim memahami dampak keputusan desain terhadap tujuan bisnis."
     }
   }
 };

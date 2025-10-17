@@ -31,13 +31,19 @@ const AnotherIsland = {
     duration: { en: '7 Months', id: '7 Bulan' },
     tools: ['Figma', 'Google Form', 'Construct 3'],
     type: { en: 'Game UX Design (Academic Research)', id: 'Desain UX Permainan (Riset Akademik)' },
-    overview: {
-      en: 'An arcade-survival game designed using the User-Centered Design (UCD) framework. The goal was to improve gameplay enjoyment and usability based on player feedback and iterative evaluation.',
-      id: 'Permainan arcade-survival yang dirancang menggunakan kerangka User-Centered Design (UCD). Tujuannya adalah meningkatkan kesenangan bermain dan kegunaan berdasarkan umpan balik pemain serta evaluasi berulang.'
-    },
+    overview: [
+      {
+        en: 'This project is an arcade-survival game designed to deliver an exciting and enjoyable gameplay experience.',
+        id: 'Proyek ini merupakan permainan arcade-survival yang dirancang untuk menghadirkan pengalaman bermain yang seru dan menyenangkan.'
+      },
+      {
+        en: 'The design process follows the User-Centered Design (UCD) framework, focusing on players needs and comfort. Through a series of user tests and feedback sessions, the game design was continuously evaluated and refined to provide a more engaging and responsive experience for players.',
+        id: 'Proses perancangannya mengikuti kerangka User-Centered Design (UCD), dengan fokus pada kebutuhan dan kenyamanan pemain. Melalui serangkaian pengujian dan umpan balik pengguna, desain permainan ini terus dievaluasi dan disempurnakan agar memberikan pengalaman yang lebih menyenangkan dan responsif bagi pemain.'
+      },
+    ],
     problem: {
-      en: 'Players of casual arcade games often seek quick, satisfying entertainment but face issues with repetitive gameplay and unclear progression.',
-      id: 'Pemain gim arcade kasual sering mencari hiburan cepat dan memuaskan, namun sering menghadapi masalah berupa gameplay yang repetitif dan progresi yang tidak jelas.'
+      en: 'Based on survey results, the majority of casual arcade players seek quick and satisfying entertainment. However, they often encounter issues such as repetitive gameplay and unclear progression systems, which reduce motivation and long-term player engagement.',
+      id: 'Berdasarkan hasil survei, mayoritas pemain gim arcade kasual mencari hiburan yang cepat dan memuaskan. Namun, mereka sering menghadapi masalah berupa gameplay yang terasa repetitif serta sistem progresi yang kurang jelas, sehingga mengurangi motivasi dan keterlibatan pemain dalam jangka panjang.'
     },
     process: [
       {

@@ -32,10 +32,16 @@ const Edufams = {
     duration: { en: "5 Months", id: "5 Bulan" },
     tools: ["Figma", "Miro", "Microsoft Planner"],
     type: { en: "Startup Internship Project", id: "Proyek Magang Startup" },
-    overview: {
-      en: "EduFams is a family education platform offering parenting content, mentorship, and donation support. Developed collaboratively under the guidance of a Product Manager using Design Thinking methodology.",
-      id: "EduFams adalah platform edukasi keluarga yang menyediakan konten parenting, pendampingan, dan dukungan donasi. Proyek ini dikembangkan secara kolaboratif di bawah arahan Product Manager menggunakan metodologi Design Thinking."
-    },
+    overview: [
+      {
+        en: "EduFams is a family education platform that provides article and video content about family life, class programs with top mentors in their fields, and donation support to help underprivileged families.",
+        id: "EduFams adalah platform edukasi keluarga yang menyediakan konten artikel/video mengenai keluarga, program kelas dengan mentor terbaik di bidangnya, dan dukungan donasi untuk membantu keluarga dengan ekonomi kebawah."
+      },
+      {
+        en: "This project was developed collaboratively with web and mobile developers under the guidance of a Product Manager, using the Agile Kanban methodology and applying Design Thinking throughout the design process.",
+        id: "Proyek ini dikembangkan secara kolaboratif bersama developer web dan juga mobile di bawah arahan Product Manager menggunakan metodologi Agile Kanban, dan Design Thinking dalam proses desainnya."
+      },
+    ],
     problem: {
       en: "Indonesian families lacked accessible parenting education during the pandemic, leading to increased child gadget dependency and family stress.",
       id: "Keluarga Indonesia kekurangan akses terhadap edukasi parenting selama masa pandemi, yang menyebabkan meningkatnya ketergantungan anak terhadap gawai dan stres dalam keluarga."
