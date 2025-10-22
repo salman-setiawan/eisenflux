@@ -84,9 +84,11 @@ const Bio = () => {
               </div>
               <div className="bg-black/80 p-4 border-dot gap-y-4 md:gap-y-6 flex flex-col justify-center">
                 <div>
-                  {language === 'en' ? "I'm a Bachelor of Informatics graduate specializing in " : 'Pengalaman Kerja '}
-                  <span className="text-[#ffaa50] font-semibold">UI/UX Design.</span>
-                  {language === 'en' ? " My method and focus lies in crafting human-centered digital experiences through research-driven design into intuitive, purposeful interfaces." : 'Pengalaman Kerja'}
+                  {language === 'en' ? "I'm a designer who believes that great design happens where empathy meets logic. My journey into UX started with a simple curiosity:" : 'Saya seorang desainer yang percaya bahwa desain terbaik lahir dari perpaduan empati dan logika. Perjalanan saya di dunia UX berawal dari rasa penasaran sederhana:'}
+                  <div className="text-[#ffaa50] font-semibold py-2 text-[18px]">
+                    {language === 'en' ? "why do some apps feel effortless, while others frustrate us in seconds?" : 'kenapa ada aplikasi yang terasa alami digunakan, sementara yang lain bikin frustrasi dalam hitungan detik?'}
+                  </div>
+                  {language === 'en' ? "Since then, I've been motivated to keep creating digital experiences that are intuitive, human-centered, and truly meaningful." : 'Sejak itu, saya termotivasi untuk terus mencoba menciptakan pengalaman digital yang intuitif, manusiawi, dan benar-benar bermanfaat.'}
                 </div>
                 <div>
                   {language === 'en' ? "I believe great design begins with understanding what users need before deciding how things should look. I approach every project through curiosity, data, and feedback." : 'Pengalaman Kerja'}

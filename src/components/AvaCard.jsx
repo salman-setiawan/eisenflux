@@ -7,7 +7,7 @@ const AvaCard = () => {
   return (
     <div className="flex flex-row gap-3.5 border border-neutral-800 p-3 bg-[#141414] rounded-xl">
       <img src="/bg-bio.webp" alt="ava" className="w-20 md:w-24 h-full object-cover rounded-lg" />
-      <div className="space-y-2 text-[15px] text-justify">
+      <div className="space-y-2 text-[14px] md:text-[15px] text-justify">
         <WorkChip label={language === "en" ? "Open to Work" : "Terbuka dalam Pekerjaan"} />
         <div className='pl-0.5 pr-2'> 
           {language === "en" ? "Hola! my name is" : "Hola! namaku"} 
