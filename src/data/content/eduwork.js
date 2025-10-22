@@ -45,6 +45,7 @@ const Eduwork = {
       en: "Eduwork aims to enhance its credibility and attract more mentors by clearly presenting the program structure, benefits, and testimonials in a modern, professional, and easy-to-understand layout.",
       id: "Eduwork ingin meningkatkan kredibilitas dan menarik lebih banyak mentor dengan menampilkan struktur program, manfaat, dan testimoni secara jelas dalam tata letak yang modern, profesional, dan mudah dipahami."
     },
+    processImg: '/eduwork/flow.webp',
     process: [
       {
         overview: {

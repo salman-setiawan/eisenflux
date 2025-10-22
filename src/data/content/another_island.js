@@ -42,9 +42,10 @@ const AnotherIsland = {
       },
     ],
     problem: {
-      en: 'Based on survey results, the majority of casual arcade players seek quick and satisfying entertainment. However, they often encounter issues such as repetitive gameplay and unclear progression systems, which reduce motivation and long-term player engagement.',
-      id: 'Berdasarkan hasil survei, mayoritas pemain gim arcade kasual mencari hiburan yang cepat dan memuaskan. Namun, mereka sering menghadapi masalah berupa gameplay yang terasa repetitif serta sistem progresi yang kurang jelas, sehingga mengurangi motivasi dan keterlibatan pemain dalam jangka panjang.'
+      en: 'To find out what kind of game players wanted to play, I conducted a questionnaire survey. The results indicated that most players preferred an arcade-style survival game that is entertaining, easy to play, yet challenging at the same time.',
+      id: 'Untuk mencari tahu permainan apa yang ingin dimainkan oleh para pemain saya melakukan survei kuisioner. Hasilnya menyatakan mayoritas pemain ingin bermain permainan arkade dengan tema bertahan hidup yang dapat menghibur mereka, mudah dimainkan namun menantang dalam waktu bersamaan.'
     },
+    processImg: '/anotherisland/ucd.webp',
     process: [
       {
         overview: {
@@ -62,22 +63,22 @@ const AnotherIsland = {
       {
         label: { en: 'Define Requirements :', id: 'Menetapkan Kebutuhan :' },
         desc: {
-          en: 'Identified key needs — quick learning curve, modern visuals, high replayability.',
-          id: 'Mengidentifikasi kebutuhan utama — kurva pembelajaran cepat, visual modern, dan tingkat permainan ulang yang tinggi.'
+          en: 'Identified and analyzed data from questionnaires, interviews, and persona insights to define user needs.',
+          id: 'Mengidentifikasi hasil analisa data kuesioner, wawancara, serta insight dari persona kemudian digunakan untuk merumuskan kebutuhan pengguna.'
         }
       },
       {
-        label: { en: 'Design Solutions :', id: 'Merancang Solusi :' },
+        label: { en: 'Product Design Solutions :', id: 'Merancang Solusi Produk :' },
         desc: {
-          en: 'Built GDD, storyboard, wireframes, and a complete design system before producing UI mockups.',
-          id: 'Membangun GDD, storyboard, wireframe, serta sistem desain lengkap sebelum membuat mockup antarmuka.'
+          en: 'Created a Game Design Document, storyboard, low- and high-fidelity wireframes, and a complete Design System before developing the UI mockup.',
+          id: 'Membangun Game Design Document, Storyboard, Wireframe fidelitas rendah dan tinggi, serta Design System lengkap sebelum membuat UI Mockup.'
         }
       },
       {
         label: { en: 'Evaluate & Iterate :', id: 'Evaluasi & Iterasi :' },
         desc: {
-          en: 'Applied Customer Feedback Loop (CFL) to gather usability scores, yielding improvement from 3.72 → 4.14.',
-          id: 'Menerapkan Customer Feedback Loop (CFL) untuk mengumpulkan skor kegunaan, menghasilkan peningkatan dari 3,72 → 4,14.'
+          en: 'Applied Customer Feedback Loop (CFL) to gather usability scores, yielding improvement from 3.72 on first evaluation to 4.14 on second evaluation.',
+          id: 'Menerapkan Customer Feedback Loop (CFL) untuk mengumpulkan skor kegunaan, menghasilkan peningkatan dari 3,72 pada evaluasi pertama menjadi 4,14 pada evaluasi kedua.'
         }
       }
     ],

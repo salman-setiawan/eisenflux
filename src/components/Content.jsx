@@ -11,6 +11,8 @@ const Content = ({ data, language }) => {
         return 'bg-emerald-400/5 border-emerald-400/30 text-emerald-400';
       case 'keyLearnings':
         return 'bg-emerald-400/5 border-emerald-400/30 text-emerald-400';
+      case 'image':
+        return 'bg-transparent border-transparent';
       default:
         return 'bg-transparent border-neutral-800';
     }
@@ -28,6 +30,24 @@ const Content = ({ data, language }) => {
       <div>
         <img className="text-center text-blue-300 text-sm py-1" src={data.img} alt={altText[language] || ""} />
         <p className="w-full text-center pt-1.5 text-sm text-gray-500"> {data.desc ? data.desc[language] : ""}</p>
+      </div>
+    );
+  }
+
+  // Image rendering
+  if (data.kind === 'image') {
+    return (
+      <div className={`flex flex-col items-center ${getBgClasses(data.kind)}`}>
+        <img 
+          className="w-full max-w-[600px] rounded-lg shadow-lg" 
+          src={data.img} 
+          alt={data.alt ? data.alt[language] : altText[language]} 
+        />
+        {data.desc && (
+          <p className="w-full text-center pt-3 text-sm text-gray-400 max-w-[600px]">
+            {data.desc[language]}
+          </p>
+        )}
       </div>
     );
   }

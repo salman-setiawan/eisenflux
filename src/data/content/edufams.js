@@ -46,6 +46,7 @@ const Edufams = {
       en: "Indonesian families lacked accessible parenting education during the pandemic, leading to increased child gadget dependency and family stress.",
       id: "Keluarga Indonesia kekurangan akses terhadap edukasi parenting selama masa pandemi, yang menyebabkan meningkatnya ketergantungan anak terhadap gawai dan stres dalam keluarga."
     },
+    processImg: '/edufams/think.webp',
     process: [
       {
         overview: {
@@ -82,7 +83,7 @@ const Edufams = {
         }
       },
       {
-        label: { en: 'Test :', id: 'Uji :' },
+        label: { en: 'Test :', id: 'Uji Coba :' },
         desc: {
           en: 'Received mentor feedback on margins, layout density, and color hierarchy; refined accordingly.',
           id: 'Mendapatkan masukan dari mentor terkait margin, kepadatan tata letak, dan hierarki warna; kemudian melakukan perbaikan sesuai saran.'

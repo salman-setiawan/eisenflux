@@ -29,6 +29,14 @@ const Article = () => {
       if (cs.problem) {
         normalized.push({ kind: 'problem', title: { en: 'Problem', id: 'Masalah' }, text: cs.problem });
       }
+      if (cs.processImg) {
+        normalized.push({ 
+          kind: 'image', 
+          img: cs.processImg,
+          alt: { en: 'Process Image', id: 'Gambar Proses' },
+          desc: { en: '', id: '' }
+        });
+      }
       if (cs.process) {
         // Build a single combined process card: overview + labeled steps
         let processOverview = null;
@@ -108,7 +116,7 @@ const Article = () => {
         </div>
 
         {csData && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[14px] text-neutral-300 pb-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[14px] text-neutral-300 pb-4">
             {csData.role && (
               <div className="flex gap-2">
                 <span className="text-neutral-400 min-w-[72px]">{metaLabels.role[language]}:</span>
