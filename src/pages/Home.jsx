@@ -12,7 +12,7 @@ import Typewriter from '../components/animate/Typewriter.jsx';
 import ExpCard from '../components/ExpCard.jsx';
 import AvaCard from '../components/AvaCard.jsx';
 import Connect from "../components/Connect.jsx";
-import Clock from "../components/Clock.jsx";
+import DeckCard from "../components/DeckCard.jsx";
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -138,96 +138,104 @@ const Home = () => {
   // Konten utama
   return (
     <div className="flex justify-center">
-      <div className="flex flex-col place-content-center w-full md:max-w-[1080px] md:h-screen">
-        <div className="flex flex-col gap-y-2 w-full h-full px-0 md:px-4">
-          <div className="flex flex-col block md:hidden">
-            <div ref={sentinelRef}></div>
-              {isFixed && <div style={{ height: '39.5px' }}></div>}
-              <div
-                id="navigation"
-                className={`${isFixed
-                  ? "fixed w-full px-4 top-0 py-3 bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center"
-                  : "px-4"}`}
-                style={{ zIndex: 200, transition: "position 0.3s ease" }}
-              >
-                {isFixed ? (
-                  <div className='flex flex-col gap-y-3 w-full'>
-                    <div className="flex justify-between items-center">
-                      <Typewriter className="text-[20px]" text="enfx." />
-                      <LanguageToggle />
-                    </div>
-                    <Navigation />
+      <div className="flex flex-col gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
+        
+        {/* Navigation */}
+        <div className="flex flex-col block md:hidden">
+          <div ref={sentinelRef}></div>
+            {isFixed && <div style={{ height: '39.5px' }}></div>}
+            <div
+              id="navigation"
+              className={`${isFixed
+                ? "fixed w-full px-4 top-0 py-3 bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center"
+                : "px-4"}`}
+              style={{ zIndex: 200, transition: "position 0.3s ease" }}
+            >
+              {isFixed ? (
+                <div className='flex flex-col gap-y-3 w-full'>
+                  <div className="flex justify-between items-center">
+                    <Typewriter className="text-[20px] pl-1" text="enfx." />
+                    <LanguageToggle />
                   </div>
-                ) : (
-                  <div className='flex flex-col gap-y-3 w-full pt-4 pb-2'>
-                    <div className="flex justify-between items-center">
-                      <Typewriter className="text-[20px]" text="enfx." />
-                      <LanguageToggle />
-                    </div>
-                    <Navigation />
+                  <Navigation />
+                </div>
+              ) : (
+                <div className='flex flex-col gap-y-3 w-full pt-4 pb-2'>
+                  <div className="flex justify-between items-center">
+                    <Typewriter className="text-[20px] pl-1" text="enfx." />
+                    <LanguageToggle />
                   </div>
-                )}
-            </div>
+                  <Navigation />
+                </div>
+              )}
           </div>
-          <div className='flex flex-col gap-y-3 py-3 pb-2 w-full hidden md:block'>
-            <div className="flex justify-between items-center">
-              <Typewriter className="text-[20px]" text="enfx." />
-              <div className="w-[400px]"><Navigation /></div>
-              <LanguageToggle />
-            </div>
+        </div>
+        <div className='flex flex-col gap-y-3 py-3 pb-2 w-full hidden md:block xl:hidden'>
+          <div className="flex justify-between items-center">
+            <Typewriter className="text-[20px] pl-1" text="enfx." />
+            <div className="w-[400px]"><Navigation /></div>
+            <LanguageToggle />
           </div>
-          <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto md:pr-3 px-4 md:px-0">
-            <div className="flex flex-col gap-1.5">
+        </div>
+
+        <div className="flex flex-col xl:flex-row xl:gap-x-1">
+          <div className="xl:flex flex-col gap-2 hidden w-[1000px] xl:px-4">
+            <div className='flex flex-col gap-y-3 py-3 pb-2 w-full'>
+              <div className="flex justify-between items-center">
+                <div className="w-[400px] xl:w-[300px]"><Navigation /></div>
+                <LanguageToggle />
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row xl:flex-col gap-2 items-stretch">
+              <AvaCard />
+              <DeckCard />
+            </div>
+            <ExpCard />
+            <Connect />
+            <div className="py-2"><Footnote /></div>
+          </div>
+
+          <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto xl:bg-[#181818] px-4 md:px-0">
+            <div className="flex flex-col gap-1.5 xl:hidden">
               <div className="flex flex-col md:flex-row gap-1.5 items-stretch">
                 <AvaCard />
-                <div className="gap-1.5 w-full flex flex-col min-w-[280px]">
-                  <div className="hidden md:block flex-1 bg-cover bg-center rounded-lg bg-[url('/pixel.gif')] border border-neutral-800"></div>
-                  <div className="grid grid-cols-2 md:grid-cols-1 gap-1.5">
-                    <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center gap-y-2 py-2 px-2.5 bg-[#141414] rounded-lg border border-neutral-800">
-                      <div className="text-[12px] md:text-[14px] pr-4">{language === "en" ? "Created with :" : "Dibuat dengan :"}</div>
-                      <div className="flex gap-1.5">
-                        <div className="text-[12px] md:text-[13px] px-2 py-0.5 font-bold text-[#ffaa50] bg-[#ffaa50]/15 rounded-full">React</div>
-                        <div className="text-[12px] md:text-[13px] px-2 py-0.5 font-bold text-[#ffaa50] bg-[#ffaa50]/15 rounded-full">TailwindCSS</div>
-                      </div>
-                    </div>
-                    <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center gap-y-1 py-2 px-2.5 bg-[#141414] rounded-lg border border-neutral-800">
-                      <div className="text-[12px] md:text-[14px] pr-4">{language === "en" ? "My Time Zone :" : "Zona Waktu Saya :"}</div>
-                      <Clock />
-                    </div>
-                  </div>
-                </div>
+                <DeckCard />
               </div>
               <ExpCard />
             </div>
-            {CardData?.length ? (
-              [...CardData]
-                .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
-                .map((article) => (
-                <div key={article.id}>
-                  <Card
-                    title={article.title}
-                    nav={article.nav}
-                    img={article.cover}
-                    obj={article.obj}
-                    desc={article.desc[language]}
-                    categories={article.categories.map(c => c[language])}
-                    url1={article.intImg && article.intText ? `/article/${article.slug}` : null}
-                    url2={article.intImg2 && article.intText2 ? `/gallery/${article.slug}` : null}
-                    url3={article.extUrl}
-                    intImg={article.intImg}
-                    intText={article.intText?.[language]}
-                    intImg2={article.intImg2}
-                    intText2={article.intText2?.[language]}
-                    extImg={article.extImg}
-                    extText={article.extText?.[language]}
-                  />
-                </div>
-              ))
-            ) : (
-              <div className="text-gray-400 italic">No Articles Available.</div>
-            )}
-            <Connect />
-            <div className="w-full">
+            <div className="xl:h-screen">
+              <div className="flex flex-col xl:w-full xl:h-full xl:overflow-y-auto xl:px-4 gap-y-3 xl:py-4">
+                {CardData?.length ? (
+                  [...CardData]
+                    .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
+                    .map((article) => (
+                    <div key={article.id}>
+                      <Card
+                        title={article.title}
+                        nav={article.nav}
+                        img={article.cover}
+                        obj={article.obj}
+                        desc={article.desc[language]}
+                        categories={article.categories.map(c => c[language])}
+                        url1={article.intImg && article.intText ? `/article/${article.slug}` : null}
+                        url2={article.intImg2 && article.intText2 ? `/gallery/${article.slug}` : null}
+                        url3={article.extUrl}
+                        intImg={article.intImg}
+                        intText={article.intText?.[language]}
+                        intImg2={article.intImg2}
+                        intText2={article.intText2?.[language]}
+                        extImg={article.extImg}
+                        extText={article.extText?.[language]}
+                      />
+                    </div>
+                  ))
+                ) : (
+                  <div className="text-gray-400 italic">No Articles Available.</div>
+                )}
+              </div>
+            </div>
+            <div className="xl:hidden"><Connect /></div>
+            <div className="xl:hidden w-full">
               <Footnote />
             </div>
           </div>

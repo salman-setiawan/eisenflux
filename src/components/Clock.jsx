@@ -23,7 +23,7 @@ const Clock = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-between sm:items-end gap-x-1.5 font-bold h-full">
+    <div className="flex items-end gap-x-1.5 font-bold h-full w-full justify-between">
       <div>
         {time || "--:--:--"}
       </div>

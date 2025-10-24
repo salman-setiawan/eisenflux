@@ -21,6 +21,7 @@ const MobileNavigation = () => {
     { name: "LinkedIn", url: "https://www.linkedin.com/in/salman-setiawan" },
     { name: "Instagram", url: "https://www.instagram.com/eisenflux" },
     { name: "Gmail", url: "mailto:stwnsalmann@gmail.com" },
+    { name: "Dribbble", url: "https://dribbble.com/eisenflux" },
   ];
   
 
@@ -45,14 +46,14 @@ const MobileNavigation = () => {
                         : navigate(`/article/${article.slug}`)
                     }
                   >
-                    / {article.nav}
+                    {article.nav}
                   </div>
                 ))}
               </div>
             </div>
           )}
         </div>
-        <div className='flex w-full relative' onClick={() => handleClick("socials")}>
+        <div className='flex w-full relative xl:hidden' onClick={() => handleClick("socials")}>
           <Button text={language === "en" ? "My Contacts" : "Kontak Saya"} fullWidth={true} />
           {openMenu === "socials" && (
             <div className="absolute py-1.5 top-full right-0 rounded-lg z-20">

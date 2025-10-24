@@ -67,7 +67,7 @@ const ExpCard = () => {
 
       {/* Desktop-specific right side gradient color */}
       <div
-        className="hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] pointer-events-none"
+        className="hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] xl:w-[470px] pointer-events-none"
         style={{
           background: 'linear-gradient(to left, #141414 0%, transparent 80%)'
         }}
@@ -86,7 +86,7 @@ const ExpCard = () => {
 
       {/* Desktop-specific right side gradient blur */}
       <div
-        className="hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] pointer-events-none"
+        className="hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] xl:w-[470px] pointer-events-none"
         style={{
           backdropFilter: 'blur(3px)',
           WebkitBackdropFilter: 'blur(3px)',

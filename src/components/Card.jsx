@@ -69,8 +69,8 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
             </div>
           </div> 
         </div>
-        <div className="hidden lg:flex gap-x-3 items-end">
-          <div className="rounded-xl flex flex-col min-w-[390px] max-w-[390px] justify-between p-4 border border-neutral-800 gap-y-8 bg-[#141414]">
+        <div className="hidden lg:flex gap-x-2 items-end">
+          <div className="h-[480px] rounded-xl flex flex-col max-w-[340px] justify-end p-4 border border-neutral-800 gap-y-8 bg-[#141414]">
             <div className="flex flex-col gap-y-4">
               <div className="flex flex-wrap gap-x-1.5 gap-y-2">
                 {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
@@ -87,7 +87,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
           </div>
           <div className="relative overflow-hidden w-full">
             {title && (
-              <motion.h1 variants={container} initial="initial" animate="animate" className="font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[18rem] font-black text-white/8 rotate-[-28deg] uppercase select-none">
+              <motion.h1 variants={container} initial="initial" animate="animate" className="font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[18rem] xl:text-[24rem] font-black text-white/10 rotate-[-28deg] uppercase select-none">
                 {words.map((word, wi) => (
                   <motion.div key={wi} variants={wordVariant} className="flex">
                     {word.split('').map((char, ci) => (
@@ -99,7 +99,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="relative rounded-xl bg-[#111]/60 border border-neutral-800 overflow-hidden">
+            <div className="relative rounded-xl bg-[#090909]/60 border border-neutral-800 overflow-hidden">
               {/* Layer Pattern */}
               <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-20 bg-tile pointer-events-none"
                   style={{
