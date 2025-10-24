@@ -179,7 +179,7 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col xl:flex-row xl:gap-x-1">
-          <div className="xl:flex flex-col gap-2 hidden w-[1000px] xl:px-4">
+          <div className="xl:flex flex-col gap-2 hidden w-[900px] xl:px-4">
             <div className='flex flex-col gap-y-3 py-3 pb-2 w-full'>
               <div className="flex justify-between items-center">
                 <div className="w-[400px] xl:w-[300px]"><Navigation /></div>
