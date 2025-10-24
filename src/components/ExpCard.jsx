@@ -101,7 +101,7 @@ const ExpCard = () => {
         <div className="flex items-end h-[48px]">
           <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full'>
             <div className={`bg-red-500 text-white py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-red-700 font-bold text-[13px] md:text-[14px]`}>
-              {language === 'en' ? 'PDF Version Here' : 'Versi PDF Disini'}
+              {language === 'en' ? 'PDF Version' : 'Versi PDF'}
             </div>
           </button>
         </div>
