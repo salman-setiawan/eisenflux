@@ -87,7 +87,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
           </div>
           <div className="relative overflow-hidden w-full">
             {title && (
-              <motion.h1 variants={container} initial="initial" animate="animate" className="font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[18rem] xl:text-[24rem] font-black text-white/10 rotate-[-28deg] uppercase select-none">
+              <motion.h1 variants={container} initial="initial" animate="animate" className="font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[18rem] xl:text-[24rem] font-black text-white/13 rotate-[-28deg] uppercase select-none">
                 {words.map((word, wi) => (
                   <motion.div key={wi} variants={wordVariant} className="flex">
                     {word.split('').map((char, ci) => (
