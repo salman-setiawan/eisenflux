@@ -195,7 +195,7 @@ const Home = () => {
             <div className="py-2"><Footnote /></div>
           </div>
 
-          <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto xl:bg-[#181818] px-4 md:px-0">
+          <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto px-4 md:px-0">
             <div className="flex flex-col gap-1.5 xl:hidden">
               <div className="flex flex-col md:flex-row gap-1.5 items-stretch">
                 <AvaCard />
@@ -203,7 +203,7 @@ const Home = () => {
               </div>
               <ExpCard />
             </div>
-            <div className="xl:h-screen">
+            <div className="xl:h-screen xl:bg-[#0c0c0c]">
               <div className="flex flex-col xl:w-full xl:h-full xl:overflow-y-auto xl:px-4 gap-y-3 xl:py-4">
                 {CardData?.length ? (
                   [...CardData]

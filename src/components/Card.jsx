@@ -99,7 +99,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
                 ))}
               </motion.h1>
             )}
-            <div className="relative rounded-xl bg-[#090909]/60 border border-neutral-800 overflow-hidden">
+            <div className="relative rounded-xl bg-[#111]/60 border border-neutral-800 overflow-hidden">
               {/* Layer Pattern */}
               <div className="absolute inset-0 bg-[url('/pattern-card.svg')] opacity-20 bg-tile pointer-events-none"
                   style={{
