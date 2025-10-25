@@ -24,19 +24,19 @@ const Home = () => {
 
   // Daftar semua asset yang perlu di-preload
   const assetsToPreload = [
-    '/bg.webp', '/pattern-card.svg', '/pixel.gif', '/process.svg', '/vite.svg', '/web.svg',
+    '/bg-bio.webp', '/pattern-card.svg', '/pixel.gif', '/vite.svg',
 
     '/showcase/another.webp', '/showcase/edufams.webp', '/showcase/eduwork.webp', '/showcase/pemedas.webp',
     
-    '/anotherisland/ces1.webp', '/anotherisland/ces2.webp', '/anotherisland/cfl.webp', '/anotherisland/content3.webp', '/anotherisland/desy.webp', '/anotherisland/ev.webp', '/anotherisland/fix1.webp', '/anotherisland/fix2.webp', '/anotherisland/fix3.webp', '/anotherisland/fix4.webp', '/anotherisland/fix5.webp', '/anotherisland/fix6.webp', '/anotherisland/fix7.webp', '/anotherisland/fix8.webp', '/anotherisland/interview.webp', '/anotherisland/ucd.webp', '/anotherisland/user.webp', '/anotherisland/wire.webp',
+    '/anotherisland/ces1.webp', '/anotherisland/ces2.webp', '/anotherisland/desy.webp', '/anotherisland/ucd.webp', '/anotherisland/user.webp',
 
     '/anotherisland/gallery/screen1.webp', '/anotherisland/gallery/screen2.webp', '/anotherisland/gallery/screen3.webp', '/anotherisland/gallery/screen4.webp', '/anotherisland/gallery/screen5.webp', '/anotherisland/gallery/screen6.webp', '/anotherisland/gallery/screen7.webp', '/anotherisland/gallery/screen8.webp', '/anotherisland/gallery/screen9.webp', '/anotherisland/gallery/screen10.webp',
 
-    '/edufams/brand.webp', '/edufams/kanban.webp', '/edufams/pitch.webp', '/edufams/style.webp', '/edufams/team.webp', '/edufams/think.webp', '/edufams/wire1.webp', '/edufams/wire2.webp',
+    '/edufams/pitch.webp', '/edufams/style.webp', '/edufams/team.webp', '/edufams/think.webp',
     
     '/edufams/gallery/mobile_screen1.webp', '/edufams/gallery/mobile_screen2.webp', '/edufams/gallery/mobile_screen3.webp', '/edufams/gallery/mobile_screen4.webp', '/edufams/gallery/mobile_screen5.webp', '/edufams/gallery/mobile_screen6.webp', '/edufams/gallery/mobile_screen7.webp', '/edufams/gallery/mobile_screen8.webp', '/edufams/gallery/mobile_screen9.webp', '/edufams/gallery/mobile_screen10.webp', '/edufams/gallery/mobile_screen11.webp', '/edufams/gallery/mobile_screen12.webp', '/edufams/gallery/pc_screen1.webp', '/edufams/gallery/pc_screen2.webp', '/edufams/gallery/pc_screen3.webp', '/edufams/gallery/pc_screen4.webp', '/edufams/gallery/pc_screen5.webp', '/edufams/gallery/pc_screen6.webp', '/edufams/gallery/pc_screen7.webp', '/edufams/gallery/pc_screen8.webp', '/edufams/gallery/pc_screen9.webp', '/edufams/gallery/pc_screen10.webp', '/edufams/gallery/pc_screen11.webp',
 
-    '/eduwork/design.webp', '/eduwork/flow.webp', '/eduwork/mood.webp', '/eduwork/team.webp',
+    '/eduwork/design.webp', '/eduwork/flow.webp', '/eduwork/mood.webp',
     
     '/eduwork/gallery/screen1.webp', '/eduwork/gallery/screen2.webp', '/eduwork/gallery/screen3.webp', '/eduwork/gallery/screen4.webp', '/eduwork/gallery/screen5.webp', '/eduwork/gallery/screen6.webp', '/eduwork/gallery/screen7.webp', '/eduwork/gallery/screen8.webp', '/eduwork/gallery/screen9.webp', '/eduwork/gallery/screen10.webp', '/eduwork/gallery/screen11.webp',
   ];
