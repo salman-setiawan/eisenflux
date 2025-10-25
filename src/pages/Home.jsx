@@ -13,20 +13,32 @@ import ExpCard from '../components/ExpCard.jsx';
 import AvaCard from '../components/AvaCard.jsx';
 import Connect from "../components/Connect.jsx";
 import DeckCard from "../components/DeckCard.jsx";
+import Tabs from "../components/Tabs.jsx";
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isFixed, setIsFixed] = useState(false);
+  const [activeTab, setActiveTab] = useState('portfolio');
   const sentinelRef = useRef(null);
   const isInvalid = language === undefined || toggleLanguage === undefined;
+
+  // Gallery images for Pinterest-style grid
+  const galleryImages = [
+    '/shot/estore.webp',
+    '/shot/musplay.webp',
+    '/shot/learnx.webp',
+    '/shot/halogbs.webp',
+  ];
 
   // Daftar semua asset yang perlu di-preload
   const assetsToPreload = [
     '/bg-bio.webp', '/pattern-card.svg', '/pixel.gif', '/vite.svg',
 
     '/showcase/another.webp', '/showcase/edufams.webp', '/showcase/eduwork.webp', '/showcase/pemedas.webp',
+    
+    '/shot/estore.webp', '/shot/musplay.webp', '/shot/learnx.webp', '/shot/halogbs.webp',
     
     '/anotherisland/ces1.webp', '/anotherisland/ces2.webp', '/anotherisland/desy.webp', '/anotherisland/ucd.webp', '/anotherisland/user.webp',
 
@@ -93,6 +105,67 @@ const Home = () => {
     preloadAssets();
   }, []);
 
+  // Handle tab change
+  const handleTabChange = (tabKey) => {
+    setActiveTab(tabKey);
+  };
+
+  // Render content based on active tab
+  const renderTabContent = () => {
+    if (activeTab === 'portfolio') {
+      return (
+        <div className="flex flex-col xl:w-full xl:h-full gap-y-3 xl:gap-y-0">
+          {CardData?.length ? (
+            [...CardData]
+              .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
+              .map((article) => (
+              <div key={article.id} className="xl:pb-3">
+                <Card
+                  title={article.title}
+                  nav={article.nav}
+                  img={article.cover}
+                  obj={article.obj}
+                  desc={article.desc[language]}
+                  categories={article.categories.map(c => c[language])}
+                  url1={article.intImg && article.intText ? `/article/${article.slug}` : null}
+                  url2={article.intImg2 && article.intText2 ? `/gallery/${article.slug}` : null}
+                  url3={article.extUrl}
+                  intImg={article.intImg}
+                  intText={article.intText?.[language]}
+                  intImg2={article.intImg2}
+                  intText2={article.intText2?.[language]}
+                  extImg={article.extImg}
+                  extText={article.extText?.[language]}
+                />
+              </div>
+            ))
+          ) : (
+            <div className="text-gray-400 italic">No Articles Available.</div>
+          )}
+        </div>
+      );
+    } else if (activeTab === 'snapshot') {
+      return (
+        <div className="columns-1 lg:columns-2 xl:columns-1 2xl:columns-2 gap-4">
+          {galleryImages.map((image, index) => (
+            <div key={index} className="break-inside-avoid mb-4">
+              <div className="relative group overflow-hidden rounded-lg bg-[#111]/60 border border-neutral-800">
+                <img 
+                  src={image} 
+                  alt={`UI Snapshot ${index + 1}`}
+                  className="w-full"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
   if (isInvalid) {
     return (
       <div className="flex justify-center">
@@ -152,7 +225,7 @@ const Home = () => {
               style={{ zIndex: 200, transition: "position 0.3s ease" }}
             >
               {isFixed ? (
-                <div className='flex flex-col gap-y-3 w-full'>
+                <div className='flex flex-col gap-y-1.5 w-full'>
                   <div className="flex justify-between items-center">
                     <Typewriter className="text-[20px] pl-1" text="enfx." />
                     <LanguageToggle />
@@ -160,7 +233,7 @@ const Home = () => {
                   <Navigation />
                 </div>
               ) : (
-                <div className='flex flex-col gap-y-3 w-full pt-4 pb-2'>
+                <div className='flex flex-col gap-y-1.5 w-full pt-4 pb-2'>
                   <div className="flex justify-between items-center">
                     <Typewriter className="text-[20px] pl-1" text="enfx." />
                     <LanguageToggle />
@@ -203,35 +276,15 @@ const Home = () => {
               </div>
               <ExpCard />
             </div>
-            <div className="xl:h-screen xl:bg-[#0c0c0c]">
-              <div className="flex flex-col xl:w-full xl:h-full xl:overflow-y-auto xl:px-4 gap-y-3 xl:py-4">
-                {CardData?.length ? (
-                  [...CardData]
-                    .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
-                    .map((article) => (
-                    <div key={article.id}>
-                      <Card
-                        title={article.title}
-                        nav={article.nav}
-                        img={article.cover}
-                        obj={article.obj}
-                        desc={article.desc[language]}
-                        categories={article.categories.map(c => c[language])}
-                        url1={article.intImg && article.intText ? `/article/${article.slug}` : null}
-                        url2={article.intImg2 && article.intText2 ? `/gallery/${article.slug}` : null}
-                        url3={article.extUrl}
-                        intImg={article.intImg}
-                        intText={article.intText?.[language]}
-                        intImg2={article.intImg2}
-                        intText2={article.intText2?.[language]}
-                        extImg={article.extImg}
-                        extText={article.extText?.[language]}
-                      />
-                    </div>
-                  ))
-                ) : (
-                  <div className="text-gray-400 italic">No Articles Available.</div>
-                )}
+            <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-2 xl:flex xl:flex-col xl:gap-y-3">
+              <div className="flex w-full">
+                <Tabs 
+                  activeTab={activeTab} 
+                  onTabChange={handleTabChange} 
+                />
+              </div>
+              <div className="mt-4">
+                {renderTabContent()}
               </div>
             </div>
             <div className="xl:hidden"><Connect /></div>

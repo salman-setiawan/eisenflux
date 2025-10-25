@@ -85,7 +85,7 @@ const Card = ({ title, nav, desc, categories, img, intImg, intText, intImg2, int
               {url3 && (<Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}
             </div>
           </div>
-          <div className="relative overflow-hidden w-full">
+          <div className="relative overflow-hidden w-full rounded-xl">
             {title && (
               <motion.h1 variants={container} initial="initial" animate="animate" className="font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center text-[18rem] lg:text-[22rem] xl:text-[24rem] font-black text-white/13 rotate-[-28deg] uppercase select-none">
                 {words.map((word, wi) => (
