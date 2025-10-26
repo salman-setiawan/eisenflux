@@ -14,6 +14,7 @@ import AvaCard from '../components/AvaCard.jsx';
 import Connect from "../components/Connect.jsx";
 import DeckCard from "../components/DeckCard.jsx";
 import Tabs from "../components/Tabs.jsx";
+import Snapshot from "../components/Snapshot.jsx";
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -24,13 +25,7 @@ const Home = () => {
   const sentinelRef = useRef(null);
   const isInvalid = language === undefined || toggleLanguage === undefined;
 
-  // Gallery images for Pinterest-style grid
-  const galleryImages = [
-    '/shot/estore.webp',
-    '/shot/musplay.webp',
-    '/shot/learnx.webp',
-    '/shot/halogbs.webp',
-  ];
+
 
   // Daftar semua asset yang perlu di-preload
   const assetsToPreload = [
@@ -114,12 +109,12 @@ const Home = () => {
   const renderTabContent = () => {
     if (activeTab === 'portfolio') {
       return (
-        <div className="flex flex-col xl:w-full xl:h-full gap-y-3 xl:gap-y-0">
+        <div className="flex flex-col xl:w-full xl:h-full gap-y-3">
           {CardData?.length ? (
             [...CardData]
               .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
               .map((article) => (
-              <div key={article.id} className="xl:pb-3">
+              <div key={article.id}>
                 <Card
                   title={article.title}
                   nav={article.nav}
@@ -146,21 +141,7 @@ const Home = () => {
       );
     } else if (activeTab === 'snapshot') {
       return (
-        <div className="columns-1 lg:columns-2 xl:columns-1 2xl:columns-2 gap-4">
-          {galleryImages.map((image, index) => (
-            <div key={index} className="break-inside-avoid mb-4">
-              <div className="relative group overflow-hidden rounded-lg bg-[#111]/60 border border-neutral-800">
-                <img 
-                  src={image} 
-                  alt={`UI Snapshot ${index + 1}`}
-                  className="w-full"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Snapshot />
       );
     }
     return null;
@@ -259,7 +240,7 @@ const Home = () => {
                 <LanguageToggle />
               </div>
             </div>
-            <div className="flex flex-col md:flex-row xl:flex-col gap-2 items-stretch">
+            <div className="flex flex-col md:flex-row xl:flex-col gap-2">
               <AvaCard />
               <DeckCard />
             </div>
@@ -276,16 +257,14 @@ const Home = () => {
               </div>
               <ExpCard />
             </div>
-            <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-2 xl:flex xl:flex-col xl:gap-y-3">
+            <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-2 flex flex-col gap-y-3">
               <div className="flex w-full">
                 <Tabs 
                   activeTab={activeTab} 
                   onTabChange={handleTabChange} 
                 />
               </div>
-              <div className="mt-4">
-                {renderTabContent()}
-              </div>
+              {renderTabContent()}
             </div>
             <div className="xl:hidden"><Connect /></div>
             <div className="xl:hidden w-full">

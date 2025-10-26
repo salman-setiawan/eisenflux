@@ -67,42 +67,6 @@
   transform: translateY(0);
 }
 
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.snake {
-  position: relative;
-  z-index: 1;
-}
-
-.snake::after,
-.snake::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  background-image: conic-gradient(from var(--angle), transparent, #ffa500 50%, transparent 50%, #ffa500);
-  z-index: -1;
-  animation: snake-spin 3s linear infinite;
-  will-change: transform, background-image, --angle;
-  border-radius: 9999px;
-}
-
-.snake::before {
-  filter: blur(0.6rem);
-}
-
-@keyframes snake-spin {
-  to {
-    --angle: 360deg;
-  }
-}
-
 @keyframes blinks {
   0%, 100% {
     background-color: #128d3f;
