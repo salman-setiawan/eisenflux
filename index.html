@@ -2,12 +2,67 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>enfx.</title>
+
+    <!-- 🟢 Preconnect untuk mempercepat koneksi font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- 🟢 Preload font utama -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap"
+      />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      />
+    </noscript>
+    <link
+      rel="preload"
+      href="/assets/index-QYEimBjk.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    >
+    <noscript><link rel="stylesheet" href="/assets/index-QYEimBjk.css"></noscript>
+  
+
+    <!-- 🟢 Inline critical CSS kecil -->
+    <style>
+      html,
+      body {
+        background-color: #1b1b1b;
+        color: rgba(255, 255, 255, 0.87);
+        font-family: 'Manrope', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    <!-- 🟢 Defer stylesheet utama -->
+    <link rel="stylesheet" href="/src/index.css" media="print" onload="this.media='all'" />
+
+    <!-- 🟢 Icon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- 🟢 Defer JS agar tidak block render -->
+    <script type="module" src="/src/main.jsx" defer></script>
   </body>
 </html>

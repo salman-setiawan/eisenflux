@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/* ✅ Font dimuat dari HTML preload (hapus @import agar tidak blocking render) */
 @import "tailwindcss";
 
+/* ---------- Root & Global ---------- */
 :root {
   font-family: 'Manrope', sans-serif;
   color: rgba(255, 255, 255, 0.87);
@@ -17,6 +17,7 @@
   scrollbar-color: #ffa500 #333333;
 }
 
+/* ---------- Custom Fonts & Colors ---------- */
 .font-anton {
   font-family: 'Anton', sans-serif;
 }
@@ -25,9 +26,10 @@
   background-color: #222222;
 }
 
+/* ---------- Border Dotted Variants ---------- */
 .border-dot-r {
   border: 0;
-  background-image: repeating-linear-gradient(to bottom, #858585 0, #858585 3px, transparent 0px, transparent 8px); /* right */
+  background-image: repeating-linear-gradient(to bottom, #858585 0 3px, transparent 0 8px);
   background-size: 1px 100%;
   background-repeat: repeat-y;
   background-position: top right;
@@ -35,24 +37,25 @@
 
 .border-dot-b {
   border: 0;
-  background-image: repeating-linear-gradient(to right, #858585 0, #858585 3px, transparent 0px, transparent 8px); /* bottom */
+  background-image: repeating-linear-gradient(to right, #858585 0 3px, transparent 0 8px);
   background-size: 100% 1px;
   background-repeat: repeat-x;
   background-position: bottom left;
 }
+
 .border-dot {
   border: 0;
   background-image:
-    repeating-linear-gradient(to right, #858585 0, #858585 3px, transparent 0px, transparent 8px), /* top */
-    repeating-linear-gradient(to right, #858585 0, #858585 3px, transparent 0px, transparent 8px), /* bottom */
-    repeating-linear-gradient(to bottom, #858585 0, #858585 3px, transparent 0px, transparent 8px), /* left */
-    repeating-linear-gradient(to bottom, #858585 0, #858585 3px, transparent 0px, transparent 8px); /* right */
+    repeating-linear-gradient(to right, #858585 0 3px, transparent 0 8px),
+    repeating-linear-gradient(to right, #858585 0 3px, transparent 0 8px),
+    repeating-linear-gradient(to bottom, #858585 0 3px, transparent 0 8px),
+    repeating-linear-gradient(to bottom, #858585 0 3px, transparent 0 8px);
   background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
   background-size: 100% 1px, 100% 1px, 1px 100%, 1px 100%;
   background-position: top left, bottom left, top left, top right;
 }
 
-
+/* ---------- Animations ---------- */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -64,55 +67,12 @@
   transform: translateY(0);
 }
 
-.snake {
-  position: relative; 
-  z-index: 1;
-}
-
-@property --angle{
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.snake::after, .snake::before {
-  content: '';
-  position: absolute;  
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);  
-  width: 100%;
-  height: 100%;
-  background-image: conic-gradient(from var(--angle), transparent, #ffa500 50%, transparent 50%, #ffa500);
-  z-index: -1; 
-  animation: 3s snake-spin linear infinite;
-  will-change: transform, background-image, --angle;
-  border-radius: 9999px;
-}
-
-.snake::before {
-  filter: blur(0.6rem);
-}
-
-@keyframes snake-spin{
-  from{
-    --angle: 0deg;
-  }
-  to{
-    --angle: 360deg;
-  }
-}
-
-
 @keyframes blinks {
-  0% {
+  0%, 100% {
     background-color: #128d3f;
   }
   50% {
     background-color: #12ff69;
-  }
-  100% {
-    background-color: #128d3f;
   }
 }
 
@@ -121,14 +81,11 @@
 }
 
 @keyframes floatAnimation {
-  0% {
+  0%, 100% {
     transform: translateY(0) rotate(-2deg);
   }
   50% {
     transform: translateY(-18px) rotate(4deg);
-  }
-  100% {
-    transform: translateY(0) rotate(-2deg);
   }
 }
 
@@ -136,21 +93,18 @@
   animation: floatAnimation 4s ease-in-out infinite;
 }
 
-/* Optimized Marquee animations - Roll Film Technique */
+/* ---------- Optimized Marquee Animations ---------- */
 @keyframes marquee-smooth {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
+  to {
     transform: translate3d(-50%, 0, 0);
   }
 }
 
 @keyframes marquee-reverse-smooth {
-  0% {
+  from {
     transform: translate3d(-50%, 0, 0);
   }
-  100% {
+  to {
     transform: translate3d(0, 0, 0);
   }
 }
@@ -160,7 +114,6 @@
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
-  perspective: 1000px;
 }
 
 .animate-marquee-reverse-smooth {
@@ -168,5 +121,4 @@
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
-  perspective: 1000px;
 }
