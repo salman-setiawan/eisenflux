@@ -4,24 +4,39 @@ const LanguageToggle = ({ className = "" }) => {
   const { language, toggleLanguage } = useLanguage();
 
   return (
-    <div className={`flex items-center gap-1 ${className}`}>
-      <span className="text-[13px] text-gray-400 font-semibold">ID</span>
+    <div className={`flex items-center ${className}`}>
       <button
         onClick={toggleLanguage}
-        className={`border-2 border-black relative inline-flex h-[22px] w-[40px] items-center rounded-full transition-colors duration-200 ease-in-out ${
-          language === 'en' ? 'bg-[#ffa500]' : 'bg-neutral-600'
-        }`}
+        className="relative inline-flex h-[40px] w-[80px] items-center rounded-lg border-2 border-neutral-800 bg-neutral-800 transition-colors duration-200"
         role="switch"
         aria-checked={language === 'en'}
         aria-label="Toggle language"
       >
-        <span
-          className={`inline-block h-[14px] w-[14px] transform rounded-full transition-transform duration-200 ease-in-out ${
-            language === 'en' ? 'translate-x-5 bg-black' : 'translate-x-0.5 bg-white'
+        {/* Active Segment Background */}
+        <div
+          className={`absolute h-[30px] w-[34px] rounded-md bg-neutral-700 transition-transform duration-200 ${
+            language === 'en' ? 'translate-x-10' : 'translate-x-0.5'
           }`}
         />
+        
+        {/* ID Segment */}
+        <div
+          className={`z-10 flex h-full w-[44px] items-center justify-center text-[14px] font-semibold transition-colors duration-200 ${
+            language === 'en' ? 'mb-0.5' : 'font-semibold mb-0.5'
+          }`}
+        >
+          ID
+        </div>
+        
+        {/* EN Segment */}
+        <div
+          className={`z-10 flex h-full w-[44px] items-center justify-center text-[14px] font-semibold transition-colors duration-200 ${
+            language === 'en' ? 'font-semibold mb-0.5' : 'mb-0.5'
+          }`}
+        >
+          EN
+        </div>
       </button>
-      <span className="text-[13px] text-gray-400 font-semibold">EN</span>
     </div>
   );
 };

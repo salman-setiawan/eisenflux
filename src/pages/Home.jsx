@@ -109,7 +109,7 @@ const Home = () => {
   const renderTabContent = () => {
     if (activeTab === 'portfolio') {
       return (
-        <div className="flex flex-col xl:w-full xl:h-full gap-y-3">
+        <div className="flex flex-col xl:w-full xl:h-full gap-y-4 lg:gap-y-3">
           {CardData?.length ? (
             [...CardData]
               .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
@@ -175,12 +175,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col place-content-center w-full px-5 relative">
-          <div className="w-full flex justify-center px-4 pt-4">
+        <div className="flex flex-col place-content-center w-full px-4 relative bg-transparent">
+          <div className="fixed top-0 w-full flex justify-center py-4">
             <LanguageToggle />
           </div>
         </div>
-        <NoiseOverlay />
         <div className="fixed bottom-0 w-full py-4">
           <Footnote />
         </div>
@@ -191,7 +190,7 @@ const Home = () => {
 
   // Konten utama
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-[#161616]">
       <div className="flex flex-col gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
         
         {/* Navigation */}
@@ -201,7 +200,7 @@ const Home = () => {
             <div
               id="navigation"
               className={`${isFixed
-                ? "fixed w-full px-4 top-0 py-3 bg-[#141414]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center"
+                ? "fixed w-full px-4 top-0 py-3 bg-[#0c0c0c]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center"
                 : "px-4"}`}
               style={{ zIndex: 200, transition: "position 0.3s ease" }}
             >
@@ -273,7 +272,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <NoiseOverlay />
     </div>
   );
 };

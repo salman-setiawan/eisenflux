@@ -18,7 +18,7 @@ const ExpCard = () => {
 
 
   return (
-    <div className="w-full p-3 rounded-xl border border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#141414]">
+    <div className="w-full p-3 rounded-xl border border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#202020]">
       <h2 className="font-bold mb-3 text-[#ffaa50]">{language === "en" ? "Work Experience" : "Pengalaman Kerja"}</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8">
         {displayedExperiences.map((exp, index) => (
@@ -61,7 +61,7 @@ const ExpCard = () => {
       <div
         className="absolute block md:hidden bottom-0 left-0 right-0 h-[160px] pointer-events-none"
         style={{
-          background: 'linear-gradient(to top, #141414 0%, transparent 80%)'
+          background: 'linear-gradient(to top, #202020 0%, transparent 80%)'
         }}
       ></div>
 
@@ -69,7 +69,7 @@ const ExpCard = () => {
       <div
         className="hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] xl:w-[470px] pointer-events-none"
         style={{
-          background: 'linear-gradient(to left, #141414 0%, transparent 80%)'
+          background: 'linear-gradient(to left, #202020 0%, transparent 80%)'
         }}
       ></div>
 
@@ -79,8 +79,8 @@ const ExpCard = () => {
         style={{
           backdropFilter: 'blur(3px)',
           WebkitBackdropFilter: 'blur(3px)',
-          mask: 'linear-gradient(to top, black 0%, black 35%, transparent 100%)',
-          WebkitMask: 'linear-gradient(to top, black 0%, black 35%, transparent 100%)'
+          mask: 'linear-gradient(to top, #202020 0%, #202020 35%, transparent 100%)',
+          WebkitMask: 'linear-gradient(to top, #202020 0%, #202020 35%, transparent 100%)'
         }}
       ></div>
 
@@ -90,8 +90,8 @@ const ExpCard = () => {
         style={{
           backdropFilter: 'blur(3px)',
           WebkitBackdropFilter: 'blur(3px)',
-          mask: 'linear-gradient(to left, black 0%, black 35%, transparent 100%)',
-          WebkitMask: 'linear-gradient(to left, black 0%, black 35%, transparent 100%)'
+          mask: 'linear-gradient(to left, #202020 0%, #202020 35%, transparent 100%)',
+          WebkitMask: 'linear-gradient(to left, #202020 0%, #202020 35%, transparent 100%)'
         }}
       ></div>
 

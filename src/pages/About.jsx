@@ -52,7 +52,7 @@ const About = () => {
   return (
     <div className='flex justify-center'>
       <title>About Me</title>
-      <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-4 px-5 items-center">
+      <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between p-4 items-center">
         <div className="flex items-center gap-x-4 md:gap-x-6">
           <button 
             onClick={() => navigate(-1)}
@@ -64,8 +64,8 @@ const About = () => {
           </button>
           <div className="flex gap-x-3 items-center">
             <img src="/bg-bio.webp" alt="ava" className="h-[46px] rounded-lg" />
-            <div><div className="font-semibold text-[15px]">Salman Setiawan</div>
-            <WorkChip label={language === "en" ? "Open to Work" : "Terbuka untuk Pekerjaan"} /></div>
+            <div><div className="font-semibold text-[14px] md:text-[15px]">Salman Setiawan</div>
+            <WorkChip color='text-white/70' label={language === "en" ? "Open to Work" : "Terbuka untuk Pekerjaan"} /></div>
           </div>
         </div>
         <LanguageToggle />

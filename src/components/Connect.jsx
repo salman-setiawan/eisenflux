@@ -3,7 +3,7 @@ import Button from "./Button"
 const Connect = () => {
   return (
     <div>
-      <div className="py-3 bg-[#141414] border border-neutral-800 flex flex-col gap-y-6 justify-center rounded-xl">
+      <div className="py-3 bg-[#202020] border border-neutral-800 flex flex-col gap-y-6 justify-center rounded-xl">
         {/* Marquee Text */}
         <div className="overflow-hidden" style={{ transform: 'translateZ(0)' }}>
           <div className="flex animate-marquee-smooth">

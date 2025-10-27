@@ -5,7 +5,7 @@ import Clock from "../components/Clock.jsx";
 const DeckCard = ({specDiv, specChip}) => {
   const { language } = useLanguage();
 
-  specDiv = "flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center py-2 px-2.5 bg-[#141414] rounded-lg border border-neutral-800";
+  specDiv = "flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center py-2 px-2.5 bg-[#202020] rounded-lg border border-neutral-800";
 
   specChip = "text-[12px] md:text-[13px] px-2 py-0.5 font-bold text-[#ffaa50] bg-[#ffaa50]/15 rounded-full";
   
