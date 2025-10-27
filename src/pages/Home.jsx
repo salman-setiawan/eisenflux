@@ -1,14 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useLanguage } from "../data/languageContext.jsx";
 import LanguageToggle from '../components/LanguageToggle'
-import NoiseOverlay from '../components/animate/Noise'
 import Footnote from '../components/Footnote'
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import Card from "../components/Card.jsx";
 import CardData from '../data/card.js';
 import Notfound from './404.jsx';
 import Navigation from '../components/Navigation.jsx';
-import Typewriter from '../components/animate/Typewriter.jsx';
 import ExpCard from '../components/ExpCard.jsx';
 import AvaCard from '../components/AvaCard.jsx';
 import Connect from "../components/Connect.jsx";
@@ -20,9 +18,9 @@ const Home = () => {
   const { language, toggleLanguage } = useLanguage();
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [isFixed, setIsFixed] = useState(false);
+  // const [isFixed, setIsFixed] = useState(false);
   const [activeTab, setActiveTab] = useState('portfolio');
-  const sentinelRef = useRef(null);
+  // const sentinelRef = useRef(null);
   const isInvalid = language === undefined || toggleLanguage === undefined;
 
 
@@ -48,24 +46,24 @@ const Home = () => {
     '/eduwork/gallery/screen1.webp', '/eduwork/gallery/screen2.webp', '/eduwork/gallery/screen3.webp', '/eduwork/gallery/screen4.webp', '/eduwork/gallery/screen5.webp', '/eduwork/gallery/screen6.webp', '/eduwork/gallery/screen7.webp', '/eduwork/gallery/screen8.webp', '/eduwork/gallery/screen9.webp', '/eduwork/gallery/screen10.webp', '/eduwork/gallery/screen11.webp',
   ];
 
-  useEffect(() => {
-    if (!isInvalid && !isLoading) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-            setIsFixed(true);
-          } else {
-            setIsFixed(false);
-          }
-        },
-        { threshold: 0, rootMargin: "0px" }
-      );
+  // useEffect(() => {
+  //   if (!isInvalid && !isLoading) {
+  //     const observer = new IntersectionObserver(
+  //       ([entry]) => {
+  //         if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+  //           setIsFixed(true);
+  //         } else {
+  //           setIsFixed(false);
+  //         }
+  //       },
+  //       { threshold: 0, rootMargin: "0px" }
+  //     );
 
-      const sentinelEl = sentinelRef.current;
-      if (sentinelEl) observer.observe(sentinelEl);
-      return () => sentinelEl && observer.unobserve(sentinelEl);
-    }
-  }, [isInvalid, isLoading]);
+  //     const sentinelEl = sentinelRef.current;
+  //     if (sentinelEl) observer.observe(sentinelEl);
+  //     return () => sentinelEl && observer.unobserve(sentinelEl);
+  //   }
+  // }, [isInvalid, isLoading]);
 
   useEffect(() => {
     const hasSeenIntro = sessionStorage.getItem('introShown');
@@ -170,15 +168,13 @@ const Home = () => {
             <div className="space-y-3">
               <div className="text-[12px] text-white/60">{language === "en" ? "Loading assets..." : "Memuat aset..."} {loadingProgress}%</div>
               <div className="w-full bg-white/10 rounded-full h-1 overflow-hidden">
-                <div className="bg-gradient-to-r from-[#ffaa50] to-[#ffaa50]/80 h-full rounded-full transition-all duration-300 ease-out" style={{ width: `${loadingProgress}%` }}></div>
+                <div className="bg-[#ffaa50] h-full rounded-full transition-all duration-300 ease-out" style={{ width: `${loadingProgress}%` }}></div>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-col place-content-center w-full px-4 relative bg-transparent">
-          <div className="fixed top-0 w-full flex justify-center py-4">
-            <LanguageToggle />
-          </div>
+        <div className="fixed top-0 w-full flex justify-center py-4">
+          <LanguageToggle />
         </div>
         <div className="fixed bottom-0 w-full py-4">
           <Footnote />
@@ -191,10 +187,18 @@ const Home = () => {
   // Konten utama
   return (
     <div className="flex justify-center bg-[#161616]">
-      <div className="flex flex-col gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
-        
+
+      <div className='fixed bg-[#171717] py-2 px-4 z-30 w-full xl:hidden'>
         {/* Navigation */}
-        <div className="flex flex-col block md:hidden">
+        <div className="flex justify-between items-center">
+          <div className="w-[330px] md:w-[400px]"><Navigation /></div>
+          <LanguageToggle />
+        </div>
+      </div>
+
+      <div className="flex flex-col pt-18 xl:pt-0 gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
+        {/* Navigation */}
+        {/* <div className="flex flex-col block md:hidden">
           <div ref={sentinelRef}></div>
             {isFixed && <div style={{ height: '39.5px' }}></div>}
             <div
@@ -207,29 +211,20 @@ const Home = () => {
               {isFixed ? (
                 <div className='flex flex-col gap-y-1.5 w-full'>
                   <div className="flex justify-between items-center">
-                    <Typewriter className="text-[20px] pl-1" text="enfx." />
+                    <div className="w-[340px]"><Navigation /></div>
                     <LanguageToggle />
                   </div>
-                  <Navigation />
                 </div>
               ) : (
                 <div className='flex flex-col gap-y-1.5 w-full pt-4 pb-2'>
                   <div className="flex justify-between items-center">
-                    <Typewriter className="text-[20px] pl-1" text="enfx." />
+                    <div className="w-[340px]"><Navigation /></div>
                     <LanguageToggle />
                   </div>
-                  <Navigation />
                 </div>
               )}
           </div>
-        </div>
-        <div className='flex flex-col gap-y-3 py-3 pb-2 w-full hidden md:block xl:hidden'>
-          <div className="flex justify-between items-center">
-            <Typewriter className="text-[20px] pl-1" text="enfx." />
-            <div className="w-[400px]"><Navigation /></div>
-            <LanguageToggle />
-          </div>
-        </div>
+        </div> */}
 
         <div className="flex flex-col xl:flex-row xl:gap-x-1">
           <div className="xl:flex flex-col gap-2 hidden w-[900px] xl:px-4">
@@ -266,7 +261,7 @@ const Home = () => {
               {renderTabContent()}
             </div>
             <div className="xl:hidden"><Connect /></div>
-            <div className="xl:hidden w-full">
+            <div className="xl:hidden w-full pb-4">
               <Footnote />
             </div>
           </div>

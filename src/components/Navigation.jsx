@@ -28,11 +28,11 @@ const MobileNavigation = () => {
   return (
     <div>
       <div className="flex gap-x-1 text-[13px] font-semibold">
-        <div className='flex w-full' onClick={() => handleClick("about")}>
-          <Button text={language === "en" ? "About Me" : "Tentang Saya"} fullWidth={true} />
+        <div className='flex w-fit' onClick={() => handleClick("about")}>
+          <Button text={language === "en" ? "About Me" : "Tentang Saya"} />
         </div>
-        <div className='flex w-full relative' onClick={() => handleClick("projects")}>
-          <Button text={language === "en" ? "My Projects" : "Proyek Saya"} fullWidth={true} />
+        <div className='flex w-fit relative' onClick={() => handleClick("projects")}>
+          <Button text={language === "en" ? "My Projects" : "Proyek Saya"} />
           {openMenu === "projects" && (
             <div className="absolute py-1.5 top-full right-0 rounded-lg z-20">
               <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-lg shadow-black/30 rounded-lg border border-neutral-800">
@@ -53,8 +53,8 @@ const MobileNavigation = () => {
             </div>
           )}
         </div>
-        <div className='flex w-full relative xl:hidden' onClick={() => handleClick("socials")}>
-          <Button text={language === "en" ? "My Contacts" : "Kontak Saya"} fullWidth={true} />
+        <div className='flex w-fit relative xl:hidden' onClick={() => handleClick("socials")}>
+          <Button text={language === "en" ? "My Contacts" : "Kontak Saya"} />
           {openMenu === "socials" && (
             <div className="absolute py-1.5 top-full right-0 rounded-lg z-20">
               <div className="bg-[#1e1e1e] text-white min-w-[200px] py-1 shadow-lg shadow-black/30 rounded-lg border border-neutral-800">
