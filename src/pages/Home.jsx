@@ -18,11 +18,8 @@ const Home = () => {
   const { language, toggleLanguage } = useLanguage();
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  // const [isFixed, setIsFixed] = useState(false);
   const [activeTab, setActiveTab] = useState('portfolio');
-  // const sentinelRef = useRef(null);
   const isInvalid = language === undefined || toggleLanguage === undefined;
-
 
 
   // Daftar semua asset yang perlu di-preload
@@ -46,24 +43,6 @@ const Home = () => {
     '/eduwork/gallery/screen1.webp', '/eduwork/gallery/screen2.webp', '/eduwork/gallery/screen3.webp', '/eduwork/gallery/screen4.webp', '/eduwork/gallery/screen5.webp', '/eduwork/gallery/screen6.webp', '/eduwork/gallery/screen7.webp', '/eduwork/gallery/screen8.webp', '/eduwork/gallery/screen9.webp', '/eduwork/gallery/screen10.webp', '/eduwork/gallery/screen11.webp',
   ];
 
-  // useEffect(() => {
-  //   if (!isInvalid && !isLoading) {
-  //     const observer = new IntersectionObserver(
-  //       ([entry]) => {
-  //         if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-  //           setIsFixed(true);
-  //         } else {
-  //           setIsFixed(false);
-  //         }
-  //       },
-  //       { threshold: 0, rootMargin: "0px" }
-  //     );
-
-  //     const sentinelEl = sentinelRef.current;
-  //     if (sentinelEl) observer.observe(sentinelEl);
-  //     return () => sentinelEl && observer.unobserve(sentinelEl);
-  //   }
-  // }, [isInvalid, isLoading]);
 
   useEffect(() => {
     const hasSeenIntro = sessionStorage.getItem('introShown');
@@ -187,52 +166,14 @@ const Home = () => {
   // Konten utama
   return (
     <div className="flex justify-center bg-[#161616]">
-
-      <div className='fixed bg-[#171717] py-2 px-4 z-30 w-full xl:hidden'>
-        {/* Navigation */}
-        <div className="flex justify-between items-center">
-          <div className="w-[330px] md:w-[400px]"><Navigation /></div>
-          <LanguageToggle />
-        </div>
+      <div className='fixed bg-[#171717]/75 backdrop-blur-sm py-2 px-4 z-30 w-full xl:hidden'>
+        <Navigation />
       </div>
-
       <div className="flex flex-col pt-18 xl:pt-0 gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
-        {/* Navigation */}
-        {/* <div className="flex flex-col block md:hidden">
-          <div ref={sentinelRef}></div>
-            {isFixed && <div style={{ height: '39.5px' }}></div>}
-            <div
-              id="navigation"
-              className={`${isFixed
-                ? "fixed w-full px-4 top-0 py-3 bg-[#0c0c0c]/75 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center"
-                : "px-4"}`}
-              style={{ zIndex: 200, transition: "position 0.3s ease" }}
-            >
-              {isFixed ? (
-                <div className='flex flex-col gap-y-1.5 w-full'>
-                  <div className="flex justify-between items-center">
-                    <div className="w-[340px]"><Navigation /></div>
-                    <LanguageToggle />
-                  </div>
-                </div>
-              ) : (
-                <div className='flex flex-col gap-y-1.5 w-full pt-4 pb-2'>
-                  <div className="flex justify-between items-center">
-                    <div className="w-[340px]"><Navigation /></div>
-                    <LanguageToggle />
-                  </div>
-                </div>
-              )}
-          </div>
-        </div> */}
-
         <div className="flex flex-col xl:flex-row xl:gap-x-1">
           <div className="xl:flex flex-col gap-2 hidden w-[900px] xl:px-4">
             <div className='flex flex-col gap-y-3 py-3 pb-2 w-full'>
-              <div className="flex justify-between items-center">
-                <div className="w-[400px] xl:w-[300px]"><Navigation /></div>
-                <LanguageToggle />
-              </div>
+              <Navigation />
             </div>
             <div className="flex flex-col md:flex-row xl:flex-col gap-2">
               <AvaCard />
@@ -242,7 +183,6 @@ const Home = () => {
             <Connect />
             <div className="py-2"><Footnote /></div>
           </div>
-
           <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto px-4 md:px-0">
             <div className="flex flex-col gap-1.5 xl:hidden">
               <div className="flex flex-col md:flex-row gap-1.5 items-stretch">
@@ -253,10 +193,7 @@ const Home = () => {
             </div>
             <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-2 flex flex-col gap-y-3">
               <div className="flex w-full">
-                <Tabs 
-                  activeTab={activeTab} 
-                  onTabChange={handleTabChange} 
-                />
+                <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
               </div>
               {renderTabContent()}
             </div>
