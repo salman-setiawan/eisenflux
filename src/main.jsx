@@ -13,6 +13,7 @@ import { LanguageProvider } from './data/languageContext';
 import Bio from './pages/Bio';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
+import About from './pages/About';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/me",
-    element: <Bio />,
+    element: <About />,
   },
   {
     path: "/article/:slug",

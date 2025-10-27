@@ -28,10 +28,10 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
       ) : null;
 
     return (
-      <div className="mt-3">
+      <div>
         {renderKeywords()}
         {jobDescText && (
-          <p className="text-[15px] text-white/80 mt-3 leading-relaxed">
+          <p className="text-[15px] text-white mt-4 leading-relaxed text-justify">
             {jobDescText}
           </p>
         )}
@@ -42,8 +42,8 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
   const layoutStyle ="flex flex-col gap-y-0.5 text-[14px] text-white/60 font-medium"
 
   return (
-    <div className="p-4 border-dot-b">
-      <div className="font-semibold text-[17px]">{title}</div>
+    <div className="p-4 border-dot-b w-full">
+      <div className="font-semibold">{title}</div>
 
       {type === "certification" ? (
         <div className={`${layoutStyle}`}>
