@@ -12,7 +12,7 @@ const InViewWrapper = ({ image, index }) => {
     <div
       key={index}
       ref={ref}
-      className={`break-inside-avoid mb-4 transition-opacity duration-700 ${
+      className={`break-inside-avoid transition-opacity duration-700 md:mb-4 2xl:mb-4 ${
         inView ? 'opacity-100' : 'opacity-0'
       }`}
     >
@@ -47,7 +47,7 @@ const Snapshot = () => {
 
   return (
     <div>
-      <div className="columns-1 md:columns-2 xl:columns-1 2xl:columns-2 gap-4">
+      <div className="columns-1 md:columns-2 xl:columns-1 2xl:columns-2 gap-4 space-y-4 md:space-y-0 xl:space-y-4 2xl:space-y-0">
         {galleryImages.map((image, index) => (
           <InViewWrapper key={index} image={image} index={index} />
         ))}

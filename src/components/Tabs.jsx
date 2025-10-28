@@ -1,10 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
+import { useLanguage } from '../data/languageContext.jsx'; 
 
-const Tabs = ({onChange, activeTab, onTabChange}) => {
+const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
+  const { language } = useLanguage();
+
   const tabItems = [
-    { key: 'portfolio', label: 'Portfolio Case' },
-    { key: 'snapshot', label: 'UI Snapshot' }
+    { key: 'portfolio', label: language === 'en' ? 'Portfolio Case': 'Kasus Portfolio' },
+    { key: 'snapshot', label: language === 'en' ? 'UI Snapshot': 'Potret UI' },
+    { key: 'blog', label: language === 'en' ? 'Blog': 'Blog' },
   ];
 
   const [activeKey, setActiveKey] = useState(() => {
@@ -26,6 +30,8 @@ const Tabs = ({onChange, activeTab, onTabChange}) => {
     setActiveKey(tabKey)
   }
 
+  specsTabs = 'border-b-2 hover:bg-neutral-800 cursor-pointer';
+
   return (
     <div className="flex z-10 xl:bg-[#0c0c0c] w-full">
       {tabItems.map((tab) => {
@@ -37,8 +43,8 @@ const Tabs = ({onChange, activeTab, onTabChange}) => {
             onClick={() => handleTabClick(tab.key)}
             className={`shrink-0 px-4 py-2 font-semibold text-[13px] whitespace-nowrap transition-colors ${
               isActive
-                ? 'border-b-2 border-[#ffaa50] text-white'
-                : 'border-b-2 border-transparent text-neutral-400 hover:bg-neutral-800'
+                ? `${specsTabs} border-[#ffaa50] text-white`
+                : `${specsTabs} border-transparent text-neutral-400`
             }`}
             aria-current={isActive ? 'page' : undefined}
           >

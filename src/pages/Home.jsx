@@ -120,6 +120,10 @@ const Home = () => {
       return (
         <Snapshot />
       );
+    } else if (activeTab === 'blog') {
+      return (
+        <div className="text-center py-8 xl:pt-12 text-white/80">Coming Soon..</div>
+      );
     }
     return null;
   };
