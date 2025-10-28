@@ -6,11 +6,14 @@ import Notfound from '../pages/404.jsx';
 import Footnote from '../components/Footnote.jsx';
 import LanguageToggle from '../components/LanguageToggle.jsx';
 import Button from '../components/Button.jsx';
+import { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
 
 const Gallery = () => {
   const { slug } = useParams();
   const { language } = useLanguage();
   const navigate = useNavigate();
+  const selectedArticle = getCardBySlug(slug);
+  const csData = getCaseStudyBySlug(slug);
 
   // Cari card berdasarkan slug
   const selectedCard = CardData.find(item => item.slug === slug);
@@ -20,15 +23,16 @@ const Gallery = () => {
   const selectedUI = UIData.find(item => item.id === selectedCard.id);
   if (!selectedUI) return <Notfound />;
 
-  const { title, intImg, intText, extUrl, extImg, extText } = selectedCard;
+  const { intImg, intText, extUrl, extImg, extText } = selectedCard;
   const { gallery } = selectedUI;
+  const navbarTitle = csData?.altTitle || selectedArticle.title3 || selectedArticle.title;
 
   const isGroupedGallery = typeof gallery === 'object' && !Array.isArray(gallery);
 
   return (
     <div>
       <div className="flex flex-col items-center px-5">
-        <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-4 px-5 items-center">
+        <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-3 px-5 items-center">
           <button 
             onClick={() => navigate(-1)}
             className="text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
@@ -37,7 +41,7 @@ const Gallery = () => {
               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-          <div className="text-center font-semibold text-[13px]">{title}</div>
+          <div className="text-center font-semibold text-[13px]">{navbarTitle}</div>
           <LanguageToggle />
         </div>
 

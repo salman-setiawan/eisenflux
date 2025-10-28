@@ -5,7 +5,6 @@ import Notfound from '../pages/404.jsx';
 import Footnote from '../components/Footnote.jsx';
 import Content from '../components/Content.jsx';
 import Showcase from '../components/Showcase.jsx';
-import Chip from '../components/Chip.jsx';
 import LanguageToggle from '../components/LanguageToggle.jsx';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button.jsx';
@@ -93,7 +92,7 @@ const Article = () => {
 
   return (
     <div className="flex flex-col items-center overflow-x-hidden bg-[#191919]">
-      <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-4 px-5 items-center">
+      <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-3 px-5 items-center">
         <button 
           onClick={() => navigate(-1)}
           className="text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"

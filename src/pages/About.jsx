@@ -7,6 +7,7 @@ import LanguageToggle from "../components/LanguageToggle.jsx";
 import Footnote from '../components/Footnote.jsx';
 import BubbleText from '../components/BubbleText.jsx';
 import WorkChip from '../components/WorkChip.jsx';
+import ProfileCard from '../components/ProfileCard.jsx';
 
 const About = () => {
   const { language } = useLanguage();
@@ -62,16 +63,12 @@ const About = () => {
               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-          <div className="flex gap-x-3 items-center">
-            <img src="/bg-bio.webp" alt="ava" className="h-[40px] rounded-lg" />
-            <div className='space-y-[1px]'><div className="font-semibold text-[14px]">Salman Setiawan</div>
-            <WorkChip color='text-white/70' label={language === "en" ? "Open to Work" : "Terbuka untuk Pekerjaan"} /></div>
-          </div>
+          <ProfileCard />
         </div>
         <LanguageToggle />
       </div>
 
-      <div className="flex place-content-center w-full md:max-w-[720px] py-24 relative px-4">
+      <div className="flex place-content-center w-full md:max-w-[720px] py-20 relative px-4">
         <div className="flex flex-col w-full gap-y-4 items-center">
           <div className="px-6 py-1 rounded-xl bg-[#ffaa50]/8 text-[#ffaa50] text-[12px] font-medium w-fit">
             {language === 'en' ? 'Today' : 'Hari ini'}
