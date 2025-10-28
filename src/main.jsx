@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   { path: "/article/:slug", element: <Article /> },
   { path: "/gallery/:slug", element: <Gallery /> },
   { path: "/404", element: <Notfound /> },
-  { path: "*", element: <Navigate to="404" /> },
+  { path: "*", element: <Navigate to="/404" replace /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

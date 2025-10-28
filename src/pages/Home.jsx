@@ -86,12 +86,12 @@ const Home = () => {
   const renderTabContent = () => {
     if (activeTab === 'portfolio') {
       return (
-        <div className="flex flex-col xl:w-full xl:h-full gap-y-4 lg:gap-y-3">
+        <div className="flex flex-col xl:w-full xl:h-full gap-y-4 lg:gap-y-3 xl:gap-y-0">
           {CardData?.length ? (
             [...CardData]
               .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
               .map((article) => (
-              <div key={article.id}>
+              <div key={article.id} className="xl:pb-3">
                 <Card
                   title={article.title}
                   nav={article.nav}
@@ -166,22 +166,18 @@ const Home = () => {
   // Konten utama
   return (
     <div className="flex justify-center bg-[#161616]">
-      <div className='fixed bg-[#171717]/75 backdrop-blur-sm py-2 px-4 z-30 w-full xl:hidden'>
+      <div className='fixed bg-[#171717]/75 backdrop-blur-sm py-3 px-4 z-30 w-full xl:hidden'>
         <Navigation />
       </div>
       <div className="flex flex-col pt-18 xl:pt-0 gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
         <div className="flex flex-col xl:flex-row xl:gap-x-1">
           <div className="xl:flex flex-col gap-2 hidden w-[900px] xl:px-4">
-            <div className='flex flex-col gap-y-3 py-3 pb-2 w-full'>
-              <Navigation />
-            </div>
-            <div className="flex flex-col md:flex-row xl:flex-col gap-2">
-              <AvaCard />
-              <DeckCard />
-            </div>
+            <div className='pt-3 pb-1.5'><Navigation /></div>
+            <AvaCard />
+            <DeckCard />
             <ExpCard />
             <Connect />
-            <div className="py-2"><Footnote /></div>
+            <div className="pt-2"><Footnote /></div>
           </div>
           <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto px-4 md:px-0">
             <div className="flex flex-col gap-1.5 xl:hidden">
@@ -191,14 +187,14 @@ const Home = () => {
               </div>
               <ExpCard />
             </div>
-            <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-3 flex flex-col gap-y-3">
+            <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-3.5 flex flex-col gap-y-3">
               <div className="flex w-full">
                 <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
               </div>
               {renderTabContent()}
             </div>
-            <div className="xl:hidden"><Connect /></div>
-            <div className="xl:hidden w-full pb-4">
+            <div className="flex flex-col xl:hidden pb-4 gap-y-3">
+              <Connect />
               <Footnote />
             </div>
           </div>
