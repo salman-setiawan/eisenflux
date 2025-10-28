@@ -2,7 +2,7 @@ import BioData from '../data/bio.js';
 import { useLanguage } from '../data/languageContext.jsx';
 import Button from './Button.jsx';
 
-const ExpCard = () => {
+const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
   const { language } = useLanguage();
   const experienceData = BioData[0].experience;
   const displayedExperiences = experienceData.slice(0, 3);
@@ -16,6 +16,10 @@ const ExpCard = () => {
     document.body.removeChild(link);
   };
 
+  maskBlur = '#202020 0%, #202020 35%, transparent 100%';
+  maskColor = '#202020 0%, transparent 80%';
+  positionDesktop = 'hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] xl:w-[470px] pointer-events-none';
+  positionMobile = 'absolute block md:hidden bottom-0 left-0 right-0 h-[240px] pointer-events-none';
 
   return (
     <div className="w-full p-3 rounded-xl border border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#202020]">
@@ -59,39 +63,39 @@ const ExpCard = () => {
 
       {/* Gradient color overlay - bottom for mobile, right side for desktop */}
       <div
-        className="absolute block md:hidden bottom-0 left-0 right-0 h-[160px] pointer-events-none"
+        className={`${positionMobile}`}
         style={{
-          background: 'linear-gradient(to top, #202020 0%, transparent 80%)'
+          background: `linear-gradient(to top, ${maskColor})`
         }}
       ></div>
 
       {/* Desktop-specific right side gradient color */}
       <div
-        className="hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] xl:w-[470px] pointer-events-none"
+        className={`${positionDesktop}`}
         style={{
-          background: 'linear-gradient(to left, #202020 0%, transparent 80%)'
+          background: `linear-gradient(to left, ${maskColor})`
         }}
       ></div>
 
       {/* Gradient blur overlay - bottom for mobile, right side for desktop */}
       <div
-        className="absolute block md:hidden bottom-0 left-0 right-0 h-[240px] pointer-events-none"
+        className={`${positionMobile}`}
         style={{
           backdropFilter: 'blur(3px)',
           WebkitBackdropFilter: 'blur(3px)',
-          mask: 'linear-gradient(to top, #202020 0%, #202020 35%, transparent 100%)',
-          WebkitMask: 'linear-gradient(to top, #202020 0%, #202020 35%, transparent 100%)'
+          mask: `linear-gradient(to top, ${maskBlur})`, 
+          WebkitMask: `linear-gradient(to top, ${maskBlur})`
         }}
       ></div>
 
       {/* Desktop-specific right side gradient blur */}
       <div
-        className="hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] xl:w-[470px] pointer-events-none"
+        className={`${positionDesktop}`}
         style={{
           backdropFilter: 'blur(3px)',
           WebkitBackdropFilter: 'blur(3px)',
-          mask: 'linear-gradient(to left, #202020 0%, #202020 35%, transparent 100%)',
-          WebkitMask: 'linear-gradient(to left, #202020 0%, #202020 35%, transparent 100%)'
+          mask: `linear-gradient(to left, ${maskBlur})`,
+          WebkitMask: `linear-gradient(to left, ${maskBlur})`
         }}
       ></div>
 
@@ -100,7 +104,7 @@ const ExpCard = () => {
         <Button to='/me' text={language === "en" ? "Learn More" : "Pelajari Lebih Lanjut"} />
         <div className="flex items-end h-[48px]">
           <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full'>
-            <div className={`bg-red-500 text-white py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-red-700 font-bold text-[13px] md:text-[14px]`}>
+            <div className={`bg-red-700 text-white py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-red-800 font-bold text-[13px] md:text-[14px]`}>
               {language === 'en' ? 'PDF Version' : 'Versi PDF'}
             </div>
           </button>

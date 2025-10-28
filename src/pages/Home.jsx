@@ -191,7 +191,7 @@ const Home = () => {
               </div>
               <ExpCard />
             </div>
-            <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-2 flex flex-col gap-y-3">
+            <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-3 flex flex-col gap-y-3">
               <div className="flex w-full">
                 <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
               </div>

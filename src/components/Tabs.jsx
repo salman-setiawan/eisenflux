@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 
 const Tabs = ({onChange, activeTab, onTabChange}) => {
@@ -17,12 +18,8 @@ const Tabs = ({onChange, activeTab, onTabChange}) => {
   }, [activeTab])
 
   useEffect(() => {
-    if (typeof onChange === 'function') {
-      onChange(activeKey)
-    }
-    if (typeof onTabChange === 'function') {
-      onTabChange(activeKey)
-    }
+    if (typeof onChange === 'function') {onChange(activeKey)}
+    if (typeof onTabChange === 'function') {onTabChange(activeKey)}
   }, [activeKey, onChange, onTabChange])
 
   const handleTabClick = (tabKey) => {
@@ -41,7 +38,7 @@ const Tabs = ({onChange, activeTab, onTabChange}) => {
             className={`shrink-0 px-4 py-2 font-semibold text-[13px] whitespace-nowrap transition-colors ${
               isActive
                 ? 'border-b-2 border-[#ffaa50] text-white'
-                : 'text-neutral-400 hover:bg-neutral-800'
+                : 'border-b-2 border-transparent text-neutral-400 hover:bg-neutral-800'
             }`}
             aria-current={isActive ? 'page' : undefined}
           >

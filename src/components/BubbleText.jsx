@@ -1,24 +1,24 @@
-import React from 'react'
+const BubbleText = ({ type, text, time, children, specsText, specsTime }) => {
 
-const BubbleText = ({ type = 'type-1', text, time, children }) => {
+  specsText = 'px-3 py-1.5 rounded-xl font-medium text-[15px] shadow-md';
+  specsTime = 'text-white/40 text-[11px] mt-1.5 mr-1 mb-4';
+
   return (
     <div className="w-full">
       {type === 'type-2' && (
         <div className="flex justify-start items-end mb-2">
           <div className="flex flex-col max-w-[80%]">
-            <div className="relative">
-              {children ? (
-                <div className="rounded-xl rounded-bl-sm">
-                  {children}
-                </div>
-              ) : (
-                <div className="px-3 py-1.5 rounded-xl bg-neutral-700/50 font-medium text-[15px] rounded-bl-sm">
-                  {text}
-                </div>
-              )}
-            </div>
+            {children ? (
+              <div className="rounded-xl rounded-bl-sm">
+                {children}
+              </div>
+            ) : (
+              <div className={`${specsText} bg-neutral-700/50 rounded-bl-sm`}>
+                {text}
+              </div>
+            )}
             {time &&
-              <div className="text-white/40 text-[11px] mt-1 mr-1 mb-4">{time}</div>
+              <div className={`${specsTime}`}>{time}</div>
             }
           </div>
         </div>
@@ -26,19 +26,17 @@ const BubbleText = ({ type = 'type-1', text, time, children }) => {
       {type === 'type-1' && (
         <div className="flex justify-end items-end mb-2">
           <div className="flex flex-col max-w-[80%] items-end">
-            <div className="relative">
-              {children ? (
-                <div className="rounded-xl rounded-br-sm">
-                  {children}
-                </div>
-              ) : (
-                <div className="px-3 py-1.5 rounded-xl bg-orange-900 font-medium text-[15px] rounded-br-sm">
-                  {text}
-                </div>
-              )}
-            </div>
+            {children ? (
+              <div className="rounded-xl rounded-br-sm">
+                {children}
+              </div>
+            ) : (
+              <div className={`${specsText} bg-orange-700/50 rounded-br-sm`}>
+                {text}
+              </div>
+            )}
             {time &&
-              <div className="text-white/40 text-[11px] mt-1 mr-1 mb-4">{time}</div>
+              <div className={`${specsTime}`}>{time}</div>
             }
           </div>
         </div>

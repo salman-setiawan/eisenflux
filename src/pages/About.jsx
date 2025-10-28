@@ -52,7 +52,7 @@ const About = () => {
   return (
     <div className='flex justify-center'>
       <title>About Me</title>
-      <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between p-4 items-center">
+      <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-3 items-center">
         <div className="flex items-center gap-x-4 md:gap-x-6">
           <button 
             onClick={() => navigate(-1)}
@@ -63,8 +63,8 @@ const About = () => {
             </svg>
           </button>
           <div className="flex gap-x-3 items-center">
-            <img src="/bg-bio.webp" alt="ava" className="h-[46px] rounded-lg" />
-            <div><div className="font-semibold text-[14px] md:text-[15px]">Salman Setiawan</div>
+            <img src="/bg-bio.webp" alt="ava" className="h-[40px] rounded-lg" />
+            <div className='space-y-[1px]'><div className="font-semibold text-[14px]">Salman Setiawan</div>
             <WorkChip color='text-white/70' label={language === "en" ? "Open to Work" : "Terbuka untuk Pekerjaan"} /></div>
           </div>
         </div>
@@ -73,7 +73,7 @@ const About = () => {
 
       <div className="flex place-content-center w-full md:max-w-[720px] py-24 relative px-4">
         <div className="flex flex-col w-full gap-y-4 items-center">
-          <div className="px-4 py-1 rounded-xl bg-[#ffaa50]/8 text-[#ffaa50] text-[13px] font-semibold w-fit">
+          <div className="px-6 py-1 rounded-xl bg-[#ffaa50]/8 text-[#ffaa50] text-[12px] font-medium w-fit">
             {language === 'en' ? 'Today' : 'Hari ini'}
           </div>
           <div className="w-full md:max-w-[720px]">
@@ -192,7 +192,7 @@ const About = () => {
           <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 pt-1 pb-3">
             <div className="flex items-end h-[48px]">
               <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full'>
-                <div className={`bg-red-500 text-white py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-red-700 font-bold text-[13px] md:text-[14px]`}>
+                <div className={`bg-red-700 text-white py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-red-800 font-bold text-[13px] md:text-[14px]`}>
                   {language === 'en' ? 'PDF Version Here' : 'Versi PDF Disini'}
                 </div>
               </button>

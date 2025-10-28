@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+ 
 import { Link } from 'react-router-dom';
 
 const Button = ({ text, to, target, rel, fullWidth }) => {
