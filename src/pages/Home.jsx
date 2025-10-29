@@ -170,7 +170,7 @@ const Home = () => {
   // Konten utama
   return (
     <div className="flex justify-center bg-[#161616]">
-      <div className='fixed bg-[#171717]/75 backdrop-blur-sm py-3 px-4 z-30 w-full xl:hidden'>
+      <div className='fixed bg-[#171717]/75 backdrop-blur-xs py-3 px-4 z-30 w-full xl:hidden'>
         <Navigation />
       </div>
       <div className="flex flex-col pt-18 xl:pt-0 gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">

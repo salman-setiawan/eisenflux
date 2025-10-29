@@ -24,7 +24,7 @@ const MobileNavigation = ({specsButton, specsDropdown1, specsDropdown2}) => {
     { name: "Dribbble", url: "https://dribbble.com/eisenflux" },
   ];
   
-  specsButton = 'flex w-fit cursor-pointer h-[40px] items-center pb-0.5 px-3 hover:bg-[#ffaa50]/20 hover:text-[#ffaa50] bg-[#0c0c0c] rounded-lg';
+  specsButton = 'flex w-fit cursor-pointer h-[40px] items-center pb-0.5 px-3 hover:bg-[#292119] hover:text-[#ffaa50] bg-[#0c0c0c] rounded-lg';
   specsDropdown1 = 'bg-[#141414] min-w-[200px] overflow-hidden shadow-xl shadow-black/40 rounded-lg border border-neutral-800 absolute top-12 left-0 rounded-lg z-20';
   specsDropdown2 = 'px-3 py-3 hover:bg-[#333] cursor-pointer text-white text-start';
 

@@ -71,7 +71,7 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
         </div> 
         <div className="hidden lg:flex gap-x-2 items-end">
           {/* Komponen Informasi */}
-          <div className="h-[480px] rounded-xl flex flex-col lg:max-w-[380px] xl:max-w-[340px] justify-end p-4 border border-neutral-800 gap-y-8 bg-[#141414]">
+          <div className="h-[481px] rounded-xl flex flex-col lg:max-w-[380px] xl:max-w-[340px] justify-end p-4 border border-neutral-800 xl:border-neutral-800/50 gap-y-8 bg-[#141414]">
             <div className="flex flex-col gap-y-4">
               <div className="flex flex-wrap gap-x-1.5 gap-y-2">
                 {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
@@ -101,7 +101,7 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
                 ))}
               </motion.h1>
             )}
-            <div className="relative rounded-xl bg-[#111]/60 border border-neutral-800 overflow-hidden">
+            <div className="relative rounded-xl bg-[#111]/60 border border-neutral-800 xl:border-neutral-800/50 overflow-hidden">
               <div className={srcTexture} style={{ WebkitMaskImage: maskTexture, WebkitMaskComposite: 'destination-in', maskComposite: 'intersect', }}></div>
               <div className="flex justify-center h-[30rem] items-center relative z-10">
                 <img className="h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />

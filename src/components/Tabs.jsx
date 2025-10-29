@@ -30,28 +30,30 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
     setActiveKey(tabKey)
   }
 
-  specsTabs = 'border-b-2 hover:bg-neutral-800 cursor-pointer';
+  specsTabs = ' cursor-pointer hover:bg-neutral-800';
 
   return (
-    <div className="flex z-10 xl:bg-[#0c0c0c] w-full">
-      {tabItems.map((tab) => {
-        const isActive = activeKey === tab.key
-        return (
-          <button
-            key={tab.key}
-            type="button"
-            onClick={() => handleTabClick(tab.key)}
-            className={`shrink-0 px-4 py-2 font-semibold text-[13px] whitespace-nowrap transition-colors ${
-              isActive
-                ? `${specsTabs} border-[#ffaa50] text-white`
-                : `${specsTabs} border-transparent text-neutral-400`
-            }`}
-            aria-current={isActive ? 'page' : undefined}
-          >
-            {tab.label}
-          </button>
-        )
-      })}
+    <div className="flex flex-col z-10 xl:bg-[#0c0c0c] w-full border-b-2 border-neutral-800">
+      <div className="flex">
+        {tabItems.map((tab) => {
+          const isActive = activeKey === tab.key
+          return (
+            <button
+              key={tab.key}
+              type="button"
+              onClick={() => handleTabClick(tab.key)}
+              className={`px-4 py-2 font-semibold text-[13px] whitespace-nowrap transition-colors ${
+                isActive
+                  ? `${specsTabs} border-b-2 translate-y-[2px] border-[#ffaa50] text-white`
+                  : `${specsTabs} translate-y-[1px] text-neutral-400`
+              }`}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              {tab.label}
+            </button>
+          )
+        })}
+      </div>
     </div>
   )
 }
