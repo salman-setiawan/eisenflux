@@ -42,7 +42,7 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
   const layoutStyle ="flex flex-col gap-y-0.5 text-[14px] text-white/60 font-medium"
 
   return (
-    <div className="p-4 border-dot-b w-full">
+    <div className="p-4 w-full">
       <div className="font-semibold">{title}</div>
 
       {type === "certification" ? (

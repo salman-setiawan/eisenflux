@@ -1,17 +1,32 @@
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from "../data/languageContext.jsx";
+import { useState } from "react";
 import BioCards from "../components/BioCards.jsx";
 import BioData from "../data/bio";
 import Notfound from "./404.jsx";
 import LanguageToggle from "../components/LanguageToggle.jsx";
 import Footnote from '../components/Footnote.jsx';
 import BubbleText from '../components/BubbleText.jsx';
-import WorkChip from '../components/WorkChip.jsx';
 import ProfileCard from '../components/ProfileCard.jsx';
 
 const About = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const handleClick = (menu) => {
+    if (menu === "about") {
+      navigate("/me");
+    } else {
+      setOpenMenu(openMenu === menu ? null : menu);
+    }
+  };
+
+  const socialList = [
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/salman-setiawan" },
+    { name: "Instagram", url: "https://www.instagram.com/eisenflux" },
+    { name: "Gmail", url: "mailto:stwnsalmann@gmail.com" },
+  ];
 
   const handleDownload = () => {
     const link = document.createElement('a');
@@ -31,7 +46,7 @@ const About = () => {
     
     return (
       <BubbleText key={item.uid} type='type-2' time={timeStr}>
-        <div className="w-full border-dot bg-black/80">
+        <div className="w-full rounded-xl bg-[#0c0c0c] shadow-md">
           <BioCards
             type={label}
             title={item.title?.[language] || item.title}
@@ -186,11 +201,25 @@ const About = () => {
 
       <div className="fixed bottom-0 w-full bg-[#141414] py-1.5" style={{ zIndex: 1 }}>
         <div className="flex w-full justify-center">
-          <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 pt-1 pb-3">
-            <div className="flex items-end h-[48px]">
+          <div className="w-full max-w-[720px] px-4 pt-1 pb-3">
+            <div className="flex flex-row gap-x-2 h-[48px] items-end">
               <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full'>
                 <div className={`bg-red-700 text-white py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-red-800 font-bold text-[13px] md:text-[14px]`}>
                   {language === 'en' ? 'PDF Version Here' : 'Versi PDF Disini'}
+                </div>
+              </button>
+              <button className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full' onClick={() => handleClick("socials")}>
+                <div className="bg-white text-black py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-[#ffaa50] font-bold text-[13px] md:text-[14px] relative">
+                  {language === "en" ? "Contacts" : "Kontak"}
+                  {openMenu === "socials" && (
+                    <div className={`bg-[#141414] w-full left-0 overflow-hidden shadow-xl shadow-black/40 rounded-lg border border-neutral-800 absolute bottom-11 rounded-lg z-20`}>
+                      {socialList.map((item, idx) => (
+                        <div key={idx} className={`px-3 py-3 hover:bg-[#333] cursor-pointer text-white text-start`} onClick={() => window.open(item.url, "_blank")}>
+                          {item.name}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </button>
             </div>
