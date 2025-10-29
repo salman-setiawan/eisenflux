@@ -23,7 +23,7 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
 
   return (
     <div className="w-full p-3 rounded-xl border border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#202020]">
-      <h2 className="font-bold mb-3 text-[#ffaa50]">{language === "en" ? "Work Experience" : "Pengalaman Kerja"}</h2>
+      <h2 className="font-medium text-[12px] mb-3">{language === "en" ? "Work Experience :" : "Pengalaman Kerja :"}</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8">
         {displayedExperiences.map((exp, index) => (
           <div key={exp.uid} className="w-full flex md:flex-col gap-y-2 gap-x-3 relative">
