@@ -5,6 +5,29 @@ import { useLanguage } from '../data/languageContext.jsx';
 const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
   const { language } = useLanguage();
 
+  const renderIcon = (key, isActive) => {
+    const iconNameMap = {
+      portfolio: 'work',
+      snapshot: 'photo_camera',
+      blog: 'article',
+    };
+    const color = isActive ? '#ffaa50' : 'rgb(163 163 163)';
+    return (
+      <span
+        className="material-symbols-outlined"
+        aria-hidden="true"
+        style={{
+          fontVariationSettings: '\'FILL\' 0, \'wght\' 400, \'GRAD\' 0, \'opsz\' 20',
+          fontSize: 16,
+          lineHeight: '16px',
+          color,
+        }}
+      >
+        {iconNameMap[key]}
+      </span>
+    );
+  }
+
   const tabItems = [
     { key: 'portfolio', label: language === 'en' ? 'Portfolio Case': 'Kasus Portfolio' },
     { key: 'snapshot', label: language === 'en' ? 'UI Snapshot': 'Potret UI' },
@@ -42,14 +65,17 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
               key={tab.key}
               type="button"
               onClick={() => handleTabClick(tab.key)}
-              className={`px-4 py-2 font-semibold text-[13px] whitespace-nowrap transition-colors ${
+              className={`px-4 pt-2 pb-1.5 font-semibold text-[13px] whitespace-nowrap transition-colors ${
                 isActive
                   ? `${specsTabs} border-b-2 translate-y-[2px] border-[#ffaa50] text-white`
                   : `${specsTabs} translate-y-[1px] text-neutral-400`
               }`}
               aria-current={isActive ? 'page' : undefined}
             >
-              {tab.label}
+              <span className="inline-flex items-center gap-2">
+                {renderIcon(tab.key, isActive)}
+                <span>{tab.label}</span>
+              </span>
             </button>
           )
         })}
