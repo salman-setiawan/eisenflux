@@ -1,7 +1,7 @@
-import { useLanguage } from '../data/languageContext.jsx'; 
+import { useLanguage } from '../data/languageContext.jsx';
 import WorkChip from './WorkChip.jsx';
 
-const AvaCard = ({highlightedText, paragraphText}) => {
+const AvaCard = ({ highlightedText, paragraphText }) => {
   const { language } = useLanguage();
 
   highlightedText = 'font-semibold text-[#ffaa50]';
@@ -10,14 +10,14 @@ const AvaCard = ({highlightedText, paragraphText}) => {
   return (
     <div className="flex flex-col gap-3 border border-neutral-800 p-3 bg-[#202020] rounded-xl">
       <div className="flex flex-row gap-3.5">
-        <img src="/bg-bio.webp" alt="ava" className="w-20 md:w-24 object-cover rounded-lg" />
+        <img src="/bg-bio.webp" loading="lazy" alt="ava" className="w-20 md:w-24 object-cover rounded-lg" />
         <div className="space-y-2">
           <WorkChip label={language === "en" ? "Open to Work" : "Terbuka untuk Pekerjaan"} />
-          <div className={paragraphText}> 
-            {language === "en" ? "Hola! my name is " : "Hola! namaku "} 
+          <div className={paragraphText}>
+            {language === "en" ? "Hola! my name is " : "Hola! namaku "}
             <span className={highlightedText}>Salman</span>
-            <span>,</span> 
-            {language === "en" ? " a Bachelor of Informatics graduate specializing in " : " lulusan Informatika dengan spesialisasi "} 
+            <span>,</span>
+            {language === "en" ? " a Bachelor of Informatics graduate specializing in " : " lulusan Informatika dengan spesialisasi "}
             <span className={highlightedText}>UI/UX Design.</span>
             {language === "en" ? " currently based in " : " saat ini berdomisili di "}
             <span className={highlightedText}>Balikpapan - Indonesia 🇮🇩</span>

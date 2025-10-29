@@ -9,9 +9,9 @@ const ProfileCard = () => {
   return (
     <div>
       <div className="flex gap-x-3 items-center">
-        <img src="/bg-bio.webp" alt="ava" className="h-[40px] rounded-lg cursor-pointer" onClick={() => setIsOpen(true)} />
+        <img src="/bg-bio.webp" loading="lazy" alt="ava" className="h-[40px] rounded-lg cursor-pointer" onClick={() => setIsOpen(true)} />
         <div className='space-y-[1px]'><div className="font-semibold text-[14px]">Salman Setiawan</div>
-        <WorkChip color='text-white/70' label={language === "en" ? "Open to Work" : "Terbuka untuk Pekerjaan"} /></div>
+          <WorkChip color='text-white/70' label={language === "en" ? "Open to Work" : "Terbuka untuk Pekerjaan"} /></div>
       </div>
       {isOpen && (
         <div
