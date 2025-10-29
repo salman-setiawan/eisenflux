@@ -65,7 +65,7 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
               key={tab.key}
               type="button"
               onClick={() => handleTabClick(tab.key)}
-              className={`px-4 pt-2 pb-1.5 font-semibold text-[13px] whitespace-nowrap transition-colors ${
+              className={`px-3 pt-2 pb-1.5 font-semibold text-[13px] whitespace-nowrap transition-colors ${
                 isActive
                   ? `${specsTabs} border-b-2 translate-y-[2px] border-[#ffaa50] text-white`
                   : `${specsTabs} translate-y-[1px] text-neutral-400`
