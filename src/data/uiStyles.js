@@ -1,0 +1,2 @@
+export const cardStyles = 'w-full flex flex-col rounded-xl border border-neutral-800 overflow-hidden p-3 bg-[#202020]';
+export const pdfButton = 'bg-red-700 text-white py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-red-800 font-bold text-[13px] md:text-[14px]';

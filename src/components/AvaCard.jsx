@@ -1,5 +1,6 @@
 import { useLanguage } from '../data/languageContext.jsx';
 import WorkChip from './WorkChip.jsx';
+import { cardStyles } from '../data/uistyles.js';
 
 const AvaCard = ({ highlightedText, paragraphText }) => {
   const { language } = useLanguage();
@@ -8,7 +9,7 @@ const AvaCard = ({ highlightedText, paragraphText }) => {
   paragraphText = 'pl-0.5 pr-1 text-[14px] md:text-[15px] text-justify';
 
   return (
-    <div className="flex flex-col gap-3 border border-neutral-800 p-3 bg-[#202020] rounded-xl">
+    <div className={`${cardStyles} gap-3`}>
       <div className="flex flex-col gap-y-2 h-fit">
         <WorkChip label={language === "en" ? "Open to Work" : "Terbuka untuk Pekerjaan"} />
         <div className={paragraphText}>

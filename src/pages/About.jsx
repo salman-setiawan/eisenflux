@@ -8,6 +8,8 @@ import LanguageToggle from "../components/LanguageToggle.jsx";
 import Footnote from '../components/Footnote.jsx';
 import BubbleText from '../components/BubbleText.jsx';
 import ProfileCard from '../components/ProfileCard.jsx';
+import { pdfButton } from '../data/uistyles.js';
+import Button from '../components/Button.jsx';
 
 const About = () => {
   const { language } = useLanguage();
@@ -203,25 +205,26 @@ const About = () => {
         <div className="flex w-full justify-center">
           <div className="w-full max-w-[720px] px-4 pt-1 pb-3">
             <div className="flex flex-row gap-x-2 h-[48px] items-end">
-              <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full'>
-                <div className={`bg-red-700 text-white py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-red-800 font-bold text-[13px] md:text-[14px]`}>
-                  {language === 'en' ? 'PDF Version Here' : 'Versi PDF Disini'}
-                </div>
-              </button>
-              <button className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full' onClick={() => handleClick("socials")}>
-                <div className="bg-white text-black py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-[#ffaa50] font-bold text-[13px] md:text-[14px] relative">
-                  {language === "en" ? "Contacts" : "Kontak"}
+              <div className="w-1/2">
+                <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full'>
+                  <div className={pdfButton} style={{ width: '100%' }}>
+                    {language === 'en' ? 'PDF Version Here' : 'Versi PDF Disini'}
+                  </div>
+                </button>
+              </div>
+              <div className="w-1/2 relative">
+                <Button text={language === "en" ? "Contacts" : "Kontak"} onClick={() => handleClick("socials")} fullWidth={true}>
                   {openMenu === "socials" && (
-                    <div className={`bg-[#141414] w-full left-0 overflow-hidden shadow-xl shadow-black/40 rounded-lg border border-neutral-800 absolute bottom-11 rounded-lg z-20`}>
+                    <div className={"bg-[#141414] w-full left-0 overflow-hidden shadow-xl shadow-black/40 rounded-lg border border-neutral-800 absolute bottom-13 rounded-lg z-20"}>
                       {socialList.map((item, idx) => (
-                        <div key={idx} className={`px-3 py-3 hover:bg-[#333] cursor-pointer text-white text-start`} onClick={() => window.open(item.url, "_blank")}>
+                        <div key={idx} className="p-3 hover:bg-[#333] cursor-pointer text-white text-start text-[13px] md:text-[14px] font-semibold" onClick={() => window.open(item.url, "_blank")}> 
                           {item.name}
                         </div>
                       ))}
                     </div>
                   )}
-                </div>
-              </button>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import BioData from '../data/bio.js';
 import { useLanguage } from '../data/languageContext.jsx';
 import Button from './Button.jsx';
+import { cardStyles, pdfButton } from '../data/uistyles.js';
 
 const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
   const { language } = useLanguage();
@@ -22,7 +23,7 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
   positionMobile = 'absolute block md:hidden bottom-0 left-0 right-0 h-[240px] pointer-events-none';
 
   return (
-    <div className="w-full p-3 rounded-xl border border-neutral-800 relative overflow-hidden md:min-h-[160px] bg-[#202020]">
+    <div className={`${cardStyles} relative overflow-hidden md:min-h-[160px]`}>
       <h2 className="font-medium text-[12px] mb-3">{language === "en" ? "Work Experience :" : "Pengalaman Kerja :"}</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8">
         {displayedExperiences.map((exp, index) => (
@@ -104,7 +105,7 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
         <Button to='/me' text={language === "en" ? "Learn More" : "Pelajari Lebih Lanjut"} />
         <div className="flex items-end h-[48px]">
           <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full'>
-            <div className={`bg-red-700 text-white py-1.5 px-2.5 flex gap-x-1.5 w-full cursor-pointer rounded-lg border-3 border-black hover:bg-red-800 font-bold text-[13px] md:text-[14px]`}>
+            <div className={pdfButton}>
               {language === 'en' ? 'PDF Version' : 'Versi PDF'}
             </div>
           </button>

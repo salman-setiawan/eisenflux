@@ -53,7 +53,7 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
     setActiveKey(tabKey)
   }
 
-  specsTabs = ' cursor-pointer hover:bg-neutral-800';
+  specsTabs = 'cursor-pointer hover:bg-neutral-800';
 
   return (
     <div className="flex flex-col z-10 xl:bg-[#0c0c0c] w-full border-b-2 border-neutral-800">
