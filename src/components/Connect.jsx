@@ -1,5 +1,5 @@
 import Button from "./Button"
-import { cardStyles, defaultButton } from '../data/uistyles.js';
+import { cardStyles, defaultButton } from '../data/uiStyles.js';
 
 const Connect = () => {
   return (

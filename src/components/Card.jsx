@@ -3,7 +3,7 @@ import Button from './Button';
 import Chip from './Chip';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import { cardStyles, defaultButton } from '../data/uistyles.js';
+import { cardStyles, defaultButton } from '../data/uiStyles.js';
 
 const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2, extImg, extText, url1, url2, url3, obj, motionText, maskTexture, srcTexture }) => {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.05, });
