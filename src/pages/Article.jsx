@@ -9,7 +9,7 @@ import LanguageToggle from '../components/LanguageToggle.jsx';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button.jsx';
 
-const Article = () => {
+const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   const { slug } = useParams();
   const { language } = useLanguage();
   const navigate = useNavigate();
@@ -90,6 +90,10 @@ const Article = () => {
     type: { en: 'Type', id: 'Jenis' },
   };
 
+  csDataPos = 'flex gap-2';
+  csDataHeader = 'text-neutral-400 min-w-[72px]';
+  csDataLabel = 'font-semibold text-white';
+
   return (
     <div className="flex flex-col items-center overflow-x-hidden bg-[#191919]">
       <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-3 px-5 items-center">
@@ -115,29 +119,29 @@ const Article = () => {
         </div>
 
         {csData && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[14px] text-neutral-300 pb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[13px] md:text-[14px] text-neutral-300 pb-4">
             {csData.role && (
-              <div className="flex gap-2">
-                <span className="text-neutral-400 min-w-[72px]">{metaLabels.role[language]}:</span>
-                <span className="font-semibold text-white">{csData.role[language] || csData.role.en || csData.role}</span>
+              <div className={csDataPos}>
+                <span className={csDataHeader}>{metaLabels.role[language]} :</span>
+                <span className={csDataLabel}>{csData.role[language] || csData.role.en || csData.role}</span>
               </div>
             )}
             {csData.duration && (
-              <div className="flex gap-2">
-                <span className="text-neutral-400 min-w-[72px]">{metaLabels.duration[language]}:</span>
-                <span className="font-semibold text-white">{csData.duration[language] || csData.duration.en || csData.duration}</span>
+              <div className={csDataPos}>
+                <span className={csDataHeader}>{metaLabels.duration[language]} :</span>
+                <span className={csDataLabel}>{csData.duration[language] || csData.duration.en || csData.duration}</span>
               </div>
             )}
             {csData.type && (
-              <div className="flex gap-2">
-                <span className="text-neutral-400 min-w-[72px]">{metaLabels.type[language]}:</span>
-                <span className="font-semibold text-white">{csData.type[language] || csData.type.en || csData.type}</span>
+              <div className={csDataPos}>
+                <span className={csDataHeader}>{metaLabels.type[language]} :</span>
+                <span className={csDataLabel}>{csData.type[language] || csData.type.en || csData.type}</span>
               </div>
             )}
             {csData.tools && Array.isArray(csData.tools) && csData.tools.length > 0 && (
-              <div className="flex gap-2">
-                <span className="text-neutral-400 min-w-[72px]">{metaLabels.tools[language]}:</span>
-                <span className="font-semibold text-white">{csData.tools.join(', ')}</span>
+              <div className={csDataPos}>
+                <span className={csDataHeader}>{metaLabels.tools[language]} :</span>
+                <span className={csDataLabel}>{csData.tools.join(', ')}</span>
               </div>
             )}
           </div>

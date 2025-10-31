@@ -174,8 +174,8 @@ const Home = () => {
         <Navigation />
       </div>
       <div className="flex flex-col pt-18 xl:pt-0 gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
-        <div className="flex flex-col xl:flex-row xl:gap-x-1 bg-[#141414]">
-          <div className="xl:flex flex-col gap-2 hidden w-[800px] xl:px-4">
+        <div className="flex flex-col xl:flex-row bg-[#141414]">
+          <div className="xl:flex flex-col gap-2 hidden w-[520px] px-4">
             <div className='pt-3 pb-1.5'><Navigation /></div>
             <AvaCard />
             <DeckCard />

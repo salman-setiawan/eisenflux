@@ -25,7 +25,7 @@ const MobileNavigation = ({specsButton}) => {
     { name: "Dribbble", url: "https://dribbble.com/eisenflux" },
   ];
   
-  specsButton = 'flex w-fit cursor-pointer h-[40px] items-center pb-0.5 px-2.5 md:px-3 hover:bg-[#292119] hover:text-[#ffaa50] bg-[#0c0c0c] rounded-lg';
+  specsButton = 'flex w-fit cursor-pointer h-[40px] items-center px-2.5 md:px-3 hover:bg-[#3E3124] hover:text-[#FED1A1] bg-[#0c0c0c] rounded-lg';
 
   return (
     <div className='flex justify-between items-center w-full'>

@@ -72,7 +72,7 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
         </div> 
         <div className="hidden lg:flex gap-x-2 items-end">
           {/* Komponen Informasi */}
-          <div className={`${cardStyles} h-[481px] lg:max-w-[380px] xl:max-w-[340px] justify-end p-4 gap-y-8`}>
+          <div className={`${cardStyles} h-[481px] lg:max-w-[380px] xl:w-[540px] justify-end p-4 gap-y-8`}>
             <div className="flex flex-col gap-y-4">
               <div className="flex flex-wrap gap-x-1.5 gap-y-2">
                 {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
