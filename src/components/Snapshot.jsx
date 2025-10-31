@@ -16,7 +16,7 @@ const InViewWrapper = ({ image, index }) => {
         inView ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <div className="relative group overflow-hidden rounded-lg bg-[#111]/60 border border-neutral-800">
+      <div className="relative group overflow-hidden rounded-md bg-[#111]/60 border border-neutral-800">
         {!isLoaded && (
           <div className="w-full aspect-auto animate-pulse bg-gradient-to-r from-[#111] via-neutral-800 to-[#111] bg-[length:200%_100%]"></div>
         )}

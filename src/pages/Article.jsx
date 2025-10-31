@@ -8,6 +8,7 @@ import Showcase from '../components/Showcase.jsx';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button.jsx';
 import Navigation from '../components/Navigation.jsx';
+import { defaultButton } from '../data/uiStyles.js';
 
 const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   const { slug } = useParams();
@@ -136,7 +137,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
         )}
 
         {contents.length === 0 ? (
-          <div className="text-neutral-300 text-center italic py-12">
+          <div className="text-neutral-300 text-center py-12">
             No content found.
           </div>
         ) : (
@@ -155,10 +156,10 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
         <div className="flex w-full justify-center">
           <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 pt-1 pb-3">
             {extUrl && (
-              <Button to={extUrl} target="_blank" rel="noopener noreferrer" img={extImg} text={extText[language]} fullWidth={true} />
+              <Button style={defaultButton} to={extUrl} target="_blank" rel="noopener noreferrer" text={extText[language]} fullWidth={true} />
             )}
             {intText2 && (
-              <Button to={`/gallery/${slug}`} img={intImg2} text={intText2[language]} fullWidth={true} />
+              <Button style={defaultButton} to={`/gallery/${slug}`} img={intImg2} text={intText2[language]} fullWidth={true} />
             )}
           </div>
         </div>

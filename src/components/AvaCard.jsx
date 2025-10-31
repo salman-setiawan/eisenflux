@@ -1,12 +1,11 @@
 import { useLanguage } from '../data/languageContext.jsx';
 import WorkChip from './WorkChip.jsx';
-import { cardStyles } from '../data/uiStyles.js';
+import { cardStyles, paragraphText } from '../data/uiStyles.js';
 
-const AvaCard = ({ highlightedText, paragraphText }) => {
+const AvaCard = ({ highlightedText }) => {
   const { language } = useLanguage();
 
   highlightedText = 'font-semibold text-[#ffaa50]';
-  paragraphText = 'pl-0.5 pr-1 text-[14px] md:text-[15px] text-justify';
 
   return (
     <div className={`${cardStyles} gap-3`}>
