@@ -1,6 +1,6 @@
 import { useLanguage } from '../data/languageContext.jsx';
 import WorkChip from './WorkChip.jsx';
-import { cardStyles } from '../data/uistyles.js';
+import { cardStyles } from '../data/uiStyles.js';
 
 const AvaCard = ({ highlightedText, paragraphText }) => {
   const { language } = useLanguage();

@@ -1,7 +1,7 @@
 import BioData from '../data/bio.js';
 import { useLanguage } from '../data/languageContext.jsx';
 import Button from './Button.jsx';
-import { cardStyles, defaultButton, pdfButton } from '../data/uistyles.js';
+import { cardStyles, defaultButton, pdfButton } from '../data/uiStyles.js';
 
 const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
   const { language } = useLanguage();

@@ -1,6 +1,6 @@
 import { useLanguage } from "../data/languageContext.jsx";
 import Clock from "../components/Clock.jsx";
-import { cardStyles } from '../data/uistyles.js';
+import { cardStyles } from '../data/uiStyles.js';
 import Chip from "./Chip.jsx";
 
 

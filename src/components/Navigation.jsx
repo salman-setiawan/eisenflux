@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ArticleData from "../data/card.js";;
 import LanguageToggle from './LanguageToggle.jsx';
-import { dropdownButton, dropdownOutter } from '../data/uistyles.js';
+import { dropdownButton, dropdownOutter } from '../data/uiStyles.js';
 
 const MobileNavigation = ({specsButton}) => {
   const { language } = useLanguage();
