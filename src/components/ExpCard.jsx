@@ -51,10 +51,10 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
             </div>
             <div>
               <h3 className="font-semibold text-sm truncate">{exp.title}</h3>
-              <p className="text-[13px] truncate">
+              <p className="text-[12px] md:text-[13px] truncate">
                 {exp.role?.[language] || exp.role?.id}
               </p>
-              <p className="text-[13px] block md:hidden">
+              <p className="text-[12px] md:text-[13px] block md:hidden">
                 {exp.dateEnd}
               </p>
             </div>

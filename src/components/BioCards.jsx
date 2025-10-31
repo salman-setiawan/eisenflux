@@ -3,7 +3,7 @@ import Chip from './Chip';
 
 const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdesc, keyWord, language, proof }) => {
   const renderDateRange = () => (
-    <div className="flex gap-x-2">
+    <div className="flex gap-x-2 mt-0.5 md:mt-0">
       <div className="md:text-end md:w-[62px]">{dateStart}</div>
       <div>⦁</div>
       <div className="md:text-end">{dateEnd}</div>
@@ -17,7 +17,7 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
     // Render keywords as chips
     const renderKeywords = () =>
       Array.isArray(keyWord) && keyWord.length > 0 ? (
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2 translate-x-[-1px]">
           {keyWord.map((keyword, idx) => (
             <Chip 
               key={idx} 
@@ -31,7 +31,7 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
       <div>
         {renderKeywords()}
         {jobDescText && (
-          <p className="text-[15px] text-white mt-4 leading-relaxed text-justify">
+          <p className="text-[14px] md:text-[15px] text-white mt-4 leading-relaxed text-justify">
             {jobDescText}
           </p>
         )}
@@ -39,7 +39,7 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
     );
   };
 
-  const layoutStyle ="flex flex-col gap-y-0.5 text-[14px] text-white/60 font-medium"
+  const layoutStyle ="flex flex-col gap-y-0.5 text-[13px] md:text-[14px] text-white/60 font-medium"
 
   return (
     <div className="p-4 w-full">
@@ -54,7 +54,7 @@ const BioCards = ({ type, title, role, company, date, dateStart, dateEnd, jobdes
           {proof &&
             <div className="pt-2.5">
             <Link to={proof} target="_blank" rel="noopener noreferrer">
-              <button className="px-2 py-1 text-[13px] text-[#ffaa50] bg-[#ffaa50]/20 w-fit rounded-md font-semibold cursor-pointer">
+              <button className="px-2 py-1 text-[13px] text-[#ffaa50] bg-[#ffaa50]/20 rounded-md font-semibold cursor-pointer">
                 {language === 'en' ? 'See Certification Here' : 'Lihat Sertifikasi Disini'}
               </button>
             </Link>

@@ -143,14 +143,14 @@ const BioData = [
       },
       {
         uid: 3,
-        title: 'Figma Assessment',
+        title: 'Figma Assessment Certificate',
         company: 'Uxcel',
         date: "2023",
         proof: "https://app.uxcel.com/assessment-report/J1YO9DIE",
       },
       {
         uid: 4,
-        title: 'Google UX Design',
+        title: 'Google UX Design Certificate',
         company: 'Coursera',
         date: "2023",
         proof: "https://drive.google.com/file/d/18l13McBY0I0Tzi43kVGKMYfPtDE-IMm1/view?usp=sharing",

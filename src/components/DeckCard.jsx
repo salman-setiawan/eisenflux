@@ -1,13 +1,13 @@
 import { useLanguage } from "../data/languageContext.jsx";
 import Clock from "../components/Clock.jsx";
 import { cardStyles } from '../data/uistyles.js';
+import Chip from "./Chip.jsx";
 
 
-const DeckCard = ({specDiv, specChip}) => {
+const DeckCard = ({specDiv}) => {
   const { language } = useLanguage();
 
   specDiv = `${cardStyles} py-2 sm:flex-row sm:flex-wrap sm:justify-between sm:items-center`;
-  specChip = "text-[12px] md:text-[13px] px-2 py-0.5 font-bold text-[#ffaa50] bg-[#ffaa50]/15 rounded-full";
   
   return (
     <div className="gap-1.5 xl:gap-2 w-full flex flex-col xl:flex-row min-w-[180px]">
@@ -16,8 +16,8 @@ const DeckCard = ({specDiv, specChip}) => {
         <div className={`${specDiv} gap-y-2`}>
           <div className="text-[12px] font-medium xl:w-[160px]">{language === "en" ? "Created with :" : "Dibuat dengan :"}</div>
           <div className="flex gap-1.5">
-            <div className={specChip}>React</div>
-            <div className={specChip}>TailwindCSS</div>
+            <Chip label='React' />
+            <Chip label='TailwindCSS' />
           </div>
         </div>
         <div className={`${specDiv} gap-y-1.5`}>
