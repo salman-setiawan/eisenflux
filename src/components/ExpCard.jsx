@@ -1,7 +1,7 @@
 import BioData from '../data/bio.js';
 import { useLanguage } from '../data/languageContext.jsx';
 import Button from './Button.jsx';
-import { cardStyles, pdfButton } from '../data/uistyles.js';
+import { cardStyles, defaultButton, pdfButton } from '../data/uistyles.js';
 
 const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
   const { language } = useLanguage();
@@ -102,14 +102,8 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
 
       {/* Learn more button */}
       <div className="absolute right-3 bottom-3 md:right-4 z-10 flex flex-col items-end md:flex-row gap-y-1 gap-x-2">
-        <Button to='/me' text={language === "en" ? "Learn More" : "Pelajari Lebih Lanjut"} />
-        <div className="flex items-end h-[48px]">
-          <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full'>
-            <div className={pdfButton}>
-              {language === 'en' ? 'PDF Version' : 'Versi PDF'}
-            </div>
-          </button>
-        </div>
+        <Button to='/me' text={language === "en" ? "Learn More" : "Pelajari Lebih Lanjut"} style={defaultButton} />
+        <Button text={language === "en" ? "PDF Version" : "Versi PDF"} onClick={handleDownload} style={pdfButton} />
       </div>
     </div>
   );

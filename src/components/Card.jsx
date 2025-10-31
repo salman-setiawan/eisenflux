@@ -3,7 +3,7 @@ import Button from './Button';
 import Chip from './Chip';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import { cardStyles } from '../data/uistyles.js';
+import { cardStyles, defaultButton } from '../data/uistyles.js';
 
 const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2, extImg, extText, url1, url2, url3, obj, motionText, maskTexture, srcTexture }) => {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.05, });
@@ -60,9 +60,9 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
             </div>
             <div className="flex flex-col lg:flex-row lg:gap-x-4 gap-y-4 justify-end lg:justify-between items-end">
               <div className="flex justify-end gap-x-1.5 min-w-[280px] z-20">
-                {url1 && <Button to={url1} img={intImg} text={intText} />}
-                {url2 && <Button to={url2} img={intImg2} text={intText2} />}
-                {url3 && (<Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}
+                {url1 && <Button style={defaultButton} to={url1} img={intImg} text={intText} />}
+                {url2 && <Button style={defaultButton} to={url2} img={intImg2} text={intText2} />}
+                {url3 && (<Button style={defaultButton} to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}
               </div>
               <div className="w-full py-2 pl-2 pr-4 text-sm md:text-[15px] bg-black/50 font-medium rounded-lg">
                 <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
@@ -82,9 +82,9 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
               </div>
             </div>
             <div className="flex gap-x-2">
-              {url1 && (<Button to={url1} img={intImg} text={intText} />)}
-              {url2 && (<Button to={url2} img={intImg2} text={intText2} />)}
-              {url3 && (<Button to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}
+              {url1 && (<Button style={defaultButton} to={url1} img={intImg} text={intText} />)}
+              {url2 && (<Button style={defaultButton} to={url2} img={intImg2} text={intText2} />)}
+              {url3 && (<Button style={defaultButton} to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}
             </div>
           </div>
           {/* Komponen Gambar */}

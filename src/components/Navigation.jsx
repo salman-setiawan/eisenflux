@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ArticleData from "../data/card.js";;
 import LanguageToggle from './LanguageToggle.jsx';
+import { dropdownButton, dropdownOutter } from '../data/uistyles.js';
 
-const MobileNavigation = ({specsButton, specsDropdown1, specsDropdown2}) => {
+const MobileNavigation = ({specsButton}) => {
   const { language } = useLanguage();
   const [openMenu, setOpenMenu] = useState(null);
   const navigate = useNavigate();
@@ -25,8 +26,6 @@ const MobileNavigation = ({specsButton, specsDropdown1, specsDropdown2}) => {
   ];
   
   specsButton = 'flex w-fit cursor-pointer h-[40px] items-center pb-0.5 px-3 hover:bg-[#292119] hover:text-[#ffaa50] bg-[#0c0c0c] rounded-lg';
-  specsDropdown1 = 'bg-[#141414] min-w-[200px] overflow-hidden shadow-xl shadow-black/40 rounded-lg border border-neutral-800 absolute top-12 left-0 rounded-lg z-20';
-  specsDropdown2 = 'px-3 py-3 hover:bg-[#333] cursor-pointer text-white text-start';
 
   return (
     <div className='flex justify-between items-center w-full'>
@@ -37,11 +36,11 @@ const MobileNavigation = ({specsButton, specsDropdown1, specsDropdown2}) => {
         <button className={`${specsButton} relative`} onClick={() => handleClick("projects")}>
           {language === "en" ? "Projects" : "Proyek"}
           {openMenu === "projects" && (
-            <div className={`${specsDropdown1}`}>
+            <div className={`${dropdownOutter} top-12 left-0 min-w-[200px]`}>
               {ArticleData.map((article) => (
                 <div
                   key={article.id}
-                  className={`${specsDropdown2}`}
+                  className={dropdownButton}
                   onClick={() =>
                     article.slug === "bhumi-pemedas"
                       ? window.open("https://bhumipemedas.netlify.app/", "_blank")
@@ -57,9 +56,9 @@ const MobileNavigation = ({specsButton, specsDropdown1, specsDropdown2}) => {
         <button className={`${specsButton} relative xl:hidden`} onClick={() => handleClick("socials")}>
           {language === "en" ? "Contacts" : "Kontak"}
           {openMenu === "socials" && (
-            <div className={`${specsDropdown1}`}>
+            <div className={`${dropdownOutter} top-12 left-0 min-w-[200px]`}>
               {socialList.map((item, idx) => (
-                <div key={idx} className={`${specsDropdown2}`} onClick={() => window.open(item.url, "_blank")}>
+                <div key={idx} className={dropdownButton} onClick={() => window.open(item.url, "_blank")}>
                   {item.name}
                 </div>
               ))}

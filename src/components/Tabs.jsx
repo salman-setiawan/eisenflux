@@ -56,30 +56,28 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
   specsTabs = 'cursor-pointer hover:bg-neutral-800';
 
   return (
-    <div className="flex flex-col z-10 xl:bg-[#0c0c0c] w-full border-b-2 border-neutral-800">
-      <div className="flex">
-        {tabItems.map((tab) => {
-          const isActive = activeKey === tab.key
-          return (
-            <button
-              key={tab.key}
-              type="button"
-              onClick={() => handleTabClick(tab.key)}
-              className={`px-3 pt-2 pb-1.5 font-semibold text-[13px] whitespace-nowrap transition-colors ${
-                isActive
-                  ? `${specsTabs} border-b-2 translate-y-[2px] border-[#ffaa50] text-white`
-                  : `${specsTabs} translate-y-[1px] text-neutral-400`
-              }`}
-              aria-current={isActive ? 'page' : undefined}
-            >
-              <span className="inline-flex items-center gap-2">
-                {renderIcon(tab.key, isActive)}
-                <span>{tab.label}</span>
-              </span>
-            </button>
-          )
-        })}
-      </div>
+    <div className="flex z-10 w-full border-b-2 border-neutral-800">
+      {tabItems.map((tab) => {
+        const isActive = activeKey === tab.key
+        return (
+          <button
+            key={tab.key}
+            type="button"
+            onClick={() => handleTabClick(tab.key)}
+            className={`px-3 pt-2 pb-1.5 font-semibold text-[13px] whitespace-nowrap transition-colors ${
+              isActive
+                ? `${specsTabs} border-b-2 translate-y-[2px] border-[#ffaa50] text-white`
+                : `${specsTabs} translate-y-[1px] text-neutral-400`
+            }`}
+            aria-current={isActive ? 'page' : undefined}
+          >
+            <span className="inline-flex items-center gap-2">
+              {renderIcon(tab.key, isActive)}
+              <span>{tab.label}</span>
+            </span>
+          </button>
+        )
+      })}
     </div>
   )
 }

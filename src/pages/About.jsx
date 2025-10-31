@@ -8,7 +8,7 @@ import LanguageToggle from "../components/LanguageToggle.jsx";
 import Footnote from '../components/Footnote.jsx';
 import BubbleText from '../components/BubbleText.jsx';
 import ProfileCard from '../components/ProfileCard.jsx';
-import { pdfButton } from '../data/uistyles.js';
+import { defaultButton, dropdownButton, dropdownOutter, pdfButton } from '../data/uistyles.js';
 import Button from '../components/Button.jsx';
 
 const About = () => {
@@ -206,18 +206,15 @@ const About = () => {
           <div className="w-full max-w-[720px] px-4 pt-1 pb-3">
             <div className="flex flex-row gap-x-2 h-[48px] items-end">
               <div className="w-1/2">
-                <button onClick={handleDownload} className='flex rounded-lg pb-1 hover:pb-1.5 bg-black w-full'>
-                  <div className={pdfButton} style={{ width: '100%' }}>
-                    {language === 'en' ? 'PDF Version Here' : 'Versi PDF Disini'}
-                  </div>
-                </button>
+                <Button text={language === "en" ? "PDF Version Here" : "Versi PDF Disini"} onClick={handleDownload} fullWidth={true} style={pdfButton}>
+                </Button>
               </div>
               <div className="w-1/2 relative">
-                <Button text={language === "en" ? "Contacts" : "Kontak"} onClick={() => handleClick("socials")} fullWidth={true}>
+                <Button text={language === "en" ? "Contacts" : "Kontak"} onClick={() => handleClick("socials")} fullWidth={true} style={defaultButton}>
                   {openMenu === "socials" && (
-                    <div className={"bg-[#141414] w-full left-0 overflow-hidden shadow-xl shadow-black/40 rounded-lg border border-neutral-800 absolute bottom-13 rounded-lg z-20"}>
+                    <div className={`${dropdownOutter} w-full left-0 bottom-13`}>
                       {socialList.map((item, idx) => (
-                        <div key={idx} className="p-3 hover:bg-[#333] cursor-pointer text-white text-start text-[13px] md:text-[14px] font-semibold" onClick={() => window.open(item.url, "_blank")}> 
+                        <div key={idx} className={dropdownButton} onClick={() => window.open(item.url, "_blank")}> 
                           {item.name}
                         </div>
                       ))}

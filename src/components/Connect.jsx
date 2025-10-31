@@ -1,5 +1,5 @@
 import Button from "./Button"
-import { cardStyles } from '../data/uistyles.js';
+import { cardStyles, defaultButton } from '../data/uistyles.js';
 
 const Connect = () => {
   return (
@@ -15,10 +15,10 @@ const Connect = () => {
         </div>
         
         <div className="flex gap-x-2 justify-center">
-          <Button to="mailto:stwnsalmann@gmail.com" target="_blank" rel="noopener noreferrer" text='Gmail' />
-          <Button to="https://instagram.com/eisenflux" target="_blank" rel="noopener noreferrer" text='Instagram' />
-          <Button to="https://linkedin.com/in/salman-setiawan" target="_blank" rel="noopener noreferrer" text='LinkedIn' />
-          <Button to="https://dribbble.com/eisenflux" target="_blank" rel="noopener noreferrer" text='Dribbble' />
+          <Button style={defaultButton} to="mailto:stwnsalmann@gmail.com" target="_blank" rel="noopener noreferrer" text='Gmail' />
+          <Button style={defaultButton} to="https://instagram.com/eisenflux" target="_blank" rel="noopener noreferrer" text='Instagram' />
+          <Button style={defaultButton} to="https://linkedin.com/in/salman-setiawan" target="_blank" rel="noopener noreferrer" text='LinkedIn' />
+          <Button style={defaultButton} to="https://dribbble.com/eisenflux" target="_blank" rel="noopener noreferrer" text='Dribbble' />
         </div>
         
         {/* Marquee Text */}
