@@ -8,7 +8,7 @@ import LanguageToggle from "../components/LanguageToggle.jsx";
 import Footnote from '../components/Footnote.jsx';
 import BubbleText from '../components/BubbleText.jsx';
 import ProfileCard from '../components/ProfileCard.jsx';
-import { defaultButton, dropdownButton, dropdownOutter, pdfButton } from '../data/uistyles.js';
+import { defaultButton, dropdownButton, dropdownOutter, pdfButton } from '../data/uiStyles.js';
 import Button from '../components/Button.jsx';
 
 const About = () => {
