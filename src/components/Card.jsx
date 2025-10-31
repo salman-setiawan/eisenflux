@@ -64,7 +64,7 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
                 {url2 && <Button style={defaultButton} to={url2} img={intImg2} text={intText2} />}
                 {url3 && (<Button style={defaultButton} to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}
               </div>
-              <div className="w-full py-2 pl-2 pr-4 text-sm md:text-[15px] bg-black/50 font-medium rounded-lg">
+              <div className="w-full py-2 pl-2 pr-4 text-sm md:text-[15px] bg-black/50 rounded-lg">
                 <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
               </div>
             </div>
@@ -77,7 +77,7 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
               <div className="flex flex-wrap gap-x-1.5 gap-y-2">
                 {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
               </div>
-              <div className="font-medium text-[15px] px-0.5">
+              <div className="text-[15px] px-0.5">
                 <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
               </div>
             </div>

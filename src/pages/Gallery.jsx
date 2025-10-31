@@ -1,17 +1,16 @@
 import CardData from '../data/card.js';
 import UIData from '../data/interface.js';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useLanguage } from '../data/languageContext';
 import Notfound from '../pages/404.jsx';
 import Footnote from '../components/Footnote.jsx';
-import LanguageToggle from '../components/LanguageToggle.jsx';
 import Button from '../components/Button.jsx';
 import { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
+import Navigation from '../components/Navigation.jsx';
 
 const Gallery = () => {
   const { slug } = useParams();
   const { language } = useLanguage();
-  const navigate = useNavigate();
   const selectedArticle = getCardBySlug(slug);
   const csData = getCaseStudyBySlug(slug);
 
@@ -32,18 +31,7 @@ const Gallery = () => {
   return (
     <div>
       <div className="flex flex-col items-center px-5">
-        <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-3 px-5 items-center">
-          <button
-            onClick={() => navigate(-1)}
-            className="text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <div className="text-center font-semibold text-[13px]">{navbarTitle}</div>
-          <LanguageToggle />
-        </div>
+        <Navigation type='type-2' title={navbarTitle} />
 
         <div className="pt-20 pb-32">
           {isGroupedGallery ? (

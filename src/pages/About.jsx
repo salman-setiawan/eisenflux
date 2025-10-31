@@ -4,12 +4,11 @@ import { useState } from "react";
 import BioCards from "../components/BioCards.jsx";
 import BioData from "../data/bio";
 import Notfound from "./404.jsx";
-import LanguageToggle from "../components/LanguageToggle.jsx";
 import Footnote from '../components/Footnote.jsx';
 import BubbleText from '../components/BubbleText.jsx';
-import ProfileCard from '../components/ProfileCard.jsx';
 import { defaultButton, dropdownButton, dropdownOutter, pdfButton } from '../data/uiStyles.js';
 import Button from '../components/Button.jsx';
+import Navigation from '../components/Navigation.jsx';
 
 const About = () => {
   const { language } = useLanguage();
@@ -70,20 +69,7 @@ const About = () => {
   return (
     <div className='flex justify-center'>
       <title>About Me</title>
-      <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-3 items-center">
-        <div className="flex items-center gap-x-4 md:gap-x-6">
-          <button 
-            onClick={() => navigate(-1)}
-            className="text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          <ProfileCard />
-        </div>
-        <LanguageToggle />
-      </div>
+      <Navigation type='type-1' />
 
       <div className="flex place-content-center w-full md:max-w-[720px] py-20 relative px-4">
         <div className="flex flex-col w-full gap-y-4 items-center">
