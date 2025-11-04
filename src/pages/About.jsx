@@ -190,12 +190,9 @@ const About = () => {
       <div className="fixed bottom-0 w-full bg-[#141414] py-1.5" style={{ zIndex: 1 }}>
         <div className="flex w-full justify-center">
           <div className="w-full max-w-[720px] px-4 pt-1 pb-3">
-            <div className="flex flex-row gap-x-2 h-[48px] items-end">
-              <div className="w-1/2">
-                <Button text={language === "en" ? "PDF Version Here" : "Versi PDF Disini"} onClick={handleDownload} fullWidth={true} style={pdfButton}>
-                </Button>
-              </div>
-              <div className="w-1/2 relative">
+            <div className="grid grid-cols-2 gap-x-2 h-[48px] items-end">
+              <Button text={language === "en" ? "PDF Version Here" : "Versi PDF Disini"} onClick={handleDownload} fullWidth={true} style={pdfButton} />
+              <div className="relative">
                 <Button text={language === "en" ? "Contacts" : "Kontak"} onClick={() => handleClick("socials")} fullWidth={true} style={defaultButton}>
                   {openMenu === "socials" && (
                     <div className={`${dropdownOutter} w-full left-0 bottom-13`}>

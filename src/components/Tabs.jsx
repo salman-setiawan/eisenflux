@@ -14,12 +14,10 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
     const color = isActive ? '#ffaa50' : 'rgb(163 163 163)';
     return (
       <span
-        className="material-symbols-outlined"
+        className="material-symbols-outlined tab-icon"
         aria-hidden="true"
         style={{
           fontVariationSettings: '\'FILL\' 0, \'wght\' 400, \'GRAD\' 0, \'opsz\' 20',
-          fontSize: 16,
-          lineHeight: '16px',
           color,
         }}
       >
@@ -57,6 +55,11 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
 
   return (
     <div className="flex z-10 w-full border-b-2 border-neutral-800">
+      <style>{`
+        .tab-icon { font-size: 16px; line-height: 16px; }
+        @media (min-width: 768px) { .tab-icon { font-size: 18px; line-height: 18px; } }
+        @media (min-width: 1024px) { .tab-icon { font-size: 20px; line-height: 20px; } }
+      `}</style>
       {tabItems.map((tab) => {
         const isActive = activeKey === tab.key
         return (

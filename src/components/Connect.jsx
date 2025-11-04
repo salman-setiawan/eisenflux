@@ -4,7 +4,7 @@ import { cardStyles, defaultButton } from '../data/uiStyles.js';
 const Connect = () => {
   const renderMarquee = () => (
     <div className="overflow-hidden">
-      <span className="flex animate-marquee-smooth flex whitespace-nowrap font-medium select-none text-white/30 mr-32 max-w-[640px] text-[14px]">
+      <span className="flex animate-marquee-smooth whitespace-nowrap font-medium select-none text-white/30 mr-32 max-w-[640px] text-[14px]">
         LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT • LET'S CONNECT
       </span>
     </div>
