@@ -102,7 +102,7 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
                 ))}
               </motion.h1>
             )}
-            <div className="relative rounded-xl bg-[#111]/60 border border-neutral-800 overflow-hidden">
+            <div className="relative rounded-xl bg-[#111]/60 border border-neutral-800/70 overflow-hidden">
               <div className={srcTexture} style={{ WebkitMaskImage: maskTexture, WebkitMaskComposite: 'destination-in', maskComposite: 'intersect', }}></div>
               <div className="flex justify-center h-[30rem] items-center relative z-10">
                 <img className="h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />

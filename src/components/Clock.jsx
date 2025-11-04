@@ -24,9 +24,7 @@ const Clock = () => {
 
   return (
     <div className="flex items-end gap-x-1.5 font-bold h-full w-full justify-between">
-      <div>
-        {time || "--:--:--"}
-      </div>
+      {time || "--:--:--"}
       <div className="text-neutral-400 text-[11px]">GMT+8</div>
     </div>
   );
