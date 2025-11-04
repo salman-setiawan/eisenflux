@@ -26,7 +26,7 @@ const Navigation = ({ specsButton, type, title }) => {
     { name: "Dribbble", url: "https://dribbble.com/eisenflux" },
   ];
 
-  specsButton = 'flex w-fit cursor-pointer h-[40px] items-center px-2.5 md:px-3 hover:bg-[#3E3124] hover:text-[#FED1A1] bg-[#0c0c0c] rounded-lg';
+  specsButton = 'flex w-fit cursor-pointer h-[36px] items-center px-2.5 hover:bg-[#3E3124] hover:text-[#FED1A1] bg-[#0c0c0c] rounded-lg';
 
   let navbarContent;
 
@@ -35,10 +35,10 @@ const Navigation = ({ specsButton, type, title }) => {
     case "type-1":
       navbarContent = (
         <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-3 items-center">
-          <div className="flex items-center gap-x-4 md:gap-x-6">
+          <div className="flex items-center gap-x-4">
             <button 
               onClick={() => navigate(-1)}
-              className="text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+              className={specsButton}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -57,7 +57,7 @@ const Navigation = ({ specsButton, type, title }) => {
         <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-3 px-5 items-center">
           <button 
             onClick={() => navigate(-1)}
-            className="text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+            className={specsButton}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

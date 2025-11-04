@@ -122,7 +122,7 @@ const Home = () => {
       );
     } else if (activeTab === 'blog') {
       return (
-        <div className="text-center py-8 xl:pt-12 text-white/80">Coming Soon..</div>
+        <div className="text-center py-8 xl:pt-12 pb-12 md:pb-24 text-white/80">Coming Soon..</div>
       );
     }
     return null;
@@ -169,14 +169,14 @@ const Home = () => {
 
   // Konten utama
   return (
-    <div className="flex justify-center bg-[#161616]">
-      <div className='fixed bg-[#141414]/75 backdrop-blur-xs py-3 px-4 z-30 w-full xl:hidden'>
+    <div className="flex justify-center bg-[#141414]">
+      <div className='fixed bg-[#141414]/75 backdrop-blur-xs py-2 px-4 z-30 w-full xl:hidden'>
         <Navigation type='type-3' />
       </div>
-      <div className="flex flex-col pt-18 xl:pt-0 gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
-        <div className="flex flex-col xl:flex-row bg-[#141414]">
-          <div className="xl:flex flex-col gap-2 hidden w-[520px] px-4">
-            <div className='pt-3 pb-1.5'><Navigation type='type-3' /></div>
+      <div className="flex flex-col pt-14 xl:pt-0 gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
+        <div className="flex flex-col xl:flex-row">
+          <div className="xl:flex flex-col gap-2 hidden w-[500px] p-4">
+            <div className="pb-1.5"><Navigation type='type-3' /></div>
             <AvaCard />
             <DeckCard />
             <ExpCard />
@@ -191,8 +191,8 @@ const Home = () => {
               </div>
               <ExpCard />
             </div>
-            <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-3 flex flex-col gap-y-3">
-              <div className="flex w-full">
+            <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-3 flex flex-col gap-y-2">
+              <div className="flex w-full pb-1">
                 <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
               </div>
               {renderTabContent()}
