@@ -75,7 +75,7 @@ const Navigation = ({ specsButton, type, title }) => {
     case "type-3":
       navbarContent = (
         <div className='flex justify-between items-center w-full'>
-          <div className="flex gap-x-1 text-[14px] font-semibold">
+          <div className="flex gap-x-1 text-[14px] font-medium">
             <button className={`${specsButton}`} onClick={() => handleClick("about")}>
               {language === "en" ? "About Me" : "Tentang Saya"}
             </button>
@@ -83,7 +83,7 @@ const Navigation = ({ specsButton, type, title }) => {
             <button className={`${specsButton} relative`} onClick={() => handleClick("projects")}>
               {language === "en" ? "Projects" : "Proyek"}
               {openMenu === "projects" && (
-                <div className={`${dropdownOutter} top-12 left-0 min-w-[200px]`}>
+                <div className={`${dropdownOutter} top-11 left-0 min-w-[200px]`}>
                   {ArticleData.map((article) => (
                     <div
                       key={article.id}
@@ -104,7 +104,7 @@ const Navigation = ({ specsButton, type, title }) => {
             <button className={`${specsButton} relative xl:hidden`} onClick={() => handleClick("socials")}>
               {language === "en" ? "Contacts" : "Kontak"}
               {openMenu === "socials" && (
-                <div className={`${dropdownOutter} top-12 left-0 min-w-[200px]`}>
+                <div className={`${dropdownOutter} top-11 left-0 min-w-[200px]`}>
                   {socialList.map((item, idx) => (
                     <div 
                       key={idx} 
