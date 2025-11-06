@@ -90,7 +90,7 @@ const Home = () => {
           {CardData?.length ? (
             [...CardData]
               .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
-              .map((article) => (
+              .map((article, index) => (
               <div key={article.id} className="xl:pb-3">
                 <Card
                   title={article.title}
@@ -108,6 +108,7 @@ const Home = () => {
                   intText2={article.intText2?.[language]}
                   extImg={article.extImg}
                   extText={article.extText?.[language]}
+                  isLCP={index === 0}
                 />
               </div>
             ))

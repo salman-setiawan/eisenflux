@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { cardStyles, defaultButton, paragraphText } from '../data/uiStyles.js';
 
-const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2, extImg, extText, url1, url2, url3, obj, motionText, maskTexture, srcTexture }) => {
+const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2, extImg, extText, url1, url2, url3, obj, motionText, maskTexture, srcTexture, isLCP = false }) => {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.05, });
 
   const words = title ? title.split(' ') : [];
@@ -56,7 +56,13 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
               {categories?.map((cat, i) => ( <Chip key={i} label={cat} />))}
             </div>
             <div className="flex justify-center md:h-[24rem] items-center">
-              <img className="h-[20rem] md:h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
+              <img 
+                className="h-[20rem] md:h-[30rem] object-cover float-anim select-none" 
+                src={obj} 
+                alt="object" 
+                fetchPriority={isLCP ? "high" : "auto"}
+                loading={isLCP ? "eager" : "lazy"}
+              />
             </div>
             <div className="flex flex-col lg:flex-row lg:gap-x-4 gap-y-4 justify-end lg:justify-between items-end">
               <div className="flex justify-end gap-x-1.5 min-w-[280px] z-20">
@@ -105,7 +111,13 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
             <div className="relative rounded-md bg-[#111]/60 border border-neutral-800/60 overflow-hidden">
               <div className={srcTexture} style={{ WebkitMaskImage: maskTexture, WebkitMaskComposite: 'destination-in', maskComposite: 'intersect', }}></div>
               <div className="flex justify-center h-[30rem] items-center relative z-10">
-                <img className="h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
+                <img 
+                  className="h-[30rem] object-cover float-anim select-none" 
+                  src={obj} 
+                  alt="object" 
+                  fetchPriority={isLCP ? "high" : "auto"}
+                  loading={isLCP ? "eager" : "lazy"}
+                />
               </div>
             </div>
           </div> 
