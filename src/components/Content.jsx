@@ -1,6 +1,6 @@
 import { paragraphText } from '../data/uiStyles.js';
 
-const Content = ({ data, language }) => {
+const Content = ({ data, language, altText }) => {
   const getBgClasses = (kind) => {
     switch (kind) {
       case 'overview':

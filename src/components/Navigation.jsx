@@ -22,7 +22,7 @@ const Navigation = ({ specsButton, type, title }) => {
   const socialList = [
     { name: "LinkedIn", url: "https://www.linkedin.com/in/salman-setiawan" },
     { name: "Instagram", url: "https://www.instagram.com/eisenflux" },
-    { name: "Gmail", url: "mailto:stwnsalmann@gmail.com" },
+    { name: "Gmail", url: "mailto:salmansetiawan88@gmail.com" },
     { name: "Dribbble", url: "https://dribbble.com/eisenflux" },
   ];
 
