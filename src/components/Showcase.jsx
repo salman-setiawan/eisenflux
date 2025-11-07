@@ -10,7 +10,7 @@ const Showcase = ({ id }) => {
   }
 
   return (
-    <div className="pt-16 md:pt-32 w-full">
+    <div className="pt-16 md:pt-32 w-full md:w-[1000px]">
       <div className="columns-2 md:columns-3 gap-2 space-y-2 rotate-[-14deg] md:rotate-[-20deg]">
         {selected.cover.map((image, index) => (
           <div key={index} className="break-inside-avoid overflow-hidden">

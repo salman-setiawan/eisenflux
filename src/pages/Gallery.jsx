@@ -7,6 +7,7 @@ import Footnote from '../components/Footnote.jsx';
 import Button from '../components/Button.jsx';
 import { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
 import Navigation from '../components/Navigation.jsx';
+import { defaultButton } from '../data/uiStyles.js';
 
 const Gallery = () => {
   const { slug } = useParams();
@@ -92,7 +93,7 @@ const Gallery = () => {
               <Button to={extUrl} target="_blank" rel="noopener noreferrer" img={extImg} text={extText[language]} fullWidth={true} />
             )}
             {intText && (
-              <Button to={`/article/${slug}`} img={intImg} text={intText[language]} fullWidth={true} />
+              <Button style={defaultButton} to={`/article/${slug}`} img={intImg} text={intText[language]} fullWidth={true} />
             )}
           </div>
         </div>

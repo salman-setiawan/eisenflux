@@ -95,7 +95,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   csDataLabel = 'font-semibold text-white';
 
   return (
-    <div className="flex flex-col items-center overflow-x-hidden bg-[#191919]">
+    <div className="flex flex-col items-center overflow-x-hidden bg-[#0c0c0c]">
       <Navigation type='type-2' title={navbarTitle} />
 
       <div className="w-[150vw] h-[560px] md:h-[320px] bg-cover flex justify-center items-center bg-[#212121] overflow-hidden">
@@ -138,7 +138,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
 
         {contents.length === 0 ? (
           <div className="text-neutral-300 text-center py-12">
-            No content found.
+            No Content Found.
           </div>
         ) : (
           contents.map((content, index) => (
@@ -154,7 +154,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
         style={{ zIndex: 1 }}
       >
         <div className="flex w-full justify-center">
-          <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 pt-1 pb-3">
+          <div className="flex flex-col gap-y-2 w-full max-w-[800px] px-4 pt-1 pb-3">
             {extUrl && (
               <Button style={defaultButton} to={extUrl} target="_blank" rel="noopener noreferrer" text={extText[language]} fullWidth={true} />
             )}

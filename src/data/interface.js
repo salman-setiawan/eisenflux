@@ -12,6 +12,8 @@ const UIData = [
       { img: '/anotherisland/gallery/screen8.webp' },
       { img: '/anotherisland/gallery/screen9.webp' },
       { img: '/anotherisland/gallery/screen10.webp' },
+      { img: '/anotherisland/gallery/screen3.webp' },
+      { img: '/anotherisland/gallery/screen8.webp' },
     ],
     gallery: [
       { img: '/anotherisland/gallery/screen1.webp' },
