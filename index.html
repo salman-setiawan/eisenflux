@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>enfx.</title>
-
     <!-- 🟢 Preconnect untuk mempercepat koneksi font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <!-- 🟢 Preload font utama -->
     <link 
       rel="preload"
@@ -22,6 +20,12 @@
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..700,0,0&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
     <noscript>
       <link
         rel="stylesheet"
@@ -31,29 +35,19 @@
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
       />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..700,0,0&display=swap"
+      />
     </noscript>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..700,0,0&display=swap"
-    />
-    <link
-      rel="preload"
-      href="/assets/index-QYEimBjk.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    >
-    <noscript><link rel="stylesheet" href="/assets/index-QYEimBjk.css"></noscript>
-
-    <!-- 🟢 Defer stylesheet utama -->
-    <link rel="stylesheet" href="/src/index.css" media="print" onload="this.media='all'" />
-
     <!-- 🟢 Icon -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   </head>
+
   <body>
     <div id="root"></div>
-
     <!-- 🟢 Defer JS agar tidak block render -->
-    <script type="module" src="/src/main.jsx" defer></script>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
+
 </html>

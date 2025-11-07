@@ -22,11 +22,11 @@ const Navigation = ({ specsButton, type, title }) => {
   const socialList = [
     { name: "LinkedIn", url: "https://www.linkedin.com/in/salman-setiawan" },
     { name: "Instagram", url: "https://www.instagram.com/eisenflux" },
-    { name: "Gmail", url: "mailto:stwnsalmann@gmail.com" },
+    { name: "Gmail", url: "mailto:salmansetiawan88@gmail.com" },
     { name: "Dribbble", url: "https://dribbble.com/eisenflux" },
   ];
 
-  specsButton = 'flex w-fit cursor-pointer h-[40px] items-center px-2.5 md:px-3 hover:bg-[#3E3124] hover:text-[#FED1A1] bg-[#0c0c0c] rounded-lg';
+  specsButton = 'flex w-fit cursor-pointer h-[36px] items-center px-2.5 hover:bg-[#3E3124] hover:text-[#FED1A1] bg-[#0c0c0c] rounded-lg';
 
   let navbarContent;
 
@@ -35,10 +35,10 @@ const Navigation = ({ specsButton, type, title }) => {
     case "type-1":
       navbarContent = (
         <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-3 items-center">
-          <div className="flex items-center gap-x-4 md:gap-x-6">
+          <div className="flex items-center gap-x-4">
             <button 
               onClick={() => navigate(-1)}
-              className="text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+              className={specsButton}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -57,7 +57,7 @@ const Navigation = ({ specsButton, type, title }) => {
         <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-3 px-5 items-center">
           <button 
             onClick={() => navigate(-1)}
-            className="text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+            className={specsButton}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -75,7 +75,7 @@ const Navigation = ({ specsButton, type, title }) => {
     case "type-3":
       navbarContent = (
         <div className='flex justify-between items-center w-full'>
-          <div className="flex gap-x-1 text-[14px] font-semibold">
+          <div className="flex gap-x-1 text-[14px] font-medium">
             <button className={`${specsButton}`} onClick={() => handleClick("about")}>
               {language === "en" ? "About Me" : "Tentang Saya"}
             </button>
@@ -83,7 +83,7 @@ const Navigation = ({ specsButton, type, title }) => {
             <button className={`${specsButton} relative`} onClick={() => handleClick("projects")}>
               {language === "en" ? "Projects" : "Proyek"}
               {openMenu === "projects" && (
-                <div className={`${dropdownOutter} top-12 left-0 min-w-[200px]`}>
+                <div className={`${dropdownOutter} top-11 left-0 min-w-[200px]`}>
                   {ArticleData.map((article) => (
                     <div
                       key={article.id}
@@ -104,7 +104,7 @@ const Navigation = ({ specsButton, type, title }) => {
             <button className={`${specsButton} relative xl:hidden`} onClick={() => handleClick("socials")}>
               {language === "en" ? "Contacts" : "Kontak"}
               {openMenu === "socials" && (
-                <div className={`${dropdownOutter} top-12 left-0 min-w-[200px]`}>
+                <div className={`${dropdownOutter} top-11 left-0 min-w-[200px]`}>
                   {socialList.map((item, idx) => (
                     <div 
                       key={idx} 

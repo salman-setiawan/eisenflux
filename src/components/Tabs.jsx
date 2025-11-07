@@ -51,7 +51,7 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
     setActiveKey(tabKey)
   }
 
-  specsTabs = 'cursor-pointer hover:bg-neutral-800';
+  specsTabs = 'cursor-pointer hover:bg-neutral-800 py-1.5';
 
   return (
     <div className="flex z-10 w-full border-b-2 border-neutral-800">
@@ -67,7 +67,7 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
             key={tab.key}
             type="button"
             onClick={() => handleTabClick(tab.key)}
-            className={`px-3 pt-2 pb-1.5 font-semibold text-[13px] whitespace-nowrap transition-colors ${
+            className={`px-3 h-[40px] flex items-center font-medium text-[13px] whitespace-nowrap transition-colors ${
               isActive
                 ? `${specsTabs} border-b-2 translate-y-[2px] border-[#ffaa50] text-white`
                 : `${specsTabs} translate-y-[1px] text-neutral-400`

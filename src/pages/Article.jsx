@@ -79,7 +79,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
     return <Notfound />;
   }
 
-  const { extUrl, extImg, extText, intImg2, intText2 } = selectedArticle;
+  const { extUrl, extText, intImg2, intText2 } = selectedArticle;
   const pageTitle = csData?.title || selectedArticle.title;
   const navbarTitle = csData?.altTitle || selectedArticle.title3 || selectedArticle.title;
 

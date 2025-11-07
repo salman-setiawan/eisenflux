@@ -22,7 +22,7 @@ const DeckCard = ({specDiv}) => {
         </div>
         <div className={`${specDiv} gap-y-1.5`}>
           <div className="text-[12px] font-medium lg:w-[200px]">{language === "en" ? "My Timezone :" : "Zona Waktu Saya :"}</div>
-          <div className="flex">
+          <div className="flex xl:w-full">
             <Clock />
           </div>
         </div>

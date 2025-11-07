@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import Button from './Button';
 import Chip from './Chip';
 import { useInView } from 'react-intersection-observer';
@@ -51,7 +50,7 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
           {/* Layer Texture dengan masking dan opacity */}
           <div className={srcTexture} style={{ backgroundSize: 'auto', WebkitMaskImage: maskTexture, WebkitMaskComposite: 'destination-in', maskComposite: 'intersect',}}></div>
           {/* Komponen Informasi */}
-          <div className="relative rounded-md bg-[#111]/60 border border-neutral-800 h-full flex flex-col p-2 justify-between">
+          <div className="relative rounded-md bg-[#111]/60 border border-neutral-800/60 h-full flex flex-col p-2 justify-between">
             <div className="flex flex-wrap gap-x-1.5 gap-y-2 py-1 pl-0.5 pr-4">
               {categories?.map((cat, i) => ( <Chip key={i} label={cat} />))}
             </div>
@@ -64,7 +63,7 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
                 {url2 && <Button style={defaultButton} to={url2} img={intImg2} text={intText2} />}
                 {url3 && (<Button style={defaultButton} to={url3} target="_blank" rel="noopener noreferrer" img={extImg} text={extText} />)}
               </div>
-              <div className={`${paragraphText} w-full py-2 pl-3 pr-8 bg-black/50 rounded-md`}>
+              <div className={`${paragraphText} w-full py-2 pl-3 pr-8 bg-black/30 rounded-md`}>
                 <span className="text-[#ffaa50] font-semibold">{nav}</span> {desc}
               </div>
             </div>
@@ -102,7 +101,7 @@ const Card = ({ title, nav, desc, categories, intImg, intText, intImg2, intText2
                 ))}
               </motion.h1>
             )}
-            <div className="relative rounded-md bg-[#111]/60 border border-neutral-800 overflow-hidden">
+            <div className="relative rounded-md bg-[#111]/60 border border-neutral-800/60 overflow-hidden">
               <div className={srcTexture} style={{ WebkitMaskImage: maskTexture, WebkitMaskComposite: 'destination-in', maskComposite: 'intersect', }}></div>
               <div className="flex justify-center h-[30rem] items-center relative z-10">
                 <img className="h-[30rem] object-cover float-anim select-none" src={obj} alt="object" />
