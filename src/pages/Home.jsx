@@ -3,7 +3,7 @@ import { useLanguage } from "../data/languageContext.jsx";
 import LanguageToggle from '../components/LanguageToggle'
 import Footnote from '../components/Footnote'
 import { useEffect, useState } from 'react';
-import Card from "../components/Card.jsx";
+import CaseCard from "../components/CaseCard.jsx";
 import CardData from '../data/card.js';
 import Notfound from './404.jsx';
 import Navigation from '../components/Navigation.jsx';
@@ -30,13 +30,13 @@ const Home = () => {
     
     '/shot/estore.webp', '/shot/musplay.webp', '/shot/learnx.webp', '/shot/halogbs.webp',
     
-    '/anotherisland/ces1.webp', '/anotherisland/ces2.webp', '/anotherisland/desy.webp', '/anotherisland/ucd.webp', '/anotherisland/user.webp',
+    '/anotherisland/ces2.webp', '/anotherisland/user.webp', '/anotherisland/desy.webp', '/anotherisland/ucd.webp',
 
     '/anotherisland/gallery/screen1.webp', '/anotherisland/gallery/screen2.webp', '/anotherisland/gallery/screen3.webp', '/anotherisland/gallery/screen4.webp', '/anotherisland/gallery/screen5.webp', '/anotherisland/gallery/screen6.webp', '/anotherisland/gallery/screen7.webp', '/anotherisland/gallery/screen8.webp', '/anotherisland/gallery/screen9.webp', '/anotherisland/gallery/screen10.webp',
 
     '/edufams/pitch.webp', '/edufams/style.webp', '/edufams/team.webp', '/edufams/think.webp',
     
-    '/edufams/gallery/mobile_screen1.webp', '/edufams/gallery/mobile_screen2.webp', '/edufams/gallery/mobile_screen3.webp', '/edufams/gallery/mobile_screen4.webp', '/edufams/gallery/mobile_screen5.webp', '/edufams/gallery/mobile_screen6.webp', '/edufams/gallery/mobile_screen7.webp', '/edufams/gallery/mobile_screen8.webp', '/edufams/gallery/mobile_screen9.webp', '/edufams/gallery/mobile_screen10.webp', '/edufams/gallery/mobile_screen11.webp', '/edufams/gallery/mobile_screen12.webp', '/edufams/gallery/pc_screen1.webp', '/edufams/gallery/pc_screen2.webp', '/edufams/gallery/pc_screen3.webp', '/edufams/gallery/pc_screen4.webp', '/edufams/gallery/pc_screen5.webp', '/edufams/gallery/pc_screen6.webp', '/edufams/gallery/pc_screen7.webp', '/edufams/gallery/pc_screen8.webp', '/edufams/gallery/pc_screen9.webp', '/edufams/gallery/pc_screen10.webp', '/edufams/gallery/pc_screen11.webp',
+    '/edufams/gallery/pc_screen1.webp', '/edufams/gallery/pc_screen2.webp', '/edufams/gallery/pc_screen3.webp', '/edufams/gallery/pc_screen4.webp', '/edufams/gallery/pc_screen5.webp', '/edufams/gallery/pc_screen6.webp', '/edufams/gallery/pc_screen7.webp', '/edufams/gallery/pc_screen8.webp', '/edufams/gallery/pc_screen9.webp', '/edufams/gallery/pc_screen10.webp', '/edufams/gallery/pc_screen11.webp',
 
     '/eduwork/design.webp', '/eduwork/flow.webp', '/eduwork/mood.webp',
     
@@ -92,7 +92,7 @@ const Home = () => {
               .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
               .map((article) => (
               <div key={article.id} className="xl:pb-3">
-                <Card
+                <CaseCard
                   title={article.title}
                   nav={article.nav}
                   img={article.cover}
@@ -170,12 +170,12 @@ const Home = () => {
   // Konten utama
   return (
     <div className="flex justify-center bg-[#141414]">
-      <div className='fixed bg-[#141414]/75 backdrop-blur-xs py-2 px-4 z-30 w-full xl:hidden'>
+      <div className='fixed bg-[#141414]/75 backdrop-blur-sm py-2 px-4 z-30 w-full xl:hidden'>
         <Navigation type='type-3' />
       </div>
       <div className="flex flex-col pt-14 xl:pt-0 gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
         <div className="flex flex-col xl:flex-row">
-          <div className="xl:flex flex-col gap-2 hidden w-[500px] p-4">
+          <div className="xl:flex flex-col gap-2 hidden max-w-[490px] p-4 overflow-y-auto h-screen">
             <div className="pb-1.5"><Navigation type='type-3' /></div>
             <AvaCard />
             <DeckCard />

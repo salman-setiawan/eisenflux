@@ -1,31 +1,29 @@
-const BubbleText = ({ type, text, time, children, specsText, specsTime }) => {
+import { paragraphText } from "../data/uiStyles";
 
-  specsText = 'px-3 py-1.5 rounded-xl text-[15px] shadow-md';
-  specsTime = 'text-white/40 text-[11px] mt-1.5 mr-1 mb-4';
-
+const BubbleText = ({ type, text, time, children }) => {
   return (
     <div className="w-full">
       {type === 'type-2' && (
         <div className="flex justify-start items-end mb-2">
-          <div className="flex flex-col max-w-[80%]">
+          <div className="flex flex-col gap-y-1.5 max-w-[80%]">
             {children ? (
-              <div className="rounded-xl rounded-bl-sm"> {children} </div>
+              <div> {children} </div>
             ) : (
-              <div className={`${specsText} bg-neutral-700/50 rounded-bl-sm`}> {text} </div>
+              <div className={`${paragraphText} bg-neutral-700/50 rounded-bl-sm px-3 pt-2 pb-1.5 shadow-sm rounded-xl`}> {text} </div>
             )}
-            {time && <div className={`${specsTime}`}>{time}</div> }
+            {time && <div className='text-white/60 text-[11px] pb-4'>{time}</div> }
           </div>
         </div>
       )}
       {type === 'type-1' && (
         <div className="flex justify-end items-end mb-2">
-          <div className="flex flex-col max-w-[80%] items-end">
+          <div className="flex flex-col gap-y-1.5 max-w-[80%] items-end">
             {children ? (
-              <div className="rounded-xl rounded-br-sm"> {children} </div>
+              <div> {children} </div>
             ) : (
-              <div className={`${specsText} bg-orange-700/50 rounded-br-sm`}> {text} </div>
+              <div className={`${paragraphText} bg-orange-700/50 rounded-br-sm px-3 pt-2 pb-1.5 shadow-sm rounded-xl`}> {text} </div>
             )}
-            {time && <div className={`${specsTime}`}>{time}</div> }
+            {time && <div className='text-white/60 text-[11px] pb-4'>{time}</div> }
           </div>
         </div>
       )}

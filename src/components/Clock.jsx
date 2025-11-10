@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { subText } from "../data/uiStyles";
 
 const Clock = () => {
   const [time, setTime] = useState("");
@@ -23,9 +24,9 @@ const Clock = () => {
   }, []);
 
   return (
-    <div className="flex items-end gap-x-1.5 font-bold h-full w-full justify-between">
-      {time || "--:--:--"}
-      <div className="text-neutral-400 text-[11px]">GMT+8</div>
+    <div className="flex items-end gap-x-1.5 h-full w-full justify-between">
+      <div className="font-bold">{time || "--:--:--"}</div>
+      <div className={subText}>GMT+8</div>
     </div>
   );
 };

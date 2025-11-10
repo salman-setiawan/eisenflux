@@ -3,7 +3,7 @@ import { useLanguage } from '../data/languageContext.jsx';
 import Button from './Button.jsx';
 import { cardStyles, defaultButton, pdfButton } from '../data/uiStyles.js';
 
-const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
+const ExpCard = ({maskBlur, maskColor, positionTwo, positionOne, dotExp, borderExp, objectVisibleOne, objectVisibleTwo}) => {
   const { language } = useLanguage();
   const experienceData = BioData[0].experience;
   const displayedExperiences = experienceData.slice(0, 3);
@@ -17,44 +17,48 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
     document.body.removeChild(link);
   };
 
+  dotExp = 'rounded-full w-[13px] h-[13px]';
+  borderExp = '2px solid #4C341A';
   maskBlur = '#202020 0%, #202020 35%, transparent 100%';
   maskColor = '#202020 0%, transparent 80%';
-  positionDesktop = 'hidden md:block absolute top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] xl:w-[470px] pointer-events-none';
-  positionMobile = 'absolute block md:hidden bottom-0 left-0 right-0 h-[240px] pointer-events-none';
+  objectVisibleOne = 'hidden md:block xl:hidden';
+  objectVisibleTwo = 'block md:hidden xl:block';
+  positionTwo = 'absolute hidden md:block xl:hidden top-0 bottom-0 right-0 md:w-[640px] lg:w-[800px] pointer-events-none';
+  positionOne = 'absolute block md:hidden xl:block bottom-0 left-0 right-0 h-[240px] pointer-events-none';
 
   return (
-    <div className={`${cardStyles} relative overflow-hidden md:min-h-[160px]`}>
+    <div className={`${cardStyles} relative overflow-clip`}>
       <h2 className="font-medium text-[12px] mb-3">{language === "en" ? "Work Experience :" : "Pengalaman Kerja :"}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-1 gap-y-4 gap-x-8">
         {displayedExperiences.map((exp, index) => (
-          <div key={exp.uid} className="w-full flex md:flex-col gap-y-2 gap-x-3 relative">
-            <p className="text-[12px] font-semibold hidden md:block">
+          <div key={exp.uid} className="w-full flex md:flex-col xl:flex-row gap-y-2 gap-x-3 relative">
+            <p className={`${objectVisibleOne} text-[12px]`}>
               {exp.dateEnd}
             </p>
-            <div className="pt-1.5 md:pt-0 pl-0.5 md:pl-0">
+            <div className="pt-1 md:pt-0 xl:pt-1 pl-0.5 md:pl-0 xl:pl-0.5">
               <div
-                className={index === 0 ? "animate-blink rounded-full w-[13px] h-[13px]" : "rounded-full w-[13px] h-[13px]"}
+                className={index === 0 ? `${dotExp} animate-blink` : dotExp}
                 style={{ backgroundColor: index === 0 ? undefined : '#4C341A' }}
               ></div>
               {index < displayedExperiences.length - 1 && (
                 <div
-                  className="hidden md:block absolute"
-                  style={{ top: 32, left: 13, width: 'calc(100% + 21rem)', borderTop: '2px solid #4C341A' }}
+                  className={`${objectVisibleOne} absolute`}
+                  style={{ top: 32, left: 13, width: 'calc(100% + 21rem)', borderTop: borderExp }}
                 ></div>
               )}
               {index < displayedExperiences.length - 1 && (
                 <div
-                  className="block md:hidden absolute"
-                  style={{ top: 19, left: 7.5, height: 'calc(100% + 5rem)', borderLeft: '2px solid #4C341A' }}
+                  className={`${objectVisibleTwo} absolute`}
+                  style={{ top: 17, left: 7.5, height: 'calc(100% + 5rem)', borderLeft: borderExp }}
                 ></div>
               )}
             </div>
             <div>
-              <h3 className="font-semibold text-sm truncate">{exp.title}</h3>
-              <p className="text-[12px] md:text-[13px] truncate">
+              <h3 className="font-semibold text-[14px] truncate">{exp.title}</h3>
+              <p className="text-[12px] truncate">
                 {exp.role?.[language] || exp.role?.id}
               </p>
-              <p className="text-[12px] md:text-[13px] block md:hidden">
+              <p className={`${objectVisibleTwo} text-[12px]`}>
                 {exp.dateEnd}
               </p>
             </div>
@@ -64,7 +68,7 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
 
       {/* Gradient color overlay - bottom for mobile, right side for desktop */}
       <div
-        className={`${positionMobile}`}
+        className={`${positionOne}`}
         style={{
           background: `linear-gradient(to top, ${maskColor})`
         }}
@@ -72,7 +76,7 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
 
       {/* Desktop-specific right side gradient color */}
       <div
-        className={`${positionDesktop}`}
+        className={`${positionTwo}`}
         style={{
           background: `linear-gradient(to left, ${maskColor})`
         }}
@@ -80,7 +84,7 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
 
       {/* Gradient blur overlay - bottom for mobile, right side for desktop */}
       <div
-        className={`${positionMobile}`}
+        className={`${positionOne}`}
         style={{
           backdropFilter: 'blur(3px)',
           WebkitBackdropFilter: 'blur(3px)',
@@ -91,7 +95,7 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
 
       {/* Desktop-specific right side gradient blur */}
       <div
-        className={`${positionDesktop}`}
+        className={`${positionTwo}`}
         style={{
           backdropFilter: 'blur(3px)',
           WebkitBackdropFilter: 'blur(3px)',
@@ -102,7 +106,7 @@ const ExpCard = ({maskBlur, maskColor, positionDesktop, positionMobile}) => {
 
       {/* Learn more button */}
       <div className="absolute right-3 bottom-3 md:right-4 z-10 flex flex-col items-end md:flex-row gap-y-1 gap-x-2">
-        <Button to='/me' text={language === "en" ? "Learn More" : "Pelajari Lebih Lanjut"} style={defaultButton} />
+        <Button to='/me' text={language === "en" ? "See More" : "Lihat Lebih Lanjut"} style={defaultButton} />
         <Button text={language === "en" ? "PDF Version" : "Versi PDF"} onClick={handleDownload} style={pdfButton} />
       </div>
     </div>
