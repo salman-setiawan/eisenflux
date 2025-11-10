@@ -5,7 +5,7 @@ const WorkChip = ({ label, color }) => {
     <div>
       <div className="flex gap-x-1.5 w-fit items-center">
         <div className={dotBlink}></div>
-        <div className={`text-[12px] font-semibold ${color}`}>{label}</div>
+        <div className={`text-[13px] font-medium ${color}`}>{label}</div>
       </div>
     </div>
   )

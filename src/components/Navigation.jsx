@@ -6,7 +6,7 @@ import LanguageToggle from './LanguageToggle.jsx';
 import { dropdownButton, dropdownOutter } from '../data/uiStyles.js';
 import ProfileCard from './ProfileCard.jsx';
 
-const Navigation = ({ specsButton, type, title }) => {
+const Navigation = ({ specsButton, specsNavbar, type, title }) => {
   const { language } = useLanguage();
   const [openMenu, setOpenMenu] = useState(null);
   const navigate = useNavigate();
@@ -27,19 +27,18 @@ const Navigation = ({ specsButton, type, title }) => {
   ];
 
   specsButton = 'flex w-fit cursor-pointer h-[36px] items-center px-2.5 hover:bg-[#3E3124] hover:text-[#FED1A1] bg-[#0c0c0c] rounded-lg';
+  specsNavbar = 'fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-3 items-center';
 
   let navbarContent;
 
   switch (type) {
+
     // --- Type 1: Navbar atas dengan ProfileCard ---
     case "type-1":
       navbarContent = (
-        <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-3 items-center">
-          <div className="flex items-center gap-x-4">
-            <button 
-              onClick={() => navigate(-1)}
-              className={specsButton}
-            >
+        <div className={specsNavbar}>
+          <div className="flex items-center gap-x-3">
+            <button onClick={() => navigate(-1)} className={specsButton}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -54,18 +53,13 @@ const Navigation = ({ specsButton, type, title }) => {
     // --- Type 2: Navbar atas dengan judul halaman ---
     case "type-2":
       navbarContent = (
-        <div className="fixed top-0 z-10 bg-[#141414] w-full flex justify-between py-3 px-5 items-center">
-          <button 
-            onClick={() => navigate(-1)}
-            className={specsButton}
-          >
+        <div className={specsNavbar}>
+          <button onClick={() => navigate(-1)} className={specsButton}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-          <div className="text-center font-semibold text-[13px]">
-            {title}
-          </div>
+          <div className="text-center font-semibold text-[14px]">{title}</div>
           <LanguageToggle />
         </div>
       );
@@ -79,7 +73,6 @@ const Navigation = ({ specsButton, type, title }) => {
             <button className={`${specsButton}`} onClick={() => handleClick("about")}>
               {language === "en" ? "About Me" : "Tentang Saya"}
             </button>
-
             <button className={`${specsButton} relative`} onClick={() => handleClick("projects")}>
               {language === "en" ? "Projects" : "Proyek"}
               {openMenu === "projects" && (
@@ -100,7 +93,6 @@ const Navigation = ({ specsButton, type, title }) => {
                 </div>
               )}
             </button>
-
             <button className={`${specsButton} relative xl:hidden`} onClick={() => handleClick("socials")}>
               {language === "en" ? "Contacts" : "Kontak"}
               {openMenu === "socials" && (

@@ -47,21 +47,19 @@ const About = () => {
     
     return (
       <BubbleText key={item.uid} type='type-2' time={timeStr}>
-        <div className="w-full rounded-xl bg-[#0c0c0c] shadow-md">
-          <BioCards
-            type={label}
-            title={item.title?.[language] || item.title}
-            role={item.role?.[language] || item.role}
-            company={item.company}
-            date={item.date}
-            dateStart={item.dateStart}
-            dateEnd={item.dateEnd}
-            keyWord={item.keyWord}
-            jobdesc={item.jobdesc}
-            language={language}
-            proof={item.proof}
-          />
-        </div>
+        <BioCards
+          type={label}
+          title={item.title?.[language] || item.title}
+          role={item.role?.[language] || item.role}
+          company={item.company}
+          year={item.year}
+          dateStart={item.dateStart}
+          dateEnd={item.dateEnd}
+          keyWord={item.keyWord}
+          jobdesc={item.jobdesc}
+          language={language}
+          proof={item.proof}
+        />
       </BubbleText>
     );
   };
