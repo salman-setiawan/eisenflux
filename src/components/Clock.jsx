@@ -21,7 +21,7 @@ const Clock = () => {
   }, []);
 
   return (
-    <div className="flex items-end gap-x-1.5 w-full justify-between">
+    <div className="flex items-center gap-x-1.5 w-full justify-between">
       <div className={smallTitleText}>{time || "--:--:--"}</div>
       <div className={tinyText}>GMT+8</div>
     </div>

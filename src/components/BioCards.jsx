@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Chip from './Chip';
 import { cardStyles, defaultButton, paragraphText, smallTitleText, subText } from '../data/uiStyles';
 import Button from './Button';
@@ -18,17 +17,15 @@ const BioCards = ({ type, title, role, company, year, dateStart, dateEnd, jobdes
 
       {type === "certification" && (
         <>
-          <div className={subText}>{company} ({year})</div>
+          <div className={`${subText} pb-1`}>{company} ({year})</div>
           {proof && (
-            <div className="pt-1">
-              <Button to={proof} style={defaultButton} text={language === "en" ? "See Certification Here" : "Lihat Sertifikasi Disini"} />
-            </div>
+            <Button to={proof} style={defaultButton} text={language === "en" ? "See Certification Here" : "Lihat Sertifikasi Disini"} />
           )}
         </>
       )}
 
       {type === "experience" && (
-        <div className='flex flex-col gap-y-3'>
+        <div className='space-y-3'>
           <div className={`flex flex-col md:flex-row md:justify-between ${subText}`}>
             <div>{role}</div>
             {renderDateRange()}
@@ -40,12 +37,12 @@ const BioCards = ({ type, title, role, company, year, dateStart, dateEnd, jobdes
               ))}
             </div>
           )}
-          <p className={`${paragraphText}`}>{jobdesc?.[language]}</p>
+          <p className={paragraphText}>{jobdesc?.[language]}</p>
         </div>
       )}
 
       {type === "education" && (
-        <div className={`flex flex-col ${subText}`}>
+        <div className={subText}>
           <div>{role}</div>
           {renderDateRange()}
         </div>

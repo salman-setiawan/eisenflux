@@ -8,7 +8,7 @@ import Showcase from '../components/Showcase.jsx';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button.jsx';
 import Navigation from '../components/Navigation.jsx';
-import { defaultButton } from '../data/uiStyles.js';
+import { defaultButton, largeTitleText } from '../data/uiStyles.js';
 
 const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   const { slug } = useParams();
@@ -103,7 +103,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
       </div>
 
       <div className="px-5 flex flex-col gap-y-4 w-full max-w-[800px] pt-6 pb-28">
-        <div className="text-2xl font-semibold pb-1">
+        <div className={largeTitleText}>
           {pageTitle}
         </div>
 

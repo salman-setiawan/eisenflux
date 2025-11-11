@@ -11,10 +11,9 @@ const AvaCard = () => {
       <div className={paragraphText}>
         {language === "en" ? "Hola! my name is " : "Hola! namaku "}
         <span className={highlightedText}>Salman</span>
-        <span>,</span>
-        {language === "en" ? " a Bachelor of Informatics graduate specializing in " : " lulusan Informatika dengan spesialisasi "}
-        <span className={highlightedText}>UI/UX Design.</span>
-        {language === "en" ? " currently based in " : " saat ini berdomisili di "}
+        {language === "en" ? ", a Bachelor of Informatics graduate specializing in " : ", lulusan Informatika dengan spesialisasi "}
+        <span className={highlightedText}>UI/UX Design</span>
+        {language === "en" ? " and currently based in " : " dan saat ini berdomisili di "}
         <span className={highlightedText}>Balikpapan - Indonesia 🇮🇩</span>
       </div>
       <div className={paragraphText}>
