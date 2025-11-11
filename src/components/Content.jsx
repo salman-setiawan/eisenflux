@@ -1,4 +1,4 @@
-import { paragraphText } from '../data/uiStyles.js';
+import { containerShape, paragraphText, smallTitleText } from '../data/uiStyles.js';
 
 const Content = ({ data, language, altText }) => {
   const getBgClasses = (kind) => {
@@ -25,15 +25,10 @@ const Content = ({ data, language, altText }) => {
     return (
       <div className={`text-justify flex flex-col items-center ${getBgClasses(data.kind)}`}>
         <img 
-          className="w-full max-w-[600px] rounded-lg shadow-lg" 
+          className={`w-full max-w-[600px] ${containerShape}`} 
           src={data.img} 
           alt={data.alt ? data.alt[language] : altText[language]} 
         />
-        {data.desc && (
-          <p className="w-full text-center pt-3 text-sm text-gray-400 max-w-[600px]">
-            {data.desc[language]}
-          </p>
-        )}
       </div>
     );
   }
@@ -42,7 +37,7 @@ const Content = ({ data, language, altText }) => {
   if (data.kind === 'process') {
     return (
       <div className={`text-justify px-3 py-2.5 rounded-lg border-2 border-dashed ${getBgClasses(data.kind)}`}>
-        <div className="font-semibold mb-1 text-[14px] md:text-[15px]">
+        <div className={smallTitleText}>
           {data.title[language]}
         </div>
         {data.text && (
@@ -67,7 +62,7 @@ const Content = ({ data, language, altText }) => {
   return (
     <div className={`text-justify px-3 py-2.5 border-2 border-dashed rounded-lg ${getBgClasses(data.kind)}`}>
       {data.title && (
-        <div className="font-semibold mb-1 text-[14px] md:text-[15px]">
+        <div className={smallTitleText}>
           {data.title[language]}  
         </div>
       )}

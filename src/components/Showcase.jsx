@@ -1,11 +1,12 @@
 import Interface from "../data/interface.js";
+import { semibaseColourText } from "../data/uiStyles.js";
 
 const Showcase = ({ id }) => {
   const selected = Interface.find(item => item.id === id);
 
   if (!selected) {
     return (
-      <div className="text-neutral-400 text-center py-12"> No images found. </div>
+      <div className={`${semibaseColourText} text-center py-12`}> No Images Found. </div>
     );
   }
 
@@ -14,7 +15,7 @@ const Showcase = ({ id }) => {
       <div className="columns-2 md:columns-3 gap-2 space-y-2 rotate-[-14deg] md:rotate-[-20deg]">
         {selected.cover.map((image, index) => (
           <div key={index} className="break-inside-avoid overflow-hidden">
-            <img src={image.img} alt={`cover-${index}`} className="w-full h-auto object-cover" loading="lazy" />
+            <img src={image.img} alt={`cover-${index}`} className="w-full object-cover" loading="lazy" />
           </div>
         ))}
       </div>

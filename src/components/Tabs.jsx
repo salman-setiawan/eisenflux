@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import { useLanguage } from '../data/languageContext.jsx'; 
+import { baseColourText, semibaseColourText, subText } from "../data/uiStyles";
 
 const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
   const { language } = useLanguage();
@@ -51,7 +52,7 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
     setActiveKey(tabKey)
   }
 
-  specsTabs = 'cursor-pointer hover:bg-neutral-800 py-1.5 font-medium text-[13px]';
+  specsTabs = `cursor-pointer hover:bg-neutral-800 py-1.5 ${subText}`;
 
   return (
     <div className="flex z-10 w-full border-b-2 border-neutral-800">
@@ -69,12 +70,12 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
             onClick={() => handleTabClick(tab.key)}
             className={`px-3 h-[40px] flex items-center whitespace-nowrap transition-colors ${
               isActive
-                ? `${specsTabs} border-b-2 translate-y-[2px] border-[#ffaa50] text-white`
-                : `${specsTabs} translate-y-[1px] text-neutral-400`
+                ? `${specsTabs} translate-y-[2px] border-b-2 border-[#ffaa50] ${baseColourText}`
+                : `${specsTabs} translate-y-[1px] ${semibaseColourText}`
             }`}
             aria-current={isActive ? 'page' : undefined}
           >
-            <span className="inline-flex items-center gap-2">
+            <span className="flex items-center gap-2">
               {renderIcon(tab.key, isActive)}
               <span>{tab.label}</span>
             </span>

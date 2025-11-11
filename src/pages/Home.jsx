@@ -175,7 +175,7 @@ const Home = () => {
       </div>
       <div className="flex flex-col pt-14 xl:pt-0 gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
         <div className="flex flex-col xl:flex-row">
-          <div className="xl:flex flex-col gap-2 hidden max-w-[490px] p-4 overflow-y-auto h-screen">
+          <div className="xl:flex flex-col gap-2 hidden xl:max-w-[420px] 2xl:max-w-[520px] p-4 overflow-y-auto h-screen">
             <div className="pb-1.5"><Navigation type='type-3' /></div>
             <AvaCard />
             <DeckCard />

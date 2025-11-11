@@ -1,28 +1,23 @@
 import { useLanguage } from '../data/languageContext';
+import { backgroundBaseColour, containerCardColour, containerShape, subText } from '../data/uiStyles';
 
-const LanguageToggle = ({segment, lang}) => {
+const LanguageToggle = ({segment}) => {
   const { language, toggleLanguage } = useLanguage();
 
-  segment = 'z-10 flex h-full w-[36px] items-center justify-center';
-  lang = 'text-[12px] font-medium';
+  segment = `z-10 flex h-full w-[36px] items-center justify-center ${subText}`;
 
   return (
-    <div className={`flex items-center bg-[#0c0c0c] rounded-lg`}>
+    <div className={`flex items-center ${backgroundBaseColour} ${containerShape}`}>
       <button
         onClick={toggleLanguage}
-        className="relative inline-flex h-[36px] w-[72px] items-center transition-colors duration-200 cursor-pointer rounded-lg"
+        className={`flex h-[36px] w-[72px] items-center cursor-pointer ${containerShape}`}
         role="switch"
         aria-checked={language === 'en'}
         aria-label="toggle-language"
       >
-        {/* Active Segment Background */}
-        <div className={`absolute h-[28px] w-[28px] rounded-md bg-neutral-800 transition-transform duration-200 ${language === 'en' ? 'translate-x-10' : 'translate-x-1'}`}/>
-        
-        {/* ID Segment */}
-        <div className={`${segment} ${language === 'en' ? lang : lang}`}> ID </div>
-
-        {/* EN Segment */}
-        <div className={`${segment} ${language === 'en' ? lang : lang}`}> EN </div>
+        <div className={`absolute h-[28px] w-[28px] ${containerShape} ${containerCardColour} transition-transform duration-200 ${language === 'en' ? 'translate-x-10' : 'translate-x-1'}`}/>
+        <div className={segment}> ID </div>
+        <div className={segment}> EN </div>
       </button>
     </div>
   );

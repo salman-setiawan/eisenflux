@@ -32,19 +32,17 @@ const CaseCard = ({ title, nav, desc, categories, intImg, intText, intImg2, intT
   return (
     <div ref={ref} className={`transition-opacity duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
       <div className="relative overflow-hidden rounded-md lg:hidden">
-        {title && (
-          <motion.h1 variants={container} initial="initial" animate="animate" className={motionText}>
-            {words.map((word, wi) => (
-              <motion.div key={wi} variants={wordVariant} className="flex">
-                {word.split('').map((char, ci) => (
-                  <motion.span key={ci} variants={letterVariant}>
-                    {char}
-                  </motion.span>
-                ))}
-              </motion.div>
-            ))}
-          </motion.h1>
-        )}
+        <motion.h1 variants={container} initial="initial" animate="animate" className={motionText}>
+          {words.map((word, wi) => (
+            <motion.div key={wi} variants={wordVariant} className="flex">
+              {word.split('').map((char, ci) => (
+                <motion.span key={ci} variants={letterVariant}>
+                  {char}
+                </motion.span>
+              ))}
+            </motion.div>
+          ))}
+        </motion.h1>
         {/* Layer Texture dengan masking dan opacity */}
         <div className={srcTexture} style={{ backgroundSize: 'auto', WebkitMaskImage: maskTexture, WebkitMaskComposite: 'destination-in', maskComposite: 'intersect',}}></div>
         {/* Komponen Informasi */}
@@ -86,19 +84,17 @@ const CaseCard = ({ title, nav, desc, categories, intImg, intText, intImg2, intT
         </div>
         {/* Komponen Gambar */}
         <div className="relative overflow-hidden w-full rounded-md">
-          {title && (
-            <motion.h1 variants={container} initial="initial" animate="animate" className={motionText}>
-              {words.map((word, wi) => (
-                <motion.div key={wi} variants={wordVariant} className="flex">
-                  {word.split('').map((char, ci) => (
-                    <motion.span key={ci} variants={letterVariant}>
-                      {char}
-                    </motion.span>
-                  ))}
-                </motion.div>
-              ))}
-            </motion.h1>
-          )}
+          <motion.h1 variants={container} initial="initial" animate="animate" className={motionText}>
+            {words.map((word, wi) => (
+              <motion.div key={wi} variants={wordVariant} className="flex">
+                {word.split('').map((char, ci) => (
+                  <motion.span key={ci} variants={letterVariant}>
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.div>
+            ))}
+          </motion.h1>
           <div className={cardImageBorder}>
             <div className={srcTexture} style={{ WebkitMaskImage: maskTexture, WebkitMaskComposite: 'destination-in', maskComposite: 'intersect', }}></div>
             <div className="flex justify-center items-center relative z-10">

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Chip from './Chip';
-import { cardStyles, defaultButton, paragraphText, subText } from '../data/uiStyles';
+import { cardStyles, defaultButton, paragraphText, smallTitleText, subText } from '../data/uiStyles';
 import Button from './Button';
 
 const BioCards = ({ type, title, role, company, year, dateStart, dateEnd, jobdesc, keyWord, language, proof }) => {
@@ -14,18 +14,17 @@ const BioCards = ({ type, title, role, company, year, dateStart, dateEnd, jobdes
 
   return (
     <div className={cardStyles}>
-      <div className="font-semibold mb-0.5">{title}</div>
+      <div className={`${smallTitleText}`}>{title}</div>
 
       {type === "certification" && (
-        <div className="flex flex-col gap-y-0.5">
-          <div className={`flex gap-x-1 ${subText}`}>
-            <div>{company}</div>
-            <div>({year})</div>
-          </div>
-          {proof &&
-            <Button to={proof} text={language === 'en' ? 'See Certification Here' : 'Lihat Sertifikasi Disini'} style={defaultButton} />
-          }
-        </div>
+        <>
+          <div className={subText}>{company} ({year})</div>
+          {proof && (
+            <div className="pt-1">
+              <Button to={proof} style={defaultButton} text={language === "en" ? "See Certification Here" : "Lihat Sertifikasi Disini"} />
+            </div>
+          )}
+        </>
       )}
 
       {type === "experience" && (
@@ -35,15 +34,13 @@ const BioCards = ({ type, title, role, company, year, dateStart, dateEnd, jobdes
             {renderDateRange()}
           </div>
           {Array.isArray(keyWord) && keyWord.length > 0 && (
-            <div className="flex flex-wrap gap-2 translate-x-[-1px]">
+            <div className="flex flex-wrap gap-2">
               {keyWord.map((keyword, idx) => (
-                <Chip key={idx} label={keyword?.[language] || keyword?.id || keyword || ""} />
+                <Chip key={idx} label={keyword?.[language]} />
               ))}
             </div>
           )}
-          <p className={`${paragraphText}`}>
-            {jobdesc?.[language] || jobdesc?.id || ""}
-          </p>
+          <p className={`${paragraphText}`}>{jobdesc?.[language]}</p>
         </div>
       )}
 

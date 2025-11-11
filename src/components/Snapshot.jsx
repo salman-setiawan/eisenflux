@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { containerShape } from '../data/uiStyles';
 
 const InViewWrapper = ({ image, index }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -16,10 +17,7 @@ const InViewWrapper = ({ image, index }) => {
         inView ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <div className="relative group overflow-hidden rounded-md bg-[#111]/60 border border-neutral-800">
-        {!isLoaded && (
-          <div className="w-full aspect-auto animate-pulse bg-gradient-to-r from-[#111] via-neutral-800 to-[#111] bg-[length:200%_100%]"></div>
-        )}
+      <div className={`relative overflow-hidden ${containerShape}`}>
         <img
           src={image}
           alt={`UI Snapshot ${index + 1}`}
@@ -30,7 +28,7 @@ const InViewWrapper = ({ image, index }) => {
           style={{ display: isLoaded ? 'block' : 'none' }}
         />
         {isLoaded && (
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+          <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300"></div>
         )}
       </div>
     </div>
