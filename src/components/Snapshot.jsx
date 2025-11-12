@@ -18,14 +18,17 @@ const InViewWrapper = ({ image, index }) => {
       }`}
     >
       <div className={`relative overflow-hidden ${containerShape}`}>
+        {!isLoaded && (
+          <div className="w-full aspect-square bg-[#1a1a1a] animate-pulse absolute inset-0" />
+        )}
         <img
           src={image}
           alt={`UI Snapshot ${index + 1}`}
           className={`w-full transition-opacity duration-300 ${
-            isLoaded ? 'opacity-100' : 'opacity-0 absolute'
+            isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
+          loading="lazy"
           onLoad={() => setIsLoaded(true)}
-          style={{ display: isLoaded ? 'block' : 'none' }}
         />
         {isLoaded && (
           <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300"></div>

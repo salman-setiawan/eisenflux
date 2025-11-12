@@ -7,24 +7,24 @@
     <!-- 🟢 Preconnect untuk mempercepat koneksi font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- 🟢 Preload font utama -->
+    <!-- 🟢 Load fonts asynchronously untuk menghindari render blocking -->
     <link 
-      rel="preload"
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@200..800&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      media="print"
+      onload="this.media='all'"
     >
     <link
-      rel="preload"
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      media="print"
+      onload="this.media='all'"
     />
     <link
-      rel="preload"
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..700,0,0&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      media="print"
+      onload="this.media='all'"
     />
     <noscript>
       <link
@@ -47,7 +47,7 @@
   <body>
     <div id="root"></div>
     <!-- 🟢 Defer JS agar tidak block render -->
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.jsx" defer></script>
   </body>
 
 </html>

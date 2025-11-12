@@ -55,7 +55,7 @@ const CaseCard = ({ title, nav, desc, categories, intText, intText2, extText, ur
             {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
           </div>
           <div className="flex justify-center items-center cursor-default">
-            <img className="h-[24rem] md:h-[30rem] object-cover float-anim" src={obj} alt="object" />
+            <img className="h-[24rem] md:h-[30rem] object-cover float-anim" src={obj} alt="object" loading="lazy" />
           </div>
           <div className="flex flex-col gap-y-4 justify-end items-end z-20">
             <div className="flex justify-end gap-x-1.5">
@@ -98,7 +98,7 @@ const CaseCard = ({ title, nav, desc, categories, intText, intText2, extText, ur
           <div className={cardImageBorder}>
             <div className={srcTexture} style={{ WebkitMaskImage: maskTexture, WebkitMaskComposite: 'destination-in', maskComposite: 'intersect' }}></div>
             <div className="flex justify-center items-center relative z-10">
-              <img className="h-[30rem] object-cover float-anim" src={obj} alt="object" />
+              <img className="h-[30rem] object-cover float-anim" src={obj} alt="object" loading="lazy" />
             </div>
           </div>
         </div> 

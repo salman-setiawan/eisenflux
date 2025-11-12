@@ -66,12 +66,12 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
       setContents([]);
     }
 
-    // ✅ Disable horizontal scroll di halaman ini
-    document.body.style.overflowX = "hidden";
+    // ✅ Disable horizontal scroll di halaman ini (menggunakan class untuk menghindari forced reflow)
+    document.body.classList.add('overflow-x-hidden');
 
     // 🧹 Kembalikan scroll seperti semula saat keluar dari halaman
     return () => {
-      document.body.style.overflowX = "auto";
+      document.body.classList.remove('overflow-x-hidden');
     };
   }, [selectedArticle, slug]);
 

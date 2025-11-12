@@ -41,7 +41,8 @@ const Content = ({ data, language, altText }) => {
         <img 
           className={`w-full max-w-[600px] ${containerShape}`} 
           src={data.img} 
-          alt={data.alt ? data.alt[language] : altText[language]} 
+          alt={data.alt ? data.alt[language] : altText[language]}
+          loading="lazy"
         />
       </div>
     );
