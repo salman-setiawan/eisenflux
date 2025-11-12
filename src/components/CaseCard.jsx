@@ -3,7 +3,7 @@ import Button from './Button.jsx';
 import Chip from './Chip.jsx';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import { cardStyles, defaultButton, highlightedText, paragraphText } from '../data/uiStyles.js';
+import { cardStyles, buttonDefault, textHighlighted, textParagraph, textBaseUltraMuted } from '../data/uiStyles.js';
 
 const CaseCard = ({ title, nav, desc, categories, intText, intText2, extText, url1, url2, url3, obj, motionText, maskTexture, srcTexture, cardImageBorder }) => {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.05, });
@@ -24,14 +24,14 @@ const CaseCard = ({ title, nav, desc, categories, intText, intText2, extText, ur
     animate: { transition: { staggerChildren: 0.05 }},
   };
 
-  motionText = 'font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center uppercase select-none uppercase select-none font-black text-white/9 text-[20rem] md:text-[26rem] rotate-[-32deg] lg:rotate-[-24deg]';
+  motionText = `font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center uppercase select-none uppercase select-none font-black ${textBaseUltraMuted} text-[20rem] md:text-[26rem] rotate-[-32deg] lg:rotate-[-24deg]`;
   maskTexture = 'radial-gradient(circle at 25% 35%, transparent 0%, black 30%), radial-gradient(circle at 75% 70%, transparent 0%, black 40%)';
-  srcTexture = `absolute inset-0 bg-[url('/pattern-card.svg')] opacity-13 pointer-events-none`;
-  cardImageBorder = 'relative rounded-md bg-[#000]/40 border border-neutral-800 h-full flex flex-col p-2 justify-between';
+  srcTexture = `absolute inset-0 bg-[url('/pattern-card.svg')] opacity-15`;
+  cardImageBorder = 'relative rounded-md bg-[#202020]/50 border border-neutral-800 h-full flex flex-col p-2 justify-between';
 
   return (
     <div ref={ref} className={`transition-opacity duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-      <div className="relative overflow-hidden rounded-md lg:hidden">
+      <div className="relative overflow-hidden rounded-md xl:hidden">
 
         {/* Motion Background Text */}
         <motion.h1 variants={container} initial="initial" animate="animate" className={motionText}>
@@ -57,29 +57,29 @@ const CaseCard = ({ title, nav, desc, categories, intText, intText2, extText, ur
           <div className="flex justify-center items-center cursor-default">
             <img className="h-[24rem] md:h-[30rem] object-cover float-anim" src={obj} alt="object" />
           </div>
-          <div className="flex flex-col lg:flex-row lg:gap-x-4 gap-y-4 justify-end lg:justify-between items-end z-20">
+          <div className="flex flex-col gap-y-4 justify-end items-end z-20">
             <div className="flex justify-end gap-x-1.5">
-              {url1 && <Button style={defaultButton} to={url1} text={intText} />}
-              {url2 && <Button style={defaultButton} to={url2} text={intText2} />}
-              {url3 && (<Button style={defaultButton} to={url3} target="_blank" rel="noopener noreferrer" text={extText} />)}
+              {url1 && <Button style={buttonDefault} to={url1} text={intText} />}
+              {url2 && <Button style={buttonDefault} to={url2} text={intText2} />}
+              {url3 && (<Button style={buttonDefault} to={url3} target="_blank" rel="noopener noreferrer" text={extText} />)}
             </div>
-            <div className={`${paragraphText} px-1`}><span className={highlightedText}> {nav} </span> {desc} </div>
+            <div className={`${textParagraph} px-2.5 py-1.5 rounded-md bg-[#0c0c0c]/60`}><span className={textHighlighted}> {nav} </span> {desc} </div>
           </div>
         </div>
       </div> 
-      <div className="hidden lg:flex gap-x-2 items-end">
+      <div className="hidden xl:flex gap-x-2 items-end">
         {/* Komponen Informasi */}
-        <div className={`${cardStyles} h-[498px] lg:max-w-[380px] xl:w-[480px] justify-end p-4 gap-y-6`}>
+        <div className={`${cardStyles} h-[498px] w-[480px] justify-end p-4 gap-y-6`}>
           <div className="flex flex-col gap-y-4">
             <div className="flex flex-wrap gap-x-1.5 gap-y-2">
               {categories?.map((cat, i) => ( <Chip key={i} label={cat} /> ))}
             </div>
-            <div className={`${paragraphText} pr-2`}><span className={highlightedText}> {nav} </span> {desc} </div>
+            <div className={`${textParagraph} pr-2`}><span className={textHighlighted}> {nav} </span> {desc} </div>
           </div>
           <div className="flex gap-x-2">
-            {url1 && (<Button style={defaultButton} to={url1} text={intText} />)}
-            {url2 && (<Button style={defaultButton} to={url2} text={intText2} />)}
-            {url3 && (<Button style={defaultButton} to={url3} target="_blank" rel="noopener noreferrer" text={extText} />)}
+            {url1 && (<Button style={buttonDefault} to={url1} text={intText} />)}
+            {url2 && (<Button style={buttonDefault} to={url2} text={intText2} />)}
+            {url3 && (<Button style={buttonDefault} to={url3} target="_blank" rel="noopener noreferrer" text={extText} />)}
           </div>
         </div>
         {/* Komponen Gambar dan Motion Background Text */}

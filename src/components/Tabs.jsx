@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import { useLanguage } from '../data/languageContext.jsx'; 
-import { baseColourText, semibaseColourText, subText } from "../data/uiStyles";
+import { textBase, textBaseSemi, textSub } from "../data/uiStyles";
 
 const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
   const { language } = useLanguage();
@@ -52,7 +52,7 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
     setActiveKey(tabKey)
   }
 
-  specsTabs = `cursor-pointer hover:bg-neutral-800 py-1.5 ${subText}`;
+  specsTabs = `cursor-pointer hover:bg-neutral-800 py-1.5 ${textSub}`;
 
   return (
     <div className="flex z-10 w-full border-b-2 border-neutral-800">
@@ -70,8 +70,8 @@ const Tabs = ({onChange, activeTab, onTabChange, specsTabs}) => {
             onClick={() => handleTabClick(tab.key)}
             className={`px-3 h-[40px] flex items-center whitespace-nowrap transition-colors ${
               isActive
-                ? `${specsTabs} translate-y-[2px] border-b-2 border-[#ffaa50] ${baseColourText}`
-                : `${specsTabs} translate-y-[1px] ${semibaseColourText}`
+                ? `${specsTabs} translate-y-[2px] border-b-2 border-[#ffaa50] ${textBase}`
+                : `${specsTabs} translate-y-[1px] ${textBaseSemi}`
             }`}
             aria-current={isActive ? 'page' : undefined}
           >

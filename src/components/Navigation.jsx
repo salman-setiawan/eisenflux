@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ArticleData from "../data/card.js";
 import LanguageToggle from './LanguageToggle.jsx';
-import { dropdownButton, dropdownOutter } from '../data/uiStyles.js';
+import { bgBase, containerShape, dropdownButton, dropdownOuter, textHeading3 } from '../data/uiStyles.js';
 import ProfileCard from './ProfileCard.jsx';
 
 const Navigation = ({ specsButton, specsNavbar, type, title }) => {
@@ -26,7 +26,7 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
     { name: "Dribbble", url: "https://dribbble.com/eisenflux" },
   ];
 
-  specsButton = 'flex w-fit cursor-pointer h-[36px] items-center px-2.5 hover:bg-[#3E3124] hover:text-[#FED1A1] bg-[#0c0c0c] rounded-lg';
+  specsButton = `flex cursor-pointer h-[36px] items-center px-2 hover:bg-[#3E3124] hover:text-[#FED1A1] ${bgBase} ${containerShape} ${textHeading3} font-medium`;
   specsNavbar = 'fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-3 items-center';
 
   let navbarContent;
@@ -59,7 +59,7 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-          <div className="text-center font-semibold text-[14px]">{title}</div>
+          <div className={`text-center font-semibold ${textHeading3}`}>{title}</div>
           <LanguageToggle />
         </div>
       );
@@ -69,14 +69,14 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
     case "type-3":
       navbarContent = (
         <div className='flex justify-between items-center w-full'>
-          <div className="flex gap-x-1 text-[14px] font-medium">
+          <div className="flex gap-x-1">
             <button className={`${specsButton}`} onClick={() => handleClick("about")}>
               {language === "en" ? "About Me" : "Tentang Saya"}
             </button>
             <button className={`${specsButton} relative`} onClick={() => handleClick("projects")}>
               {language === "en" ? "Projects" : "Proyek"}
               {openMenu === "projects" && (
-                <div className={`${dropdownOutter} top-11 left-0 min-w-[200px]`}>
+                <div className={`${dropdownOuter} top-11 left-0 min-w-[200px]`}>
                   {ArticleData.map((article) => (
                     <div
                       key={article.id}
@@ -93,10 +93,10 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
                 </div>
               )}
             </button>
-            <button className={`${specsButton} relative xl:hidden`} onClick={() => handleClick("socials")}>
+            <button className={`${specsButton} relative lg:hidden`} onClick={() => handleClick("socials")}>
               {language === "en" ? "Contacts" : "Kontak"}
               {openMenu === "socials" && (
-                <div className={`${dropdownOutter} top-11 left-0 min-w-[200px]`}>
+                <div className={`${dropdownOuter} top-11 left-0 min-w-[200px]`}>
                   {socialList.map((item, idx) => (
                     <div 
                       key={idx} 

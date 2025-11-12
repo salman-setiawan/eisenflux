@@ -1,18 +1,32 @@
-import { containerShape, paragraphText, smallTitleText } from '../data/uiStyles.js';
+import { 
+  containerShape, 
+  textParagraph, 
+  textHeading3,
+  textRegular,
+  textSemanticWarning,
+  textSemanticError,
+  textSemanticSuccess,
+  bgSemanticWarning,
+  bgSemanticError,
+  bgSemanticSuccess,
+  borderSemanticWarning,
+  borderSemanticError,
+  borderSemanticSuccess
+} from '../data/uiStyles.js';
 
 const Content = ({ data, language, altText }) => {
   const getBgClasses = (kind) => {
     switch (kind) {
       case 'overview':
-        return 'bg-yellow-300/5 border-yellow-400/30 text-yellow-400';
+        return `${bgSemanticWarning} ${borderSemanticWarning} ${textSemanticWarning}`;
       case 'problem':
-        return 'bg-rose-500/5 border-rose-500/30 text-rose-400';
+        return `${bgSemanticError} ${borderSemanticError} ${textSemanticError}`;
       case 'process':
-        return 'bg-yellow-300/5 border-yellow-400/30 text-yellow-400';
+        return `${bgSemanticWarning} ${borderSemanticWarning} ${textSemanticWarning}`;
       case 'impact':
-        return 'bg-emerald-400/5 border-emerald-400/30 text-emerald-400';
+        return `${bgSemanticSuccess} ${borderSemanticSuccess} ${textSemanticSuccess}`;
       case 'keyLearnings':
-        return 'bg-emerald-400/5 border-emerald-400/30 text-emerald-400';
+        return `${bgSemanticSuccess} ${borderSemanticSuccess} ${textSemanticSuccess}`;
       case 'image':
         return 'bg-transparent border-transparent';
       default:
@@ -37,19 +51,19 @@ const Content = ({ data, language, altText }) => {
   if (data.kind === 'process') {
     return (
       <div className={`text-justify px-3 py-2.5 rounded-lg border-2 border-dashed ${getBgClasses(data.kind)}`}>
-        <div className={smallTitleText}>
+        <div className={textHeading3}>
           {data.title[language]}
         </div>
         {data.text && (
-          <div className={`${paragraphText} mb-4`}>{data.text[language]}</div>
+          <div className={`${textParagraph} mb-4`}>{data.text[language]}</div>
         )}
         {Array.isArray(data.steps) && data.steps.length > 0 && (
           <div className="flex flex-col gap-y-2">
             {data.steps.map((s, i) => (
               <div key={i}>
-                <span className="font-medium text-[14px] md:text-[15px]">{s.label?.[language]}</span>
+                <span className={`font-medium ${textHeading3} ${textRegular}`}>{s.label?.[language]}</span>
                 {s.desc && (
-                  <span className={paragraphText}>{" "}{s.desc[language]}</span>
+                  <span className={textParagraph}>{" "}{s.desc[language]}</span>
                 )}
               </div>
             ))}
@@ -62,19 +76,19 @@ const Content = ({ data, language, altText }) => {
   return (
     <div className={`text-justify px-3 py-2.5 border-2 border-dashed rounded-lg ${getBgClasses(data.kind)}`}>
       {data.title && (
-        <div className={smallTitleText}>
+        <div className={textHeading3}>
           {data.title[language]}  
         </div>
       )}
       {Array.isArray(data.text) ? (
         <div className="flex flex-col gap-y-2">
           {data.text.map((para, idx) => (
-            <span key={idx} className={paragraphText}>{para?.[language] || para?.en || ''}</span>
+            <span key={idx} className={textParagraph}>{para?.[language] || para?.en || ''}</span>
           ))}
         </div>
       ) : (
         data.text && (
-          <span className={paragraphText}>{data.text[language]}</span>
+          <span className={textParagraph}>{data.text[language]}</span>
         )
       )}
     </div>

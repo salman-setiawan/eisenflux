@@ -1,12 +1,12 @@
 import Interface from "../data/interface.js";
-import { semibaseColourText } from "../data/uiStyles.js";
+import { textBaseSemi } from "../data/uiStyles.js";
 
 const Showcase = ({ id }) => {
   const selected = Interface.find(item => item.id === id);
 
   if (!selected) {
     return (
-      <div className={`${semibaseColourText} text-center py-12`}> No Images Found. </div>
+      <div className={`${textBaseSemi} text-center py-12`}> No Images Found. </div>
     );
   }
 

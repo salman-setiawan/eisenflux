@@ -6,7 +6,7 @@ import BioData from "../data/bio";
 import Notfound from "./404.jsx";
 import Footnote from '../components/Footnote.jsx';
 import BubbleText from '../components/BubbleText.jsx';
-import { defaultButton, dropdownButton, dropdownOutter, pdfButton } from '../data/uiStyles.js';
+import { bgBrand, textBrandLight, buttonDefault, dropdownButton, dropdownOuter, buttonPdf, textSub, containerBase } from '../data/uiStyles.js';
 import Button from '../components/Button.jsx';
 import Navigation from '../components/Navigation.jsx';
 
@@ -71,7 +71,7 @@ const About = () => {
 
       <div className="flex place-content-center w-full md:max-w-[720px] py-20 relative px-4">
         <div className="flex flex-col w-full gap-y-4 items-center">
-          <div className="px-6 py-1 rounded-xl bg-[#ffaa50]/8 text-[#ffaa50] text-[12px] font-medium w-fit">
+          <div className={`px-6 py-1 rounded-xl ${bgBrand} ${textBrandLight} ${textSub}`}>
             {language === 'en' ? 'Today' : 'Hari ini'}
           </div>
           <div className="w-full md:max-w-[720px]">
@@ -185,15 +185,15 @@ const About = () => {
         </div>
       </div>
 
-      <div className="fixed bottom-0 w-full bg-[#141414] py-1.5" style={{ zIndex: 1 }}>
+      <div className={`fixed bottom-0 w-full ${containerBase} py-1.5`} style={{ zIndex: 1 }}>
         <div className="flex w-full justify-center">
           <div className="w-full max-w-[720px] px-4 pt-1 pb-3">
             <div className="grid grid-cols-2 gap-x-2 h-[48px] items-end">
-              <Button text={language === "en" ? "PDF Version Here" : "Versi PDF Disini"} onClick={handleDownload} fullWidth={true} style={pdfButton} />
+              <Button text={language === "en" ? "PDF Version Here" : "Versi PDF Disini"} onClick={handleDownload} fullWidth={true} style={buttonPdf} />
               <div className="relative">
-                <Button text={language === "en" ? "Contacts" : "Kontak"} onClick={() => handleClick("socials")} fullWidth={true} style={defaultButton}>
+                <Button text={language === "en" ? "Contacts" : "Kontak"} onClick={() => handleClick("socials")} fullWidth={true} style={buttonDefault}>
                   {openMenu === "socials" && (
-                    <div className={`${dropdownOutter} w-full left-0 bottom-13`}>
+                    <div className={`${dropdownOuter} w-full left-0 bottom-13`}>
                       {socialList.map((item, idx) => (
                         <div key={idx} className={dropdownButton} onClick={() => window.open(item.url, "_blank")}> 
                           {item.name}

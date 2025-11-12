@@ -1,9 +1,9 @@
-import { paragraphText, semibaseColourText } from "../data/uiStyles";
+import { textParagraph, textBaseSemi, textMicro } from "../data/uiStyles";
 
 const BubbleText = ({ type, text, time, children, bubbleSpecs, timeSpecs }) => {
 
   bubbleSpecs = 'px-3 pt-2 pb-1.5 shadow-sm rounded-xl';
-  timeSpecs = `${semibaseColourText} text-[11px] pb-4`;
+  timeSpecs = `${textBaseSemi} ${textMicro} pb-4`;
 
   return (
     <div className="w-full">
@@ -13,7 +13,7 @@ const BubbleText = ({ type, text, time, children, bubbleSpecs, timeSpecs }) => {
             {children ? (
               <div> {children} </div>
             ) : (
-              <div className={`${paragraphText} ${bubbleSpecs} bg-neutral-700/50 rounded-bl-sm`}> {text} </div>
+              <div className={`${textParagraph} ${bubbleSpecs} bg-neutral-700/50 rounded-bl-sm`}> {text} </div>
             )}
             {time && <div className={timeSpecs}>{time}</div> }
           </div>
@@ -25,7 +25,7 @@ const BubbleText = ({ type, text, time, children, bubbleSpecs, timeSpecs }) => {
             {children ? (
               <div> {children} </div>
             ) : (
-              <div className={`${paragraphText} ${bubbleSpecs} bg-orange-700/50 rounded-br-sm`}> {text} </div>
+              <div className={`${textParagraph} ${bubbleSpecs} bg-orange-700/50 rounded-br-sm`}> {text} </div>
             )}
             {time && <div className={timeSpecs}>{time}</div> }
           </div>

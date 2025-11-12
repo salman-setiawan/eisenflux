@@ -1,5 +1,5 @@
 import Chip from './Chip';
-import { cardStyles, defaultButton, paragraphText, smallTitleText, subText } from '../data/uiStyles';
+import { cardStyles, buttonDefault, textParagraph, textSubSemi, textHeading3 } from '../data/uiStyles';
 import Button from './Button';
 
 const BioCards = ({ type, title, role, company, year, dateStart, dateEnd, jobdesc, keyWord, language, proof }) => {
@@ -13,20 +13,20 @@ const BioCards = ({ type, title, role, company, year, dateStart, dateEnd, jobdes
 
   return (
     <div className={cardStyles}>
-      <div className={`${smallTitleText}`}>{title}</div>
+      <div className={`${textHeading3}`}>{title}</div>
 
       {type === "certification" && (
         <>
-          <div className={`${subText} pb-1`}>{company} ({year})</div>
+          <div className={`${textSubSemi} pb-1`}>{company} ({year})</div>
           {proof && (
-            <Button to={proof} style={defaultButton} text={language === "en" ? "See Certification Here" : "Lihat Sertifikasi Disini"} />
+            <Button to={proof} style={buttonDefault} text={language === "en" ? "See Certification Here" : "Lihat Sertifikasi Disini"} />
           )}
         </>
       )}
 
       {type === "experience" && (
         <div className='space-y-3'>
-          <div className={`flex flex-col md:flex-row md:justify-between ${subText}`}>
+          <div className={`flex flex-col md:flex-row md:justify-between ${textSubSemi}`}>
             <div>{role}</div>
             {renderDateRange()}
           </div>
@@ -37,12 +37,12 @@ const BioCards = ({ type, title, role, company, year, dateStart, dateEnd, jobdes
               ))}
             </div>
           )}
-          <p className={paragraphText}>{jobdesc?.[language]}</p>
+          <p className={textParagraph}>{jobdesc?.[language]}</p>
         </div>
       )}
 
       {type === "education" && (
-        <div className={subText}>
+        <div className={textSubSemi}>
           <div>{role}</div>
           {renderDateRange()}
         </div>

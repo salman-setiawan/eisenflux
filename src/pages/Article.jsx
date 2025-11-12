@@ -8,7 +8,7 @@ import Showcase from '../components/Showcase.jsx';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button.jsx';
 import Navigation from '../components/Navigation.jsx';
-import { defaultButton, largeTitleText } from '../data/uiStyles.js';
+import { buttonDefault, textHeading1, textSmall, textNeutral300, textNeutral400, textBase, containerBase } from '../data/uiStyles.js';
 
 const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   const { slug } = useParams();
@@ -91,8 +91,8 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   };
 
   csDataPos = 'flex gap-2';
-  csDataHeader = 'text-neutral-400 min-w-[72px]';
-  csDataLabel = 'font-semibold text-white';
+  csDataHeader = `${textNeutral400} min-w-[72px]`;
+  csDataLabel = `font-semibold ${textBase}`;
 
   return (
     <div className="flex flex-col items-center overflow-x-hidden bg-[#0c0c0c]">
@@ -103,12 +103,12 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
       </div>
 
       <div className="px-5 flex flex-col gap-y-4 w-full max-w-[800px] pt-6 pb-28">
-        <div className={largeTitleText}>
+        <div className={textHeading1}>
           {pageTitle}
         </div>
 
         {csData && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[13px] md:text-[14px] text-neutral-300 pb-4">
+          <div className={`grid grid-cols-1 sm:grid-cols-2 gap-2 ${textSmall} ${textNeutral300} pb-4`}>
             {csData.role && (
               <div className={csDataPos}>
                 <span className={csDataHeader}>{metaLabels.role[language]} :</span>
@@ -137,7 +137,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
         )}
 
         {contents.length === 0 ? (
-          <div className="text-neutral-300 text-center py-12">
+          <div className={`${textNeutral300} text-center py-12`}>
             No Content Found.
           </div>
         ) : (
@@ -150,16 +150,16 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
       </div>
 
       <div
-        className="fixed bottom-0 w-full bg-[#141414] py-1.5"
+        className={`fixed bottom-0 w-full ${containerBase} py-1.5`}
         style={{ zIndex: 1 }}
       >
         <div className="flex w-full justify-center">
           <div className="flex flex-col gap-y-2 w-full max-w-[800px] px-4 pt-1 pb-3">
             {extUrl && (
-              <Button style={defaultButton} to={extUrl} target="_blank" rel="noopener noreferrer" text={extText[language]} fullWidth={true} />
+              <Button style={buttonDefault} to={extUrl} target="_blank" rel="noopener noreferrer" text={extText[language]} fullWidth={true} />
             )}
             {intText2 && (
-              <Button style={defaultButton} to={`/gallery/${slug}`} img={intImg2} text={intText2[language]} fullWidth={true} />
+              <Button style={buttonDefault} to={`/gallery/${slug}`} img={intImg2} text={intText2[language]} fullWidth={true} />
             )}
           </div>
         </div>

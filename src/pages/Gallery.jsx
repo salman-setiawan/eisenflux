@@ -7,7 +7,7 @@ import Footnote from '../components/Footnote.jsx';
 import Button from '../components/Button.jsx';
 import { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
 import Navigation from '../components/Navigation.jsx';
-import { defaultButton } from '../data/uiStyles.js';
+import { buttonDefault, textHeading1, textGray400, containerBase } from '../data/uiStyles.js';
 
 const Gallery = () => {
   const { slug } = useParams();
@@ -39,7 +39,7 @@ const Gallery = () => {
             <>
               {gallery.pc && (
                 <div className="mb-16">
-                  <h2 className="text-[24px] font-semibold mb-6">
+                  <h2 className={`${textHeading1} font-semibold mb-6`}>
                     {language === "en" ? "Desktop Screens" : "Tampilan Desktop"}
                   </h2>
                   <div className="columns-1 md:columns-2 lg:columns-3 gap-3">
@@ -53,7 +53,7 @@ const Gallery = () => {
               )}
               {gallery.mobile && (
                 <div>
-                  <h2 className="text-[24px] font-semibold mb-6">
+                  <h2 className={`${textHeading1} font-semibold mb-6`}>
                     {language === "en" ? "Mobile Screens" : "Tampilan Mobile"}
                   </h2>
                   <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-6 gap-3">
@@ -75,7 +75,7 @@ const Gallery = () => {
                   </div>
                 ))
               ) : (
-                <p className="pt-2 text-gray-400">Konten tidak tersedia.</p>
+                <p className={`pt-2 ${textGray400}`}>Konten tidak tersedia.</p>
               )}
             </div>
           )}
@@ -86,14 +86,14 @@ const Gallery = () => {
         </div>
       </div>
 
-      <div className="fixed bottom-0 w-full bg-[#141414] py-1.5" style={{ zIndex: 1 }}>
+      <div className={`fixed bottom-0 w-full ${containerBase} py-1.5`} style={{ zIndex: 1 }}>
         <div className="flex w-full justify-center">
           <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 pt-1 pb-3">
             {extUrl && (
               <Button to={extUrl} target="_blank" rel="noopener noreferrer" img={extImg} text={extText[language]} fullWidth={true} />
             )}
             {intText && (
-              <Button style={defaultButton} to={`/article/${slug}`} img={intImg} text={intText[language]} fullWidth={true} />
+              <Button style={buttonDefault} to={`/article/${slug}`} img={intImg} text={intText[language]} fullWidth={true} />
             )}
           </div>
         </div>

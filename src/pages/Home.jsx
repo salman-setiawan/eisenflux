@@ -9,9 +9,9 @@ import Navigation from '../components/Navigation.jsx';
 import ExpCard from '../components/ExpCard.jsx';
 import AvaCard from '../components/AvaCard.jsx';
 import Connect from "../components/Connect.jsx";
-import DeckCard from "../components/DeckCard.jsx";
 import Tabs from "../components/Tabs.jsx";
 import Snapshot from "../components/Snapshot.jsx";
+import { textGray400, textBaseSemi } from '../data/uiStyles.js';
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -53,7 +53,7 @@ const Home = () => {
               </div>
             ))
           ) : (
-            <div className="text-gray-400 italic">No Articles Available.</div>
+            <div className={`${textGray400} italic`}>No Articles Available.</div>
           )}
         </div>
       );
@@ -63,7 +63,7 @@ const Home = () => {
       );
     } else if (activeTab === 'blog') {
       return (
-        <div className="text-center py-8 xl:pt-12 pb-12 md:pb-24 text-white/80">Coming Soon..</div>
+        <div className={`text-center py-8 lg:pt-12 pb-12 md:pb-24 ${textBaseSemi}`}>Coming Soon..</div>
       );
     }
     return null;
@@ -80,33 +80,29 @@ const Home = () => {
   // Konten utama
   return (
     <div className="flex justify-center bg-[#141414]">
-      <div className="fixed backdrop-blur-sm shadow-lg pb-2 pt-3 px-4 z-30 w-full xl:hidden">
+      <div className="fixed backdrop-blur-sm shadow-lg pb-2 pt-3 px-4 z-30 w-full lg:hidden">
         <Navigation type='type-3' />
       </div>
-      <div className="flex flex-col xl:flex-row pt-14 xl:pt-0 gap-y-2 w-full h-full px-0 md:px-4 xl:px-0">
-        <div className="xl:flex flex-col gap-2 hidden xl:max-w-[420px] 2xl:max-w-[520px] p-4 overflow-y-auto h-screen">
+      <div className="flex flex-col lg:flex-row pt-14 lg:pt-0 gap-y-2 w-full h-full px-0 md:px-4 lg:px-0">
+        <div className="lg:flex flex-col gap-2 hidden lg:max-w-[420px] 2xl:max-w-[520px] p-4 overflow-y-auto h-screen">
           <div className="pb-1.5"><Navigation type='type-3' /></div>
           <AvaCard />
-          <DeckCard />
           <ExpCard />
           <Connect />
           <div className="pt-2"><Footnote /></div>
         </div>
         <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto px-4 md:px-0">
-          <div className="flex flex-col gap-1.5 xl:hidden">
-            <div className="flex flex-col md:flex-row gap-1.5 items-stretch">
-              <AvaCard />
-              <DeckCard />
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 lg:hidden">
+            <AvaCard />
             <ExpCard />
           </div>
-          <div className="xl:h-screen xl:bg-[#0c0c0c] xl:overflow-y-auto xl:px-4 xl:py-3 flex flex-col gap-y-2">
+          <div className="lg:h-screen lg:bg-[#0c0c0c] lg:overflow-y-auto lg:px-4 lg:py-3 flex flex-col gap-y-2">
             <div className="flex w-full pb-1">
               <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
             </div>
             {renderTabContent()}
           </div>
-          <div className="flex flex-col xl:hidden pb-4 gap-y-3">
+          <div className="flex flex-col lg:hidden pb-4 gap-y-3">
             <Connect />
             <Footnote />
           </div>

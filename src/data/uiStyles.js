@@ -1,41 +1,58 @@
-// Font Size
-export const heading1Text = 'text-[24px]';
-export const heading2Text = 'text-[20px]';
-export const heading3Text = 'text-[15px]';
-export const regularText = 'text-[14px]';
-export const smallText = 'text-[13px]';
-export const tinyText = 'text-[12px]';
+// Text Sizes
+export const textHeading1 = 'text-[24px] font-semibold mb-1';
+export const textHeading2 = 'text-[18px]';
+export const textHeading3 = 'text-[14px] font-semibold';
+export const textRegular = 'text-[14px]';
+export const textSmall = 'text-[13px]';
+export const textTiny = 'text-[12px]';
+export const textMicro = 'text-[11px]';
 
-// Colour Text
-export const brandColourText = 'text-orange-300';
-export const brandLighterColourText = 'text-orange-100';
-export const baseColourText = 'text-white';
-export const semibaseColourText = 'text-white/60';
-export const invertedbaseColourText = 'text-black';
+// Text Colors
+export const textBrand = 'text-orange-300';
+export const textBrandLight = 'text-orange-200';
+export const textBase = 'text-white';
+export const textBaseSemi = 'text-white/60';
+export const textBaseUltraMuted = 'text-white/8';
+export const textInverted = 'text-black';
+export const textNeutral300 = 'text-neutral-300';
+export const textNeutral400 = 'text-neutral-400';
+export const textGray400 = 'text-gray-400';
 
-// Container Specs
+// Container Styles
 export const containerShape = 'rounded-md';
-export const containerBorderColour = 'border border-neutral-800/60';
-export const containerCardColour = 'bg-[#202020]';
-export const containerBaseColour = 'bg-[#141414]';
+export const containerBorder = 'border border-neutral-800/60';
+export const containerCard = 'bg-[#202020]';
+export const containerBase = 'bg-[#141414]';
 export const containerBaseHover = 'hover:bg-[#333333]';
-export const backgroundBaseColour = 'bg-[#0c0c0c]';
-export const brandBaseColour = 'bg-[#3D3B38]';
-export const brandBaseHover = 'hover:bg-orange-200';
+export const bgBase = 'bg-[#0c0c0c]';
+export const bgBrand = 'bg-[#3D3B38]';
+export const bgBrandHover = 'hover:bg-orange-200';
 
-
+// Utility Styles
 export const dotBlink = "w-[10px] h-[10px] rounded-full animate-blink";
 
-export const cardStyles = `p-3 flex flex-col ${containerShape} ${containerBorderColour} ${containerCardColour}`;
+// Component Styles
+export const cardStyles = `p-3 flex flex-col ${containerShape} ${containerBorder} ${containerCard}`;
 
-export const pdfButton = `w-full py-1.5 px-2 bg-red-700 hover:bg-red-800 text-white ${containerShape} border-3 border-black font-semibold ${regularText} cursor-pointer`;
-export const defaultButton = `w-full py-1.5 px-2 bg-white ${brandBaseHover} text-black ${containerShape} border-3 border-black font-semibold ${regularText} cursor-pointer`;
+export const buttonPdf = `w-full py-1.5 px-2 bg-red-700 hover:bg-red-800 text-white ${containerShape} border-3 border-black font-semibold ${textRegular} cursor-pointer`;
+export const buttonDefault = `w-full py-1.5 px-2 bg-white ${bgBrandHover} text-black ${containerShape} border-3 border-black font-semibold ${textRegular} cursor-pointer`;
 
-export const dropdownOutter = `absolute md:min-w-[200px] overflow-hidden shadow-xl shadow-black/40 ${containerShape} ${containerBorderColour} ${containerShape} ${containerBaseColour} z-20`;
-export const dropdownButton = `p-3 ${containerBaseHover} ${baseColourText} text-start cursor-pointer`;
+export const dropdownOuter = `absolute md:min-w-[200px] overflow-hidden shadow-xl shadow-black/40 ${containerShape} ${containerBorder} ${containerShape} ${containerBase} z-20`;
+export const dropdownButton = `p-3 ${containerBaseHover} ${textBase} text-start cursor-pointer`;
 
-export const largeTitleText = `${heading1Text} font-semibold mb-1`
-export const smallTitleText = `${heading3Text} font-semibold`
-export const paragraphText = `${regularText} ${baseColourText} text-justify leading-relaxed`;
-export const highlightedText = `${regularText} ${brandColourText} font-semibold`;
-export const subText = `${smallText}`
+// Typography Styles
+export const textParagraph = `${textRegular} ${textBase} text-justify leading-relaxed`;
+export const textHighlighted = `${textRegular} ${textBrand} font-semibold`;
+export const textSub = `${textSmall}`;
+export const textSubSemi = `${textSmall} ${textBaseSemi}`;
+
+// Semantic Colors (for Content component)
+export const textSemanticWarning = 'text-yellow-400';
+export const textSemanticError = 'text-rose-400';
+export const textSemanticSuccess = 'text-emerald-400';
+export const bgSemanticWarning = 'bg-yellow-300/5';
+export const bgSemanticError = 'bg-rose-500/5';
+export const bgSemanticSuccess = 'bg-emerald-400/5';
+export const borderSemanticWarning = 'border-yellow-400/30';
+export const borderSemanticError = 'border-rose-500/30';
+export const borderSemanticSuccess = 'border-emerald-400/30';

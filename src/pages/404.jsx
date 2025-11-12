@@ -1,3 +1,5 @@
+import { textHeading3 } from '../data/uiStyles.js';
+
 const Notfound = () => {
   return (
     <div>
@@ -7,7 +9,7 @@ const Notfound = () => {
           <div className="float-anim-2">0</div>
           <div className="float-anim-3">4</div>
         </div>
-        <div className="px-24 text-center text-[14px] md:text-[16px]">i-can't-find-the-page-or-link-that-u-requested-sorry</div>
+        <div className={`px-24 text-center ${textHeading3}`}>i-can't-find-the-page-or-link-that-u-requested-sorry</div>
       </div>
     </div>
   )
