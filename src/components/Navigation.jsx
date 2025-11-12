@@ -3,12 +3,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ArticleData from "../data/card.js";
 import LanguageToggle from './LanguageToggle.jsx';
-import { bgBase, containerShape, dropdownButton, dropdownOuter, textHeading3 } from '../data/uiStyles.js';
-import ProfileCard from './ProfileCard.jsx';
+import { bgBase, containerShape, dropdownButton, dropdownOuter, textHeading3, textBaseSemi, textBase } from '../data/uiStyles.js';
+import WorkChip from './WorkChip.jsx';
 
 const Navigation = ({ specsButton, specsNavbar, type, title }) => {
   const { language } = useLanguage();
   const [openMenu, setOpenMenu] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = (menu) => {
@@ -43,7 +44,21 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
                 <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <ProfileCard type="type-3" />
+            <div className="flex gap-x-3 items-center">
+              <img src="/bg-bio.webp" loading="lazy" alt="ava" className="h-[40px] rounded-lg cursor-pointer" onClick={() => setIsOpen(true)} />
+              <div>
+                <div className={`font-semibold ${textHeading3}`}>Salman Setiawan</div>
+                <WorkChip color={textBaseSemi} label={language === "en" ? "Open to Work" : "Terbuka untuk Pekerjaan"} />
+              </div>
+            </div>
+            {isOpen && (
+              <div className="fixed flex flex-col gap-y-8 inset-0 z-50 bg-black/20 backdrop-blur-md flex items-center justify-center p-4" onClick={() => setIsOpen(false)}>
+                <button aria-label="Close" className={`${textBase} cursor-pointer`} onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}>
+                  {language === 'en' ? 'tap anywhere to close' : 'tekan dimana saja untuk menutup'}
+                </button>
+                <img src="/bg-bio.webp" alt="ava" className="max-h-[72vh] rounded-lg shadow-2xl" onClick={(e) => e.stopPropagation()} />
+              </div>
+            )}
           </div>
           <LanguageToggle />
         </div>

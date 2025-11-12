@@ -83,18 +83,16 @@ const Home = () => {
         <Navigation type='type-3' />
       </div>
       <div className="flex flex-col lg:flex-row pt-14 lg:pt-0 gap-y-2 w-full h-full px-0 md:px-4 lg:px-0">
-        <div className="lg:flex flex-col gap-2 hidden lg:max-w-[420px] 2xl:max-w-[520px] p-4 overflow-y-auto h-screen">
+        <div className="lg:flex flex-col gap-2 hidden max-w-[420px] 2xl:max-w-[520px] p-4 overflow-y-auto h-screen">
           <div className="pb-1.5"><Navigation type='type-3' /></div>
           <HomeCard />
           <Connect />
-          <div className="pt-2"><Footnote /></div>
+          <Footnote />
         </div>
         <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto px-4 md:px-0">
           <div className="lg:hidden"><HomeCard /></div>
-          <div className="lg:h-screen lg:bg-[#0c0c0c] lg:overflow-y-auto lg:px-4 lg:py-3 flex flex-col gap-y-2">
-            <div className="flex w-full pb-1">
-              <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
-            </div>
+          <div className="lg:h-screen lg:bg-[#0c0c0c] lg:overflow-y-auto lg:px-4 lg:py-3 flex flex-col gap-y-3">
+            <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
             {renderTabContent()}
           </div>
           <div className="flex flex-col lg:hidden pb-4 gap-y-3">
