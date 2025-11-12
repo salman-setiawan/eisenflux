@@ -9,17 +9,11 @@ const Button = ({ text, to, target, rel, fullWidth, onClick, style, ...rest }) =
       </div>
     </div>
   );
-  if (to) {
-    return (
-      <Link className={classNames} to={to} target={target} rel={rel} onClick={onClick} {...rest}>
-        {innerButton}
-      </Link>
-    );
-  }
+  
   return (
-    <button className={classNames} onClick={onClick} type="button" {...rest}>
+    <Link className={classNames} to={to} target={target} rel={rel} onClick={onClick} {...rest}>
       {innerButton}
-    </button>
+    </Link>
   );
 };
 

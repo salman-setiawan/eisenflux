@@ -52,20 +52,16 @@ const Content = ({ data, language, altText }) => {
   if (data.kind === 'process') {
     return (
       <div className={`text-justify px-3 py-2.5 rounded-lg border-2 border-dashed ${getBgClasses(data.kind)}`}>
-        <div className={textHeading3}>
-          {data.title[language]}
-        </div>
+        <div className={`${textHeading3} mb-1`}> {data.title[language]} </div>
         {data.text && (
           <div className={`${textParagraph} mb-4`}>{data.text[language]}</div>
         )}
         {Array.isArray(data.steps) && data.steps.length > 0 && (
           <div className="flex flex-col gap-y-2">
             {data.steps.map((s, i) => (
-              <div key={i}>
-                <span className={`font-medium ${textHeading3} ${textRegular}`}>{s.label?.[language]}</span>
-                {s.desc && (
-                  <span className={textParagraph}>{" "}{s.desc[language]}</span>
-                )}
+              <div key={i} className={`font-medium ${textHeading3} ${textRegular}`}>
+                {s.label?.[language]}
+                {s.desc && ( <span className={textParagraph}>{" "}{s.desc[language]}</span> )}
               </div>
             ))}
           </div>
@@ -77,14 +73,14 @@ const Content = ({ data, language, altText }) => {
   return (
     <div className={`text-justify px-3 py-2.5 border-2 border-dashed rounded-lg ${getBgClasses(data.kind)}`}>
       {data.title && (
-        <div className={textHeading3}>
+        <div className={`${textHeading3} mb-1`}>
           {data.title[language]}  
         </div>
       )}
       {Array.isArray(data.text) ? (
         <div className="flex flex-col gap-y-2">
           {data.text.map((para, idx) => (
-            <span key={idx} className={textParagraph}>{para?.[language] || para?.en || ''}</span>
+            <span key={idx} className={textParagraph}>{para?.[language]}</span>
           ))}
         </div>
       ) : (

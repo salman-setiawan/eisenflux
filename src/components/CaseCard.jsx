@@ -61,7 +61,7 @@ const CaseCard = ({ title, nav, desc, categories, intText, intText2, extText, ur
             <div className="flex justify-end gap-x-1.5">
               {url1 && <Button style={buttonDefault} to={url1} text={intText} />}
               {url2 && <Button style={buttonDefault} to={url2} text={intText2} />}
-              {url3 && (<Button style={buttonDefault} to={url3} target="_blank" rel="noopener noreferrer" text={extText} />)}
+              {url3 && <Button style={buttonDefault} to={url3} target="_blank" rel="noopener noreferrer" text={extText} />}
             </div>
             <div className={`${textParagraph} px-2.5 py-1.5 rounded-md bg-[#0c0c0c]/60`}><span className={textHighlighted}> {nav} </span> {desc} </div>
           </div>
@@ -77,9 +77,9 @@ const CaseCard = ({ title, nav, desc, categories, intText, intText2, extText, ur
             <div className={`${textParagraph} pr-2`}><span className={textHighlighted}> {nav} </span> {desc} </div>
           </div>
           <div className="flex gap-x-2">
-            {url1 && (<Button style={buttonDefault} to={url1} text={intText} />)}
-            {url2 && (<Button style={buttonDefault} to={url2} text={intText2} />)}
-            {url3 && (<Button style={buttonDefault} to={url3} target="_blank" rel="noopener noreferrer" text={extText} />)}
+            {url1 && <Button style={buttonDefault} to={url1} text={intText} />}
+            {url2 && <Button style={buttonDefault} to={url2} text={intText2} />}
+            {url3 && <Button style={buttonDefault} to={url3} target="_blank" rel="noopener noreferrer" text={extText} />}
           </div>
         </div>
         {/* Komponen Gambar dan Motion Background Text */}

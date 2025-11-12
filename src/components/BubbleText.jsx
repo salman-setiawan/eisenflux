@@ -7,6 +7,7 @@ const BubbleText = ({ type, text, time, children, bubbleSpecs, timeSpecs }) => {
 
   return (
     <div className="w-full">
+
       {type === 'type-2' && (
         <div className="flex justify-start mb-2">
           <div className="flex flex-col gap-y-1.5 max-w-[80%]">
@@ -15,10 +16,11 @@ const BubbleText = ({ type, text, time, children, bubbleSpecs, timeSpecs }) => {
             ) : (
               <div className={`${textParagraph} ${bubbleSpecs} bg-neutral-700/50 rounded-bl-sm`}> {text} </div>
             )}
-            {time && <div className={timeSpecs}>{time}</div> }
+            {time && <div className={timeSpecs}> {time} </div> }
           </div>
         </div>
       )}
+
       {type === 'type-1' && (
         <div className="flex justify-end mb-2">
           <div className="flex flex-col gap-y-1.5 max-w-[80%] items-end">
@@ -27,10 +29,11 @@ const BubbleText = ({ type, text, time, children, bubbleSpecs, timeSpecs }) => {
             ) : (
               <div className={`${textParagraph} ${bubbleSpecs} bg-orange-700/50 rounded-br-sm`}> {text} </div>
             )}
-            {time && <div className={timeSpecs}>{time}</div> }
+            {time && <div className={timeSpecs}> {time} </div> }
           </div>
         </div>
       )}
+
     </div>
   )
 }

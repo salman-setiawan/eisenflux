@@ -26,7 +26,7 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
     { name: "Dribbble", url: "https://dribbble.com/eisenflux" },
   ];
 
-  specsButton = `flex cursor-pointer h-[36px] items-center px-2 hover:bg-[#3E3124] hover:text-[#FED1A1] ${bgBase} ${containerShape} ${textHeading3} font-medium`;
+  specsButton = `flex cursor-pointer h-[36px] items-center px-2 hover:bg-[#3D3B38] hover:text-orange-200 ${bgBase} ${containerShape} ${textHeading3} font-medium`;
   specsNavbar = 'fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-3 items-center';
 
   let navbarContent;

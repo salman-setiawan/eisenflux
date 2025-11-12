@@ -6,12 +6,11 @@ import CaseCard from "../components/CaseCard.jsx";
 import CardData from '../data/card.js';
 import Notfound from './404.jsx';
 import Navigation from '../components/Navigation.jsx';
-import ExpCard from '../components/ExpCard.jsx';
-import AvaCard from '../components/AvaCard.jsx';
 import Connect from "../components/Connect.jsx";
 import Tabs from "../components/Tabs.jsx";
 import Snapshot from "../components/Snapshot.jsx";
 import { textGray400, textBaseSemi } from '../data/uiStyles.js';
+import HomeCard from "../components/HomeCard.jsx";
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -86,16 +85,12 @@ const Home = () => {
       <div className="flex flex-col lg:flex-row pt-14 lg:pt-0 gap-y-2 w-full h-full px-0 md:px-4 lg:px-0">
         <div className="lg:flex flex-col gap-2 hidden lg:max-w-[420px] 2xl:max-w-[520px] p-4 overflow-y-auto h-screen">
           <div className="pb-1.5"><Navigation type='type-3' /></div>
-          <AvaCard />
-          <ExpCard />
+          <HomeCard />
           <Connect />
           <div className="pt-2"><Footnote /></div>
         </div>
         <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto px-4 md:px-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 lg:hidden">
-            <AvaCard />
-            <ExpCard />
-          </div>
+          <div className="lg:hidden"><HomeCard /></div>
           <div className="lg:h-screen lg:bg-[#0c0c0c] lg:overflow-y-auto lg:px-4 lg:py-3 flex flex-col gap-y-2">
             <div className="flex w-full pb-1">
               <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
