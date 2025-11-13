@@ -3,7 +3,7 @@ import { useLanguage } from "../data/languageContext.jsx";
 import Footnote from '../components/Footnote'
 import { useState } from 'react';
 import CaseCard from "../components/CaseCard.jsx";
-import CardData from '../data/card.js';
+import cards from '../data/content/index.js';
 import Notfound from './404.jsx';
 import Navigation from '../components/Navigation.jsx';
 import Connect from "../components/Connect.jsx";
@@ -27,8 +27,8 @@ const Home = () => {
     if (activeTab === 'portfolio') {
       return (
         <div className="flex flex-col gap-y-3">
-          {CardData?.length ? (
-            [...CardData]
+          {cards?.length ? (
+            [...cards]
               .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
               .map((article) => (
               <div key={article.id}>

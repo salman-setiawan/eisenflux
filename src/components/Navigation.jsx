@@ -1,7 +1,7 @@
 import { useLanguage } from '../data/languageContext.jsx';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ArticleData from "../data/card.js";
+import cards from "../data/content/index.js";
 import LanguageToggle from './LanguageToggle.jsx';
 import { bgBase, containerShape, dropdownButton, dropdownOuter, textHeading3, textBaseSemi, textBase } from '../data/uiStyles.js';
 import WorkChip from './WorkChip.jsx';
@@ -28,7 +28,7 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
   ];
 
   specsButton = `flex cursor-pointer h-[36px] items-center px-2 hover:bg-[#3D3B38] hover:text-orange-200 ${bgBase} ${containerShape} ${textHeading3} font-medium`;
-  specsNavbar = 'fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-3 items-center';
+  specsNavbar = 'fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-2.5 items-center';
 
   let navbarContent;
 
@@ -45,7 +45,7 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
               </svg>
             </button>
             <div className="flex gap-x-3 items-center">
-              <img src="/bg-bio.webp" loading="lazy" alt="ava" className="h-[40px] rounded-lg cursor-pointer" onClick={() => setIsOpen(true)} />
+              <img src="/bg-bio.webp" loading="lazy" alt="ava" className="h-[36px] rounded-lg cursor-pointer" onClick={() => setIsOpen(true)} />
               <div>
                 <div className={`font-semibold ${textHeading3}`}>Salman Setiawan</div>
                 <WorkChip color={textBaseSemi} label={language === "en" ? "Open to Work" : "Terbuka untuk Pekerjaan"} />
@@ -63,12 +63,12 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
           <LanguageToggle />
         </div>
       );
-      break;
+    break;
 
     // --- Type 2: Navbar atas dengan judul halaman ---
     case "type-2":
       navbarContent = (
-        <div className={specsNavbar}>
+        <div className='flex justify-between items-center w-full'>
           <button onClick={() => navigate(-1)} className={specsButton}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -78,7 +78,7 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
           <LanguageToggle />
         </div>
       );
-      break;
+    break;
 
     // --- Type 3: Navigasi utama (About, Projects, Contacts) ---
     case "type-3":
@@ -92,7 +92,7 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
               {language === "en" ? "Projects" : "Proyek"}
               {openMenu === "projects" && (
                 <div className={`${dropdownOuter} top-11 left-0 min-w-[200px]`}>
-                  {ArticleData.map((article) => (
+                  {cards.map((article) => (
                     <div
                       key={article.id}
                       className={dropdownButton}
@@ -128,11 +128,28 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
           <LanguageToggle />
         </div>
       );
-      break;
+    break;
+
+    // --- Type 2: Navbar atas dengan judul halaman ---
+    case "type-4":
+      navbarContent = (
+        <div className={specsNavbar}>
+          <button onClick={() => navigate(-1)} className={specsButton}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <div className={`text-center font-semibold ${textHeading3}`}>{title}</div>
+          <LanguageToggle />
+        </div>
+      );
+    break;
 
     default:
       return null; // jika type tidak valid
   }
+
+
 
   return <>{navbarContent}</>;
 };

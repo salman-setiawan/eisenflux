@@ -95,62 +95,71 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   csDataLabel = `font-semibold ${textBase}`;
 
   return (
-    <div className="flex flex-col items-center overflow-x-hidden bg-[#0c0c0c]">
-      <Navigation type='type-2' title={navbarTitle} />
-
-      <div className="w-[150vw] h-[560px] md:h-[320px] bg-cover flex justify-center items-center bg-[#212121] overflow-hidden">
-        <Showcase id={selectedArticle.id} />
+    <div className="flex flex-col items-center overflow-x-hidden bg-[#141414]">
+      <div className="lg:hidden flex w-full">
+        <Navigation type='type-4' title={navbarTitle} />
+        <div className="w-[150vw] h-[560px] bg-cover flex justify-center items-center bg-[#212121] overflow-hidden">
+          <Showcase id={selectedArticle.id} />
+        </div>
       </div>
 
-      <div className="px-5 flex flex-col gap-y-4 w-full max-w-[800px] pt-6 pb-28">
-        <div className={textHeading1}>
-          {pageTitle}
+      
+
+      <div className="flex flex-col lg:flex-row w-full lg:max-w-[1400px]">
+        <div className="flex flex-col w-full lg:max-w-[500px] p-4 lg:h-screen lg:overflow-y-auto bg-[#0c0c0c] lg:bg-[#141414] gap-y-4">
+          <div className="hidden lg:block"><Navigation type='type-2' title={navbarTitle} /></div>
+          <div className="hidden lg:flex h-[560px] bg-cover items-center overflow-hidden">
+            <Showcase id={selectedArticle.id} />
+          </div>
+          <div className="flex flex-col gap-y-4 w-full">
+            <div className={textHeading1}> {pageTitle} </div>
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-2 ${textSmall} ${textNeutral300}`}>
+              {csData.role && (
+                <div className={csDataPos}>
+                  <span className={csDataHeader}>{metaLabels.role[language]} :</span>
+                  <span className={csDataLabel}>{csData.role[language] || csData.role.en || csData.role}</span>
+                </div>
+              )}
+              {csData.duration && (
+                <div className={csDataPos}>
+                  <span className={csDataHeader}>{metaLabels.duration[language]} :</span>
+                  <span className={csDataLabel}>{csData.duration[language] || csData.duration.en || csData.duration}</span>
+                </div>
+              )}
+              {csData.type && (
+                <div className={csDataPos}>
+                  <span className={csDataHeader}>{metaLabels.type[language]} :</span>
+                  <span className={csDataLabel}>{csData.type[language] || csData.type.en || csData.type}</span>
+                </div>
+              )}
+              {csData.tools && Array.isArray(csData.tools) && csData.tools.length > 0 && (
+                <div className={csDataPos}>
+                  <span className={csDataHeader}>{metaLabels.tools[language]} :</span>
+                  <span className={csDataLabel}>{csData.tools.join(', ')}</span>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
-        {csData && (
-          <div className={`grid grid-cols-1 sm:grid-cols-2 gap-2 ${textSmall} ${textNeutral300} pb-4`}>
-            {csData.role && (
-              <div className={csDataPos}>
-                <span className={csDataHeader}>{metaLabels.role[language]} :</span>
-                <span className={csDataLabel}>{csData.role[language] || csData.role.en || csData.role}</span>
-              </div>
-            )}
-            {csData.duration && (
-              <div className={csDataPos}>
-                <span className={csDataHeader}>{metaLabels.duration[language]} :</span>
-                <span className={csDataLabel}>{csData.duration[language] || csData.duration.en || csData.duration}</span>
-              </div>
-            )}
-            {csData.type && (
-              <div className={csDataPos}>
-                <span className={csDataHeader}>{metaLabels.type[language]} :</span>
-                <span className={csDataLabel}>{csData.type[language] || csData.type.en || csData.type}</span>
-              </div>
-            )}
-            {csData.tools && Array.isArray(csData.tools) && csData.tools.length > 0 && (
-              <div className={csDataPos}>
-                <span className={csDataHeader}>{metaLabels.tools[language]} :</span>
-                <span className={csDataLabel}>{csData.tools.join(', ')}</span>
-              </div>
-            )}
-          </div>
-        )}
-
-        {contents.length === 0 ? (
-          <div className={`${textNeutral300} text-center py-12`}>
-            No Content Found.
-          </div>
-        ) : (
-          contents.map((content, index) => (
-            <div key={index}>
-              <Content data={content} language={language} />
+        <div className="space-y-4 bg-[#0c0c0c] p-4 lg:h-screen lg:overflow-y-auto">
+          {contents.length === 0 ? (
+            <div className={`${textNeutral300} text-center py-12`}>
+              No Content Found.
             </div>
-          ))
-        )}
+          ) : (
+            contents.map((content, index) => (
+              <div key={index}>
+                <Content data={content} language={language} />
+              </div>
+            ))
+          )}
+          <Footnote />
+        </div>
       </div>
 
       <div
-        className={`fixed bottom-0 w-full ${containerBase} py-1.5`}
+        className={`fixed bottom-0 w-full ${containerBase} py-1.5 lg:hidden`}
         style={{ zIndex: 1 }}
       >
         <div className="flex w-full justify-center">
@@ -163,9 +172,8 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
             )}
           </div>
         </div>
-        <Footnote />
-        <title>{pageTitle}</title>
       </div>
+      <title>{pageTitle}</title>
     </div>
   );
 };

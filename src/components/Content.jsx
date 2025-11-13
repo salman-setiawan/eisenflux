@@ -2,7 +2,6 @@ import {
   containerShape, 
   textParagraph, 
   textHeading3,
-  textRegular,
   textSemanticWarning,
   textSemanticError,
   textSemanticSuccess,
@@ -59,9 +58,9 @@ const Content = ({ data, language, altText }) => {
         {Array.isArray(data.steps) && data.steps.length > 0 && (
           <div className="flex flex-col gap-y-2">
             {data.steps.map((s, i) => (
-              <div key={i} className={`font-medium ${textHeading3} ${textRegular}`}>
-                {s.label?.[language]}
-                {s.desc && ( <span className={textParagraph}>{" "}{s.desc[language]}</span> )}
+              <div key={i}>
+                <span className={textHeading3}>{s.label?.[language]}</span>
+                <span className={textParagraph}>{" "}{s.desc[language]}</span>
               </div>
             ))}
           </div>

@@ -1,11 +1,10 @@
-import CardData from '../data/card.js';
 import UIData from '../data/interface.js';
 import { useParams } from 'react-router-dom';
 import { useLanguage } from '../data/languageContext';
 import Notfound from '../pages/404.jsx';
 import Footnote from '../components/Footnote.jsx';
 import Button from '../components/Button.jsx';
-import { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
+import cards, { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
 import Navigation from '../components/Navigation.jsx';
 import { buttonDefault, textHeading1, textGray400, containerBase } from '../data/uiStyles.js';
 
@@ -16,10 +15,10 @@ const Gallery = () => {
   const csData = getCaseStudyBySlug(slug);
 
   // Cari card berdasarkan slug
-  const selectedCard = CardData.find(item => item.slug === slug);
+  const selectedCard = cards.find(item => item.slug === slug);
   if (!selectedCard) return <Notfound />;
 
-  // Gunakan id dari CardData untuk cari data gallery di UIData
+  // Gunakan id dari cards untuk cari data gallery di UIData
   const selectedUI = UIData.find(item => item.id === selectedCard.id);
   if (!selectedUI) return <Notfound />;
 

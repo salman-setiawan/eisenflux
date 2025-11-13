@@ -47,12 +47,12 @@ export const textSub = `${textSmall}`;
 export const textSubSemi = `${textSmall} ${textBaseSemi}`;
 
 // Semantic Colors (for Content component)
-export const textSemanticWarning = 'text-yellow-400';
-export const textSemanticError = 'text-rose-400';
+export const textSemanticWarning = 'text-yellow-200';
+export const textSemanticError = 'text-orange-400';
 export const textSemanticSuccess = 'text-emerald-400';
 export const bgSemanticWarning = 'bg-yellow-300/5';
-export const bgSemanticError = 'bg-rose-500/5';
+export const bgSemanticError = 'bg-orange-500/5';
 export const bgSemanticSuccess = 'bg-emerald-400/5';
 export const borderSemanticWarning = 'border-yellow-400/30';
-export const borderSemanticError = 'border-rose-500/30';
+export const borderSemanticError = 'border-orange-500/30';
 export const borderSemanticSuccess = 'border-emerald-400/30';
