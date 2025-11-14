@@ -1,7 +1,7 @@
 // Text Sizes
 export const textHeading1 = 'text-[24px] font-semibold mb-1';
-export const textHeading2 = 'text-[18px]';
-export const textHeading3 = 'text-[14px] font-semibold';
+export const textHeading2 = 'text-[18px] font-medium';
+export const textHeading3 = 'text-[14px] font-medium';
 export const articleHeading = 'font-semibold';
 export const textArticle = 'text-[16px]';
 export const textRegular = 'text-[14px]';
@@ -37,7 +37,7 @@ export const buttonPdf = `w-full py-1.5 px-2 bg-red-700 hover:bg-red-800 text-wh
 export const buttonDefault = `w-full py-1.5 px-2 bg-white ${bgBrandHover} text-black ${containerShape} border-3 border-black font-semibold ${textRegular} cursor-pointer`;
 
 export const dropdownOuter = `absolute md:min-w-[200px] overflow-hidden shadow-xl shadow-black/40 ${containerShape} ${containerBorder} ${containerShape} ${containerBase} z-20`;
-export const dropdownButton = `p-3 ${containerBaseHover} ${textBase} text-start cursor-pointer`;
+export const dropdownButton = `p-3 ${containerBaseHover} ${textBase} text-start cursor-pointer ${textHeading3}`;
 
 // Typography Styles
 export const textParagraph = `${textRegular} ${textBase} text-justify leading-relaxed`;

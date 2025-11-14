@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useLanguage } from "../data/languageContext.jsx";
 import Footnote from '../components/Footnote'
 import { useState } from 'react';
@@ -6,11 +5,11 @@ import CaseCard from "../components/CaseCard.jsx";
 import cards from '../data/content/index.js';
 import Notfound from './404.jsx';
 import Navigation from '../components/Navigation.jsx';
-import Connect from "../components/Connect.jsx";
 import Tabs from "../components/Tabs.jsx";
 import Snapshot from "../components/Snapshot.jsx";
 import { textBaseSemi } from '../data/uiStyles.js';
 import HomeCard from "../components/HomeCard.jsx";
+import SocialCard from "../components/SocialCard.jsx";
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -86,7 +85,7 @@ const Home = () => {
         <div className="lg:flex flex-col gap-2 hidden max-w-[420px] 2xl:max-w-[520px] p-4 overflow-y-auto h-screen">
           <div className="pb-1.5"><Navigation type='type-3' /></div>
           <HomeCard />
-          <Connect />
+          <SocialCard />
           <Footnote />
         </div>
         <div className="flex flex-col gap-y-4 md:w-full md:overflow-y-auto px-4 md:px-0">
@@ -96,7 +95,7 @@ const Home = () => {
             {renderTabContent()}
           </div>
           <div className="flex flex-col lg:hidden pb-4 gap-y-3">
-            <Connect />
+            <SocialCard />
             <Footnote />
           </div>
         </div>

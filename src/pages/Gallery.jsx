@@ -31,7 +31,7 @@ const Gallery = () => {
   return (
     <div>
       <div className="flex flex-col items-center px-5">
-        <Navigation type='type-4' title={navbarTitle} />
+        <Navigation type='type-2' title={navbarTitle} />
 
         <div className="pt-18 pb-22">
           {isGroupedGallery ? (

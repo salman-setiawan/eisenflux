@@ -8,7 +8,8 @@ import Showcase from '../components/Showcase.jsx';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button.jsx';
 import Navigation from '../components/Navigation.jsx';
-import { buttonDefault, textHeading1, textBaseSemi, textBase, containerBase, textSmall } from '../data/uiStyles.js';
+import { buttonDefault, textHeading1, textBaseSemi, textBase, textSmall, cardStyles, textHeading2 } from '../data/uiStyles.js';
+import SocialCard from '../components/SocialCard.jsx';
 
 const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   const { slug } = useParams();
@@ -123,7 +124,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   return (
     <div className="flex flex-col items-center overflow-x-hidden bg-[#0c0c0c]">
 
-      <Navigation type='type-4' title={navbarTitle} />
+      <Navigation type='type-2' title={navbarTitle} />
 
       <div className="relative w-full h-[560px] bg-cover flex justify-center items-center bg-[#212121] overflow-hidden">
         <Showcase id={selectedArticle.id} />
@@ -137,7 +138,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
       </div>
 
 
-      <div className="flex flex-col gap-y-6 px-4 py-8 w-full md:max-w-[720px]">
+      <div className="flex flex-col gap-y-6 px-4 pt-8 w-full md:max-w-[720px]">
         {contents.length === 0 ? (
           <div className={`${textBaseSemi} text-center py-12`}>
             No Content Found.
@@ -149,19 +150,21 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
             </div>
           ))
         )}
-        <div className="pt-2 pb-12"><Footnote /></div>
-      </div>
-
-      <div
-        className={`fixed bottom-0 w-full ${containerBase} flex justify-center`}
-        style={{ zIndex: 1 }}
-      >
-        <div className="w-[720px] px-4 py-2">
+        <div className="space-y-2 py-2">
           {extUrl && (
-            <Button style={buttonDefault} to={extUrl} target="_blank" rel="noopener noreferrer" text={extText[language]} fullWidth={true} />
+            <div className="relative overflow-hidden">
+              <div className={`${cardStyles} gap-y-2 flex-row justify-between items-center`}>
+                <div className={textHeading2}>The Site is Live</div>
+                <Button style={buttonDefault} to={extUrl} target="_blank" rel="noopener noreferrer" text={extText[language]} />
+              </div>
+              <div className="absolute text-[240px] font-bold left-[-40px] bottom-[-170px] text-orange-200/8">*</div>
+            </div>
           )}
+          <SocialCard />
+          <div className="py-1"><Footnote /></div>
         </div>
       </div>
+
       <title>{pageTitle}</title>
     </div>
   );
