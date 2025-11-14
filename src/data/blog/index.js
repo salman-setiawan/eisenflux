@@ -6,7 +6,7 @@ const modules = import.meta.glob('./*.js', { eager: true, import: 'default' });
 const allEntries = Object.values(modules).filter(Boolean);
 
 // Build cards array with stable ids based on ordering
-export const cards = allEntries
+export const cardsBlog = allEntries
   .map((entry, index) => ({
     // prefer explicit id from file, otherwise fallback to order
     id: entry.card?.id ?? index + 1,
@@ -16,14 +16,14 @@ export const cards = allEntries
   .filter((c) => c && c.slug && c.title);
 
 export function getCardBySlug(slug) {
-  return cards.find((c) => c.slug === slug) || null;
+  return cardsBlog.find((c) => c.slug === slug) || null;
 }
 
-export function getCaseStudyBySlug(slug) {
+export function getBlogBySlug(slug) {
   const entry = allEntries.find((e) => e?.card?.slug === slug);
-  return entry?.caseStudies || null;
+  return entry?.blog || null;
 }
 
-export default cards;
+export default cardsBlog;
 
 

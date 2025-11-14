@@ -4,10 +4,7 @@ import { containerShape } from '../data/uiStyles';
 
 const InViewWrapper = ({ image, index }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.05, });
 
   return (
     <div

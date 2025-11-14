@@ -2,7 +2,8 @@ import { useLanguage } from "../data/languageContext.jsx";
 import Footnote from '../components/Footnote'
 import { useState } from 'react';
 import CaseCard from "../components/CaseCard.jsx";
-import cards from '../data/content/index.js';
+import cardsPortfolio from '../data/portfolio/index.js';
+import cardsBlog from '../data/blog/index.js';
 import Notfound from './404.jsx';
 import Navigation from '../components/Navigation.jsx';
 import Tabs from "../components/Tabs.jsx";
@@ -10,6 +11,7 @@ import Snapshot from "../components/Snapshot.jsx";
 import { textBaseSemi } from '../data/uiStyles.js';
 import HomeCard from "../components/HomeCard.jsx";
 import SocialCard from "../components/SocialCard.jsx";
+import BlogCard from "../components/BlogCard.jsx";
 
 const Home = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -26,8 +28,8 @@ const Home = () => {
     if (activeTab === 'portfolio') {
       return (
         <div className="flex flex-col gap-y-3">
-          {cards?.length ? (
-            [...cards]
+          {cardsPortfolio?.length ? (
+            [...cardsPortfolio]
               .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
               .map((article) => (
               <div key={article.id}>
@@ -41,11 +43,8 @@ const Home = () => {
                   url1={article.intImg && article.intText ? `/article/${article.slug}` : null}
                   url2={article.intImg2 && article.intText2 ? `/gallery/${article.slug}` : null}
                   url3={article.extUrl}
-                  intImg={article.intImg}
                   intText={article.intText?.[language]}
-                  intImg2={article.intImg2}
                   intText2={article.intText2?.[language]}
-                  extImg={article.extImg}
                   extText={article.extText?.[language]}
                 />
               </div>
@@ -61,7 +60,24 @@ const Home = () => {
       );
     } else if (activeTab === 'blog') {
       return (
-        <div className={`text-center py-8 lg:pt-12 pb-12 md:pb-24 ${textBaseSemi}`}>Coming Soon..</div>
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
+          {cardsBlog?.length ? (
+            [...cardsBlog]
+              .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
+              .map((blog) => (
+              <div key={blog.id}>
+                <BlogCard
+                  // url={`/blog/${blog.slug}`}
+                  title={blog.title[language]}
+                  desc={blog.desc[language]}
+                  date={blog.date}
+                />
+              </div>
+            ))
+          ) : (
+            <div className={`${textBaseSemi} italic`}>No Blogs Available.</div>
+          )}
+        </div>
       );
     }
     return null;

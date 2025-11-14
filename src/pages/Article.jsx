@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useLanguage } from '../data/languageContext';
-import { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
+import { getCardBySlug, getCaseStudyBySlug } from '../data/portfolio/index.js';
 import Notfound from '../pages/404.jsx';
 import Footnote from '../components/Footnote.jsx';
 import Content from '../components/Content.jsx';
@@ -11,7 +11,7 @@ import Navigation from '../components/Navigation.jsx';
 import { buttonDefault, textHeading1, textBaseSemi, textBase, textSmall, cardStyles, textHeading2 } from '../data/uiStyles.js';
 import SocialCard from '../components/SocialCard.jsx';
 
-const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
+const Article = ({ csDataHeader, csDataLabel, csDataPos }) => {
   const { slug } = useParams();
   const { language } = useLanguage();
   const selectedArticle = getCardBySlug(slug);

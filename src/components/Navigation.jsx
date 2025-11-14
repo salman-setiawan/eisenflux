@@ -1,7 +1,7 @@
 import { useLanguage } from '../data/languageContext.jsx';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import cards from "../data/content/index.js";
+import cards from "../data/portfolio/index.js";
 import LanguageToggle from './LanguageToggle.jsx';
 import { bgBase, containerShape, dropdownButton, dropdownOuter, textHeading3, textBaseSemi, textBase } from '../data/uiStyles.js';
 import WorkChip from './WorkChip.jsx';
