@@ -9,7 +9,7 @@ import Navigation from '../components/Navigation.jsx';
 import Connect from "../components/Connect.jsx";
 import Tabs from "../components/Tabs.jsx";
 import Snapshot from "../components/Snapshot.jsx";
-import { textGray400, textBaseSemi } from '../data/uiStyles.js';
+import { textBaseSemi } from '../data/uiStyles.js';
 import HomeCard from "../components/HomeCard.jsx";
 
 const Home = () => {
@@ -52,7 +52,7 @@ const Home = () => {
               </div>
             ))
           ) : (
-            <div className={`${textGray400} italic`}>No Articles Available.</div>
+            <div className={`${textBaseSemi} italic`}>No Articles Available.</div>
           )}
         </div>
       );

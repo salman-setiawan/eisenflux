@@ -28,7 +28,7 @@ const Navigation = ({ specsButton, specsNavbar, type, title }) => {
   ];
 
   specsButton = `flex cursor-pointer h-[36px] items-center px-2 hover:bg-[#3D3B38] hover:text-orange-200 ${bgBase} ${containerShape} ${textHeading3} font-medium`;
-  specsNavbar = 'fixed top-0 z-10 bg-[#141414] w-full flex justify-between px-4 py-2.5 items-center';
+  specsNavbar = 'fixed top-0 z-30 bg-[#141414] w-full flex justify-between px-4 py-2.5 items-center';
 
   let navbarContent;
 

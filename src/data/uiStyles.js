@@ -2,6 +2,8 @@
 export const textHeading1 = 'text-[24px] font-semibold mb-1';
 export const textHeading2 = 'text-[18px]';
 export const textHeading3 = 'text-[14px] font-semibold';
+export const articleHeading = 'font-semibold';
+export const textArticle = 'text-[16px]';
 export const textRegular = 'text-[14px]';
 export const textSmall = 'text-[13px]';
 export const textTiny = 'text-[12px]';
@@ -14,9 +16,6 @@ export const textBase = 'text-white';
 export const textBaseSemi = 'text-white/60';
 export const textBaseUltraMuted = 'text-white/8';
 export const textInverted = 'text-black';
-export const textNeutral300 = 'text-neutral-300';
-export const textNeutral400 = 'text-neutral-400';
-export const textGray400 = 'text-gray-400';
 
 // Container Styles
 export const containerShape = 'rounded-md';
@@ -42,6 +41,7 @@ export const dropdownButton = `p-3 ${containerBaseHover} ${textBase} text-start 
 
 // Typography Styles
 export const textParagraph = `${textRegular} ${textBase} text-justify leading-relaxed`;
+export const textParagraphArticle = `${textArticle} ${textBase} text-justify leading-relaxed`;
 export const textHighlighted = `${textRegular} ${textBrand} font-semibold`;
 export const textSub = `${textSmall}`;
 export const textSubSemi = `${textSmall} ${textBaseSemi}`;
@@ -50,9 +50,3 @@ export const textSubSemi = `${textSmall} ${textBaseSemi}`;
 export const textSemanticWarning = 'text-yellow-200';
 export const textSemanticError = 'text-orange-400';
 export const textSemanticSuccess = 'text-emerald-400';
-export const bgSemanticWarning = 'bg-yellow-300/5';
-export const bgSemanticError = 'bg-orange-500/5';
-export const bgSemanticSuccess = 'bg-emerald-400/5';
-export const borderSemanticWarning = 'border-yellow-400/30';
-export const borderSemanticError = 'border-orange-500/30';
-export const borderSemanticSuccess = 'border-emerald-400/30';

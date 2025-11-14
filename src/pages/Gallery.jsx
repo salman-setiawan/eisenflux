@@ -6,7 +6,7 @@ import Footnote from '../components/Footnote.jsx';
 import Button from '../components/Button.jsx';
 import cards, { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
 import Navigation from '../components/Navigation.jsx';
-import { buttonDefault, textHeading1, textGray400, containerBase } from '../data/uiStyles.js';
+import { buttonDefault, textHeading1, textBaseSemi, containerBase } from '../data/uiStyles.js';
 
 const Gallery = () => {
   const { slug } = useParams();
@@ -31,9 +31,9 @@ const Gallery = () => {
   return (
     <div>
       <div className="flex flex-col items-center px-5">
-        <Navigation type='type-2' title={navbarTitle} />
+        <Navigation type='type-4' title={navbarTitle} />
 
-        <div className="pt-20 pb-32">
+        <div className="pt-18 pb-22">
           {isGroupedGallery ? (
             <>
               {gallery.pc && (
@@ -74,7 +74,7 @@ const Gallery = () => {
                   </div>
                 ))
               ) : (
-                <p className={`pt-2 ${textGray400}`}>Konten tidak tersedia.</p>
+                <p className={`pt-2 ${textBaseSemi}`}>Konten tidak tersedia.</p>
               )}
             </div>
           )}
@@ -96,7 +96,6 @@ const Gallery = () => {
             )}
           </div>
         </div>
-        <Footnote />
       </div>
     </div>
   );
