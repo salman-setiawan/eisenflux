@@ -8,7 +8,7 @@ import Showcase from '../components/Showcase.jsx';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button.jsx';
 import Navigation from '../components/Navigation.jsx';
-import { buttonDefault, textHeading1, textBaseSemi, textBase, containerBase, textRegular } from '../data/uiStyles.js';
+import { buttonDefault, textHeading1, textBaseSemi, textBase, containerBase, textSmall } from '../data/uiStyles.js';
 
 const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   const { slug } = useParams();
@@ -92,7 +92,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   csDataLabel = `text-center ${textBase} font-medium w-[190px]`;
 
   const renderDataLabels = () => (
-    <div className={`grid grid-cols-2 gap-y-4 ${textRegular} gap-x-8 justify-center`}>
+    <div className={`grid grid-cols-2 gap-y-4 ${textSmall} gap-x-6 md:gap-x-12 justify-center`}>
       {csData.role && (
         <div className={csDataPos}>
           <span className={csDataHeader}>{metaLabels.role[language]} :</span>
