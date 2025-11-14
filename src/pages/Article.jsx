@@ -92,7 +92,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
   csDataLabel = `text-center ${textBase} font-medium w-[190px]`;
 
   const renderDataLabels = () => (
-    <div className={`grid grid-cols-1 sm:grid-cols-2 gap-y-4 ${textRegular} gap-x-12 justify-center`}>
+    <div className={`grid grid-cols-2 gap-y-4 ${textRegular} gap-x-8 justify-center`}>
       {csData.role && (
         <div className={csDataPos}>
           <span className={csDataHeader}>{metaLabels.role[language]} :</span>
