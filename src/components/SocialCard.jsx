@@ -1,7 +1,7 @@
-import Button from "./Button"
+import Button from "./Button.jsx"
 import { cardStyles, buttonDefault, textBaseSemi, textRegular } from '../data/uiStyles.js';
 
-const Connect = () => {
+const SocialCard = () => {
   const renderMarquee = () => (
     <div className="overflow-hidden">
       <span className={`flex animate-marquee-smooth whitespace-nowrap font-medium select-none ${textBaseSemi} mr-32 max-w-[640px] ${textRegular}`}>
@@ -26,4 +26,4 @@ const Connect = () => {
   )
 }
 
-export default Connect
+export default SocialCard
