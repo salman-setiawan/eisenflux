@@ -4,7 +4,7 @@ import { useLanguage } from '../data/languageContext';
 import Notfound from '../pages/404.jsx';
 import Footnote from '../components/Footnote.jsx';
 import Button from '../components/Button.jsx';
-import cards, { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
+import cardsPortfolio, { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
 import Navigation from '../components/Navigation.jsx';
 import { buttonDefault, textHeading1, textBaseSemi, containerBase } from '../data/uiStyles.js';
 
@@ -15,7 +15,7 @@ const Gallery = () => {
   const csData = getCaseStudyBySlug(slug);
 
   // Cari card berdasarkan slug
-  const selectedCard = cards.find(item => item.slug === slug);
+  const selectedCard = cardsPortfolio.find(item => item.slug === slug);
   if (!selectedCard) return <Notfound />;
 
   // Gunakan id dari cards untuk cari data gallery di UIData
