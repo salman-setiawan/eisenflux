@@ -4,7 +4,7 @@ import { useLanguage } from '../data/languageContext';
 import Notfound from '../pages/404.jsx';
 import Footnote from '../components/Footnote.jsx';
 import Button from '../components/Button.jsx';
-import cardsPortfolio, { getCardBySlug, getCaseStudyBySlug } from '../data/content/index.js';
+import cardsPortfolio, { getCardBySlug, getCaseStudyBySlug } from '../data/portfolio/index.js';
 import Navigation from '../components/Navigation.jsx';
 import { buttonDefault, textHeading1, textBaseSemi, containerBase } from '../data/uiStyles.js';
 
