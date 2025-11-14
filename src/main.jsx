@@ -14,12 +14,14 @@ import Notfound from './pages/404';
 const About = lazy(() => import('./pages/About'));
 const Article = lazy(() => import('./pages/Article'));
 const Gallery = lazy(() => import('./pages/Gallery'));
+const Blog = lazy(() => import('./pages/Blog'));
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/me", element: <About /> },
   { path: "/article/:slug", element: <Article /> },
   { path: "/gallery/:slug", element: <Gallery /> },
+  { path: "/blog/:slug", element: <Blog /> },
   { path: "/404", element: <Notfound /> },
   { path: "*", element: <Navigate to="/404" replace /> },
 ]);

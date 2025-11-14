@@ -1,8 +1,8 @@
-const oneChange = {
-  slug: 'one-small-change-in-the-user-experience',
+const designVisual = {
+  slug: 'design-is-not-just-about-visual',
   title: {
-    en: 'One Small Change in the User Experience',
-    id: 'Satu Perubahan Kecil pada User Experience'
+    en: 'Design is not just about visual',
+    id: 'Desain tidak hanya sekadar visual'
   },
   content: [
     {
@@ -53,4 +53,4 @@ const oneChange = {
   ]
 };
 
-export default oneChange;
+export default designVisual;
