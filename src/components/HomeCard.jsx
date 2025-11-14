@@ -60,7 +60,7 @@ const HomeCard = ({maskBlur, maskColor, positionOne, dotExp, borderExp}) => {
           ))}
         </div>
 
-        {/* Gradient color overlay - bottom for mobile, right side for desktop */}
+        {/* Gradient color overlay */}
         <div
           className={`${positionOne}`}
           style={{
@@ -68,7 +68,7 @@ const HomeCard = ({maskBlur, maskColor, positionOne, dotExp, borderExp}) => {
           }}
         ></div>
 
-        {/* Gradient blur overlay - bottom for mobile, right side for desktop */}
+        {/* Gradient blur overlay */}
         <div
           className={`${positionOne}`}
           style={{

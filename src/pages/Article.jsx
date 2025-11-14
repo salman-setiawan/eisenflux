@@ -19,7 +19,6 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
 
   useEffect(() => {
     const cs = getCaseStudyBySlug(slug);
-    // normalize to Content.jsx input array shape if present
     if (cs && Array.isArray(cs.process)) {
       const normalized = [];
       if (cs.overview) {
@@ -37,7 +36,6 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
         });
       }
       if (cs.process) {
-        // Build a single combined process card: overview + labeled steps
         let processOverview = null;
         const steps = [];
         cs.process.forEach((step) => {
@@ -66,13 +64,12 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
       setContents([]);
     }
 
-    // ✅ Disable horizontal scroll di halaman ini (menggunakan class untuk menghindari forced reflow)
     document.body.classList.add('overflow-x-hidden');
 
-    // 🧹 Kembalikan scroll seperti semula saat keluar dari halaman
     return () => {
       document.body.classList.remove('overflow-x-hidden');
     };
+
   }, [selectedArticle, slug]);
 
   if (!selectedArticle) {
@@ -90,55 +87,63 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
     type: { en: 'Type', id: 'Jenis' },
   };
 
-  csDataPos = 'flex gap-2';
-  csDataHeader = `${textNeutral400} min-w-[72px]`;
-  csDataLabel = `font-semibold ${textBase}`;
+  csDataPos = 'flex flex-col lg:flex-row gap-x-2 gap-y-0.5 items-center';
+  csDataHeader = `${textNeutral400} lg:min-w-[72px]`;
+  csDataLabel = `font-semibold text-center lg:text-start ${textBase} max-w-[190px] lg:max-w-full`;
+
+  const renderDataLabels = () => (
+    <div className={`grid grid-cols-2 lg:grid-cols-1 gap-y-4 lg:gap-y-2 gap-x-12 ${textSmall} ${textNeutral300}`}>
+      {csData.role && (
+        <div className={csDataPos}>
+          <span className={csDataHeader}>{metaLabels.role[language]} :</span>
+          <span className={csDataLabel}>{csData.role[language] || csData.role.en || csData.role}</span>
+        </div>
+      )}
+      {csData.duration && (
+        <div className={csDataPos}>
+          <span className={csDataHeader}>{metaLabels.duration[language]} :</span>
+          <span className={csDataLabel}>{csData.duration[language] || csData.duration.en || csData.duration}</span>
+        </div>
+      )}
+      {csData.type && (
+        <div className={csDataPos}>
+          <span className={csDataHeader}>{metaLabels.type[language]} :</span>
+          <span className={csDataLabel}>{csData.type[language] || csData.type.en || csData.type}</span>
+        </div>
+      )}
+      {csData.tools && Array.isArray(csData.tools) && csData.tools.length > 0 && (
+        <div className={csDataPos}>
+          <span className={csDataHeader}>{metaLabels.tools[language]} :</span>
+          <span className={csDataLabel}>{csData.tools.join(', ')}</span>
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <div className="flex flex-col items-center overflow-x-hidden bg-[#141414]">
+
       <div className="lg:hidden flex w-full">
         <Navigation type='type-4' title={navbarTitle} />
-        <div className="w-[150vw] h-[560px] bg-cover flex justify-center items-center bg-[#212121] overflow-hidden">
+        <div className="relative w-[150vw] h-[560px] bg-cover flex justify-center items-center bg-[#212121] overflow-hidden">
           <Showcase id={selectedArticle.id} />
+          <div className="lg:hidden absolute w-full z-10 bottom-0 flex flex-col items-center gap-y-4 px-8 py-4">
+            <div className={`${textHeading1} text-center`}> {pageTitle} </div>
+            {renderDataLabels()}
+          </div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_top,_#0c0c0c_0%,_rgba(12,12,12,0.91)_25%,_rgba(12,12,12,0.4)_70%,_transparent_100%)] pointer-events-none"></div>
         </div>
       </div>
 
-      
-
       <div className="flex flex-col lg:flex-row w-full lg:max-w-[1400px]">
-        <div className="flex flex-col w-full lg:max-w-[500px] p-4 lg:h-screen lg:overflow-y-auto bg-[#0c0c0c] lg:bg-[#141414] gap-y-4">
-          <div className="hidden lg:block"><Navigation type='type-2' title={navbarTitle} /></div>
-          <div className="hidden lg:flex h-[560px] bg-cover items-center overflow-hidden">
+        <div className="hidden lg:flex flex-col w-full lg:max-w-[500px] p-4 lg:h-screen lg:overflow-y-auto bg-[#0c0c0c] lg:bg-[#141414] gap-y-4">
+          <Navigation type='type-2' title={navbarTitle} />
+          <div className="flex h-[560px] bg-cover items-center overflow-hidden">
             <Showcase id={selectedArticle.id} />
           </div>
-          <div className="flex flex-col gap-y-4 w-full">
+          <div className="lg:flex flex-col gap-y-4 w-full hidden">
             <div className={textHeading1}> {pageTitle} </div>
-            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-2 ${textSmall} ${textNeutral300}`}>
-              {csData.role && (
-                <div className={csDataPos}>
-                  <span className={csDataHeader}>{metaLabels.role[language]} :</span>
-                  <span className={csDataLabel}>{csData.role[language] || csData.role.en || csData.role}</span>
-                </div>
-              )}
-              {csData.duration && (
-                <div className={csDataPos}>
-                  <span className={csDataHeader}>{metaLabels.duration[language]} :</span>
-                  <span className={csDataLabel}>{csData.duration[language] || csData.duration.en || csData.duration}</span>
-                </div>
-              )}
-              {csData.type && (
-                <div className={csDataPos}>
-                  <span className={csDataHeader}>{metaLabels.type[language]} :</span>
-                  <span className={csDataLabel}>{csData.type[language] || csData.type.en || csData.type}</span>
-                </div>
-              )}
-              {csData.tools && Array.isArray(csData.tools) && csData.tools.length > 0 && (
-                <div className={csDataPos}>
-                  <span className={csDataHeader}>{metaLabels.tools[language]} :</span>
-                  <span className={csDataLabel}>{csData.tools.join(', ')}</span>
-                </div>
-              )}
-            </div>
+            {renderDataLabels()}
           </div>
         </div>
 
@@ -163,7 +168,7 @@ const Article = ({csDataHeader, csDataLabel, csDataPos}) => {
         style={{ zIndex: 1 }}
       >
         <div className="flex w-full justify-center">
-          <div className="flex flex-col gap-y-2 w-full max-w-[800px] px-4 pt-1 pb-3">
+          <div className="flex flex-col gap-y-2 w-full px-4 pt-1 pb-3">
             {extUrl && (
               <Button style={buttonDefault} to={extUrl} target="_blank" rel="noopener noreferrer" text={extText[language]} fullWidth={true} />
             )}
