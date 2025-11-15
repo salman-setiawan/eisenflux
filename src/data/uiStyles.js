@@ -41,7 +41,7 @@ export const dropdownButton = `p-3 ${containerBaseHover} ${textBase} text-start 
 
 // Typography Styles
 export const textParagraph = `${textRegular} ${textBase} text-justify leading-relaxed`;
-export const textParagraphArticle = `${textArticle} ${textBase} text-justify leading-relaxed`;
+export const textParagraphArticle = `${textArticle} text-white/75 text-justify leading-relaxed`;
 export const textHighlighted = `${textRegular} ${textBrand} font-semibold`;
 export const textSub = `${textSmall}`;
 export const textSubSemi = `${textSmall} ${textBaseSemi}`;
