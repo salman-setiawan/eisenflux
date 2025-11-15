@@ -87,9 +87,19 @@ const AnotherIsland = {
       id: 'Meningkatkan metrik kegunaan, kepuasan, dan daya ingat lebih dari 10%, menghasilkan pengalaman bermain yang lebih lancar dan menarik.'
     },
     keyLearnings: {
-      en: "Design iteration backed by measurable user data builds credibility. Visual fun alone doesn't guarantee usability — clarity and feedback do.",
-      id: 'Iterasi desain yang didukung oleh data pengguna terukur meningkatkan kredibilitas. Visual yang menarik saja tidak menjamin kegunaan — kejelasan dan umpan baliklah yang menentukan.'
-    }
+      en: "Design iteration backed by measurable user data builds credibility. Visual fun alone doesn't guarantee usability, clarity and feedback do.",
+      id: 'Iterasi desain yang didukung oleh data pengguna terukur meningkatkan kredibilitas. Visual yang menarik saja tidak menjamin kegunaan, kejelasan dan umpan baliklah yang menentukan.'
+    },
+    gallery: [
+      {
+        type: 'video',
+        src: '/anotherisland/showcase.webm',
+      },
+      {
+        type: 'image',
+        src: '/anotherisland/desy.webp',
+      },
+    ]
   }
 };
 

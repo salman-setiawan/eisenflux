@@ -11,16 +11,18 @@ const Content = ({ data, language, altText }) => {
   const getBgClasses = (kind) => {
     switch (kind) {
       case 'overview':
-        return ` ${textSemanticWarning}`;
+        return textSemanticWarning;
       case 'problem':
-        return ` ${textSemanticError}`;
+        return textSemanticError;
       case 'process':
-        return ` ${textSemanticWarning}`;
+        return textSemanticWarning;
       case 'impact':
-        return ` ${textSemanticSuccess}`;
+        return textSemanticSuccess;
       case 'keyLearnings':
-        return ` ${textSemanticSuccess}`;
+        return textSemanticSuccess;
       case 'image':
+        return 'bg-transparent';
+      case 'gallery':
         return 'bg-transparent';
       default:
         return 'bg-transparent';
@@ -31,20 +33,39 @@ const Content = ({ data, language, altText }) => {
   if (data.kind === 'image') {
     return (
       <div className={`text-justify flex flex-col items-center ${getBgClasses(data.kind)}`}>
-        <img 
-          className={`w-full max-w-[720px] ${containerShape}`} 
-          src={data.img} 
-          alt={data.alt ? data.alt[language] : altText[language]}
-          loading="lazy"
-        />
+        <img className={`w-full max-w-[720px] ${containerShape}`} src={data.img} alt={data.alt ? data.alt[language] : altText[language]}loading="lazy" />
       </div>
     );
   }
 
+  if (data.kind === 'gallery') {
+    return (
+      <div className={`flex flex-col items-center gap-y-2 ${getBgClasses(data.kind)}`}>
+        {Array.isArray(data.items) && data.items.length > 0 && (
+          data.items.map((item, i) => {
+            if (item.type === 'image') {
+              return (
+                <img key={i} className={`w-full max-w-[720px] ${containerShape}`} src={item.src} alt={item.alt && item.alt[language] ? item.alt[language] : 'gallery image'} loading="lazy" />
+              );
+            }
+            if (item.type === 'video') {
+              return (
+                <video key={i} className={`w-full max-w-[720px] ${containerShape}`} src={item.src} autoPlay loop muted playsInline preload="none" />
+              );
+            }
+            return null;
+          })
+        )}
+      </div>
+    );
+  }
+  
+  
+
   // Combined Process Card rendering
   if (data.kind === 'process') {
     return (
-      <div className={`text-justify ${getBgClasses(data.kind)}`}>
+      <div className={getBgClasses(data.kind)}>
         <div className={`${articleHeading} mb-1`}> {data.title[language]} </div>
         {data.text && (
           <div className={`${textParagraphArticle} mb-4`}>{data.text[language]}</div>
@@ -64,7 +85,7 @@ const Content = ({ data, language, altText }) => {
   }
 
   return (
-    <div className={`text-justify ${getBgClasses(data.kind)}`}>
+    <div className={getBgClasses(data.kind)}>
       {data.title && (
         <div className={`${articleHeading} mb-1`}>
           {data.title[language]}  

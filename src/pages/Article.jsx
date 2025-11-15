@@ -59,6 +59,12 @@ const Article = ({ csDataHeader, csDataLabel, csDataPos }) => {
       if (cs.keyLearnings) {
         normalized.push({ kind: 'keyLearnings', title: { en: 'Key Learnings', id: 'Pelajaran Utama' }, text: cs.keyLearnings });
       }
+      if (cs.gallery && Array.isArray(cs.gallery)) {
+        normalized.push({
+          kind: 'gallery',
+          items: cs.gallery
+        });
+      }      
       setContents(normalized);
     } else {
       console.warn(`⚠️ Artikel "${slug}" tidak memiliki data konten.`);
