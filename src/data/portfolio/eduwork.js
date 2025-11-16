@@ -82,7 +82,13 @@ const Eduwork = {
     keyLearnings: {
       en: "Consistent communication and transparent collaboration accelerated the design iteration process. Furthermore, presenting information in a well-structured manner not only improved design efficiency but also helped the team understand the impact of design decisions on business goals.",
       id: "Komunikasi yang konsisten dan kolaborasi yang transparan mempercepat proses iterasi desain. Kemudian penyajian informasi yang terstruktur dengan baik tidak hanya meningkatkan efisiensi desain, tetapi juga membantu tim memahami dampak keputusan desain terhadap tujuan bisnis."
-    }
+    },
+    gallery: [
+      {
+        type: 'image',
+        src: '/eduwork/ui.webp',
+      },
+    ]
   }
 };
 
