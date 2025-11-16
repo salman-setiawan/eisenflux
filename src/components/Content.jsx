@@ -20,10 +20,6 @@ const Content = ({ data, language, altText }) => {
         return textSemanticSuccess;
       case 'keyLearnings':
         return textSemanticSuccess;
-      case 'image':
-        return 'bg-transparent';
-      case 'gallery':
-        return 'bg-transparent';
       default:
         return 'bg-transparent';
     }
@@ -32,15 +28,13 @@ const Content = ({ data, language, altText }) => {
   // Image rendering
   if (data.kind === 'image') {
     return (
-      <div className={`text-justify flex flex-col items-center ${getBgClasses(data.kind)}`}>
-        <img className={`w-full max-w-[720px] ${containerShape}`} src={data.img} alt={data.alt ? data.alt[language] : altText[language]}loading="lazy" />
-      </div>
+      <img className={`w-full max-w-[720px] ${containerShape}`} src={data.img} alt={data.alt ? data.alt[language] : altText[language]}loading="lazy" />
     );
   }
 
   if (data.kind === 'gallery') {
     return (
-      <div className={`flex flex-col items-center gap-y-2 ${getBgClasses(data.kind)}`}>
+      <div className='flex flex-col items-center gap-y-2'>
         {Array.isArray(data.items) && data.items.length > 0 && (
           data.items.map((item, i) => {
             if (item.type === 'image') {
@@ -65,7 +59,7 @@ const Content = ({ data, language, altText }) => {
   // Combined Process Card rendering
   if (data.kind === 'process') {
     return (
-      <div className={getBgClasses(data.kind)}>
+      <div className={`${getBgClasses(data.kind)} text-justify`}>
         <div className={`${articleHeading} mb-1`}> {data.title[language]} </div>
         {data.text && (
           <div className={`${textParagraphArticle} mb-4`}>{data.text[language]}</div>
@@ -85,7 +79,7 @@ const Content = ({ data, language, altText }) => {
   }
 
   return (
-    <div className={getBgClasses(data.kind)}>
+    <div className={`${getBgClasses(data.kind)} text-justify`}>
       {data.title && (
         <div className={`${articleHeading} mb-1`}>
           {data.title[language]}  

@@ -156,7 +156,7 @@ const Article = ({ csDataHeader, csDataLabel, csDataPos }) => {
             </div>
           ))
         )}
-        <div className="space-y-2 py-2">
+        <div className="space-y-2 pb-2">
           {extUrl && (
             <div className="relative overflow-hidden">
               <div className={`${cardStyles} gap-y-2 flex-row justify-between items-center`}>

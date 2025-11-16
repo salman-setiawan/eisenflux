@@ -20,7 +20,7 @@ const designVisual = {
     content: [
       {
         type: 'paragraph',
-        en: "Have you ever, as an app or website user, suddenly noticed something a little different—like a button whose color shifted slightly or a menu order that moved around? It might be subtle, yet somehow the experience feels better, right? In digital product design, small tweaks often create a big impact. Here's why, plus a real example.",
+        en: "Have you ever, as an app or website user suddenly noticed something a little different, example a button whose color shifted slightly or a menu order that moved around? It might be subtle, yet somehow the experience feels better, right? In digital product design, small tweaks often create a big impact. Here's why, plus a real example.",
         id: 'Pernah nggak kamu sebagai pengguna aplikasi atau situs tiba-tiba menemukan hal yang sedikit berbeda, misalnya tombol yang warnanya berubah sedikit, atau urutan menu yang digeser sedikit. Hanya sedikit saja, tapi rasanya kok jadi lebih enak pakai ini ya? Di dunia desain produk digital, perubahan kecil sering kali punya dampak besar. Berikut alasannya + contoh nyata.'
       },
       {

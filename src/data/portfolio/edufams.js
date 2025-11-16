@@ -50,8 +50,8 @@ const Edufams = {
     process: [
       {
         overview: {
-          en: "Design Thinking was chosen by our company because it emphasizes empathy, iteration, and collaboration — making it ideal for designing human-centered solutions in a startup environment.",
-          id: "Metode Design Thinking dipilih oleh perusahaan karena menekankan empati, iterasi, dan kolaborasi — menjadikannya ideal untuk merancang solusi berorientasi manusia dalam lingkungan startup."
+          en: "Design Thinking was chosen by our company because it emphasizes empathy, iteration, and collaboration making it ideal for designing human-centered solutions in a startup environment.",
+          id: "Metode Design Thinking dipilih oleh perusahaan karena menekankan empati, iterasi, dan kolaborasi menjadikannya ideal untuk merancang solusi berorientasi manusia dalam lingkungan startup."
         }
       },
       {
@@ -71,8 +71,8 @@ const Edufams = {
       {
         label: { en: 'Ideate :', id: 'Ideasi :' },
         desc: {
-          en: 'Brainstormed solutions via mind maps — resulting in a family-learning platform concept.',
-          id: 'Melakukan brainstorming melalui mind map — menghasilkan konsep platform pembelajaran keluarga.'
+          en: 'Brainstormed solutions via mind maps resulting in a family-learning platform concept.',
+          id: 'Melakukan brainstorming melalui mind map menghasilkan konsep platform pembelajaran keluarga.'
         }
       },
       {
@@ -95,9 +95,19 @@ const Edufams = {
       id: 'Menghasilkan prototipe MVP lengkap yang siap digunakan untuk pengujian dan presentasi kepada investor di PT Media Kreasi Abadi. Kegunaan meningkat melalui penyempurnaan tata letak dan konsistensi identitas merek.'
     },
     keyLearnings: {
-      en: "Design should first serve clarity, accessibility, and empathy — not only aesthetics. Broader usability testing is key for scalable design decisions.",
-      id: "Desain harus terlebih dahulu mengutamakan kejelasan, aksesibilitas, dan empati — bukan sekadar estetika. Pengujian kegunaan yang lebih luas merupakan kunci dalam pengambilan keputusan desain yang dapat diskalakan."
-    }
+      en: "Design should first serve clarity, accessibility, and empathy not only aesthetics. Broader usability testing is key for scalable design decisions.",
+      id: "Desain harus terlebih dahulu mengutamakan kejelasan, aksesibilitas, dan empati bukan sekadar estetika. Pengujian kegunaan yang lebih luas merupakan kunci dalam pengambilan keputusan desain yang dapat diskalakan."
+    },
+    gallery: [
+      {
+        type: 'image',
+        src: '/edufams/mobile.webp',
+      },
+      {
+        type: 'image',
+        src: '/edufams/browser.webp',
+      },
+    ]
   }
 };
 
