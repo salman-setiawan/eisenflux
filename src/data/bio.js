@@ -28,8 +28,8 @@ const BioData = [
         uid: 2,
         title: "PT. Mahakarya Inovasi Bangsa",
         role: {
-          en: "UI/UX Designer (Intern)",
-          id: "Perancang UI/UX (Magang)"
+          en: "UI/UX Designer (Contract)",
+          id: "Perancang UI/UX (Kontrak)"
         },
         dateStart: "2024-06",
         dateEnd: "2024-09",
