@@ -1,6 +1,6 @@
 const Eduwork = {
   card: {
-    id: 4,
+    id: 2,
     slug: 'eduwork',
     title: 'EDUWORK MENTOR',
     nav: 'eduwork.prj',

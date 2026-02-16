@@ -12,7 +12,7 @@ const BioCards = ({ type, title, role, company, year, dateStart, dateEnd, jobdes
   );
 
   return (
-    <div className={cardStyles}>
+    <div className={`${cardStyles} bg-neutral-700/35`}>
       <div className={`${textHeading3}`}>{title}</div>
 
       {type === "certification" && (

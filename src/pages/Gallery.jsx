@@ -22,7 +22,7 @@ const Gallery = () => {
   const selectedUI = UIData.find(item => item.id === selectedCard.id);
   if (!selectedUI) return <Notfound />;
 
-  const { intImg, intText, extUrl, extImg, extText } = selectedCard;
+  const { intImg, intText, extUrl, extImg, extText, extUrl2, extImg2, extText2 } = selectedCard;
   const { gallery } = selectedUI;
   const navbarTitle = csData?.altTitle || selectedArticle.title3 || selectedArticle.title;
 
@@ -90,6 +90,9 @@ const Gallery = () => {
           <div className="flex flex-col gap-y-2 w-full max-w-[720px] px-4 pt-1 pb-3">
             {extUrl && (
               <Button to={extUrl} target="_blank" rel="noopener noreferrer" img={extImg} text={extText[language]} fullWidth={true} />
+            )}
+            {extUrl2 && (
+              <Button to={extUrl2} target="_blank" rel="noopener noreferrer" img={extImg2} text={extText2[language]} fullWidth={true} />
             )}
             {intText && (
               <Button style={buttonDefault} to={`/article/${slug}`} img={intImg} text={intText[language]} fullWidth={true} />

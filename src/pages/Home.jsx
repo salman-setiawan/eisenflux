@@ -30,7 +30,7 @@ const Home = () => {
         <div className="flex flex-col gap-y-3">
           {cardsPortfolio?.length ? (
             [...cardsPortfolio]
-              .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
+              .sort((a, b) => (b.id ?? 0) - (a.id ?? 0))
               .map((article) => (
               <div key={article.id}>
                 <CaseCard
@@ -43,9 +43,11 @@ const Home = () => {
                   url1={article.intImg && article.intText ? `/article/${article.slug}` : null}
                   url2={article.intImg2 && article.intText2 ? `/gallery/${article.slug}` : null}
                   url3={article.extUrl}
+                  url4={article.extUrl2}
                   intText={article.intText?.[language]}
                   intText2={article.intText2?.[language]}
                   extText={article.extText?.[language]}
+                  extText2={article.extText2?.[language]}
                 />
               </div>
             ))

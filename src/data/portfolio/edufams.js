@@ -1,6 +1,6 @@
 const Edufams = {
   card: {
-    id: 3,
+    id: 1,
     slug: 'edufams',
     title: 'EDUCATION FAMILY',
     nav: 'edufams.prj',

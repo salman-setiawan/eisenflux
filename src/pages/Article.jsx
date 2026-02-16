@@ -83,7 +83,7 @@ const Article = ({ csDataHeader, csDataLabel, csDataPos }) => {
     return <Notfound />;
   }
 
-  const { extUrl, extText } = selectedArticle;
+  const { extUrl, extText, extUrl2, extText2 } = selectedArticle;
   const pageTitle = csData?.title || selectedArticle.title;
   const navbarTitle = csData?.altTitle || selectedArticle.title3 || selectedArticle.title;
 
@@ -157,11 +157,14 @@ const Article = ({ csDataHeader, csDataLabel, csDataPos }) => {
           ))
         )}
         <div className="space-y-2 pb-2">
-          {extUrl && (
+          {(extUrl || extUrl2) && (
             <div className="relative overflow-hidden">
-              <div className={`${cardStyles} gap-y-2 flex-row justify-between items-center`}>
+              <div className={`${cardStyles} gap-y-2 flex-row justify-between items-center flex-wrap gap-x-2`}>
                 <div className={textHeading2}>The Site is Live</div>
-                <Button style={buttonDefault} to={extUrl} target="_blank" rel="noopener noreferrer" text={extText[language]} />
+                <div className="flex gap-x-2 flex-wrap">
+                  {extUrl && <Button style={buttonDefault} to={extUrl} target="_blank" rel="noopener noreferrer" text={extText[language]} />}
+                  {extUrl2 && <Button style={buttonDefault} to={extUrl2} target="_blank" rel="noopener noreferrer" text={extText2[language]} />}
+                </div>
               </div>
               <div className="absolute text-[240px] font-bold left-[-40px] bottom-[-170px] text-orange-200/8">*</div>
             </div>
