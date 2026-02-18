@@ -95,7 +95,7 @@ const Home = () => {
 
   // Konten utama
   return (
-    <div className="flex justify-center bg-[#141414]">
+    <div className="flex justify-center bg-[#101010] lg:bg-[#141414]">
       <div className="fixed backdrop-blur-sm shadow-lg pb-2 pt-3 px-4 z-30 w-full lg:hidden">
         <Navigation type='type-3' />
       </div>

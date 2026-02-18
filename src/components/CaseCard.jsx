@@ -28,7 +28,7 @@ const CaseCard = ({ title, nav, desc, categories, intText, intText2, extText, ex
   motionText = `font-anton absolute inset-0 flex flex-col leading-none text-center items-center justify-center uppercase select-none uppercase select-none font-black ${textBaseUltraMuted} text-[20rem] md:text-[26rem] rotate-[-32deg] lg:rotate-[-24deg]`;
   maskTexture = 'radial-gradient(circle, black 0%, black 25%, transparent 65%)';
   srcTexture = `absolute inset-0 bg-[url('/pattern-card.svg')] opacity-15`;
-  cardImageBorder = 'relative rounded-md border border-neutral-800 xl:border-none h-full flex flex-col p-2 justify-between';
+  cardImageBorder = 'relative rounded-md border border-neutral-800/60 xl:border-none h-full flex flex-col p-2 justify-between';
 
   return (
     <div ref={ref} className={`transition-opacity duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
