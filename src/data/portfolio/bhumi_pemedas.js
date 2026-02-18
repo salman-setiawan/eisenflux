@@ -1,6 +1,6 @@
 const BhumiPemedas = {
   card: {
-    id: 4,
+    id: 5,
     slug: 'bhumi-pemedas',
     title: 'BHUMI PEMEDAS',
     nav: 'bhumi_pemedas.prj',

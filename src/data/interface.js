@@ -1,35 +1,7 @@
 const UIData = [
+  // Portfolio IDs must match `src/data/portfolio/*` card.id values
   {
-    id: 2,
-    cover: [
-      { img: '/anotherisland/gallery/screen1.webp' },
-      { img: '/anotherisland/gallery/screen2.webp' },
-      { img: '/anotherisland/gallery/screen3.webp' },
-      { img: '/anotherisland/gallery/screen4.webp' },
-      { img: '/anotherisland/gallery/screen5.webp' },
-      { img: '/anotherisland/gallery/screen6.webp' },
-      { img: '/anotherisland/gallery/screen7.webp' },
-      { img: '/anotherisland/gallery/screen8.webp' },
-      { img: '/anotherisland/gallery/screen9.webp' },
-      { img: '/anotherisland/gallery/screen10.webp' },
-      { img: '/anotherisland/gallery/screen3.webp' },
-      { img: '/anotherisland/gallery/screen8.webp' },
-    ],
-    gallery: [
-      { img: '/anotherisland/gallery/screen1.webp' },
-      { img: '/anotherisland/gallery/screen2.webp' },
-      { img: '/anotherisland/gallery/screen3.webp' },
-      { img: '/anotherisland/gallery/screen4.webp' },
-      { img: '/anotherisland/gallery/screen5.webp' },
-      { img: '/anotherisland/gallery/screen6.webp' },
-      { img: '/anotherisland/gallery/screen7.webp' },
-      { img: '/anotherisland/gallery/screen8.webp' },
-      { img: '/anotherisland/gallery/screen9.webp' },
-      { img: '/anotherisland/gallery/screen10.webp' },
-    ],
-  },
-  {
-    id: 3,
+    id: 1, // edufams
     cover: [
       { img: '/edufams/gallery/pc_screen1.webp' },
       { img: '/edufams/gallery/pc_screen2.webp' },
@@ -74,7 +46,7 @@ const UIData = [
     },
   },
   {
-    id: 4,
+    id: 2, // eduwork
     cover: [
       { img: '/eduwork/gallery/screen1.webp' },
       { img: '/eduwork/gallery/screen2.webp' },
@@ -101,6 +73,50 @@ const UIData = [
       { img: '/eduwork/gallery/screen10.webp' },
       { img: '/eduwork/gallery/screen11.webp' },
     ],
+  },
+  {
+    id: 3, // another-island
+    cover: [
+      { img: '/anotherisland/gallery/screen1.webp' },
+      { img: '/anotherisland/gallery/screen2.webp' },
+      { img: '/anotherisland/gallery/screen3.webp' },
+      { img: '/anotherisland/gallery/screen4.webp' },
+      { img: '/anotherisland/gallery/screen5.webp' },
+      { img: '/anotherisland/gallery/screen6.webp' },
+      { img: '/anotherisland/gallery/screen7.webp' },
+      { img: '/anotherisland/gallery/screen8.webp' },
+      { img: '/anotherisland/gallery/screen9.webp' },
+      { img: '/anotherisland/gallery/screen10.webp' },
+      { img: '/anotherisland/gallery/screen3.webp' },
+      { img: '/anotherisland/gallery/screen8.webp' },
+    ],
+    gallery: [
+      { img: '/anotherisland/gallery/screen1.webp' },
+      { img: '/anotherisland/gallery/screen2.webp' },
+      { img: '/anotherisland/gallery/screen3.webp' },
+      { img: '/anotherisland/gallery/screen4.webp' },
+      { img: '/anotherisland/gallery/screen5.webp' },
+      { img: '/anotherisland/gallery/screen6.webp' },
+      { img: '/anotherisland/gallery/screen7.webp' },
+      { img: '/anotherisland/gallery/screen8.webp' },
+      { img: '/anotherisland/gallery/screen9.webp' },
+      { img: '/anotherisland/gallery/screen10.webp' },
+    ],
+  },
+  {
+    id: 4, // aevenic-studio
+    cover: [{ img: '/showcase/aevenic.png' }],
+    gallery: [{ img: '/showcase/aevenic.png' }],
+  },
+  {
+    id: 5, // bhumi-pemedas
+    cover: [{ img: '/showcase/pemedas.webp' }],
+    gallery: [{ img: '/showcase/pemedas.webp' }],
+  },
+  {
+    id: 6, // duitra-apps
+    cover: [{ img: '/showcase/duitra.webp' }],
+    gallery: [{ img: '/showcase/duitra.webp' }],
   },
 ];
 
